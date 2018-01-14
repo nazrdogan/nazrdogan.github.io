@@ -28,6 +28,7 @@ Neyse ki daha sonra ise Promise geldi. Bize callback fonksiyonlarından daha org
  Son olarak ise Async/Await'in eklenmesiyle daha okunabilir ve bakımı kolay bir hale geldi.
 
 
+
 ## Nedir Bu  Async/Await ?
 Async/Await  uzun zamandır beklenen asenkron işlemleri daha anlaşılması kolay bir hale getiren Promise tabanlı Javascript özelliğidir.
 
