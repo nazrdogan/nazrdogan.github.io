@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: C++ | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/c-plus-plus/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sailfish Merhaba Dünya Uygulaması]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi/"/>
+    <updated>2013-12-16T10:58:29+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi</id>
+    <content type="html"><![CDATA[<p>Nokia'dan ayrılan bir grup geliştiricinin MeeGo projesinin devamı olarak piyasaya sundukları Sailfish OS ve ilk Jolla cihazlarını kısıtlı sayıda olsada çıkarmış bulunuyorlar.</p>
+
+
+<p>Bu yazıda ise Sailfish için uygulama nasıl başlanır onunla ilgili bilgiler bulacaksınız.</p>
+
+
+<p>Öncellikle <a href="https://sailfishos.org/index.html">buradan</a> Sailfish SDK 'yi indirmeniz gerekmektedir.Sailfish IDE aslında QT nin üzerine kurulmuş IDE'den başka birşey degil.işletim sisteminize uygun sürümü indirdikten sonra kurmanız gerekmektedir.Windows için oldukça kolay ,kurulumu başlatıp sadece next demek kalıyor.</p>
+
+
+<p>Linux için ise</p>
+
+
+<p>Terminal'i açıp</p>
+
+
+<pre>$ chmod +x ~/Downloads/&lt;installer_name&gt;
+$ ./Downloads/&lt;installer_name&gt;</pre>
+
+
+<p>--</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/sdk_setup.png"><img class="alignnone  wp-image-282" src="/assets/sdk_setup.png" alt="SDK_setup" width="500" height="364" /></a><br />
+<a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/install_3.png"><img class="alignnone size-full wp-image-283" src="/assets/install_3.png" alt="install_3" width="555" height="364" /></a></p>
+
+
+<p>Kurulumu üstteki gibi yaptıkan sonra Sailfish SDK artık hazır.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-123525.png"><img class="alignnone size-large wp-image-285" src="/assets/screenshot-from-2013-12-16-123525.png?w=1024" alt="Screenshot from 2013-12-16 12:35:25" width="1024" height="575" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124112.png"><img class="alignnone size-large wp-image-292" src="/assets/screenshot-from-2013-12-16-124112.png?w=1024" alt="Screenshot from 2013-12-16 12:41:12" width="1024" height="575" /></a><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124229.png"><img class="alignnone size-large wp-image-294" src="/assets/screenshot-from-2013-12-16-124229.png?w=1024" alt="Screenshot from 2013-12-16 12:42:29" width="1024" height="575" /></a></p>
+
+
+<p>Eger uygulamamızı Simulatorde görmek istiyorsak .Virtualbox'ın kurulu olması gerekmekte.Çünkü Simulator VirtualBox üzerinde çalışmakta.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124735.png"><img class="alignnone size-large wp-image-296" src="/assets/screenshot-from-2013-12-16-124735.png?w=1024" alt="Screenshot from 2013-12-16 12:47:35" width="1024" height="575" /></a></p>
+
+
+<p>Uygulama geliştirme dili olarak ise QML i kullanmakta.</p>
+
+
+<p>Kaynak olarak ise <a href="https://sailfishos.org/sailfish-silica/sailfish-silica-all.html"> buradan  </a> faydalanabilirsiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-125502.png"><img class="alignnone size-large wp-image-298" src="/assets/screenshot-from-2013-12-16-125502.png?w=1024" alt="Screenshot from 2013-12-16 12:55:02" width="1024" height="575" /></a></p>
+
+
+<p>Şimdilik SDK nın alpha olması ve vaktimin sınırlı olmasından dolayı izlenimlerim bu kadar .Umarım devamında birşeyler ekleyebilirim.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu üzerinde QT Ve MySql Baglantısı]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/12/03/ubuntu-uzerinde-qt-ve-mysql-baglantisi/"/>
+    <updated>2013-12-03T23:40:04+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/12/03/ubuntu-uzerinde-qt-ve-mysql-baglantisi</id>
+    <content type="html"><![CDATA[<p><img src="/assets/Qt_Software_logo.png" alt="" /><img src="/assets/MySQL.svg" alt="" /></p>
+
+<p>QT ve Mysql bağlantısı için gerekli olanlar</p>
+
+<p>Öncelikle bir localde yada uzakta çalışan bir Web server'a ihtiyacımız var.Öncelikle bu</p>
+
+<p><span style="color: #ff6600;">
+  <span style="color: #ff6600;"><a href="https://help.ubuntu.com/community/ApacheMySQLPHP">adresten </a> <span style="color: #000000;">LAMP kurulumunu yapıp serverimizi hazır hale getirmemiz gerekiyor.</span></span>
+</span></p>
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/lamp.png"><img src="/assets/lamp-1024x575.png" alt="lamp" /></a></p>
+
+<p>Eğer üstteki resimdeki gibi görüyorsanız web serveriniz hazır durumdadır.</p>
+
+<p>Artık QT ile ilgili olan tarafına geçebilirsiniz.</p>
+
+<p>QT de ise işler oldukça kolay. öncelikle yazılım merkezinden QT mysql sürücülerini indirmeniz gerekiyor.</p>
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-04-011859.png"><img src="/assets/screenshot-from-2013-12-04-011859.png?w=1024" alt="Screenshot from 2013-12-04 01:18:59" /></a></p>
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-04-012932.png"><img src="/assets/screenshot-from-2013-12-04-012932.png?w=1024" alt="Screenshot from 2013-12-04 01:29:32" /></a>Projenizin .pro dosyasına QT += core gui sql şeklinde eklemeniz gerekmektedir.</p>
+
+<p>Daha sonra ise örnek bir proje ile çalıştırabilirsiniz.<br>
+<a href="https://gist.github.com/nazrdogan/7779642">https://gist.github.com/nazrdogan/7779642</a></p>
+
+<p>Eğer bir sorun çıkmadıysa QT ve MySql bağlantınız hazır demektir :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen İnceleme Videosu]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/23/tizen-inceleme-videosu/"/>
+    <updated>2013-09-23T06:48:45+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/23/tizen-inceleme-videosu</id>
+    <content type="html"><![CDATA[<p><a href="https://vimeo.com/75167028">https://vimeo.com/75167028</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen Uygulama Geliştirme - Merhaba Dünya Native Uygulama]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/21/tizen-uygulama-gelistirme-merhaba-dunya-native-uygulama/"/>
+    <updated>2013-09-21T07:48:04+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/21/tizen-uygulama-gelistirme-merhaba-dunya-native-uygulama</id>
+    <content type="html"><![CDATA[<p>Tizen uygulama geliştirmenin iki tane yolu olduğundan daha öncede bahsetmiştik.Bu yazımda ise Native bir Hello World uygulaması nasıl yapılır.Arayüz nasıl tasarlanır onun üzerinde duracağım.</p>
+
+<p>ilk adım olarak</p>
+
+<p><span style="color: #ff6600;">Tizen IDE</span></p>
+
+<p>&lsquo;yı açalım.Daha sonra ise</p>
+
+<p><span style="color: #ff6600;">File-&gt;Project-&gt;Tizen-&gt;Tizen Native Project-&gt;Form Based Application-&gt;with SceneManager</span></p>
+
+<p>yolunu izleyip proje ismini girip</p>
+
+<p><span style="color: #ff6600;">&lt;HelloWorld&gt;</span></p>
+
+<p> Finish dedikten sonra ise projemiz çalışmak için hazır oluyor.</p>
+
+<p>Eğer daha önceden <a href="http://www.cplusplus.com/">C++</a> ile ilğilendiyseniz kaynak kodları yabancı gelmeyecektir. Çünkü Native uygulamalar C++ ile yazılmaktadır.Bizim cpp kodlarımız</p>
+
+<p><span style="color: #ff6600;">src</span></p>
+
+<p> &lsquo;nin içinde yer almaktadır.ayrıca header dosyaları ise</p>
+
+<p><span style="color: #ff6600;"> inc</span></p>
+
+<p> dosyası içinde yer almaktadır.</p>
+
+<p>Bunları biraz olsun anladıktan sonra arayüze geçmek için projenin isminin üzerine gelip sağ tıkladıktan sonra</p>
+
+<p><span style="color: #ff6600;">Run Native UI Builder <span style="color: #000000;">dedikten sonra </span></span></p>
+
+<p><a href="/assets/runnativeuibuilder.png"><img src="/assets/runnativeuibuilder.png?w=1024" alt="runnativeuibuilder" /></a></p>
+
+<p>UI builder'in açıldıgını göreceksiniz.</p>
+
+<p><a href="/assets/nativeui.png"><img src="/assets/nativeui.png?w=1024" alt="nativeui" /></a></p>
+
+<p><a href="/assets/nativeui1.png"><img src="/assets/nativeui1.png?w=1024" alt="nativeui" /></a></p>
+
+<p>Native UI Builder'da sürükle bırak ile istediginiz arayüzü tasarlayabilir.Web uygulamalarına göre daha performanslı uygulamalar geliştirebilirsiniz.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen Uygulama Geliştirme-Uygulama Paket Yöneticisi]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/13/tizen-uygulama-gelistirme-uygulama-paket-yoneticisi/"/>
+    <updated>2013-09-13T19:59:57+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/13/tizen-uygulama-gelistirme-uygulama-paket-yoneticisi</id>
+    <content type="html"><![CDATA[<p>Uygulama paket yöneticisi Tizen  Framework'un çekirdek modüllerinden  biridir .Uygulama  yükleme kaldırma ve güncelleme paketleri ve onların bilgilerini  depolamaktan sorumludur.Paket yöneticisi kullanarak, aynı zamanda cihazda yüklü olan paketler ile ilgili bilgi alabilirsiniz.</p>
+
+
+<p>Uygulama paket yöneticisi modülü uygulamaları çeşitli destek genişletilebilir, ve belirlenen kurulum modülleri buna eklenebilir.</p>
+
+
+<p>Tizen aşağıdaki uygulama paketleri destekler:</p>
+
+
+<p><span style="color:#ff6600;">Web Uygulama Paketi</span></p>
+
+
+<p><span style="color:#ff6600;">Hirbid  Uygulama Paketi</span></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/application_package_manager.png"><img class="alignnone size-full wp-image-134" alt="application_package_manager" src="/assets/application_package_manager.png" width="653" height="432" /></a></p>
+
+
+<h2><span style="color:#ff6600;">Web uygulama Paket Yapılandırması:</span></h2>
+
+
+<p>Her Web Widget paketinin  meta verileri gösteren bir yapılandırma dosyası, config.xml vardır.</p>
+
+]]></content>
+  </entry>
+  
+</feed>

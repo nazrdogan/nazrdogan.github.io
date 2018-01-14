@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Sailfish Merhaba Dünya Uygulaması - Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="Nokia'dan ayrılan bir grup geliştiricinin MeeGo projesinin devamı olarak piyasaya sundukları Sailfish OS ve ilk Jolla cihazlarını kısıtlı sayıda &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Sailfish Merhaba Dünya Uygulaması</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-12-16T10:58:29+02:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>10:58 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Nokia'dan ayrılan bir grup geliştiricinin MeeGo projesinin devamı olarak piyasaya sundukları Sailfish OS ve ilk Jolla cihazlarını kısıtlı sayıda olsada çıkarmış bulunuyorlar.</p>
+
+
+<p>Bu yazıda ise Sailfish için uygulama nasıl başlanır onunla ilgili bilgiler bulacaksınız.</p>
+
+
+<p>Öncellikle <a href="https://sailfishos.org/index.html">buradan</a> Sailfish SDK 'yi indirmeniz gerekmektedir.Sailfish IDE aslında QT nin üzerine kurulmuş IDE'den başka birşey degil.işletim sisteminize uygun sürümü indirdikten sonra kurmanız gerekmektedir.Windows için oldukça kolay ,kurulumu başlatıp sadece next demek kalıyor.</p>
+
+
+<p>Linux için ise</p>
+
+
+<p>Terminal'i açıp</p>
+
+
+<pre>$ chmod +x ~/Downloads/&lt;installer_name&gt;
+$ ./Downloads/&lt;installer_name&gt;</pre>
+
+
+<p>--</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/sdk_setup.png"><img class="alignnone  wp-image-282" src="/assets/sdk_setup.png" alt="SDK_setup" width="500" height="364" /></a><br />
+<a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/install_3.png"><img class="alignnone size-full wp-image-283" src="/assets/install_3.png" alt="install_3" width="555" height="364" /></a></p>
+
+
+<p>Kurulumu üstteki gibi yaptıkan sonra Sailfish SDK artık hazır.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-123525.png"><img class="alignnone size-large wp-image-285" src="/assets/screenshot-from-2013-12-16-123525.png?w=1024" alt="Screenshot from 2013-12-16 12:35:25" width="1024" height="575" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124112.png"><img class="alignnone size-large wp-image-292" src="/assets/screenshot-from-2013-12-16-124112.png?w=1024" alt="Screenshot from 2013-12-16 12:41:12" width="1024" height="575" /></a><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124229.png"><img class="alignnone size-large wp-image-294" src="/assets/screenshot-from-2013-12-16-124229.png?w=1024" alt="Screenshot from 2013-12-16 12:42:29" width="1024" height="575" /></a></p>
+
+
+<p>Eger uygulamamızı Simulatorde görmek istiyorsak .Virtualbox'ın kurulu olması gerekmekte.Çünkü Simulator VirtualBox üzerinde çalışmakta.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124735.png"><img class="alignnone size-large wp-image-296" src="/assets/screenshot-from-2013-12-16-124735.png?w=1024" alt="Screenshot from 2013-12-16 12:47:35" width="1024" height="575" /></a></p>
+
+
+<p>Uygulama geliştirme dili olarak ise QML i kullanmakta.</p>
+
+
+<p>Kaynak olarak ise <a href="https://sailfishos.org/sailfish-silica/sailfish-silica-all.html"> buradan  </a> faydalanabilirsiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-125502.png"><img class="alignnone size-large wp-image-298" src="/assets/screenshot-from-2013-12-16-125502.png?w=1024" alt="Screenshot from 2013-12-16 12:55:02" width="1024" height="575" /></a></p>
+
+
+<p>Şimdilik SDK nın alpha olması ve vaktimin sınırlı olmasından dolayı izlenimlerim bu kadar .Umarım devamında birşeyler ekleyebilirim.</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Nazir Doğan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2013-12-16T10:58:29+02:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>10:58 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/c-plus-plus/'>c++</a>, <a class='category' href='/blog/categories/open-source/'>open source</a>, <a class='category' href='/blog/categories/qt/'>qt</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi/" data-via="gereksizcoder" data-counturl="http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/12/12/ubuntuya-virtualbox-yukleme/" title="Previous Post: Ubuntu'ya VirtualBox Yükleme">&laquo; Ubuntu'ya VirtualBox Yükleme</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/05/25/node-js-yazarken-hissedilen/" title="Next Post: Node.js yazarken hissedilen">Node.js yazarken hissedilen &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi/';
+        var disqus_url = 'http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

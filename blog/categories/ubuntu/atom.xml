@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ubuntu | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu'ya Node.js Kurulumu]]></title>
+    <link href="http://nazrdogan.github.io/blog/2014/07/21/ubuntuya-node-js-yukleme/"/>
+    <updated>2014-07-21T20:43:45+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2014/07/21/ubuntuya-node-js-yukleme</id>
+    <content type="html"><![CDATA[<p>&nbsp;</p>
+
+
+<p>Node.js  hızlı ağ uygulamaları geliştirmek için sunucu tarafı için kullanılan bir Javascript platformudur.Hem Front-end de hem de back-end tarafında Javascript yazılarak daha tutarlı uygulamalar yazmak amaçlanmıştır.</p>
+
+
+<p>Bu yazımda Node.js ne olduğundan değil başlıktanda anlaşılacağı üzere Ubuntu üzerine nasıl kurulum yapacağız ondan bahsedeceğim.</p>
+
+
+<p>Node.js Ubuntu repo'larında bulunmaktadır. Termial'de aşagıdaki kodu yazdıktan sonra Node.js 'in son sürümü yüklenecektir.</p>
+
+
+<pre class="lang:default decode:true">sudo apt-get update
+sudo apt-get install nodejs</pre>
+
+
+<p>Daha sonra  ise  Node package Manager yani npm'e ihtiyaçınız olacağı için onuda yükleyin</p>
+
+
+<pre class="lang:default decode:true">sudo apt-get install npm</pre>
+
+
+<p><strong>PPA (Personal  Package Archive ) kullanarak yükleme</strong></p>
+
+
+<p>Chris Lea'nin tarafından sağlanan paket için ise gerekli kod</p>
+
+
+<pre class="lang:default decode:true ">sudo add-apt-repository ppa:chris-lea/node.js</pre>
+
+
+<p>PPA'yi ekledikten sonra</p>
+
+
+<pre class="lang:default decode:true ">sudo apt-get update
+sudo apt-get install nodejs
+</pre>
+
+
+<p>Daha sonra ise npm için</p>
+
+
+<pre class="lang:default decode:true ">sudo apt-get install npm</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>Daha sonra ise  yüklenip yüklenmediğini kontrol için node.js ve npm in versiyonunu kontrol edebilirsiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/Screenshot-from-2014-07-21-233828.png"><img class="alignnone wp-image-475 size-full" src="/assets/Screenshot-from-2014-07-21-233828.png" alt="Screenshot from 2014-07-21 23:38:28" width="725" height="461" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Kolay Gelsin.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Arduino RFID Modülü]]></title>
+    <link href="http://nazrdogan.github.io/blog/2014/06/01/arduino-rfid-modulu/"/>
+    <updated>2014-06-01T09:10:26+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2014/06/01/arduino-rfid-modulu</id>
+    <content type="html"><![CDATA[<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/10413221_1428326937430396_965054233_n.jpg"><img class="alignnone size-full wp-image-347" src="/assets/10413221_1428326937430396_965054233_n.jpg" alt="10413221_1428326937430396_965054233_n" width="640" height="640" /></a></p>
+
+
+<p>Bu yazımda başlıktanda anlaşılacağı üzere RFID (RC522) okumayı oldukça basit bir şekilde göstercem. Bu <a href="https://github.com/miguelbalboa/rfid">kütüphaneyi</a> Arduino kütüphaneleri arasına ekledikten sonra yapmanız gerekenler oldukça kolay.</p>
+
+
+<p>Eger Arduino Uno kullanıyorsanız pinout söyle olmalı</p>
+
+
+<pre>MOSI: Pin 11 / ICSP-4
+ MISO: Pin 12 / ICSP-1
+ SCK : Pin 13 / ISCP-3
+ SS : Pin 10 (Configurable)
+ RST : Pin 9 (Configurable)</pre>
+
+
+<p>Arduino Mega kullanıyorsanız</p>
+
+
+<pre>MOSI: Pin 51 / ICSP-4
+MISO: Pin 50 / ICSP-1
+SCK : Pin 52 / ISCP-3
+SS : Pin 53 (Configurable)
+RST : Pin 5 (Configurable)</pre>
+
+
+<pre></pre>
+
+
+<p>RFID'yi bagladıktan sonra  tek yapmanız gereken Arduino'ya kodu yüklemek</p>
+
+
+<p>https://gist.github.com/nazrdogan/68508f3e0707c86e13b9<br />
+Biraz uğraşla belki Akbil'i hacklebilirsiniz. :)</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/screenshot-from-2014-06-01-120722.png"><img class="alignnone size-large wp-image-349" src="/assets/screenshot-from-2014-06-01-120722.png?w=1024" alt="Screenshot from 2014-06-01 12:07:22" width="1024" height="575" /></a></p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sailfish Merhaba Dünya Uygulaması]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi/"/>
+    <updated>2013-12-16T10:58:29+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi</id>
+    <content type="html"><![CDATA[<p>Nokia'dan ayrılan bir grup geliştiricinin MeeGo projesinin devamı olarak piyasaya sundukları Sailfish OS ve ilk Jolla cihazlarını kısıtlı sayıda olsada çıkarmış bulunuyorlar.</p>
+
+
+<p>Bu yazıda ise Sailfish için uygulama nasıl başlanır onunla ilgili bilgiler bulacaksınız.</p>
+
+
+<p>Öncellikle <a href="https://sailfishos.org/index.html">buradan</a> Sailfish SDK 'yi indirmeniz gerekmektedir.Sailfish IDE aslında QT nin üzerine kurulmuş IDE'den başka birşey degil.işletim sisteminize uygun sürümü indirdikten sonra kurmanız gerekmektedir.Windows için oldukça kolay ,kurulumu başlatıp sadece next demek kalıyor.</p>
+
+
+<p>Linux için ise</p>
+
+
+<p>Terminal'i açıp</p>
+
+
+<pre>$ chmod +x ~/Downloads/&lt;installer_name&gt;
+$ ./Downloads/&lt;installer_name&gt;</pre>
+
+
+<p>--</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/sdk_setup.png"><img class="alignnone  wp-image-282" src="/assets/sdk_setup.png" alt="SDK_setup" width="500" height="364" /></a><br />
+<a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/install_3.png"><img class="alignnone size-full wp-image-283" src="/assets/install_3.png" alt="install_3" width="555" height="364" /></a></p>
+
+
+<p>Kurulumu üstteki gibi yaptıkan sonra Sailfish SDK artık hazır.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-123525.png"><img class="alignnone size-large wp-image-285" src="/assets/screenshot-from-2013-12-16-123525.png?w=1024" alt="Screenshot from 2013-12-16 12:35:25" width="1024" height="575" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124112.png"><img class="alignnone size-large wp-image-292" src="/assets/screenshot-from-2013-12-16-124112.png?w=1024" alt="Screenshot from 2013-12-16 12:41:12" width="1024" height="575" /></a><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124229.png"><img class="alignnone size-large wp-image-294" src="/assets/screenshot-from-2013-12-16-124229.png?w=1024" alt="Screenshot from 2013-12-16 12:42:29" width="1024" height="575" /></a></p>
+
+
+<p>Eger uygulamamızı Simulatorde görmek istiyorsak .Virtualbox'ın kurulu olması gerekmekte.Çünkü Simulator VirtualBox üzerinde çalışmakta.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124735.png"><img class="alignnone size-large wp-image-296" src="/assets/screenshot-from-2013-12-16-124735.png?w=1024" alt="Screenshot from 2013-12-16 12:47:35" width="1024" height="575" /></a></p>
+
+
+<p>Uygulama geliştirme dili olarak ise QML i kullanmakta.</p>
+
+
+<p>Kaynak olarak ise <a href="https://sailfishos.org/sailfish-silica/sailfish-silica-all.html"> buradan  </a> faydalanabilirsiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-125502.png"><img class="alignnone size-large wp-image-298" src="/assets/screenshot-from-2013-12-16-125502.png?w=1024" alt="Screenshot from 2013-12-16 12:55:02" width="1024" height="575" /></a></p>
+
+
+<p>Şimdilik SDK nın alpha olması ve vaktimin sınırlı olmasından dolayı izlenimlerim bu kadar .Umarım devamında birşeyler ekleyebilirim.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu'ya VirtualBox Yükleme]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/12/12/ubuntuya-virtualbox-yukleme/"/>
+    <updated>2013-12-12T19:36:55+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/12/12/ubuntuya-virtualbox-yukleme</id>
+    <content type="html"><![CDATA[<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/virtualbox_logo.jpg"><img class="alignnone size-full wp-image-272" src="/assets/virtualbox_logo.jpg" alt="virtualbox_logo" width="400" height="272" /></a></p>
+
+
+<p>Bu  yazımda VirtualBox'ın  Ubuntu 13.10 Saucy, 13.04 Raring, 12.04 Precise sürümlerine  nasıl yüklenecegini basitçe göstermek istiyorum.</p>
+
+
+<p>ilk olarak  Ctrl+Alt+Del  kombinasyonu ile Terminal açılır.</p>
+
+
+<ul>
+<ul>
+<li>Repository'ı eklemek için   terminale kopyalayıp yapıştırın.</li>
+</ul>
+</ul>
+
+
+<p>&nbsp;</p>
+
+
+<pre>sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc)  contrib" &gt;&gt; /etc/apt/sources.list'</pre>
+
+
+<ul>
+<li>Key 'i indirip yükleyin.</li>
+</ul>
+
+
+<pre>wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -</pre>
+
+
+<ul>
+<li>Güncelleyin</li>
+</ul>
+
+
+<pre>sudo apt-get update</pre>
+
+
+<ul>
+<li>VirtualBox 4.3 yükleyin.</li>
+</ul>
+
+
+<pre>sudo apt-get install virtualbox-4.3</pre>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+</feed>

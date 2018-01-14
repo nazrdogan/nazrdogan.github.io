@@ -1,0 +1,739 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="Processing nedir?
+Processing, 2001 yılından bu yana çevrimiçi görsel sanatlar odaklı geliştirilen bir programlama dili ve ortamıdır.Açık kaynaklıdır &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/posts/7/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/01/tizen-uzerinde-processing-js/">Tizen üzerinde Processing.js</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-10-01T12:36:28+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2013</span></span> <span class='time'>12:36 pm</span></time>
+        
+           | <a href="/blog/2013/10/01/tizen-uzerinde-processing-js/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/10/01/tizen-uzerinde-processing-js/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul id="content">
+<li id="work">
+<h2>Processing nedir?</h2>
+<p>Processing, 2001 yılından bu yana çevrimiçi görsel sanatlar odaklı geliştirilen bir programlama dili ve ortamıdır.Açık kaynaklıdır. İlk zamanlarda hızlı prototip çıkarma ve eskiz çalışması yapabilme için geliştirilse de zaman içersinde programlamanın temellerini anlatabilmek için kullanılmaya başlanmıştır. Processing ile çok hızlı geliştirmeler yapabilir ve profesyonel nitelikte çalışmalar hazırlayabilirsiniz.</li>
+</ul>
+
+
+<p>Processing java tabanlı olmasına rağmen javascript moduda mevcut.Bende mevcut Processing.js in Tizen üzerinde nasıl çalışıtıgını test etmek basit bir uygulama ile denedim gayet başarılı sonuçlar aldım.<br />
+yapmanız gerekenler gayet basit .<a href="http://processingjs.org/">Processing.js</a>  sitesinden indirip processing-1.4.1.js adlı(şu an bu versiyonda) js dosyasını projenizine dahil etmek.(Ben isminide degiştirdim)</p>
+
+
+<p>sonra aşagıdaki gibi kullanmak zaten processing.js sitesinde bunun için dersler mevcut.Benim örneğim ise basit bir sarkaç simulasyonu.<br />
+https://gist.github.com/nazrdogan/6776991</p>
+
+
+<p>Simulator üzerinde  processing.js</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/10/pendulumprocessing.png"><img class="alignnone size-full wp-image-215" alt="pendulumprocessing" src="/assets/pendulumprocessing.png" width="438" height="458" /></a></p>
+
+
+<p>https://gist.github.com/nazrdogan/6777186</p>
+
+
+<h2 style="text-align:justify;"><span style="color:#ff6600;">Tizen üzerinde başka bir örnek.(Rastgele zıplayan top)</span></h2>
+
+
+<p>https://gist.github.com/nazrdogan/6777186<br />
+https://vimeo.com/75860986<br />
+&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/30/processing-pendulum/">Processing Pendulum</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-30T21:24:45+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>9:24 pm</span></time>
+        
+           | <a href="/blog/2013/09/30/processing-pendulum/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/30/processing-pendulum/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>https://gist.github.com/nazrdogan/6770472</p>
+
+
+<p>Not:Henuz tamamlanmadı...</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/27/tizen-uygulama-gelistirme-bluetooth-donanimi/">Tizen Uygulama Geliştirme-Bluetooth Donanımı</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-27T21:01:23+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>9:01 pm</span></time>
+        
+           | <a href="/blog/2013/09/27/tizen-uygulama-gelistirme-bluetooth-donanimi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/27/tizen-uygulama-gelistirme-bluetooth-donanimi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Tizen'in HTML5 olmasının getirdiği özelliklerinden biride Web API'leri ile  Cihazın donanımına ulaşmak.Bu donanımlardan bir tanesi de Bluetooth. Bu yazımda<a href="http://tr.wikipedia.org/wiki/Bluetooth"> Bluetooth  </a>API'lerinden bahsedecegim.</p>
+
+
+<p style="text-align:justify;">İlk önce tizen web projesi açtıktan sonra  <span style="color:#ff6600;"> config.xml  <span style="color:#000000;">sayfasında ki<a href="https://developer.tizen.org/help/index.jsp?topic=%2Forg.tizen.web.appprogramming%2Fhtml%2Fapp_dev_process%2Fspecify_api_access.htm"> Privileges</a>(izinler) tabından aşagıdaki resimdeki gibi izinleri eklememiz gerekmektedir.Çünkü Bluetooth cihazına ulaşmak için bu izinlere ihtiyacı var uygulamanın.</span></span></p>
+
+
+<p style="text-align:justify;"><a href="http://nazirdogan.files.wordpress.com/2013/09/bluetoothpriviliges.png"><img class="alignnone size-large wp-image-189" alt="bluetoothpriviliges" src="/assets/bluetoothpriviliges.png?w=1024" width="1024" height="617" /></a></p>
+
+
+<p style="text-align:justify;">Resimdeki gibi ekledikten sonra aşagıdaki kodu<span style="color:#ff6600;"> index.html <span style="color:#000000;"> sayfasına ekledikten sonra Bluetooth Aç-Kapa fonksiyonu çalışır hale gelecek.</span></span></p>
+
+
+<p>https://gist.github.com/nazrdogan/6732035</p>
+
+
+<p>Eğer bütün   adımları dogru yaptıysanız uygulamanızın ekranında aşagıdaki gibi görebilirsiniz.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/bluetooth-ac3a7kapa.png"><img class="alignnone size-full wp-image-197" alt="bluetooth açkapa" src="/assets/bluetooth-ac3a7kapa.png" width="387" height="681" /></a></p>
+
+
+<p>Eğer  HTML kodu  içerisindeki Javascript kısmındakı yorumları takip edip kodu incelerseniz.Bütün fonksiyonları görebilirsiniz.(Yazı Resimlerle güncellenecektir.)</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/bluetooth.png"><img class="alignnone size-full wp-image-204" alt="bluetooth" src="/assets/bluetooth.png" width="499" height="889" /></a></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/25/tizen-uygulama-gelistirme-native-uygulama-gelistirme-sureci/">Tizen Uygulama Geliştirme-Native Uygulama Geliştirme Süreci</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-25T20:24:53+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:24 pm</span></time>
+        
+           | <a href="/blog/2013/09/25/tizen-uygulama-gelistirme-native-uygulama-gelistirme-sureci/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/25/tizen-uygulama-gelistirme-native-uygulama-gelistirme-sureci/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://nazirdogan.files.wordpress.com/2013/09/overview_of_app_dev_process.png"><img class="alignnone size-full wp-image-185" alt="overview_of_app_dev_process" src="/assets/overview_of_app_dev_process.png" width="613" height="532" /></a></p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/23/tizen-inceleme-videosu/">Tizen İnceleme Videosu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-23T06:48:45+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2013</span></span> <span class='time'>6:48 am</span></time>
+        
+           | <a href="/blog/2013/09/23/tizen-inceleme-videosu/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/23/tizen-inceleme-videosu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://vimeo.com/75167028">https://vimeo.com/75167028</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/21/tizen-uygulama-gelistirme-merhaba-dunya-native-uygulama/">Tizen Uygulama Geliştirme - Merhaba Dünya Native Uygulama</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-21T07:48:04+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2013</span></span> <span class='time'>7:48 am</span></time>
+        
+           | <a href="/blog/2013/09/21/tizen-uygulama-gelistirme-merhaba-dunya-native-uygulama/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/21/tizen-uygulama-gelistirme-merhaba-dunya-native-uygulama/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Tizen uygulama geliştirmenin iki tane yolu olduğundan daha öncede bahsetmiştik.Bu yazımda ise Native bir Hello World uygulaması nasıl yapılır.Arayüz nasıl tasarlanır onun üzerinde duracağım.</p>
+
+<p>ilk adım olarak</p>
+
+<p><span style="color: #ff6600;">Tizen IDE</span></p>
+
+<p>&lsquo;yı açalım.Daha sonra ise</p>
+
+<p><span style="color: #ff6600;">File-&gt;Project-&gt;Tizen-&gt;Tizen Native Project-&gt;Form Based Application-&gt;with SceneManager</span></p>
+
+<p>yolunu izleyip proje ismini girip</p>
+
+<p><span style="color: #ff6600;">&lt;HelloWorld&gt;</span></p>
+
+<p> Finish dedikten sonra ise projemiz çalışmak için hazır oluyor.</p>
+
+<p>Eğer daha önceden <a href="http://www.cplusplus.com/">C++</a> ile ilğilendiyseniz kaynak kodları yabancı gelmeyecektir. Çünkü Native uygulamalar C++ ile yazılmaktadır.Bizim cpp kodlarımız</p>
+
+<p><span style="color: #ff6600;">src</span></p>
+
+<p> &lsquo;nin içinde yer almaktadır.ayrıca header dosyaları ise</p>
+
+<p><span style="color: #ff6600;"> inc</span></p>
+
+<p> dosyası içinde yer almaktadır.</p>
+
+<p>Bunları biraz olsun anladıktan sonra arayüze geçmek için projenin isminin üzerine gelip sağ tıkladıktan sonra</p>
+
+<p><span style="color: #ff6600;">Run Native UI Builder <span style="color: #000000;">dedikten sonra </span></span></p>
+
+<p><a href="/assets/runnativeuibuilder.png"><img src="/assets/runnativeuibuilder.png?w=1024" alt="runnativeuibuilder" /></a></p>
+
+<p>UI builder'in açıldıgını göreceksiniz.</p>
+
+<p><a href="/assets/nativeui.png"><img src="/assets/nativeui.png?w=1024" alt="nativeui" /></a></p>
+
+<p><a href="/assets/nativeui1.png"><img src="/assets/nativeui1.png?w=1024" alt="nativeui" /></a></p>
+
+<p>Native UI Builder'da sürükle bırak ile istediginiz arayüzü tasarlayabilir.Web uygulamalarına göre daha performanslı uygulamalar geliştirebilirsiniz.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/15/tizen-uygulamasini-telefon-uzerinde-calistirma/">Tizen Uygulamasını Telefon Üzerinde Çalıştırma</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-15T19:54:08+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>7:54 pm</span></time>
+        
+           | <a href="/blog/2013/09/15/tizen-uygulamasini-telefon-uzerinde-calistirma/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/15/tizen-uygulamasini-telefon-uzerinde-calistirma/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bugüne kadar Tizen uygulamalarını Tizen Emulator veya Tizen Web Simulator üzerinde çalıştırdığımız için sorunla karşılaşmadık .Çünkü bunlar IDE ile beraber gelen şeyler oldugu için bizim için bir problem üretmedi .Ama iş Cihaz üzerinde denemeye geldiginde muhtemelen bazı sorunlar çıkacaktır.Bunların sebebi ise Tizen'nın hem çok yeni olması hemde yeterli geliştirici olmadığından yardım almak  gibi bir durumun söz konusu olmaması.</p>
+
+
+<p>Benim karşılaştığım ilk problem PC'nin cihazı tanımaması (Windows için) Windows update'den driver indirmeyi deniyor ama bulamıyor .Bir kaç yerde araştırıp bulduğum çözüm ise şu <a href="http://www.4shared.com/zip/8XTsm_P5/samsung_usb_driver_for_mobile_.html?">linkteki</a> driverlar.Bu  driver'i indirip kurdukan sonra Tizen IDE 'de <span style="color:#ff6600;">Connection Explorer <span style="color:#000000;">kısmında  cihazınızı görmeniz mümkün.</span></span></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/connection.png"><img class="alignnone size-full wp-image-164" alt="connection" src="/assets/connection.png" width="259" height="366" /></a></p>
+
+
+<p>Diger başka bir problem ise  Tizen Cihaz ile Tizen uygulamasının  versiyonlarının farklı olması.Elimdeki cihaz Tizen 2.1 ve Tizen IDE'de ise uygulamanın <span style="color:#ff6600;">required_version=2.2</span> olmasından kaynaklı uygulamayı telefona yüklememekte. Eğer versiyon numarasını 2.1 olarak değiştirirseniz sorun ortadan kalkacaktır.Muhtemelen diğer versiyonlarda bu sorunu çözmezler ise bu şekilde kendimiz çözmüş olmaktayız.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/tizenerror.png"><img class="alignnone size-large wp-image-156" alt="tizenerror" src="/assets/tizenerror.png?w=1024" width="1024" height="555" /></a></p>
+
+
+<h3><span style="color:#ff6600;">Çalıştırma</span></h3>
+
+
+<p>Uygulamamızın üzerine gelip sağ tıklayıp açılan menüden<span style="color:#ff6600;">  Run as-&gt;Tizeb Web Application</span>'u seçip cihaza yüklendiğini görebilirsiniz.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/tizenrun.png"><img class="alignnone size-large wp-image-160" alt="tizenrun" src="/assets/tizenrun.png?w=1024" width="1024" height="609" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/15/tizen-web-uygulama-gelistirme-form-uygulamasi/">Tizen Web Uygulama Geliştirme-Form Uygulaması</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-15T19:19:23+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>7:19 pm</span></time>
+        
+           | <a href="/blog/2013/09/15/tizen-web-uygulama-gelistirme-form-uygulamasi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/15/tizen-web-uygulama-gelistirme-form-uygulamasi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Daha önceleri Tizen ile ilğili giriş yapmıştık ,Uygulama geliştirme methodlarından bahsetmiştik.Şimdi ise Tizen+Jquery Mobile ile uygulama geliştirmeye başlamış bulunmaktayız.</p>
+
+
+<p>Bu uygulama Jquery örnegi oldugu için Tizen üzerinde nasıl görünüyor onu görmüş olacagız.Uygulamamız basit bir form sayfasından ibaret.</p>
+
+
+<p>Uygulamayı oluşturmak için</p>
+
+
+<p><span style="color:#ff6600;">File-&gt;New-&gt;Web Application Project-Jquery Mobile</span>   şeçeneklerini izleyip uygulamamıza isim verip oluşturuyoruz.</p>
+
+
+<p>Daha sonra ise index.html sayfasını açıp aşagıdakı kodu kopyalayıp yapıştırıp çalıştırdıgımzda form uygulamamız hazır olmuş oluyor.</p>
+
+
+<p>https://gist.github.com/nazrdogan/6573473</p>
+
+
+<p>Ekran Görüntüsü (Ekran görüntüsü  Web Simulatorden alınmıştır.Tizen Telefon üzerinde daha güzel durmaktadır.)</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/tizenform.png"><img class="alignnone size-full wp-image-146" alt="tizenform" src="/assets/tizenform.png" width="385" height="661" /></a></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/13/tizen-uygulama-gelistirme-uygulama-paket-yoneticisi/">Tizen Uygulama Geliştirme-Uygulama Paket Yöneticisi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-13T19:59:57+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>7:59 pm</span></time>
+        
+           | <a href="/blog/2013/09/13/tizen-uygulama-gelistirme-uygulama-paket-yoneticisi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/13/tizen-uygulama-gelistirme-uygulama-paket-yoneticisi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Uygulama paket yöneticisi Tizen  Framework'un çekirdek modüllerinden  biridir .Uygulama  yükleme kaldırma ve güncelleme paketleri ve onların bilgilerini  depolamaktan sorumludur.Paket yöneticisi kullanarak, aynı zamanda cihazda yüklü olan paketler ile ilgili bilgi alabilirsiniz.</p>
+
+
+<p>Uygulama paket yöneticisi modülü uygulamaları çeşitli destek genişletilebilir, ve belirlenen kurulum modülleri buna eklenebilir.</p>
+
+
+<p>Tizen aşağıdaki uygulama paketleri destekler:</p>
+
+
+<p><span style="color:#ff6600;">Web Uygulama Paketi</span></p>
+
+
+<p><span style="color:#ff6600;">Hirbid  Uygulama Paketi</span></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/application_package_manager.png"><img class="alignnone size-full wp-image-134" alt="application_package_manager" src="/assets/application_package_manager.png" width="653" height="432" /></a></p>
+
+
+<h2><span style="color:#ff6600;">Web uygulama Paket Yapılandırması:</span></h2>
+
+
+<p>Her Web Widget paketinin  meta verileri gösteren bir yapılandırma dosyası, config.xml vardır.</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/09/tizen-web-uygulama-gelistirmenin-temelleri-uygulama-modeli/">Tizen Web Uygulama Geliştirmenin Temelleri-Uygulama Modeli</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-09T11:26:21+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>11:26 am</span></time>
+        
+           | <a href="/blog/2013/09/09/tizen-web-uygulama-gelistirmenin-temelleri-uygulama-modeli/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/09/tizen-web-uygulama-gelistirmenin-temelleri-uygulama-modeli/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Daha öncede <a href="http://nazirdogan.wordpress.com/2013/09/02/tizen-mimarisi/">bahsettiğim</a> gibi   Tizen SDK yi kurup incelediyseniz  iki çeşit uygulama geliştirme modeli mevcut.Web ve Native olmak üzere ikiye ayrılıyor.</p>
+
+
+<p>Bu yazımda Web Uygulama Geliştirmenin temellerini anlatacağım.</p>
+
+
+<p>Tizen SDK size Web uygulamarı ve widgetları geliştirmenize izin veriyor.</p>
+
+
+<ul>
+<li><span style="color:#ff6600;">Uygulama Modeli</span></li>
+</ul>
+
+
+<p>Bir  Tizen Web Uygulaması  HTML ,Javascript ve CSS den oluşuyor. Ve bir Widget paketi gerekli olan  bütün dosyaları içerir.Bu nedenle widget herhangi  bir ek kaynak ve ağ bağlantısı olmadan  çalıştırılabilen  bağımsız Web Uygulamasıdır.Tizen Web Uygulaması çeşitli JavaScript API’lerini ,ekstra HTML tag (işaretlerini) ve CSS özelliklerini  desteklemektedir.Bu özellikler Tizen API’leri ile birlikte iletişim ,mesajlaşma,cihaz bilgi erişimi,Multimedya,grafik ve oyunlar gibi  kategorilerde çeşitli zengin Web Uygulamaları geliştirmek için kullanılır.</p>
+
+
+<p>Tizen  Web uygulama  ve hirbid uygulama paketleri  bir veya daha fazla native servis uygulamalarını desteklemektedir.</p>
+
+
+<p>Bir sonraki yazım<span style="color:#ff6600;">  Tizen –uygulama paket yöneticisi</span></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/8">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/6">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

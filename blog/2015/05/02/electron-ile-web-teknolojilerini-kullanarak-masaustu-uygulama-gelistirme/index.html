@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Electron Ile Web Teknolojilerini Kullanarak Masaüstü Uygulama Geliştirme - Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="Electron , Javascript ile masaüstü uygulaması geliştirmenize  olanak  sağlayan bir runtime'dir.Electron  açık kaynak ve çapraz platfromdur .HTML ,CSS &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Electron Ile Web Teknolojilerini Kullanarak Masaüstü Uygulama Geliştirme</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-05-02T10:49:29+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>10:49 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Electron , Javascript ile masaüstü uygulaması geliştirmenize  olanak  sağlayan bir runtime'dir.Electron  açık kaynak ve çapraz platfromdur .HTML ,CSS ve io.js'ten gücünü almaktadır.Electron GUI olarak web sayfasını kullanır.yani göreceginiz aslında minimal bir Chromuium tarayıcıdı.r İlk olarak Github'un Atom Editörü için geliştirilmiştir. Electron'u kullanan firmalar arasında  Microsoft ,Facebook ,Slack  ve Docker vardır. Hatta yeni çıkan Microsoft Visual Studio Code Electron tabanlıdır.</p>
+
+
+<p>Lafı fazla uzatmadan kurulum ve uygulama oluşturma  kısmına geçelim.</p>
+
+
+<p>Electron'u kurmak için</p>
+
+
+<pre class="theme:github lang:default decode:true"># Install the `electron` command globally
+npm install electron-prebuilt -g
+
+# Install as a development dependency
+npm install electron-prebuilt --save-dev
+
+</pre>
+
+
+<p>Yukardaki işlemi yaptıktan sonra Electron sistemimize kurulmuş olacaktır. Doğrulamak için</p>
+
+
+<pre class="theme:eclipse lang:default decode:true">electron -v
+
+</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronCMD.png"><img class="alignnone size-medium wp-image-829" src="/assets/electronCMD-300x152.png" alt="electronCMD" width="300" height="152" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Doğruladıktan sonra uygulama oluşturmak için üç tane temel dosyaya ihtiyaçımız var.Bunlar package.json ,main.js,index.html  dosyalarıdır.</p>
+
+
+<pre class="theme:github lang:default decode:true ">your-app/
+├── package.json
+├── main.js
+└── index.html</pre>
+
+
+<p>&nbsp;</p>
+
+
+<pre class="lang:default decode:true">//package.json
+
+{
+  "name"    : "your-app",
+  "version" : "0.1.0",
+  "main"    : "main.js"
+}</pre>
+
+
+<p>&nbsp;</p>
+
+
+<pre class="theme:github lang:default decode:true ">//main.js
+var app = require('app');  // Module to control application life.
+var BrowserWindow = require('browser-window');  // Module to create native browser window.
+
+// Report crashes to our server.
+require('crash-reporter').start();
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the javascript object is GCed.
+var mainWindow = null;
+
+// Quit when all windows are closed.
+app.on('window-all-closed', function() {
+  if (process.platform != 'darwin')
+    app.quit();
+});
+
+// This method will be called when Electron has done everything
+// initialization and ready for creating browser windows.
+app.on('ready', function() {
+  // Create the browser window.
+  mainWindow = new BrowserWindow({width: 800, height: 600});
+
+  // and load the index.html of the app.
+  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+
+  // Emitted when the window is closed.
+  mainWindow.on('closed', function() {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null;
+  });
+});</pre>
+
+
+<pre class="theme:eclipse lang:default decode:true">//index.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Hello World!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Merhaba Dünya!&lt;/h1&gt;
+    We are using io.js &lt;script&gt;document.write(process.version)&lt;/script&gt;
+    and Electron &lt;script&gt;document.write(process.versions['electron'])&lt;/script&gt;.
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+
+<p>Uygulamayı çalıştırmak için  terminal de electron yazıp Enter'layalım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronGUI.png"><img class="alignnone size-medium wp-image-834" src="/assets/electronGUI-300x234.png" alt="electronGUI" width="300" height="234" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Daha sonra oluşturdugumuz  klasörü yani your-app klasörünü sürükleyip bırakalım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronMerhaba.png"><img class="alignnone size-medium wp-image-835" src="/assets/electronMerhaba-300x225.png" alt="electronMerhaba" width="300" height="225" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Söyleyecek çok şey olsada   temel olarak şimdilik bu kadar. Electron hakkında daha fazla   bilgi için</p>
+
+
+<p><a href="http://electron.atom.io/">electron.atom.io</a> sayfasına   bakabilirsiniz.</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Nazir Doğan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-05-02T10:49:29+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>10:49 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/node-dot-js/'>node.js</a>, <a class='category' href='/blog/categories/open-source/'>open source</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://nazrdogan.github.io/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme/" data-via="gereksizcoder" data-counturl="http://nazrdogan.github.io/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/04/11/labview-ile-arduino-programlama/" title="Previous Post: LabVIEW ile Arduino Programlama">&laquo; LabVIEW ile Arduino Programlama</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/05/09/cocos2d-js-intellij-idea-kurulumu/" title="Next Post: Cocos2d-JS Intellij IDEA Kurulumu">Cocos2d-JS Intellij IDEA Kurulumu &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://nazrdogan.github.io/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme/';
+        var disqus_url = 'http://nazrdogan.github.io/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

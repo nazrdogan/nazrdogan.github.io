@@ -1,0 +1,1035 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="&nbsp; Bu yazımda birçok yazılım geliştiricinin vazgeçilmez araçlarından biri olan Sublime Text için Arduino ekletisinden bahsedeceğim. Arduino'nun &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/posts/5/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/03/arduino-icin-sublime-text-eklentisi-stino/">Arduino Için Sublime Text Eklentisi: Stino</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-03T15:44:15+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>3:44 pm</span></time>
+        
+           | <a href="/blog/2015/01/03/arduino-icin-sublime-text-eklentisi-stino/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/01/03/arduino-icin-sublime-text-eklentisi-stino/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="alignnone" src="/assets/stino1.png?w=800" alt="" width="800" height="302" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Bu yazımda birçok yazılım geliştiricinin vazgeçilmez araçlarından biri olan Sublime Text için Arduino ekletisinden bahsedeceğim. Arduino'nun bir geliştirme ortamı varken neden böyle birşeye ihtiyaçımız olabilir diyebilirsiniz. Evet Arduino'nun bir geliştirme ortamı mevcut ama büyük dosyalarda ve büyük projelerde sıkıntılı olmaktadır. Ayrıca kod tamamlama gibi özelliği  yoktur. Stino eklentisi ise Arduino ortamının bütün özellikleri ve daha birçok ekstra özelliği size kazandırmaktadır. Bunun yanı sıra Sublime Text kullanıyorsanız tek bir geliştirme ortamında ve Sublime Text'in güçlü özelliklerini kullanacagınız bir ortama sahip olmuş olacaksınız.</p>
+
+
+<p>Bu kadar lak lak ettikten sonra şimdi asıl işimize geçelim. Stino'yu yüklemek için iki tane yazılıma ihtiyacımız var. Aslında isminden de anlaşılacağı üzere  Sublime+Arduino=Stino yani Sublime Text ve Arduino programlarının birleşimi oldugu için bu ikisi bilgisayarımızda olması gerekmektedir.</p>
+
+
+<p><a href="http://www.sublimetext.com/">Sublime Text </a></p>
+
+
+<p>Sublime Text ücretli bir text editör olsa da ücretsiz olarak kullanabilirsiniz.</p>
+
+
+<p><a href="http://arduino.cc/en/Main/Software">Arduino</a></p>
+
+
+<p>Yukarda verdiğim linklerden indirip kurduktan sonra  <a href="https://github.com/Robot-Will/Stino/archive/new-stino.zip">Stino</a>'yu buradan indiriyoruz. Stino şu anki versiyonununda sadece manuel olarak yüklenmektedir.</p>
+
+
+<p>Yüklemek için ise Sublime Text'i açıyoruz. Üst menüden</p>
+
+
+<p><code>Preferences</code>-&gt;<code>Browse Packages</code></p>
+
+
+<p>tıkladığımızda  Sublime Text'in paketlerinin bulunduğu bir klasör açılacaktır. Buraya indirdiğimiz .zip dosyasının içinden Stino' yu buraya çıkarıyoruz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/01/Selection_178.png"><img class="alignnone wp-image-542 size-large" src="/assets/Selection_178-1024x322.png" alt="Selection_178" width="700" height="220" /></a></p>
+
+
+<p>Bu işlemi yaptıktan sonra  Sublime Text'e geri döndüğümüzde  Arduino menüsü  menü çubuğunun en sonuna gelecektir.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/01/Workspace-1_181.png"><img class="alignnone size-large wp-image-543" src="/assets/Workspace-1_181-1024x575.png" alt="Workspace 1_181" width="700" height="393" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/01/usr-share-arduino-examples-1.Basics-AnalogReadSerial-AnalogReadSerial.ino-•-AnalogReadSerial-Sublime-Text-UNREGISTERED_183.png"><img class="alignnone size-large wp-image-544" src="/assets/usr-share-arduino-examples-1.Basics-AnalogReadSerial-AnalogReadSerial.ino-&#8226;-AnalogReadSerial-Sublime-Text-UNREGISTERED_183-1024x585.png" alt="-usr-share-arduino-examples-1.Basics-AnalogReadSerial-AnalogReadSerial.ino • (AnalogReadSerial) - Sublime Text (UNREGISTERED)_183" width="700" height="399" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Stino projesi gelişme aşamasında olmasına rağmen oldukça kullanışlı özelliklere sahip.Bunların hepsinden bahsetmemiz elbette mümkün değil. Açık kaynak bir proje olduğu için indirin deneyin. Özelliklerini kendiniz keşfedin. Unutmadan Stino <a href="https://github.com/Robot-Will/Stino">Github</a> sayfasını verelim. Sonra nerde bu Stino diyenler olabilir :)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/09/09/gelistiriciler-icin-en-iyi-10-javascript-template-engine/">Geliştiriciler Için en Iyi 10 Javascript Template Engine</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-09-09T16:58:26+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>4:58 pm</span></time>
+        
+           | <a href="/blog/2014/09/09/gelistiriciler-icin-en-iyi-10-javascript-template-engine/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/09/09/gelistiriciler-icin-en-iyi-10-javascript-template-engine/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu yazımda Javascript geliştiricilerine oldukça kolaylık sağlayan Javascript Template engine'larını topladım.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>1)<a href="http://jade-lang.com/"> Jade</a></p>
+
+
+<p>Jade,yüksek performanslı ve mükemmel API'si ile Node.js için tasarlanmış bir template engine'dir.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/09/Jade-Template-Engine-Chromium_065.png"><img class="alignnone wp-image-507 size-large" src="/assets/Jade-Template-Engine-Chromium_065-1024x585.png" alt="Jade - Template Engine - Chromium_065" width="640" height="365" /></a></p>
+
+
+<p>2)<a href="http://mustache.github.io/"> Mustache</a></p>
+
+
+<p>Mustache kendinisi için "logic-less "  terimini kullansada oldukça  kullanışlıdır. Mustache ile HTML sayfaları,config dosyaları ve kaynak kodları için kullanabilirsiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/09/mustache-Chromium_066.png"><img class="alignnone wp-image-512 size-large" src="/assets/mustache-Chromium_066-1024x585.png" alt=" - Chromium_066" width="640" height="365" /></a></p>
+
+
+<p>3) <a title="best javascript template engines for developers " href="https://github.com/leonidas/transparency" target="_blank">Transparency</a></p>
+
+
+<p>Transparency  DOM'a  data-binding yapan  istemci  tarafında kullanılan bir template engine'dir.<span id="result_box" class="" lang="tr" tabindex="-1"><span class="hps">Transparency </span> <span class="hps">IE9</span> <span class="hps">+, Chrome</span>, <span class="hps">Firefox</span>, <span class="hps">iOS</span>, <span class="hps">Android ve</span> <span class="hps">diğer mobil</span> <span class="hps">tarayıcılar ile</span> <span class="hps">uyumludur</span>. <span class="hps">IE8 için </span> <span class="hps">jQuery</span> <span class="hps">gerektirir.</span></span></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/09/Try-Transparency-Chromium_067.png"><img class="alignnone wp-image-515 size-large" src="/assets/Try-Transparency-Chromium_067-1024x585.png" alt="Try Transparency - Chromium_067" width="640" height="365" /></a></p>
+
+
+<p>4) <a href="http://underscorejs.org/">Underscorejs</a></p>
+
+
+<p>Underscorejs javascript ile fonksiyonel programlamayı kolaylaştırmak amaçlı geliştirilen bir kütüphanedir.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/09/Underscore.js-Chromium_068.png"><img class="alignnone wp-image-516 size-large" src="/assets/Underscore.js-Chromium_068-1024x585.png" alt="Underscore.js - Chromium_068" width="640" height="365" /></a></p>
+
+
+<p>5) <a href="http://embeddedjs.com/">Embeddedjs</a></p>
+
+
+<p>Embeddedjs  Javascript ile HTML'inizi  daha temiz hale getiren istemci taraflı bir template'dir.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/09/EJS-JavaScript-Templates-Chromium_069.png"><img class="alignnone wp-image-517 size-large" src="/assets/EJS-JavaScript-Templates-Chromium_069-1024x585.png" alt="EJS - JavaScript Templates - Chromium_069" width="640" height="365" /></a></p>
+
+
+<p>6) <a href="http://olado.github.io/doT/">doT.js</a></p>
+
+
+<p>doT.js  en hızlı ve yalın  Node.js ve istemci tarafı için kullanılabilen  bir template engine'dir.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/09/doT.js-the-fastest-and-concise-javascript-template-engine-for-Node.js-and-browsers-Chromium_070.png"><img class="alignnone wp-image-518 size-large" src="/assets/doT.js-the-fastest-and-concise-javascript-template-engine-for-Node.js-and-browsers-Chromium_070-1024x585.png" alt="doT.js - the fastest and concise javascript template engine for Node.js and browsers - Chromium_070" width="640" height="365" /></a></p>
+
+
+<p>7)  <a href="http://handlebarsjs.com/">Handlebarsjs</a></p>
+
+
+<p>Handlebarsjs  semantik template'ler oluşturmanızı sağlayan bir templeate engine'dir.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/09/Handlebars.js-Minimal-Templating-on-Steroids-Chromium_071.png"><img class="alignnone wp-image-519 size-large" src="/assets/Handlebars.js-Minimal-Templating-on-Steroids-Chromium_071-1024x585.png" alt="Handlebars.js: Minimal Templating on Steroids - Chromium_071" width="640" height="365" /></a></p>
+
+
+<p>8)<a href="https://github.com/gcao/T.js"> T.js </a></p>
+
+
+<p><span id="result_box" class="" lang="tr"><span class="hps">T.js</span> <span class="hps">html /</span> <span class="hps">xml</span> <span class="hps">verileri göstermek için</span> <span class="hps">basit bir Javascript</span> <span class="hps">veri</span> <span class="hps">yapısını kullanan bir</span> <span class="hps">template engine'dir</span>.</span></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/09/gcao-T.js-·-GitHub-Chromium_072.png"><img class="alignnone wp-image-520 size-large" src="/assets/gcao-T.js-&#183;-GitHub-Chromium_072-1024x585.png" alt="gcao-T.js · GitHub - Chromium_072" width="640" height="365" /></a></p>
+
+
+<p>9) <a href="http://linkedin.github.io/dustjs/">Dustjs</a></p>
+
+
+<p>Dustjs Node.js ve   istemci tarafı için  kullanılan bir template engine'dir.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/09/Dustjs-by-linkedin-Chromium_073.png"><img class="alignnone wp-image-521 size-large" src="/assets/Dustjs-by-linkedin-Chromium_073-1024x585.png" alt="Dustjs by linkedin - Chromium_073" width="640" height="365" /></a></p>
+
+
+<p>10) <span id="result_box" class="" lang="tr"><span class="hps">Nunjucks</span></span></p>
+
+
+<p><span id="result_box" class="" lang="tr"><span class="hps">Nunjucks</span> <span class="hps">blok</span> <span class="hps">miras</span>, <span class="hps">autoescaping</span><span class="">, makro,</span> <span class="hps">asenkron</span> <span class="hps">kontrol vb. </span> <span class="hps">özelliklerine sahip</span> <span class="hps">JavaScript için</span> <span class="hps">daha sofistike</span> <span class="hps">template engine'dir.</span></span></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/09/Nunjucks-Chromium_074.png"><img class="alignnone wp-image-522 size-large" src="/assets/Nunjucks-Chromium_074-1024x585.png" alt="Nunjucks - Chromium_074" width="640" height="365" /></a></p>
+
+
+<h3></h3>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/24/angularjs-nedir-ve-merhaba-dunya-uygulamasi/">AngularJS Nedir ? Ve Merhaba Dünya Uygulaması</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-07-24T21:08:34+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:08 pm</span></time>
+        
+           | <a href="/blog/2014/07/24/angularjs-nedir-ve-merhaba-dunya-uygulamasi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/07/24/angularjs-nedir-ve-merhaba-dunya-uygulamasi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="alignnone" src="/assets/AngularJS-large.png" alt="" width="383" height="108" /></p>
+
+
+<p>AngularJS  istemci(client-side) tafarında kullanılan bir Javascript framework'udur.AngularJS  tek sayfa (single page ) uygulamalar geliştirmek amacı ile tasarlanmıştır.</p>
+
+
+<p><strong>Angular.js 'de Merhaba Dünya</strong></p>
+
+
+<pre class="lang:default decode:true">&lt;!DOCTYPE html&gt;
+&lt;html ng-app&gt;
+&lt;head&gt;
+
+    &lt;title&gt;Simple app&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;&lt;/meta&gt;
+    &lt;script
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"&gt;
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input ng-model="name" type="text" placeholder="Birşey girin"&gt;
+&lt;h1&gt;Merhaba &lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+<p>Örnegimiz oldukça kolay. Dikkat edilmesi gereken iki şey var birisi html tag'ine yazdıgımız ng-app diger ise input tagına yazdığımız ng-model</p>
+
+
+<p>Çıktı ise  söyle olacaktır.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/Screenshot-from-2014-07-25-000043.png"><img class="alignnone wp-image-488 size-full" src="/assets/Screenshot-from-2014-07-25-000043.png" alt="Screenshot from 2014-07-25 00:00:43" width="1304" height="714" /></a></p>
+
+
+<p>(yazı güncellenecektir)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/21/ubuntuya-node-js-yukleme/">Ubuntu'ya Node.js Kurulumu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-07-21T20:43:45+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>8:43 pm</span></time>
+        
+           | <a href="/blog/2014/07/21/ubuntuya-node-js-yukleme/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/07/21/ubuntuya-node-js-yukleme/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>&nbsp;</p>
+
+
+<p>Node.js  hızlı ağ uygulamaları geliştirmek için sunucu tarafı için kullanılan bir Javascript platformudur.Hem Front-end de hem de back-end tarafında Javascript yazılarak daha tutarlı uygulamalar yazmak amaçlanmıştır.</p>
+
+
+<p>Bu yazımda Node.js ne olduğundan değil başlıktanda anlaşılacağı üzere Ubuntu üzerine nasıl kurulum yapacağız ondan bahsedeceğim.</p>
+
+
+<p>Node.js Ubuntu repo'larında bulunmaktadır. Termial'de aşagıdaki kodu yazdıktan sonra Node.js 'in son sürümü yüklenecektir.</p>
+
+
+<pre class="lang:default decode:true">sudo apt-get update
+sudo apt-get install nodejs</pre>
+
+
+<p>Daha sonra  ise  Node package Manager yani npm'e ihtiyaçınız olacağı için onuda yükleyin</p>
+
+
+<pre class="lang:default decode:true">sudo apt-get install npm</pre>
+
+
+<p><strong>PPA (Personal  Package Archive ) kullanarak yükleme</strong></p>
+
+
+<p>Chris Lea'nin tarafından sağlanan paket için ise gerekli kod</p>
+
+
+<pre class="lang:default decode:true ">sudo add-apt-repository ppa:chris-lea/node.js</pre>
+
+
+<p>PPA'yi ekledikten sonra</p>
+
+
+<pre class="lang:default decode:true ">sudo apt-get update
+sudo apt-get install nodejs
+</pre>
+
+
+<p>Daha sonra ise npm için</p>
+
+
+<pre class="lang:default decode:true ">sudo apt-get install npm</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>Daha sonra ise  yüklenip yüklenmediğini kontrol için node.js ve npm in versiyonunu kontrol edebilirsiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/Screenshot-from-2014-07-21-233828.png"><img class="alignnone wp-image-475 size-full" src="/assets/Screenshot-from-2014-07-21-233828.png" alt="Screenshot from 2014-07-21 23:38:28" width="725" height="461" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Kolay Gelsin.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/09/ubuntu-uzerinde-cocos2d-js-ile-mobil-oyun-gelistirme/">Ubuntu üzerinde Cocos2d-js Ile Mobil Oyun Geliştirme</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-06-09T20:29:19+03:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:29 pm</span></time>
+        
+           | <a href="/blog/2014/06/09/ubuntu-uzerinde-cocos2d-js-ile-mobil-oyun-gelistirme/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/06/09/ubuntu-uzerinde-cocos2d-js-ile-mobil-oyun-gelistirme/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>HTML5 her geçen gün dahada güçlenerek heryere girmesiyle birlikte herşey artık çapraz platform olmaya başladı.Güçlenen browserlar ve javascript engine'lar sayesinde daha iyi uygulamaları görüyoruz ve görmeye devam edeceğiz. Cocos2D-Js daha önceden duymuştum .pek ilgilenme vaktim olmamıştı.</p>
+
+
+<p>Cocos2d-js Cocos2d-x ekibi tarafından geliştirilen browser'da ve android ve ios platformları için oyun geliştirecebileceginiz bir framework.isminden de anlaşılacağı üzere Javascript yazılan bir framework.</p>
+
+
+<p>Lafı fazla uzatmadan kuruluma geçelim .Çünkü Cocos2d-js ile detaylı bilgiler internette bolca mevcut.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/cocos2d-js-structure-2-png.jpeg"><img class="alignnone size-large wp-image-388" src="/assets/cocos2d-js-structure-2-png.jpeg?w=1024" alt="Cocos2d-JS Structure-2.png" width="1024" height="503" /></a></p>
+
+
+<p><a href="http://cocos2d-x.org/download">Cocos 2d-js</a> adresinden  Download  v 3.0 beta(şu an ki versiyon)  olanı  seçip indiriyoruz.</p>
+
+
+<p>Zipli dosyayı herhangi bir yere çıkarttıktan sonra</p>
+
+
+<pre>setup.py  çalıştırdıktan sonra
+cocos     scriptini çalıştırın.
+
+</pre>
+
+
+<pre><code>$ cd cocos2d-js
+$ ./setup.py
+$ source FILE_TO_SAVE_SYSTEM_VARIABLE
+
+$ cocos new MyGame -l js -d /directory/to/project
+$ cd /directory/to/project/MyGame
+</code></pre>
+
+
+<pre>oyunu çalıştırmak için  ise : cocos run -p web
+</pre>
+
+
+<p>Son olarak editor olarak benimde favorim olan WebStorm'u kullanabilirsiniz.Debug ve kod tamamlama açısından gayet başarılı.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/screenshot-from-2014-06-09-2325011.png"><img class="alignnone size-large wp-image-392" src="/assets/screenshot-from-2014-06-09-2325011.png?w=1024" alt="Screenshot from 2014-06-09 23:25:01" width="1024" height="575" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/screenshot-from-2014-06-09-232658.png"><img class="alignnone size-large wp-image-394" src="/assets/screenshot-from-2014-06-09-232658.png?w=1024" alt="Screenshot from 2014-06-09 23:26:58" width="1024" height="575" /></a></p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/03/ubuntu-14-04-uzerinde-tizen-ide-yeni-proje-olusturma-problemi/">Ubuntu 14.04 üzerinde Tizen IDE Yeni Proje Oluşturma Problemi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-06-03T17:25:27+03:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>5:25 pm</span></time>
+        
+           | <a href="/blog/2014/06/03/ubuntu-14-04-uzerinde-tizen-ide-yeni-proje-olusturma-problemi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/06/03/ubuntu-14-04-uzerinde-tizen-ide-yeni-proje-olusturma-problemi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Tizen IDE Ubuntu 14.04 üzerine kurulu ise muhtemelen bu hatayı alacaksınızdır(gelecekte düzeltilebilir). Sorun ise yeni proje oluştururken IDE'nin kapanması  .</p>
+
+
+<p>Çözüm ise oldukça basit</p>
+
+
+<p>Tizen sdk içindeki Ide klasörürün içindeki eclipse.ini dosyasının sonuna aşagıdaki scripti eklemek.</p>
+
+
+<p>&nbsp;</p>
+
+
+<div id="file-2-LC1" class="line">[gist id = "d69655d8e0a940e3b04b" file = "<a class="tooltipped tooltipped-s permalink" style="color: #4183c4;" href="https://gist.github.com/nazrdogan/d69655d8e0a940e3b04b#file-gistfile1-txt"><strong class="file-name js-selectable-text">gistfile1.txt</strong></a>"]</div>
+
+
+<p>Kolay gelsin</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/01/arduinoyla-socket-uzerinden-yilan-oyunu/">Arduino'yla Socket üzerinden Yılan Oyunu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-06-01T15:10:28+03:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>3:10 pm</span></time>
+        
+           | <a href="/blog/2014/06/01/arduinoyla-socket-uzerinden-yilan-oyunu/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/06/01/arduinoyla-socket-uzerinden-yilan-oyunu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu yazımda ise Bir Arduino ile Joysctick kontrolü ve Socket.io kullanarak  basit bir yılan oyunu nasıl kontrol edilir  ondan bahsedecegim.</p>
+
+
+<p>Elimde bir tane keyes joystick mevcut.(Arduino ile haşır neşir olanlar bilebilir).</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/fotoc49fraf1.jpg"><img class="alignnone size-large wp-image-361" src="/assets/fotoc49fraf1.jpg?w=768" alt="fotoğraf" width="768" height="1024" /></a></p>
+
+
+<p>Arduino Bağlantısı ise  söyle</p>
+
+
+<pre>(SW )- 2</pre>
+
+
+<pre>VRX- A0</pre>
+
+
+<pre>VRY-A1</pre>
+
+
+<pre>GND-GND</pre>
+
+
+<pre>5V -5V</pre>
+
+
+<p>Bagladıktan sonra app.js index.html ve package.json'ı ArduinoSnakeNode adlı bir klasör oluşturup içine kaydedin.<br />
+arduino.ino dosaysınıda Arduino'ya yükleyin.</p>
+
+
+<p>[gist id = "892488d1a2fb14df9bfd" file = "<span style="color: #21759b;"><b><span style="text-decoration: underline;">app.js</span></b></span>"]<br />
+<a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/screenshot-from-2014-06-01-174729.png"><img class="alignnone size-large wp-image-367" src="/assets/screenshot-from-2014-06-01-174729.png?w=1024" alt="Screenshot from 2014-06-01 17:47:29" width="1024" height="575" /></a><br />
+Video(Tost makinesi ile çektim ) biraz kötü ama iş görür yinede :)<br />
+http://www.youtube.com/watch?v=0WuekIWsX68</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/01/arduino-toprak-nem-sensoru/">Arduino Toprak Nem Sensörü</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-06-01T10:10:54+03:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>10:10 am</span></time>
+        
+           | <a href="/blog/2014/06/01/arduino-toprak-nem-sensoru/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/06/01/arduino-toprak-nem-sensoru/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/fotoc49fraf.jpg"><img class="alignnone size-large wp-image-357" src="/assets/fotoc49fraf.jpg?w=1024" alt="watersensor" width="1024" height="768" /></a>Bu yazımda da Arduino için Su sensörünu basit bir örnekle anlatacağım.<br />
+Sensörün baglanması oldukça basit<br />
+(+) -5v<br />
+(-) -GND<br />
+(S) -A0</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>bagladıktan sonra aşagıdaki kodu yükleyin.Serial Monitorden izleyebilirsinz.</p>
+
+
+<p>https://gist.github.com/nazrdogan/906ba3a6e04bcc1226de<br />
+http://www.youtube.com/watch?v=_TxVLhSFBNU</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/01/arduino-rfid-modulu/">Arduino RFID Modülü</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-06-01T09:10:26+03:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>9:10 am</span></time>
+        
+           | <a href="/blog/2014/06/01/arduino-rfid-modulu/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/06/01/arduino-rfid-modulu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/10413221_1428326937430396_965054233_n.jpg"><img class="alignnone size-full wp-image-347" src="/assets/10413221_1428326937430396_965054233_n.jpg" alt="10413221_1428326937430396_965054233_n" width="640" height="640" /></a></p>
+
+
+<p>Bu yazımda başlıktanda anlaşılacağı üzere RFID (RC522) okumayı oldukça basit bir şekilde göstercem. Bu <a href="https://github.com/miguelbalboa/rfid">kütüphaneyi</a> Arduino kütüphaneleri arasına ekledikten sonra yapmanız gerekenler oldukça kolay.</p>
+
+
+<p>Eger Arduino Uno kullanıyorsanız pinout söyle olmalı</p>
+
+
+<pre>MOSI: Pin 11 / ICSP-4
+ MISO: Pin 12 / ICSP-1
+ SCK : Pin 13 / ISCP-3
+ SS : Pin 10 (Configurable)
+ RST : Pin 9 (Configurable)</pre>
+
+
+<p>Arduino Mega kullanıyorsanız</p>
+
+
+<pre>MOSI: Pin 51 / ICSP-4
+MISO: Pin 50 / ICSP-1
+SCK : Pin 52 / ISCP-3
+SS : Pin 53 (Configurable)
+RST : Pin 5 (Configurable)</pre>
+
+
+<pre></pre>
+
+
+<p>RFID'yi bagladıktan sonra  tek yapmanız gereken Arduino'ya kodu yüklemek</p>
+
+
+<p>https://gist.github.com/nazrdogan/68508f3e0707c86e13b9<br />
+Biraz uğraşla belki Akbil'i hacklebilirsiniz. :)</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/screenshot-from-2014-06-01-120722.png"><img class="alignnone size-large wp-image-349" src="/assets/screenshot-from-2014-06-01-120722.png?w=1024" alt="Screenshot from 2014-06-01 12:07:22" width="1024" height="575" /></a></p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/31/arduino-dan-socket-io-gercek-zamanli-veri-alma/">Arduino 'Dan Socket.io Ile Gerçek Zamanlı Veri Alma</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-05-31T20:50:23+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>8:50 pm</span></time>
+        
+           | <a href="/blog/2014/05/31/arduino-dan-socket-io-gercek-zamanli-veri-alma/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/05/31/arduino-dan-socket-io-gercek-zamanli-veri-alma/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/05/logo-884x360.png"><img class="alignnone size-full wp-image-337" src="/assets/logo-884x360.png" alt="logo-884x360" width="884" height="360" /></a></p>
+
+
+<p><a href="http://nazirdogan.wordpress.com/2014/05/30/arduino-ile-sicaklik-ve-nem-olcumu/">Dünkü</a> yazımda sadece  Arduino ile sıcaklık ve nem verisinin alınmasını göstermiştim.Bügün ise  uygulamayı biraz geliştirip veri tabanına kayıt eden ve bir web sayfasında gerçek zamanlı gösteren bir uygulama haline dönüştürdüm.</p>
+
+
+<p>ilk olarak kullandığım teknolojileri söyle özetlersem</p>
+
+
+<p>Node.js  , Express.js(Web uygulama framework'u olarak),Socket.io, veritabanı olarak ise MongoDB'yi tercih ettim.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>DHT11 bir önceki yazıdaki gibi bagladıktan sonra  aşagıdaki kodu yükleyin.<br />
+https://gist.github.com/nazrdogan/cb9bd8a1f52d50d14106</p>
+
+
+<p>&nbsp;<br />
+Arduino kısmıyla işimiz bitti diyebilirim.</p>
+
+
+<p>daha sonra Node.js ve SerialPort modülünü yükleyelim.(İşletim sisteminize göre Node.js yükleyin)<br />
+https://gist.github.com/nazrdogan/48bdc9e81dc1867570f2</p>
+
+
+<p>Express.js yüklemek için<br />
+https://gist.github.com/nazrdogan/5a5dfd0cc4f23ed93fe1<br />
+Daha sonra ise  yeni bir directory oluşturun</p>
+
+
+<pre><span style="color: #ff0000;">$ mkdir ArduinoSocket</span></pre>
+
+
+<p>Daha sonra bir tane package.json'a ihtiyacınız olacak. Bu Json'ı kullanabilirsiniz.<br />
+https://gist.github.com/nazrdogan/1b229d091e8ca447f8cc</p>
+
+
+<p>Daha sonra ise uygulamanın directory kısmına gelip baglı oldugu modülleri yükleyin.Directory'nun içinde app.js ve index.html adında iki dosya oluşturun.</p>
+
+
+<pre><span style="color: #ff0000;">$npm install</span></pre>
+
+
+<p><span style="color: #0000ff;">app.js</span><br />
+https://gist.github.com/nazrdogan/7f0f7e9338bc8ce68645<br />
+<span style="color: #0000ff;">index.html</span><br />
+https://gist.github.com/nazrdogan/4ace3504fdb0ea52f070</p>
+
+
+<p>Uygulamamızda app.js,index.html ve package.json adlı dosyalar bulunması lazım</p>
+
+
+<h3> Not:Bütün bu işlerden önce MongoDB'nin kurulu va çalışıyor olması ve app.js içindeki port ile Arduino portunun aynı olması gerekiyor.</h3>
+
+
+<h1> <span style="color: #ff0000;">Sonuç olarak ise  veritabanında </span></h1>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/05/screenshot-from-2014-05-31-232821.png"><img class="alignnone size-large wp-image-332" src="/assets/screenshot-from-2014-05-31-232821.png?w=1024" alt="Screenshot from 2014-05-31 23:28:21" width="1024" height="575" /></a></p>
+
+
+<h1><span style="color: #ff0000;"> Browser'da ise</span></h1>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/05/screenshot-from-2014-05-31-232843.png"><img class="alignnone size-large wp-image-333" src="/assets/screenshot-from-2014-05-31-232843.png?w=1024" alt="Screenshot from 2014-05-31 23:28:43" width="1024" height="575" /></a></p>
+
+
+<p>Arduino'dan saatte bir veri göndermek için</p>
+
+
+<p>https://gist.github.com/nazrdogan/88d95d287ee080c097c5</p>
+
+
+<h2><span style="color: #3366ff;"> İyi Eğlenceler.... :)</span></h2>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/6">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/4">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

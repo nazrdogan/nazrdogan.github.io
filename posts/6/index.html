@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="Uzun bir aradan sonra tekrardan blog yazmaya karar verdiğim ilk an aklıma gelen basit bir uygulama olan Arduino ile sıcaklık ve nem ölçümü &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/posts/6/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/30/arduino-ile-sicaklik-ve-nem-olcumu/">Arduino Ile Sıcaklık Ve Nem ölçümü</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-05-30T22:37:15+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:37 pm</span></time>
+        
+           | <a href="/blog/2014/05/30/arduino-ile-sicaklik-ve-nem-olcumu/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/05/30/arduino-ile-sicaklik-ve-nem-olcumu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Uzun bir aradan sonra tekrardan blog yazmaya karar verdiğim ilk an aklıma gelen basit bir uygulama olan Arduino ile sıcaklık ve nem ölçümü uygulamasını yapmak istedim.</p>
+
+<p>İsterseniz hemen uygulamaya geçelim.Sıcaklık ve nem ölçmek için heryerde kolayca bulunabilen DHT11 sensörünü tercih ettim.Ayrıca Arduino kütüphaneside mevcut.<a href="https://github.com/RobTillaart/Arduino/tree/master/libraries/DHTlib">Buradan indirebilirisiniz.</a></p>
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/05/dht11_pins.png"><img src="/assets/dht11_pins.png" alt="DHT11_Pins" /></a></p>
+
+<p>Eger verdiğim kütüphaneyi kullanacaksanız 1.pin ->5v 2.pin->5 digital pin'e 3.pin boş ve 4.pin->Ground &lsquo;a bağlı olacak.</p>
+
+<p>Serial Monitorden sıcaklık ve nem değerlerini görebilirsiniz.</p>
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/05/screenshot-from-2014-05-31-012337.png"><img src="/assets/screenshot-from-2014-05-31-012337.png?w=1024" alt="Screenshot from 2014-05-31 01:23:37" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/29/tizen-ide-acilis-hatasi/">Tizen IDE Açılış Hatası</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-05-29T15:49:06+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>3:49 pm</span></time>
+        
+           | <a href="/blog/2014/05/29/tizen-ide-acilis-hatasi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/05/29/tizen-ide-acilis-hatasi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3><span style="color:#ff0000;">Failed to start sdb. Read sdb log in ${tizen_sdk}/tools for details</span></h3>
+
+
+<p>Ubuntu 14.04 böyle bir hata alıyorsanız,sembolik link ile bu sorunu çözebilirsiniz.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>https://gist.github.com/anonymous/21f32fbcc4e874871627</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/25/node-js-yazarken-hissedilen/">Node.js Yazarken Hissedilen</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-05-25T18:54:01+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:54 pm</span></time>
+        
+           | <a href="/blog/2014/05/25/node-js-yazarken-hissedilen/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2014/05/25/node-js-yazarken-hissedilen/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="size-full" src="/assets/3ogi8b.jpg" alt="Node.js yazarken hissedilen" /></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi/">Sailfish Merhaba Dünya Uygulaması</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-12-16T10:58:29+02:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>10:58 am</span></time>
+        
+           | <a href="/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Nokia'dan ayrılan bir grup geliştiricinin MeeGo projesinin devamı olarak piyasaya sundukları Sailfish OS ve ilk Jolla cihazlarını kısıtlı sayıda olsada çıkarmış bulunuyorlar.</p>
+
+
+<p>Bu yazıda ise Sailfish için uygulama nasıl başlanır onunla ilgili bilgiler bulacaksınız.</p>
+
+
+<p>Öncellikle <a href="https://sailfishos.org/index.html">buradan</a> Sailfish SDK 'yi indirmeniz gerekmektedir.Sailfish IDE aslında QT nin üzerine kurulmuş IDE'den başka birşey degil.işletim sisteminize uygun sürümü indirdikten sonra kurmanız gerekmektedir.Windows için oldukça kolay ,kurulumu başlatıp sadece next demek kalıyor.</p>
+
+
+<p>Linux için ise</p>
+
+
+<p>Terminal'i açıp</p>
+
+
+<pre>$ chmod +x ~/Downloads/&lt;installer_name&gt;
+$ ./Downloads/&lt;installer_name&gt;</pre>
+
+
+<p>--</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/sdk_setup.png"><img class="alignnone  wp-image-282" src="/assets/sdk_setup.png" alt="SDK_setup" width="500" height="364" /></a><br />
+<a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/install_3.png"><img class="alignnone size-full wp-image-283" src="/assets/install_3.png" alt="install_3" width="555" height="364" /></a></p>
+
+
+<p>Kurulumu üstteki gibi yaptıkan sonra Sailfish SDK artık hazır.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-123525.png"><img class="alignnone size-large wp-image-285" src="/assets/screenshot-from-2013-12-16-123525.png?w=1024" alt="Screenshot from 2013-12-16 12:35:25" width="1024" height="575" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124112.png"><img class="alignnone size-large wp-image-292" src="/assets/screenshot-from-2013-12-16-124112.png?w=1024" alt="Screenshot from 2013-12-16 12:41:12" width="1024" height="575" /></a><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124229.png"><img class="alignnone size-large wp-image-294" src="/assets/screenshot-from-2013-12-16-124229.png?w=1024" alt="Screenshot from 2013-12-16 12:42:29" width="1024" height="575" /></a></p>
+
+
+<p>Eger uygulamamızı Simulatorde görmek istiyorsak .Virtualbox'ın kurulu olması gerekmekte.Çünkü Simulator VirtualBox üzerinde çalışmakta.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124735.png"><img class="alignnone size-large wp-image-296" src="/assets/screenshot-from-2013-12-16-124735.png?w=1024" alt="Screenshot from 2013-12-16 12:47:35" width="1024" height="575" /></a></p>
+
+
+<p>Uygulama geliştirme dili olarak ise QML i kullanmakta.</p>
+
+
+<p>Kaynak olarak ise <a href="https://sailfishos.org/sailfish-silica/sailfish-silica-all.html"> buradan  </a> faydalanabilirsiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-125502.png"><img class="alignnone size-large wp-image-298" src="/assets/screenshot-from-2013-12-16-125502.png?w=1024" alt="Screenshot from 2013-12-16 12:55:02" width="1024" height="575" /></a></p>
+
+
+<p>Şimdilik SDK nın alpha olması ve vaktimin sınırlı olmasından dolayı izlenimlerim bu kadar .Umarım devamında birşeyler ekleyebilirim.</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/12/ubuntuya-virtualbox-yukleme/">Ubuntu'ya VirtualBox Yükleme</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-12-12T19:36:55+02:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>7:36 pm</span></time>
+        
+           | <a href="/blog/2013/12/12/ubuntuya-virtualbox-yukleme/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/12/12/ubuntuya-virtualbox-yukleme/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/virtualbox_logo.jpg"><img class="alignnone size-full wp-image-272" src="/assets/virtualbox_logo.jpg" alt="virtualbox_logo" width="400" height="272" /></a></p>
+
+
+<p>Bu  yazımda VirtualBox'ın  Ubuntu 13.10 Saucy, 13.04 Raring, 12.04 Precise sürümlerine  nasıl yüklenecegini basitçe göstermek istiyorum.</p>
+
+
+<p>ilk olarak  Ctrl+Alt+Del  kombinasyonu ile Terminal açılır.</p>
+
+
+<ul>
+<ul>
+<li>Repository'ı eklemek için   terminale kopyalayıp yapıştırın.</li>
+</ul>
+</ul>
+
+
+<p>&nbsp;</p>
+
+
+<pre>sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc)  contrib" &gt;&gt; /etc/apt/sources.list'</pre>
+
+
+<ul>
+<li>Key 'i indirip yükleyin.</li>
+</ul>
+
+
+<pre>wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -</pre>
+
+
+<ul>
+<li>Güncelleyin</li>
+</ul>
+
+
+<pre>sudo apt-get update</pre>
+
+
+<ul>
+<li>VirtualBox 4.3 yükleyin.</li>
+</ul>
+
+
+<pre>sudo apt-get install virtualbox-4.3</pre>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/03/ubuntu-uzerinde-qt-ve-mysql-baglantisi/">Ubuntu üzerinde QT Ve MySql Baglantısı</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-12-03T23:40:04+02:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2013</span></span> <span class='time'>11:40 pm</span></time>
+        
+           | <a href="/blog/2013/12/03/ubuntu-uzerinde-qt-ve-mysql-baglantisi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/12/03/ubuntu-uzerinde-qt-ve-mysql-baglantisi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/assets/Qt_Software_logo.png" alt="" /><img src="/assets/MySQL.svg" alt="" /></p>
+
+<p>QT ve Mysql bağlantısı için gerekli olanlar</p>
+
+<p>Öncelikle bir localde yada uzakta çalışan bir Web server'a ihtiyacımız var.Öncelikle bu</p>
+
+<p><span style="color: #ff6600;">
+  <span style="color: #ff6600;"><a href="https://help.ubuntu.com/community/ApacheMySQLPHP">adresten </a> <span style="color: #000000;">LAMP kurulumunu yapıp serverimizi hazır hale getirmemiz gerekiyor.</span></span>
+</span></p>
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/lamp.png"><img src="/assets/lamp-1024x575.png" alt="lamp" /></a></p>
+
+<p>Eğer üstteki resimdeki gibi görüyorsanız web serveriniz hazır durumdadır.</p>
+
+<p>Artık QT ile ilgili olan tarafına geçebilirsiniz.</p>
+
+<p>QT de ise işler oldukça kolay. öncelikle yazılım merkezinden QT mysql sürücülerini indirmeniz gerekiyor.</p>
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-04-011859.png"><img src="/assets/screenshot-from-2013-12-04-011859.png?w=1024" alt="Screenshot from 2013-12-04 01:18:59" /></a></p>
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-04-012932.png"><img src="/assets/screenshot-from-2013-12-04-012932.png?w=1024" alt="Screenshot from 2013-12-04 01:29:32" /></a>Projenizin .pro dosyasına QT += core gui sql şeklinde eklemeniz gerekmektedir.</p>
+
+<p>Daha sonra ise örnek bir proje ile çalıştırabilirsiniz.<br>
+<a href="https://gist.github.com/nazrdogan/7779642">https://gist.github.com/nazrdogan/7779642</a></p>
+
+<p>Eğer bir sorun çıkmadıysa QT ve MySql bağlantınız hazır demektir :)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/22/firefox-os-uygulama-gelistirme-merhaba-dunya/">Firefox OS Uygulama geliştirme-Merhaba Dünya</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-11-22T20:06:58+02:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>8:06 pm</span></time>
+        
+           | <a href="/blog/2013/11/22/firefox-os-uygulama-gelistirme-merhaba-dunya/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/11/22/firefox-os-uygulama-gelistirme-merhaba-dunya/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2><span style="color: #ff6600;">Firefox OS nedir?</span></h2>
+
+
+<p>Firefox OS ,Mozilla tarafından geliştirilen  mobil işletim sistemidir.Linux temelli olmasına rağmen HTML5 uyğulamalarını kullanmak üzere tasarlanmıştır.Javascript API si ile cihazın donanımına ulaşmayı mümkün kılmaktadır.</p>
+
+
+<h2><span style="color: #ff6600;">Nasıl Başlarım?</span></h2>
+
+
+<p>ilk olarak ihtiyacınız Firefox Tarayıcısı .Firefox indirip kurduktan sonra ise Firefox OS simulator'u firefox eklenti şeklinde kurmanız gerekmektedir.</p>
+
+
+<p><a href="https://addons.mozilla.org/en-us/firefox/addon/firefox-os-simulator/">Firefox OS simulator</a></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/11/simulator.png"><img class="alignnone size-large wp-image-251" src="/assets/simulator.png?w=1024" alt="simulator" width="1024" height="575" /></a></p>
+
+
+<h2><span style="color: #ff6600;">Merhaba Dünya</span></h2>
+
+
+<p>Firefox uyğulaması yazmak için dört şeye ihtiyacımız var .HTML,CSS ,Javascript ve manifest.webapp dosyası.</p>
+
+
+<p>Daha sonra yapacagımız işler çok kolay .(IDE olarak herhangi bir editoru kullanabilirsiniz.)</p>
+
+
+<p>Firefox'da Tools menusünden  Web Developer ordan ise Firefox OS simulator sayfasını görmeniz lazım.</p>
+
+
+<p>Eğer bu ekranı görüyorsanız Add Directory kısmından  manifest.webapp dosyasını eklemeniz lazım.Ekledikten sonra simulator üzerinde görebilirsiniz.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/11/screenshot-from-2013-11-22-215602.png"><img class="alignnone size-large wp-image-255" src="/assets/screenshot-from-2013-11-22-215602.png?w=1024" alt="Screenshot from 2013-11-22 21:56:02" width="1024" height="575" /></a></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/11/simulator1.png"><img class="alignnone size-large wp-image-254" src="/assets/simulator1.png?w=1024" alt="simulator1" width="1024" height="575" /></a><br />
+https://gist.github.com/nazrdogan/7605761</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/22/three-js-3d-javascript-kutuphanesi/">Three.js 3d Javascript Kütüphanesi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-11-22T19:04:35+02:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>7:04 pm</span></time>
+        
+           | <a href="/blog/2013/11/22/three-js-3d-javascript-kutuphanesi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/11/22/three-js-3d-javascript-kutuphanesi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://nazirdogan.files.wordpress.com/2013/11/screenshot-from-2013-11-22-205914.png"><img class="alignnone size-large wp-image-245" alt="Screenshot from 2013-11-22 20:59:14" src="/assets/screenshot-from-2013-11-22-205914.png?w=1024" width="1024" height="575" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Three.js   hafif bir   3d  javascript kütüphanesidir. Yani basitçe anlatmak gereksirse  bu kütüphane ile 3 boyutlu nesneler oluşturabilir .Bunların üzerinde çalışabilirsiniz.&lt;canvas&gt;  ve &lt;svg&gt; render işlemleri yapabilirsiniz.</p>
+
+
+<p>Bundan sonra elimden geldigi kadar kendi sitesindeki dökümanları ve kendi yaptığım uygulamaları burda paylaşacagım .Umarım faydalı olur.</p>
+
+
+<p>Three.js   kendi sayfasından indirip  ekleyebiliriz yada github'dan çekebiliriz.</p>
+
+
+<p>https://gist.github.com/nazrdogan/7604399</p>
+
+
+<h2><span style="color:#ff6600;">Sahne oluşturma</span></h2>
+
+
+<p>Three.js 'de birşeyler oluşturmamız için  3 şeye ihtiyacımız var bunlar sahne  ,kamera ve renderer  ,bundan sonra  sahneleri kamera ile render'liyabiliriz.</p>
+
+
+<p>https://gist.github.com/nazrdogan/7604615</p>
+
+
+<p>Sonuç olarak<br />
+https://gist.github.com/nazrdogan/7604887</p>
+
+
+<p>Not:Bende çok yeni oldugum için three.js'e yanlış anlatımlar olabilir .affola :)</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/12/kaynak-kodundaki-is-ilani/">Kaynak Kodundaki Iş Ilanı</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-10-12T14:52:06+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:52 pm</span></time>
+        
+           | <a href="/blog/2013/10/12/kaynak-kodundaki-is-ilani/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/10/12/kaynak-kodundaki-is-ilani/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Flickr kaynak  kodlarında rastladığım iş ilanı... Basit ama işe yarar bir yöntem</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/10/flickrr.png"><img class="alignnone size-full wp-image-234" alt="flickrr" src="/assets/flickrr.png" width="853" height="581" /></a></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/09/tizen-ui-builderweb-icin/">Tizen UI Builder(Web Için)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-10-09T08:20:07+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:20 am</span></time>
+        
+           | <a href="/blog/2013/10/09/tizen-ui-builderweb-icin/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/10/09/tizen-ui-builderweb-icin/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Tizen Web  UI Builder sürükle bırak editoru kullanarak arayüz oluşturmasını saglayan bir geliştirici aracıdır.UI Builder'de bulunan HTML elementleri sayesinde UI oluşturmanız oldukça kolaylaşıyor.<br />
+Eğer UI Builder kullanacaksanız:<br />
+<span style="color: #ff6600;">File-&gt;New-&gt;Tizen Web Project  <span style="color: #000000;"> daha sonra resimdeki gibi seçtikten sonra projemiz  hazır oluyor.</span></span></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/10/tizenwebui.png"><img class="alignnone size-full wp-image-225" src="/assets/tizenwebui.png" alt="tizenwebui" width="926" height="768" /></a></p>
+
+
+<p>Web UI Builder içinde  her sayfa için bir design sayfası .page uzantılı   onun altında ise  html,css ,js  , managed.css ve managed.js dosyalarını oluşturyor. Html elementlerini sürükleyip bırakıp kaydettikçe otomatik olarak HTML sayfasında  oluşturuluyor.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/10/tizenwebui1.png"><img class="alignnone size-large wp-image-226" src="/assets/tizenwebui1.png?w=1024" alt="tizenwebui1" width="1024" height="639" /></a><br />
+<a href="http://nazirdogan.files.wordpress.com/2013/10/tizen_builder.png"><img class="alignnone size-full wp-image-230" src="/assets/tizen_builder.png" alt="tizen_builder" width="793" height="589" /></a></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/7">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/5">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

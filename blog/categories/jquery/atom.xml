@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Jquery | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[PhoneGap/Cordova Uygulamalarında ActionSheet Kullanımı]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/03/05/phonegapcordova-uygulamalarinda-actionsheet-kullanimi/"/>
+    <updated>2015-03-05T21:22:40+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/03/05/phonegapcordova-uygulamalarinda-actionsheet-kullanimi</id>
+    <content type="html"><![CDATA[<p>Action Sheet  native olarak kullanıcıya seçenek listesinden birşey seçtirmek için kullanabileceginiz bir plugindir.  Birçok uygulamada görebilirsiniz. ( Yazının sonundaki görsele bakarsanız daha anlaşılır olabilir.) Plugin iOS, Android ve Windows Phone platformlarını desteklemektedir.</p>
+
+
+<p>Şimdi  basit bir uygulama oluştururak  nasıl kullanıldığını görelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">//
+cordova create actionsheet com.example.actionsheet ActionSheet
+//
+cd  actionsheet
+
+//
+cordova platform add android
+
+//</pre>
+
+
+<p>ActionSheet pluginini ekliyoruz ve hazırlıyoruz.</p>
+
+
+<pre class="lang:default decode:true">cordova plugin add https://github.com/EddyVerbruggen/cordova-plugin-actionsheet
+//
+ cordova prepare</pre>
+
+
+<p>Demo olarak bu kodu inceleyebilirsiniz. oldukça basit Javascript kodu oldugu için açıklamaya gerek yok diye düşünüyorum.</p>
+
+
+<pre class="theme:github lang:default decode:true">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="format-detection" content="telephone=no" /&gt;
+    &lt;!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 --&gt;
+    &lt;meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="css/index.css" /&gt;
+    &lt;meta name="msapplication-tap-highlight" content="no" /&gt;
+    &lt;title&gt;Hello ActionSheet&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="app"&gt;
+    &lt;h1&gt;ActionSheet demo&lt;/h1&gt;
+    &lt;div id="deviceready" class="blink"&gt;
+        &lt;p class="event listening"&gt;Connecting to Device&lt;/p&gt;
+        &lt;p class="event received"&gt;Device is Ready&lt;/p&gt;
+        &lt;button onclick="testShareSheet()"&gt;Test Share&lt;/button&gt;&lt;br/&gt;&lt;br/&gt;
+        &lt;button onclick="testDeleteSheet()"&gt;Test Delete&lt;/button&gt;&lt;br/&gt;&lt;br/&gt;
+        &lt;button onclick="testLogoutSheet()"&gt;Test Logout&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript" src="cordova.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/index.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+
+    app.initialize();
+
+    var callback = function(buttonIndex) {
+        setTimeout(function() {
+            alert('button index clicked: ' + buttonIndex);
+        });
+    };
+
+    function testShareSheet() {
+        var options = {
+            'androidTheme' : window.plugins.actionsheet.ANDROID_THEMES.THEME_HOLO_LIGHT,
+            'title': 'What do you want with this image?',
+            'buttonLabels': ['Share via Facebook', 'Share via Twitter'],
+            'addCancelButtonWithLabel': 'Cancel',
+            'androidEnableCancelButton' : true,
+            'winphoneEnableCancelButton' : true,
+            'addDestructiveButtonWithLabel' : 'Delete it'
+        };
+        window.plugins.actionsheet.show(options, callback);
+    }
+
+    function testDeleteSheet() {
+        var options = {
+            'addCancelButtonWithLabel': 'Cancel',
+            'addDestructiveButtonWithLabel' : 'Delete note'
+        };
+        window.plugins.actionsheet.show(options, callback);
+    }
+
+    function testLogoutSheet() {
+        var options = {
+            'buttonLabels': ['Log out'],
+            'androidEnableCancelButton' : true,
+            'winphoneEnableCancelButton' : true,
+            'addCancelButtonWithLabel': 'Cancel'
+        };
+        window.plugins.actionsheet.show(options, callback);
+    }
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+<p><a href="https://github.com/EddyVerbruggen/cordova-plugin-actionsheet">ActionSheet Github sayfasını ziyaret edip daha fazla bilgi alabilirsiniz.</a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/03/snapshot41.png"><img class="alignnone size-full wp-image-760" src="/assets/snapshot41.png" alt="snapshot41" width="532" height="819" /></a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PhoneGap/Cordova - AdMob İle Uygulamaya Reklam Eklenmesi]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/02/28/phonegapcordova-admob-ile-uygulamaya-reklam-eklenmesi/"/>
+    <updated>2015-02-28T18:48:53+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/02/28/phonegapcordova-admob-ile-uygulamaya-reklam-eklenmesi</id>
+    <content type="html"><![CDATA[<p>Appstore'da ve Google Play'deki uygulamaların birçoğu  ücretsiz olup gelir modeli olarak  ise  reklam alma olarak belirlenmiştir. Bunun için birçok reklam servisi vardır. Bunlardan en ünlüsü ve en tercih edileni ise Google'un sahibi olduğu  AdMob'tur.</p>
+
+
+<p>Bu yazımda ise  Admob reklamlarını PhoneGap/Cordova uygulamalarına nasıl ekleyecegimizden bahsedeceğim.</p>
+
+
+<p>ilk iş olarak Admob'a  Google hesabımızı kullanarak giriş yapıyoruz.</p>
+
+
+<p><a href="https://www.google.com/admob/">https://www.google.com/admob/</a></p>
+
+
+<p>Giriş yaptıktan sonra bu ekranı göreceksiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/snapshot38.png"><img class="alignnone size-large wp-image-734" src="/assets/snapshot38-1024x492.png" alt="snapshot38" width="770" height="370" /></a></p>
+
+
+<p>"Monetize New App"  diyerek uygulamamızı ekliyoruz. Burda uzun uzadıya bahsetmeme gerek yok sanırım.</p>
+
+
+<p>Phonegap/Cordova tarafında ise eklentiyi kullanamak oldukça basit.Ayrıca plugin Android iOS ve Windows Phone 8 platformlarını desteklemektedir.</p>
+
+
+<p>Plugini eklemek için.</p>
+
+
+<pre class="theme:github lang:default decode:true">cordova plugin add com.rjfun.cordova.plugin.admob</pre>
+
+
+<p>Plugini ekledikten sonra koda geçebiliriz.</p>
+
+
+<p>https://gist.github.com/nazrdogan/7535c81d584b67f04323</p>
+
+
+<p>Ekran görüntüsü:</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/Screenshot_2015-02-28-20-04-12.jpg"><img class="alignnone size-large wp-image-738" src="/assets/Screenshot_2015-02-28-20-04-12-640x1024.jpg" alt="Screenshot_2015-02-28-20-04-12" width="640" height="1024" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Plugin hakkında daha fazla bilgi almak için <a href="https://github.com/floatinghotpot/cordova-plugin-admob">Github</a> sayfasısını ziyaret edebilirsiniz.</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Firefox OS Uygulama geliştirme-Merhaba Dünya]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/11/22/firefox-os-uygulama-gelistirme-merhaba-dunya/"/>
+    <updated>2013-11-22T20:06:58+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/11/22/firefox-os-uygulama-gelistirme-merhaba-dunya</id>
+    <content type="html"><![CDATA[<h2><span style="color: #ff6600;">Firefox OS nedir?</span></h2>
+
+
+<p>Firefox OS ,Mozilla tarafından geliştirilen  mobil işletim sistemidir.Linux temelli olmasına rağmen HTML5 uyğulamalarını kullanmak üzere tasarlanmıştır.Javascript API si ile cihazın donanımına ulaşmayı mümkün kılmaktadır.</p>
+
+
+<h2><span style="color: #ff6600;">Nasıl Başlarım?</span></h2>
+
+
+<p>ilk olarak ihtiyacınız Firefox Tarayıcısı .Firefox indirip kurduktan sonra ise Firefox OS simulator'u firefox eklenti şeklinde kurmanız gerekmektedir.</p>
+
+
+<p><a href="https://addons.mozilla.org/en-us/firefox/addon/firefox-os-simulator/">Firefox OS simulator</a></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/11/simulator.png"><img class="alignnone size-large wp-image-251" src="/assets/simulator.png?w=1024" alt="simulator" width="1024" height="575" /></a></p>
+
+
+<h2><span style="color: #ff6600;">Merhaba Dünya</span></h2>
+
+
+<p>Firefox uyğulaması yazmak için dört şeye ihtiyacımız var .HTML,CSS ,Javascript ve manifest.webapp dosyası.</p>
+
+
+<p>Daha sonra yapacagımız işler çok kolay .(IDE olarak herhangi bir editoru kullanabilirsiniz.)</p>
+
+
+<p>Firefox'da Tools menusünden  Web Developer ordan ise Firefox OS simulator sayfasını görmeniz lazım.</p>
+
+
+<p>Eğer bu ekranı görüyorsanız Add Directory kısmından  manifest.webapp dosyasını eklemeniz lazım.Ekledikten sonra simulator üzerinde görebilirsiniz.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/11/screenshot-from-2013-11-22-215602.png"><img class="alignnone size-large wp-image-255" src="/assets/screenshot-from-2013-11-22-215602.png?w=1024" alt="Screenshot from 2013-11-22 21:56:02" width="1024" height="575" /></a></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/11/simulator1.png"><img class="alignnone size-large wp-image-254" src="/assets/simulator1.png?w=1024" alt="simulator1" width="1024" height="575" /></a><br />
+https://gist.github.com/nazrdogan/7605761</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen üzerinde Processing.js]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/10/01/tizen-uzerinde-processing-js/"/>
+    <updated>2013-10-01T12:36:28+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/10/01/tizen-uzerinde-processing-js</id>
+    <content type="html"><![CDATA[<ul id="content">
+<li id="work">
+<h2>Processing nedir?</h2>
+<p>Processing, 2001 yılından bu yana çevrimiçi görsel sanatlar odaklı geliştirilen bir programlama dili ve ortamıdır.Açık kaynaklıdır. İlk zamanlarda hızlı prototip çıkarma ve eskiz çalışması yapabilme için geliştirilse de zaman içersinde programlamanın temellerini anlatabilmek için kullanılmaya başlanmıştır. Processing ile çok hızlı geliştirmeler yapabilir ve profesyonel nitelikte çalışmalar hazırlayabilirsiniz.</li>
+</ul>
+
+
+<p>Processing java tabanlı olmasına rağmen javascript moduda mevcut.Bende mevcut Processing.js in Tizen üzerinde nasıl çalışıtıgını test etmek basit bir uygulama ile denedim gayet başarılı sonuçlar aldım.<br />
+yapmanız gerekenler gayet basit .<a href="http://processingjs.org/">Processing.js</a>  sitesinden indirip processing-1.4.1.js adlı(şu an bu versiyonda) js dosyasını projenizine dahil etmek.(Ben isminide degiştirdim)</p>
+
+
+<p>sonra aşagıdaki gibi kullanmak zaten processing.js sitesinde bunun için dersler mevcut.Benim örneğim ise basit bir sarkaç simulasyonu.<br />
+https://gist.github.com/nazrdogan/6776991</p>
+
+
+<p>Simulator üzerinde  processing.js</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/10/pendulumprocessing.png"><img class="alignnone size-full wp-image-215" alt="pendulumprocessing" src="/assets/pendulumprocessing.png" width="438" height="458" /></a></p>
+
+
+<p>https://gist.github.com/nazrdogan/6777186</p>
+
+
+<h2 style="text-align:justify;"><span style="color:#ff6600;">Tizen üzerinde başka bir örnek.(Rastgele zıplayan top)</span></h2>
+
+
+<p>https://gist.github.com/nazrdogan/6777186<br />
+https://vimeo.com/75860986<br />
+&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen Uygulama Geliştirme-Bluetooth Donanımı]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/27/tizen-uygulama-gelistirme-bluetooth-donanimi/"/>
+    <updated>2013-09-27T21:01:23+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/27/tizen-uygulama-gelistirme-bluetooth-donanimi</id>
+    <content type="html"><![CDATA[<p>Tizen'in HTML5 olmasının getirdiği özelliklerinden biride Web API'leri ile  Cihazın donanımına ulaşmak.Bu donanımlardan bir tanesi de Bluetooth. Bu yazımda<a href="http://tr.wikipedia.org/wiki/Bluetooth"> Bluetooth  </a>API'lerinden bahsedecegim.</p>
+
+
+<p style="text-align:justify;">İlk önce tizen web projesi açtıktan sonra  <span style="color:#ff6600;"> config.xml  <span style="color:#000000;">sayfasında ki<a href="https://developer.tizen.org/help/index.jsp?topic=%2Forg.tizen.web.appprogramming%2Fhtml%2Fapp_dev_process%2Fspecify_api_access.htm"> Privileges</a>(izinler) tabından aşagıdaki resimdeki gibi izinleri eklememiz gerekmektedir.Çünkü Bluetooth cihazına ulaşmak için bu izinlere ihtiyacı var uygulamanın.</span></span></p>
+
+
+<p style="text-align:justify;"><a href="http://nazirdogan.files.wordpress.com/2013/09/bluetoothpriviliges.png"><img class="alignnone size-large wp-image-189" alt="bluetoothpriviliges" src="/assets/bluetoothpriviliges.png?w=1024" width="1024" height="617" /></a></p>
+
+
+<p style="text-align:justify;">Resimdeki gibi ekledikten sonra aşagıdaki kodu<span style="color:#ff6600;"> index.html <span style="color:#000000;"> sayfasına ekledikten sonra Bluetooth Aç-Kapa fonksiyonu çalışır hale gelecek.</span></span></p>
+
+
+<p>https://gist.github.com/nazrdogan/6732035</p>
+
+
+<p>Eğer bütün   adımları dogru yaptıysanız uygulamanızın ekranında aşagıdaki gibi görebilirsiniz.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/bluetooth-ac3a7kapa.png"><img class="alignnone size-full wp-image-197" alt="bluetooth açkapa" src="/assets/bluetooth-ac3a7kapa.png" width="387" height="681" /></a></p>
+
+
+<p>Eğer  HTML kodu  içerisindeki Javascript kısmındakı yorumları takip edip kodu incelerseniz.Bütün fonksiyonları görebilirsiniz.(Yazı Resimlerle güncellenecektir.)</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/bluetooth.png"><img class="alignnone size-full wp-image-204" alt="bluetooth" src="/assets/bluetooth.png" width="499" height="889" /></a></p>
+
+]]></content>
+  </entry>
+  
+</feed>

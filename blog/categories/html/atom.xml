@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Html | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/html/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Chrome Developer Tools -Console API Referans]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/06/18/chrome-developer-tools-console-api-referans/"/>
+    <updated>2015-06-18T19:44:34+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/06/18/chrome-developer-tools-console-api-referans</id>
+    <content type="html"><![CDATA[<p>Chrome Developer Tools birçok web geliştiricinin vazgeçilmez bir araçtır. Console API ise uygulamamızda hata ayıklama, ekrana bilgi yazdırma ve Javascript  analizi yapmamıza imkan sağlamaktadır.</p>
+
+
+<h2 id="consoleassertexpression-object" class="has-permalink">console.assert(expression, object)</h2>
+
+
+<p>Eğer yazdığınız expression false degerini alıyorsa mesajı ekrana basar.</p>
+
+
+<p>Örnegin:</p>
+
+
+<pre><code>var list = document.querySelector('#myList');
+
+console.assert(list.childNodes.length &lt; 10, "List item count is &gt;= 10");
+
+</code></pre>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2><a href="http://www.nazirdogan.com/wp-content/uploads/2015/06/assert-failed-list.png"><img class="alignnone size-full wp-image-888" src="/assets/assert-failed-list.png" alt="assert-failed-list" width="1324" height="230" /></a></h2>
+
+
+<h2>console.clear()</h2>
+
+
+<p>Console ekranını temizler</p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consolecountlabel" class="has-permalink">console.count(label)</h2>
+
+
+<p>count()  fonkisyonunun kaç defa çağrıldığını  gösterir.</p>
+
+
+<pre class="prettyprint"><code><span class="kwd">function</span><span class="pln"> login</span><span class="pun">(</span><span class="pln">user</span><span class="pun">)</span> <span class="pun">{</span><span class="pln">   
+ console</span><span class="pun">.</span><span class="pln">count</span><span class="pun">(</span><span class="str">"Login called"</span><span class="pun">);</span>
+   <span class="com">// login() code...
+}</span></code></pre>
+
+
+<p><img class="alignnone" src="/assets/count.png" alt="" width="709" height="84" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Farklı bir örnek ile count() methoduna bakarsak  her isim için farklı çağrıldıgı için 1,2,3 şeklinde artmayıp  farklı farklı yazmıştır.</p>
+
+
+<pre class="prettyprint"><code><span class="kwd">function</span><span class="pln"> login</span><span class="pun">(</span><span class="pln">user</span><span class="pun">)</span> <span class="pun">{</span><span class="pln">   
+ console</span><span class="pun">.</span><span class="pln">count</span><span class="pun">(</span><span class="str">"Login called for user '"</span> <span class="pun">+</span><span class="pln">  user </span><span class="pun">+</span> <span class="str">"'"</span><span class="pun">);</span>   
+ <span class="com">// login() code...
+}</span></code></pre>
+
+
+<p><img class="alignnone" src="/assets/count-unique.png" alt="" width="1324" height="316" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consoledebugobject-object" class="has-permalink">console.debug(object [, object, ...])</h2>
+
+
+<p>console.log() ile aynıdır.</p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consoledirobject" class="has-permalink">console.dir(object)</h2>
+
+
+<p>Belirtilen nesneyi Javascript  nesnesi görünümünde  ekrana basar.</p>
+
+
+<pre class="prettyprint"><code><span class="pln">console</span><span class="pun">.</span><span class="pln">dir</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">body</span><span class="pun">);</span></code></pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone" src="/assets/consoledir-body.png" alt="" width="1322" height="398" /></p>
+
+
+<p>Ayrıca  console.log'a  "%0 " yazarak  console.dir ile aynı şekilde kullanabilirsiniz.</p>
+
+
+<pre class="prettyprint"><code><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"document body: %O"</span><span class="pun">,</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">body</span><span class="pun">);</span></code></pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone" src="/assets/consolelog-object-formatter.png" alt="" width="1322" height="246" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consoleerrorobject-object" class="has-permalink">console.error(object [, object, ...])</h2>
+
+
+<p>console.log()'a  benzer olarak method nerede çağrılıyor ise stack trace'leri içerir.</p>
+
+
+<pre class="prettyprint"><code><span class="kwd">function</span><span class="pln"> connectToServer</span><span class="pun">()</span> <span class="pun">{</span>  
+  <span class="kwd">var</span><span class="pln"> errorCode </span><span class="pun">=</span> <span class="lit">1</span><span class="pun">;</span>    
+<span class="kwd">if</span> <span class="pun">(</span><span class="pln">errorCode</span><span class="pun">)</span> <span class="pun">{</span><span class="pln">    
+
+  console</span><span class="pun">.</span><span class="pln">error</span><span class="pun">(</span><span class="str">"Error: %s (%i)"</span><span class="pun">,
+</span><span class="str">  "Server is  not responding"</span><span class="pun">,</span> <span class="lit">500</span><span class="pun">);</span>  
+  <span class="pun">}}
+
+</span><span class="pln">connectToServer</span><span class="pun">();</span></code></pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone" src="/assets/error-server-not-resp.png" alt="" width="1130" height="319" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Yazı Güncellenecektir...</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Firefox OS Uygulama geliştirme-Merhaba Dünya]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/11/22/firefox-os-uygulama-gelistirme-merhaba-dunya/"/>
+    <updated>2013-11-22T20:06:58+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/11/22/firefox-os-uygulama-gelistirme-merhaba-dunya</id>
+    <content type="html"><![CDATA[<h2><span style="color: #ff6600;">Firefox OS nedir?</span></h2>
+
+
+<p>Firefox OS ,Mozilla tarafından geliştirilen  mobil işletim sistemidir.Linux temelli olmasına rağmen HTML5 uyğulamalarını kullanmak üzere tasarlanmıştır.Javascript API si ile cihazın donanımına ulaşmayı mümkün kılmaktadır.</p>
+
+
+<h2><span style="color: #ff6600;">Nasıl Başlarım?</span></h2>
+
+
+<p>ilk olarak ihtiyacınız Firefox Tarayıcısı .Firefox indirip kurduktan sonra ise Firefox OS simulator'u firefox eklenti şeklinde kurmanız gerekmektedir.</p>
+
+
+<p><a href="https://addons.mozilla.org/en-us/firefox/addon/firefox-os-simulator/">Firefox OS simulator</a></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/11/simulator.png"><img class="alignnone size-large wp-image-251" src="/assets/simulator.png?w=1024" alt="simulator" width="1024" height="575" /></a></p>
+
+
+<h2><span style="color: #ff6600;">Merhaba Dünya</span></h2>
+
+
+<p>Firefox uyğulaması yazmak için dört şeye ihtiyacımız var .HTML,CSS ,Javascript ve manifest.webapp dosyası.</p>
+
+
+<p>Daha sonra yapacagımız işler çok kolay .(IDE olarak herhangi bir editoru kullanabilirsiniz.)</p>
+
+
+<p>Firefox'da Tools menusünden  Web Developer ordan ise Firefox OS simulator sayfasını görmeniz lazım.</p>
+
+
+<p>Eğer bu ekranı görüyorsanız Add Directory kısmından  manifest.webapp dosyasını eklemeniz lazım.Ekledikten sonra simulator üzerinde görebilirsiniz.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/11/screenshot-from-2013-11-22-215602.png"><img class="alignnone size-large wp-image-255" src="/assets/screenshot-from-2013-11-22-215602.png?w=1024" alt="Screenshot from 2013-11-22 21:56:02" width="1024" height="575" /></a></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/11/simulator1.png"><img class="alignnone size-large wp-image-254" src="/assets/simulator1.png?w=1024" alt="simulator1" width="1024" height="575" /></a><br />
+https://gist.github.com/nazrdogan/7605761</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen Uygulama Geliştirme-Bluetooth Donanımı]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/27/tizen-uygulama-gelistirme-bluetooth-donanimi/"/>
+    <updated>2013-09-27T21:01:23+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/27/tizen-uygulama-gelistirme-bluetooth-donanimi</id>
+    <content type="html"><![CDATA[<p>Tizen'in HTML5 olmasının getirdiği özelliklerinden biride Web API'leri ile  Cihazın donanımına ulaşmak.Bu donanımlardan bir tanesi de Bluetooth. Bu yazımda<a href="http://tr.wikipedia.org/wiki/Bluetooth"> Bluetooth  </a>API'lerinden bahsedecegim.</p>
+
+
+<p style="text-align:justify;">İlk önce tizen web projesi açtıktan sonra  <span style="color:#ff6600;"> config.xml  <span style="color:#000000;">sayfasında ki<a href="https://developer.tizen.org/help/index.jsp?topic=%2Forg.tizen.web.appprogramming%2Fhtml%2Fapp_dev_process%2Fspecify_api_access.htm"> Privileges</a>(izinler) tabından aşagıdaki resimdeki gibi izinleri eklememiz gerekmektedir.Çünkü Bluetooth cihazına ulaşmak için bu izinlere ihtiyacı var uygulamanın.</span></span></p>
+
+
+<p style="text-align:justify;"><a href="http://nazirdogan.files.wordpress.com/2013/09/bluetoothpriviliges.png"><img class="alignnone size-large wp-image-189" alt="bluetoothpriviliges" src="/assets/bluetoothpriviliges.png?w=1024" width="1024" height="617" /></a></p>
+
+
+<p style="text-align:justify;">Resimdeki gibi ekledikten sonra aşagıdaki kodu<span style="color:#ff6600;"> index.html <span style="color:#000000;"> sayfasına ekledikten sonra Bluetooth Aç-Kapa fonksiyonu çalışır hale gelecek.</span></span></p>
+
+
+<p>https://gist.github.com/nazrdogan/6732035</p>
+
+
+<p>Eğer bütün   adımları dogru yaptıysanız uygulamanızın ekranında aşagıdaki gibi görebilirsiniz.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/bluetooth-ac3a7kapa.png"><img class="alignnone size-full wp-image-197" alt="bluetooth açkapa" src="/assets/bluetooth-ac3a7kapa.png" width="387" height="681" /></a></p>
+
+
+<p>Eğer  HTML kodu  içerisindeki Javascript kısmındakı yorumları takip edip kodu incelerseniz.Bütün fonksiyonları görebilirsiniz.(Yazı Resimlerle güncellenecektir.)</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/bluetooth.png"><img class="alignnone size-full wp-image-204" alt="bluetooth" src="/assets/bluetooth.png" width="499" height="889" /></a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen İnceleme Videosu]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/23/tizen-inceleme-videosu/"/>
+    <updated>2013-09-23T06:48:45+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/23/tizen-inceleme-videosu</id>
+    <content type="html"><![CDATA[<p><a href="https://vimeo.com/75167028">https://vimeo.com/75167028</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen Uygulamasını Telefon Üzerinde Çalıştırma]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/15/tizen-uygulamasini-telefon-uzerinde-calistirma/"/>
+    <updated>2013-09-15T19:54:08+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/15/tizen-uygulamasini-telefon-uzerinde-calistirma</id>
+    <content type="html"><![CDATA[<p>Bugüne kadar Tizen uygulamalarını Tizen Emulator veya Tizen Web Simulator üzerinde çalıştırdığımız için sorunla karşılaşmadık .Çünkü bunlar IDE ile beraber gelen şeyler oldugu için bizim için bir problem üretmedi .Ama iş Cihaz üzerinde denemeye geldiginde muhtemelen bazı sorunlar çıkacaktır.Bunların sebebi ise Tizen'nın hem çok yeni olması hemde yeterli geliştirici olmadığından yardım almak  gibi bir durumun söz konusu olmaması.</p>
+
+
+<p>Benim karşılaştığım ilk problem PC'nin cihazı tanımaması (Windows için) Windows update'den driver indirmeyi deniyor ama bulamıyor .Bir kaç yerde araştırıp bulduğum çözüm ise şu <a href="http://www.4shared.com/zip/8XTsm_P5/samsung_usb_driver_for_mobile_.html?">linkteki</a> driverlar.Bu  driver'i indirip kurdukan sonra Tizen IDE 'de <span style="color:#ff6600;">Connection Explorer <span style="color:#000000;">kısmında  cihazınızı görmeniz mümkün.</span></span></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/connection.png"><img class="alignnone size-full wp-image-164" alt="connection" src="/assets/connection.png" width="259" height="366" /></a></p>
+
+
+<p>Diger başka bir problem ise  Tizen Cihaz ile Tizen uygulamasının  versiyonlarının farklı olması.Elimdeki cihaz Tizen 2.1 ve Tizen IDE'de ise uygulamanın <span style="color:#ff6600;">required_version=2.2</span> olmasından kaynaklı uygulamayı telefona yüklememekte. Eğer versiyon numarasını 2.1 olarak değiştirirseniz sorun ortadan kalkacaktır.Muhtemelen diğer versiyonlarda bu sorunu çözmezler ise bu şekilde kendimiz çözmüş olmaktayız.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/tizenerror.png"><img class="alignnone size-large wp-image-156" alt="tizenerror" src="/assets/tizenerror.png?w=1024" width="1024" height="555" /></a></p>
+
+
+<h3><span style="color:#ff6600;">Çalıştırma</span></h3>
+
+
+<p>Uygulamamızın üzerine gelip sağ tıklayıp açılan menüden<span style="color:#ff6600;">  Run as-&gt;Tizeb Web Application</span>'u seçip cihaza yüklendiğini görebilirsiniz.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/tizenrun.png"><img class="alignnone size-large wp-image-160" alt="tizenrun" src="/assets/tizenrun.png?w=1024" width="1024" height="609" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+</feed>

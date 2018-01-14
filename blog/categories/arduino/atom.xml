@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Arduino | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/arduino/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[LabVIEW Ile Arduino Programlama]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/04/11/labview-ile-arduino-programlama/"/>
+    <updated>2015-04-11T11:09:05+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/04/11/labview-ile-arduino-programlama</id>
+    <content type="html"><![CDATA[<p>Labview Nedir?</p>
+
+
+<p>LabVIEW (Laboratuary Virtual Instruments For Engineering Workbench)</p>
+
+
+<p>LabVIEW, ölçüm ve kontrol uygulamaları oluşturmak için ihtiyacınız olan araçları ile bilim adamları ve mühendisler sağlayan tek sistemi tasarım yazılımıdır. Bu sorunları çözmek için çok  güçlü, verimlilik hızlandırmaya yardımcı olur ve sürekli yenilik güven veren bir yazılımdır.Görsel programlama dediğimiz kodlara girmeden kendimize özgü programlar oluşturabiliriz. Bir çok kütüphanesi mevcuttur.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Labview'in ne oldugunu öğrendikten sonra şimdi bunu Arduino ile nasıl konuştururum kısmına   gelelim.</p>
+
+
+<p>Adım adım anlatacağım için sorun çıkacağını  düşünmüyorum.</p>
+
+
+<p>1- Öncelikle LabVIEW programını indirin ve kurun.  2011 veya sonrası bir sürüm  olmasına dikkat edin.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/labview-logo.jpg"><img class="alignnone size-medium wp-image-801" src="/assets/labview-logo-300x259.jpg" alt="labview-logo" width="300" height="259" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>2- <a href="http://www.ni.com/visa/">NI-VISA</a>  indirin ve kurun.  Bu LabVIEW için RS-232 sürücülerini içermeketedir.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/ni_logo_trans.png"><img class="alignnone size-full wp-image-803" src="/assets/ni_logo_trans.png" alt="ni_logo_trans" width="292" height="284" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>3- Arduino IDE'sini indirin ve kurun burda dikkat edilmesi gereken Arduino IDE'sinin sürümü 1.0.5 olması gerektigi .(Diğerleride ilede çalışabilir ama test etmek lazım)</p>
+
+
+<p>ve Arduino sürücülerini  yükleyin.</p>
+
+
+<p>Şimdi ise asıl önemli adımlara geçelim.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>4- LabVIEW Interface for Arduino  VI Package Manager'i kullanarak indirin.  VI Package Manager LabVIEW ile beraber gelmektedir.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/2-_search_arduino.png"><img class="alignnone size-medium wp-image-804" src="/assets/2-_search_arduino-300x216.png" alt="2-_search_arduino" width="300" height="216" /></a></p>
+
+
+<p>VI Package Manager'i açın.   Arama yerine Arduino yazdıktan sonra  göreceksiniz. Daha sonra ise Sağ tıklayıp "install " diyebilirsiniz.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>5-   Yükledikten sonra  Arduino'yu bilgisayarımıza bağlıyoruz.</p>
+
+
+<p>LIFA Firmware'ini  Arduino'ya  yüklememiz gerekmekte.</p>
+
+
+<pre class="">C:\Program Files\National Instruments\LabVIEW 2014\vi.lib\LabVIEW Interface for Arduino\Firmware\LIFA_Base
+</pre>
+
+
+<p>Yukardakı dosya yolunda  LIFA_Base klasörünün içerisindeki Arduino kaynak  kodlarını Arduino'da   açın .Hepsini seçtiginizden emin olun. Eğer "error compiling " gibi hata alırsanız  LIFA_Base klasörünü alıp başka  bir yere taşıyıp deneyin.</p>
+
+
+<p>6- Daha sonra  LabVIEW programını açın .</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/1_-_help_findexamples.png"><img class="alignnone size-medium wp-image-805" src="/assets/1_-_help_findexamples-300x207.png" alt="1_-_help_findexamples" width="300" height="207" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Daha sonra  Analog Read Serial örnegini açın. Açtıktan sonra Ctrl+E yaparak  block diagramı açın.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/analogread.png"><img class="alignnone size-medium wp-image-806" src="/assets/analogread-297x300.png" alt="analogread" width="297" height="300" /></a></p>
+
+
+<p>Arduino'da  gerekli bağlantıları yaptıktan sonra "run " diyerek çalıştırın.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/potantiometer.png"><img class="alignnone size-medium wp-image-807" src="/assets/potantiometer-300x188.png" alt="potantiometer" width="300" height="188" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Arduino Bağlantılarını ve sürücüleri düzgün yüklediyseniz sorunsuz çalışacaktır kolay gelsin. :)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Arduino Için Sublime Text Eklentisi: Stino]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/01/03/arduino-icin-sublime-text-eklentisi-stino/"/>
+    <updated>2015-01-03T15:44:15+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/01/03/arduino-icin-sublime-text-eklentisi-stino</id>
+    <content type="html"><![CDATA[<p><img class="alignnone" src="/assets/stino1.png?w=800" alt="" width="800" height="302" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Bu yazımda birçok yazılım geliştiricinin vazgeçilmez araçlarından biri olan Sublime Text için Arduino ekletisinden bahsedeceğim. Arduino'nun bir geliştirme ortamı varken neden böyle birşeye ihtiyaçımız olabilir diyebilirsiniz. Evet Arduino'nun bir geliştirme ortamı mevcut ama büyük dosyalarda ve büyük projelerde sıkıntılı olmaktadır. Ayrıca kod tamamlama gibi özelliği  yoktur. Stino eklentisi ise Arduino ortamının bütün özellikleri ve daha birçok ekstra özelliği size kazandırmaktadır. Bunun yanı sıra Sublime Text kullanıyorsanız tek bir geliştirme ortamında ve Sublime Text'in güçlü özelliklerini kullanacagınız bir ortama sahip olmuş olacaksınız.</p>
+
+
+<p>Bu kadar lak lak ettikten sonra şimdi asıl işimize geçelim. Stino'yu yüklemek için iki tane yazılıma ihtiyacımız var. Aslında isminden de anlaşılacağı üzere  Sublime+Arduino=Stino yani Sublime Text ve Arduino programlarının birleşimi oldugu için bu ikisi bilgisayarımızda olması gerekmektedir.</p>
+
+
+<p><a href="http://www.sublimetext.com/">Sublime Text </a></p>
+
+
+<p>Sublime Text ücretli bir text editör olsa da ücretsiz olarak kullanabilirsiniz.</p>
+
+
+<p><a href="http://arduino.cc/en/Main/Software">Arduino</a></p>
+
+
+<p>Yukarda verdiğim linklerden indirip kurduktan sonra  <a href="https://github.com/Robot-Will/Stino/archive/new-stino.zip">Stino</a>'yu buradan indiriyoruz. Stino şu anki versiyonununda sadece manuel olarak yüklenmektedir.</p>
+
+
+<p>Yüklemek için ise Sublime Text'i açıyoruz. Üst menüden</p>
+
+
+<p><code>Preferences</code>-&gt;<code>Browse Packages</code></p>
+
+
+<p>tıkladığımızda  Sublime Text'in paketlerinin bulunduğu bir klasör açılacaktır. Buraya indirdiğimiz .zip dosyasının içinden Stino' yu buraya çıkarıyoruz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/01/Selection_178.png"><img class="alignnone wp-image-542 size-large" src="/assets/Selection_178-1024x322.png" alt="Selection_178" width="700" height="220" /></a></p>
+
+
+<p>Bu işlemi yaptıktan sonra  Sublime Text'e geri döndüğümüzde  Arduino menüsü  menü çubuğunun en sonuna gelecektir.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/01/Workspace-1_181.png"><img class="alignnone size-large wp-image-543" src="/assets/Workspace-1_181-1024x575.png" alt="Workspace 1_181" width="700" height="393" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/01/usr-share-arduino-examples-1.Basics-AnalogReadSerial-AnalogReadSerial.ino-•-AnalogReadSerial-Sublime-Text-UNREGISTERED_183.png"><img class="alignnone size-large wp-image-544" src="/assets/usr-share-arduino-examples-1.Basics-AnalogReadSerial-AnalogReadSerial.ino-&#8226;-AnalogReadSerial-Sublime-Text-UNREGISTERED_183-1024x585.png" alt="-usr-share-arduino-examples-1.Basics-AnalogReadSerial-AnalogReadSerial.ino • (AnalogReadSerial) - Sublime Text (UNREGISTERED)_183" width="700" height="399" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Stino projesi gelişme aşamasında olmasına rağmen oldukça kullanışlı özelliklere sahip.Bunların hepsinden bahsetmemiz elbette mümkün değil. Açık kaynak bir proje olduğu için indirin deneyin. Özelliklerini kendiniz keşfedin. Unutmadan Stino <a href="https://github.com/Robot-Will/Stino">Github</a> sayfasını verelim. Sonra nerde bu Stino diyenler olabilir :)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Arduino'yla Socket üzerinden Yılan Oyunu]]></title>
+    <link href="http://nazrdogan.github.io/blog/2014/06/01/arduinoyla-socket-uzerinden-yilan-oyunu/"/>
+    <updated>2014-06-01T15:10:28+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2014/06/01/arduinoyla-socket-uzerinden-yilan-oyunu</id>
+    <content type="html"><![CDATA[<p>Bu yazımda ise Bir Arduino ile Joysctick kontrolü ve Socket.io kullanarak  basit bir yılan oyunu nasıl kontrol edilir  ondan bahsedecegim.</p>
+
+
+<p>Elimde bir tane keyes joystick mevcut.(Arduino ile haşır neşir olanlar bilebilir).</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/fotoc49fraf1.jpg"><img class="alignnone size-large wp-image-361" src="/assets/fotoc49fraf1.jpg?w=768" alt="fotoğraf" width="768" height="1024" /></a></p>
+
+
+<p>Arduino Bağlantısı ise  söyle</p>
+
+
+<pre>(SW )- 2</pre>
+
+
+<pre>VRX- A0</pre>
+
+
+<pre>VRY-A1</pre>
+
+
+<pre>GND-GND</pre>
+
+
+<pre>5V -5V</pre>
+
+
+<p>Bagladıktan sonra app.js index.html ve package.json'ı ArduinoSnakeNode adlı bir klasör oluşturup içine kaydedin.<br />
+arduino.ino dosaysınıda Arduino'ya yükleyin.</p>
+
+
+<p>[gist id = "892488d1a2fb14df9bfd" file = "<span style="color: #21759b;"><b><span style="text-decoration: underline;">app.js</span></b></span>"]<br />
+<a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/screenshot-from-2014-06-01-174729.png"><img class="alignnone size-large wp-image-367" src="/assets/screenshot-from-2014-06-01-174729.png?w=1024" alt="Screenshot from 2014-06-01 17:47:29" width="1024" height="575" /></a><br />
+Video(Tost makinesi ile çektim ) biraz kötü ama iş görür yinede :)<br />
+http://www.youtube.com/watch?v=0WuekIWsX68</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Arduino Toprak Nem Sensörü]]></title>
+    <link href="http://nazrdogan.github.io/blog/2014/06/01/arduino-toprak-nem-sensoru/"/>
+    <updated>2014-06-01T10:10:54+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2014/06/01/arduino-toprak-nem-sensoru</id>
+    <content type="html"><![CDATA[<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/fotoc49fraf.jpg"><img class="alignnone size-large wp-image-357" src="/assets/fotoc49fraf.jpg?w=1024" alt="watersensor" width="1024" height="768" /></a>Bu yazımda da Arduino için Su sensörünu basit bir örnekle anlatacağım.<br />
+Sensörün baglanması oldukça basit<br />
+(+) -5v<br />
+(-) -GND<br />
+(S) -A0</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>bagladıktan sonra aşagıdaki kodu yükleyin.Serial Monitorden izleyebilirsinz.</p>
+
+
+<p>https://gist.github.com/nazrdogan/906ba3a6e04bcc1226de<br />
+http://www.youtube.com/watch?v=_TxVLhSFBNU</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Arduino RFID Modülü]]></title>
+    <link href="http://nazrdogan.github.io/blog/2014/06/01/arduino-rfid-modulu/"/>
+    <updated>2014-06-01T09:10:26+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2014/06/01/arduino-rfid-modulu</id>
+    <content type="html"><![CDATA[<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/10413221_1428326937430396_965054233_n.jpg"><img class="alignnone size-full wp-image-347" src="/assets/10413221_1428326937430396_965054233_n.jpg" alt="10413221_1428326937430396_965054233_n" width="640" height="640" /></a></p>
+
+
+<p>Bu yazımda başlıktanda anlaşılacağı üzere RFID (RC522) okumayı oldukça basit bir şekilde göstercem. Bu <a href="https://github.com/miguelbalboa/rfid">kütüphaneyi</a> Arduino kütüphaneleri arasına ekledikten sonra yapmanız gerekenler oldukça kolay.</p>
+
+
+<p>Eger Arduino Uno kullanıyorsanız pinout söyle olmalı</p>
+
+
+<pre>MOSI: Pin 11 / ICSP-4
+ MISO: Pin 12 / ICSP-1
+ SCK : Pin 13 / ISCP-3
+ SS : Pin 10 (Configurable)
+ RST : Pin 9 (Configurable)</pre>
+
+
+<p>Arduino Mega kullanıyorsanız</p>
+
+
+<pre>MOSI: Pin 51 / ICSP-4
+MISO: Pin 50 / ICSP-1
+SCK : Pin 52 / ISCP-3
+SS : Pin 53 (Configurable)
+RST : Pin 5 (Configurable)</pre>
+
+
+<pre></pre>
+
+
+<p>RFID'yi bagladıktan sonra  tek yapmanız gereken Arduino'ya kodu yüklemek</p>
+
+
+<p>https://gist.github.com/nazrdogan/68508f3e0707c86e13b9<br />
+Biraz uğraşla belki Akbil'i hacklebilirsiniz. :)</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/06/screenshot-from-2014-06-01-120722.png"><img class="alignnone size-large wp-image-349" src="/assets/screenshot-from-2014-06-01-120722.png?w=1024" alt="Screenshot from 2014-06-01 12:07:22" width="1024" height="575" /></a></p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+</feed>

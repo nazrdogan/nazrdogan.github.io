@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Phonegap | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/phonegap/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Focusing an Input Field Ionic and Angular Application.]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/07/focusing-an-input-field-ionic-and-angular-application/"/>
+    <updated>2015-12-07T21:30:49+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/07/focusing-an-input-field-ionic-and-angular-application</id>
+    <content type="html"><![CDATA[<p>if you developing Angular/Ionic application. Maybe you need to focusing input field. with this small code snippet is very easy.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">factory('focus', function($timeout, $window) {
+        return function(id) {
+            $timeout(function() {
+                var element = $window.document.getElementById(id);
+                if(element)
+                    element.focus();
+            });
+        };
+    });</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>Full example on <a href="http://codepen.io/nazrdogan_/pen/VeYpVJ">Codepen</a></p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+</feed>

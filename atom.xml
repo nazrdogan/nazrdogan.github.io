@@ -1,106 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Nazir Doğan Code Blog</title>
-  <meta name="author" content="Nazir Doğan">
-
-  
-  <meta name="description" content="Yukardaki gif Javascript geliştiricileri için oldukça büyük anlam ifade etse gerek. Javascript geliştiricleri yıllarca asenkron kod yazmak için &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://nazrdogan.github.io/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-54922205-13']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a></h1>
-    
-    
-      <p class="meta">
-        
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
-
-
-
-<time class='entry-date' datetime='2018-01-12'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>12:00 am</span></time>
-        
-           | <a href="/blog/2018/01/12/async-await-javascript/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2018/01/12/async-await-javascript/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="https://www.bram.us/wordpress/wp-content/uploads/2017/05/js-callbacks-promises-asyncawait.gif" alt="async-await" /></p>
+  
+  <entry>
+    <title type="html"><![CDATA[Async/Await Ile Asenkron Javascript]]></title>
+    <link href="http://nazrdogan.github.io/blog/2018/01/12/async-await-javascript/"/>
+    <updated>2018-01-12T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2018/01/12/async-await-javascript</id>
+    <content type="html"><![CDATA[<p><img src="https://www.bram.us/wordpress/wp-content/uploads/2017/05/js-callbacks-promises-asyncawait.gif" alt="async-await" /></p>
 
 <p>Yukardaki gif  Javascript geliştiricileri için oldukça büyük anlam ifade etse gerek. Javascript geliştiricleri yıllarca  asenkron kod yazmak için callback fonksiyonlarını ihtiyaç duyuyorlardı.</p>
 
@@ -170,38 +88,15 @@ Daha sonra ise <code>.then()</code> kısmında aşağıdaki gibi değişiklik ya
 
 
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2017-11-18'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>12:00 am</span></time>
-        
-           | <a href="/blog/2017/11/18/yarn/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2017/11/18/yarn/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="https://yarnpkg.com/assets/og_image.png" alt="yarn" /></p>
+  <entry>
+    <title type="html"><![CDATA[Yarn Paket Yöneticisi Nedir ?]]></title>
+    <link href="http://nazrdogan.github.io/blog/2017/11/18/yarn/"/>
+    <updated>2017-11-18T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2017/11/18/yarn</id>
+    <content type="html"><![CDATA[<p><img src="https://yarnpkg.com/assets/og_image.png" alt="yarn" /></p>
 
 <p>Facebook mühendisleri tarafından geliştirilmiş olan Yarn, hız ve güvenlik konusunda npm'den daha iyi olduğuna söz veriyor.</p>
 
@@ -239,38 +134,15 @@ Daha sonra ise <code>.then()</code> kısmında aşağıdaki gibi değişiklik ya
 <li>yarn remove: aktif paketten bir paketi siler.</li>
 </ul>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2016-09-30T00:00:00+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
-        
-           | <a href="/blog/2016/09/30/swift-temelleri/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/09/30/swift-temelleri/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/assets/swift_logo.png" width="100%"></p>
+  <entry>
+    <title type="html"><![CDATA[Swift 3 Dersleri-Temeller]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/09/30/swift-temelleri/"/>
+    <updated>2016-09-30T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/09/30/swift-temelleri</id>
+    <content type="html"><![CDATA[<p><img src="http://nazrdogan.github.io/assets/swift_logo.png" width="100%"></p>
 
 <h2>Merhaba Dünya uygulaması</h2>
 
@@ -419,38 +291,15 @@ Daha sonra ise <code>.then()</code> kısmında aşağıdaki gibi değişiklik ya
 
 
 <p></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2016-09-30T00:00:00+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
-        
-           | <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/09/30/programmatically-creating-ui-swift3/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>if you are new in iOS development and using Interface Builder for creating UI elements. Maybe you want to learn how can do with code. In this post I will talk about this and give a snippet.</p>
+  <entry>
+    <title type="html"><![CDATA[Programmatically Creating UI Elements Using Swift 3]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/09/30/programmatically-creating-ui-swift3/"/>
+    <updated>2016-09-30T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/09/30/programmatically-creating-ui-swift3</id>
+    <content type="html"><![CDATA[<p>if you are new in iOS development and using Interface Builder for creating UI elements. Maybe you want to learn how can do with code. In this post I will talk about this and give a snippet.</p>
 
 <h3>UIView</h3>
 
@@ -463,7 +312,7 @@ Daha sonra ise <code>.then()</code> kısmında aşağıdaki gibi değişiklik ya
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="/assets/Simulator Screen Shot 30 Sep 2016 13.19.40.png" width="308"></p>
+<p><img src="http://nazrdogan.github.io/assets/Simulator Screen Shot 30 Sep 2016 13.19.40.png" width="308"></p>
 
 <h3>UISlider</h3>
 
@@ -499,7 +348,7 @@ Daha sonra ise <code>.then()</code> kısmında aşağıdaki gibi değişiklik ya
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="/assets/Simulator Screen Shot 30 Sep 2016 13.56.51.png" width="308"></p>
+<p><img src="http://nazrdogan.github.io/assets/Simulator Screen Shot 30 Sep 2016 13.56.51.png" width="308"></p>
 
 <h3>UIButton</h3>
 
@@ -523,7 +372,7 @@ Daha sonra ise <code>.then()</code> kısmında aşağıdaki gibi değişiklik ya
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="/assets/Simulator Screen Shot 30 Sep 2016 14.56.26.png" width="308"></p>
+<p><img src="http://nazrdogan.github.io/assets/Simulator Screen Shot 30 Sep 2016 14.56.26.png" width="308"></p>
 
 <h3>UISwitch</h3>
 
@@ -551,7 +400,7 @@ Daha sonra ise <code>.then()</code> kısmında aşağıdaki gibi değişiklik ya
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="/assets/Simulator Screen Shot 30 Sep 2016 19.40.40.png" width="308"></p>
+<p><img src="http://nazrdogan.github.io/assets/Simulator Screen Shot 30 Sep 2016 19.40.40.png" width="308"></p>
 
 <h3>UISegmentedControl</h3>
 
@@ -607,91 +456,45 @@ Daha sonra ise <code>.then()</code> kısmında aşağıdaki gibi değişiklik ya
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="/assets/Simulator Screen Shot 30 Sep 2016 19.43.35.png" width="308"></p>
-</div>
+<p><img src="http://nazrdogan.github.io/assets/Simulator Screen Shot 30 Sep 2016 19.43.35.png" width="308"></p>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2016-08-30T00:00:00+03:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
-        
-           | <a href="/blog/2016/08/30/apache-cordova-ios-debug/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/08/30/apache-cordova-ios-debug/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Bu yazımda Apache Cordova için iOS uygulamalarında uzaktan hata ayıklama nasıl yapılır onu göstereceğim.</p>
+  <entry>
+    <title type="html"><![CDATA[Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/08/30/apache-cordova-ios-debug/"/>
+    <updated>2016-08-30T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/08/30/apache-cordova-ios-debug</id>
+    <content type="html"><![CDATA[<p>Bu yazımda Apache Cordova için iOS uygulamalarında uzaktan hata ayıklama nasıl yapılır onu göstereceğim.</p>
 
 <h5>Hata Ayıklamayı  Etkinleştirme</h5>
 
 <p>ilk olarak Safari'nin  &ldquo;Develop Menu&rdquo; kısmını etkinleştirmeniz gerekmekte. Bunun için Safari > Preferences ve  &ldquo;Show Develop Menu&rdquo; checkbox'unu seçilmiş oldugundan emin olalım.</p>
 
-<p><img src="/assets/safari-debug-enable.png" alt="safari debug enabble" /></p>
+<p><img src="http://nazrdogan.github.io/assets/safari-debug-enable.png" alt="safari debug enabble" /></p>
 
 <p>Şimdi ise iOS cihaz üzerinden gidip Web Denetçisini aktif hale getirmek.
 Bunun için Ayarlar > Safari > ileri Düzey ve  Web Denetçisini aktif hale getirin.</p>
 
-<p><img src="/assets/IMG_3736.PNG" alt="iphone debug enable" />
-<img src="/assets/IMG_3737.PNG" alt="iphone debug enable" />
-<img src="/assets/IMG_3738.PNG" alt="iphone debug enable" /></p>
+<p><img src="http://nazrdogan.github.io/assets/IMG_3736.PNG" alt="iphone debug enable" />
+<img src="http://nazrdogan.github.io/assets/IMG_3737.PNG" alt="iphone debug enable" />
+<img src="http://nazrdogan.github.io/assets/IMG_3738.PNG" alt="iphone debug enable" /></p>
 
 <h5>Safari ile Hata ayıklama</h5>
 
 <p>Gerekli ayarları yaptıktan sonra ise hata ayıklamaya geçebiliriz. Öncelikle uygulamayı cihazımızda başlatıyoruz. (Cihazımız USB ile bağlı olmalı) Daha sonra ise Safari'de Develop Menusünden  Cihazımızı seçerek hata ayıklama işlemini başlatabiliriz.</p>
 
-<p><img src="/assets/safari-debug-1.png" alt="safari debug 1" />
-<img src="/assets/safari-debug-2.png" alt="safari debug 2" /></p>
-</div>
+<p><img src="http://nazrdogan.github.io/assets/safari-debug-1.png" alt="safari debug 1" />
+<img src="http://nazrdogan.github.io/assets/safari-debug-2.png" alt="safari debug 2" /></p>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/07/31/ionic2-googlemaps/">Ionic 2 - Google Maps</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2016-07-31T00:00:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
-        
-           | <a href="/blog/2016/07/31/ionic2-googlemaps/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/07/31/ionic2-googlemaps/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Bu yazımda Ionic 2 uygulamalarında <strong>Google Maps</strong>&lsquo;ı nasıl ekleyeceğimiz ve <strong>ionic-native</strong> kullanarak konum bilgisini almayı öğreneceğiz.</p>
+  <entry>
+    <title type="html"><![CDATA[Ionic 2 - Google Maps]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/07/31/ionic2-googlemaps/"/>
+    <updated>2016-07-31T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/07/31/ionic2-googlemaps</id>
+    <content type="html"><![CDATA[<p>Bu yazımda Ionic 2 uygulamalarında <strong>Google Maps</strong>&lsquo;ı nasıl ekleyeceğimiz ve <strong>ionic-native</strong> kullanarak konum bilgisini almayı öğreneceğiz.</p>
 
 <p>Şimdi yeni bir ionic projesi oluşturarak başlayalım.</p>
 
@@ -892,41 +695,18 @@ Bunun için Ayarlar > Safari > ileri Düzey ve  Web Denetçisini aktif hale geti
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="/assets/ionic-maps.png" alt="project structure" /></p>
+<p><img src="http://nazrdogan.github.io/assets/ionic-maps.png" alt="project structure" /></p>
 
 <p>Projenin Github <a href="https://github.com/nazrdogan/ionic-maps">linki</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/07/23/ionic2-uzaktan-veri-alma/">Ionic 2 - Sunucudan Veri Alma</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2016-07-23T00:00:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
-        
-           | <a href="/blog/2016/07/23/ionic2-uzaktan-veri-alma/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/07/23/ionic2-uzaktan-veri-alma/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/assets/ionic-weather-app.png" alt="project structure" /></p>
+  <entry>
+    <title type="html"><![CDATA[Ionic 2 - Sunucudan Veri Alma]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/07/23/ionic2-uzaktan-veri-alma/"/>
+    <updated>2016-07-23T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/07/23/ionic2-uzaktan-veri-alma</id>
+    <content type="html"><![CDATA[<p><img src="http://nazrdogan.github.io/assets/ionic-weather-app.png" alt="project structure" /></p>
 
 <p>Mobil uygulamaların birçoğu servis olmadan çokta birşey ifade etmezler. ve birçok uygulama REST ve benzeri servisleri kullanmaktadır. Şimdi bizde yapacağımız uygulama ile basit bir servis çagırısı yapıp veriyi ekrana basacağız.</p>
 
@@ -1006,42 +786,19 @@ export class MyData {
 
 
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/07/23/ionic2-proje-yapisi/">Ionic 2 - Proje Yapısı</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2016-07-23T00:00:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
-        
-           | <a href="/blog/2016/07/23/ionic2-proje-yapisi/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/07/23/ionic2-proje-yapisi/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Bir <a href="http://nazrdogan.github.io/javascript/ionic%202/2016/07/22/ionic2-kurulum.html">önceki yazımda</a> Ionic 2' nin nasıl kurulacağından bahsettim.</p>
+  <entry>
+    <title type="html"><![CDATA[Ionic 2 - Proje Yapısı]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/07/23/ionic2-proje-yapisi/"/>
+    <updated>2016-07-23T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/07/23/ionic2-proje-yapisi</id>
+    <content type="html"><![CDATA[<p>Bir <a href="http://nazrdogan.github.io/javascript/ionic%202/2016/07/22/ionic2-kurulum.html">önceki yazımda</a> Ionic 2' nin nasıl kurulacağından bahsettim.</p>
 
 <p>Bu yazımda ise proje yapısınıdan bahsetmek ve önemli birkaç dosyayı göstermek istiyorum.</p>
 
-<p><img src="/assets/ionic2-project-yapi.png" alt="project structure" /></p>
+<p><img src="http://nazrdogan.github.io/assets/ionic2-project-yapi.png" alt="project structure" /></p>
 
 <p><em>Not:Görseldeki editor <a href="" title="https://www.visualstudio.com/en-us/products/code-vs.aspx">Visual Studio Code</a> ve ionic'in oluşturdugu blank projedir.Sadece homeSercives.ts dosyası eklenmiştir.</em></p>
 
@@ -1094,38 +851,15 @@ ionicBootstrap(MyApp);
 
 
 <p>Proje yapısına dair söylenebilecek çok şey olsada şimdilik bu kadar. İlk bakışta biraz karışık gelebilir ama konsepti öğrendikten sonra oldukça modüler ve kullanışlı geleceğinden eminim. ionic 1.x de şikayet ettiğim birçok şeyden kurtulmuşa benziyor. Ionic 2' ye başlamadan önce  <strong>Angular 2</strong> ve <strong>Typescript</strong> çalışmanızı şiddetle tavsiye ediyorum.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/07/22/ionic2-kurulum/">Ionic 2 Kurulumu</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2016-07-22T00:00:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
-        
-           | <a href="/blog/2016/07/22/ionic2-kurulum/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/07/22/ionic2-kurulum/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://ionicframework.com/img/blog/ionic-angular-v2.jpg" alt="ionic-angular-v2" /></p>
+  <entry>
+    <title type="html"><![CDATA[Ionic 2 Kurulumu]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/07/22/ionic2-kurulum/"/>
+    <updated>2016-07-22T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/07/22/ionic2-kurulum</id>
+    <content type="html"><![CDATA[<p><img src="http://ionicframework.com/img/blog/ionic-angular-v2.jpg" alt="ionic-angular-v2" /></p>
 
 <hr />
 
@@ -1197,38 +931,15 @@ ionicBootstrap(MyApp);
 </span><span class='line'>ionic serve -l -c -s
 </span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/07/10/facebook-flow/">Facebook Flow - Javascript Için Statik Tip Denetleyicisi (Static Type Checker)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2016-07-10T00:00:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
-        
-           | <a href="/blog/2016/07/10/facebook-flow/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/07/10/facebook-flow/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="https://flowtype.org/static/flow-og-image.png" alt="flowtype" /></p>
+  <entry>
+    <title type="html"><![CDATA[Facebook Flow - Javascript Için Statik Tip Denetleyicisi (Static Type Checker)]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/07/10/facebook-flow/"/>
+    <updated>2016-07-10T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/07/10/facebook-flow</id>
+    <content type="html"><![CDATA[<p><img src="https://flowtype.org/static/flow-og-image.png" alt="flowtype" /></p>
 
 <p>&nbsp;&nbsp;Flow, Facebook tarafından geliştirilen Javascript için statik tip denetleyicisidir. Bu araçın ortaya çıkmasında altında yatan neden ise Javascript'in dinamik tipe sahip bir olmasıdır. Dinamik tipli dillerde değişkenlerin tipi (string ,float, double) derleme anında bilinmezler. Statik tipli diller (Java ,C ve C++ vb.. ) ise kullanıcının değişkenlerin tiplerini her zaman tanımlmasını ister.</p>
 
@@ -1395,145 +1106,702 @@ ionicBootstrap(MyApp);
 <p>Flow hakkında daha çok bilgi için: <a href="https://flowtype.org/">flowtype.org</a></p>
 
 <p><a href="https://github.com/igrigorik/ga-beacon"><img src="https://ga-beacon.appspot.com/UA-54922205-13/facebook-flow" alt="Analytics" /></a></p>
-</div>
+]]></content>
+  </entry>
   
-  
+  <entry>
+    <title type="html"><![CDATA[Passing Data Parent to Child Controller - Titanium Alloy]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/24/passing-data-between-parent-to-child-controller-titanium-mobile/"/>
+    <updated>2015-12-24T21:29:07+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/24/passing-data-between-parent-to-child-controller-titanium-mobile</id>
+    <content type="html"><![CDATA[<p>In this post , I will give small snippet about passing data parent to child controller.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//index.js
+</span><span class='line'>
+</span><span class='line'>function goDetail(e){
+</span><span class='line'>
+</span><span class='line'>$.tab.open(Alloy.createController('detail',{data:e.row.title}).getView());
+</span><span class='line'>}
+</span><span class='line'>$.index.open();
+</span><span class='line'>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
 
 
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/posts/2">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
-      </li>
-    
-  </ul>
-</section>
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//index.xml
+</span><span class='line'>&lt;Alloy&gt;
+</span><span class='line'>    &lt;TabGroup&gt;
+</span><span class='line'>         &lt;Tab id="tab"&gt;
+</span><span class='line'>       &lt;Window onClick="goDetail" id="win" backgroundColor="white" navBarHidden="true" tabBarHidden="true"&gt;
+</span><span class='line'>        &lt;TableView id="table"&gt;
+</span><span class='line'>                &lt;TableViewRow title="Apple"/&gt;
+</span><span class='line'>                &lt;TableViewRow title="Bananas"/&gt;&lt;br&gt;
+</span><span class='line'>&lt;TableViewRow title="Carrots"/&gt;
+</span><span class='line'>                &lt;TableViewRow title="Potatoes"/&gt;
+</span><span class='line'>                 &lt;TableViewRow title="Cod"/&gt;
+</span><span class='line'>                &lt;TableViewRow title="Haddock"/&gt;&lt;br&gt;
+</span><span class='line'>&lt;/TableView&gt;
+</span><span class='line'>    &lt;/Window&gt;
+</span><span class='line'>    &lt;/Tab&gt;
+</span><span class='line'>    &lt;/TabGroup&gt;
+</span><span class='line'>&lt;/Alloy&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// detail.js
+</span><span class='line'>var args = arguments[0] || {};
+</span><span class='line'> Ti.API.info(args.data);
+</span><span class='line'>  $.title.text=args.data;
+</span><span class='line'>
+</span><span class='line'>//detail.xml
+</span><span class='line'>&lt;Alloy&gt;
+</span><span class='line'>    &lt;Window class="container" backgroundColor="white"&gt;
+</span><span class='line'>     &lt;Label top=30 id="title"&gt;&lt;Label&gt;
+</span><span class='line'>    &lt;/Window&gt;
+</span><span class='line'>&lt;/Alloy&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/qQUshuYvP1w" frameborder="0" allowfullscreen="allowfullscreen">
+</iframe>
+
+]]></content>
+  </entry>
   
-  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
+  <entry>
+    <title type="html"><![CDATA[Hello World Application Cocos2d-js V3]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/18/hello-world-cocos2d-js/"/>
+    <updated>2015-12-18T10:54:39+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/18/hello-world-cocos2d-js</id>
+    <content type="html"><![CDATA[<p class="p1"><span class="s1">In this post , we can start a real cross platform cocos2d-js example. Let's begin </span><span class="s1">(If you don't read posts about setup and what is cocos2d-js you can click to check  underlined blog posts.) </span><span class="s1">If you created a project you should see index.html page . There is no interesting things in here it's just plain   HTML. </span></p>
+
+
+<p class="p1"><span class="s1"> </span></p>
+
+
+
+
+<pre class="theme:sublime-text lang:default decode:true">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Cocos2d-html5 Hello World test&lt;/title&gt;
+    &lt;link rel="icon" type="image/GIF" href="res/favicon.ico"/&gt;
+    &lt;meta name="viewport" content="width=480, initial-scale=1"&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"/&gt;
+    &lt;meta name="full-screen" content="yes"/&gt;
+    &lt;meta name="screen-orientation" content="portrait"/&gt;
+    &lt;meta name="x5-fullscreen" content="true"/&gt;
+    &lt;meta name="360-fullscreen" content="true"/&gt;
+    &lt;style&gt;
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body style="padding:0; margin: 0; background: #000;"&gt;
+&lt;script src="res/loading.js"&gt;&lt;/script&gt;
+&lt;canvas id="gameCanvas" width="480" height="720"&gt;&lt;/canvas&gt;
+&lt;script src="frameworks/cocos2d-html5/CCBoot.js"&gt;&lt;/script&gt;
+&lt;script cocos src="main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 
-        github.showRepos({
-            user: 'nazrdogan',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
+</pre>
+
+
+<p>This canvas  will show  the game inside it.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">&lt;canvas id="gameCanvas" width="480" height="720"&gt;&lt;/canvas&gt;</pre>
+
+
+<p>and second important thing is  its used for starting Cocos2d-js framework.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">&lt;script src="frameworks/cocos2d-html5/CCBoot.js"&gt;&lt;/script&gt;
+</pre>
+
+
+<p>and last one is our actual game will start in this script file.</p>
+
+
+<p>Lets look at main.js file. if you  look carefully we only call main.js file in index.html. Game starting at this script file even so its more like a configuration file you won't code at this moment.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">cc.game.onStart = function(){
+    if(!cc.sys.isNative &amp;&amp; document.getElementById("cocosLoading")) //If referenced loading.js, please remove it
+        document.body.removeChild(document.getElementById("cocosLoading"));
+
+    // Pass true to enable retina display, on Android disabled by default to improve performance
+    cc.view.enableRetina(cc.sys.os === cc.sys.OS_IOS ? true : false);
+
+    // Adjust viewport meta
+    cc.view.adjustViewPort(true);
+    // Setup the resolution policy and design resolution size
+    cc.view.setDesignResolutionSize(cc.winSize.height, cc.winSize.width, cc.ResolutionPolicy.SHOW_ALL);
+    // Instead of set design resolution, you can also set the real pixel resolution size
+    // Uncomment the following line and delete the previous line.
+    // cc.view.setRealPixelResolution(960, 640, cc.ResolutionPolicy.SHOW_ALL);
+    // The game will be resized when browser size change
+    cc.view.resizeWithBrowserSize(true);
+    //load resources
+    cc.LoaderScene.preload(g_resources, function () {
+        cc.director.runScene(new HelloWorldScene());
+    }, this);
+};
+cc.game.run();</pre>
+
+
+<p>I think most important thing in here , loading resources and running scene by  the director. the others is easy to understand and just configs.</p>
+
+
+<p>Docs says "<a href="http://www.cocos2d-x.org/reference/html5-js/V3.8/index.html">cc.LoaderScene</a> is a scene that you can load it when you loading files "</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true"> cc.LoaderScene.preload(g_resources, function () {
+        cc.director.runScene(new HelloWorldScene());
+    }, this);</pre>
+
+
+<p>We  loaded resources file and   run the scene.</p>
+
+
+<p>Let's look at  resources.js in our project. resources.js is file our resources described in here.  if you look at the  above code <em>g_resources</em> loaded. it's come from this file.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">var res = {
+    HelloWorld_png : "res/HelloWorld.png",
+
+};
+
+
+var g_resources = [];
+for (var i in res) {
+    g_resources.push(res[i]);
+}
+</pre>
+
+
+<p>We showed path of image files. and pushed it  to  <em>g_resources </em> array.  You can add more resources in here.</p>
+
+
+<p>After looking at resources file, Let's look most important file of our simple project. its named app.js. When you start to game user will show UI in it.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">var HelloWorldLayer = cc.Layer.extend({
+    sprite:null,
+    ctor:function () {
+        //////////////////////////////
+        // 1. super init first
+        this._super();
+
+
+        /////////////////////////////
+        // 2. add a menu item with "X" image, which is clicked to quit the program
+        //    you may modify it.
+        // ask the window size
+        var size = cc.winSize;
+
+        /////////////////////////////
+        // 3. add your codes below...
+        // add a label shows "Hello World"
+        // create and initialize a label
+        var helloLabel = new cc.LabelTTF("Hello", "Arial", 55);
+      //  helloLabel.setColor(new cc.Color(255,222,22));
+        // position the label on the center of the screen
+        helloLabel.x = size.width / 2;
+        helloLabel.y = size.height / 2 + 200;
+        // add the label as a child to this layer
+        this.addChild(helloLabel, 5);
+
+        // add "HelloWorld" splash screen"
+        this.sprite = new cc.Sprite(res.HelloWorld_png);
+        this.sprite.attr({
+            x: size.width / 2,
+            y: size.height / 2
         });
+        this.addChild(this.sprite, 0);  
+        return true;
+    }
+});
+
+var HelloWorldScene = cc.Scene.extend({
+    onEnter:function () {
+        this._super();
+        var layer = new HelloWorldLayer();
+        this.addChild(layer);
+    }
+});
+</pre>
+
+
+<p>First of all We created  a layer and extend it. add a  label and a sprite to our layer. İf you think like director  they are our decor. After that We created Scene then add this decor to the scene. and Last we say "Action !!" .</p>
+
+
+<p>I will not explain the code .because its very simple .If you know Javascript you will understand what is going on.</p>
+
+
+<p><img class="alignnone size-full wp-image-998" src="http://nazrdogan.github.io/assets/Simulator-Screen-Shot-15-Dec-2015-01.29.25.png" alt="Simulator Screen Shot 15 Dec 2015 01.29.25" width="640" height="960" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Structure of Cocos2d-JS Project]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/15/the-structure-of-cocos2d-js-project/"/>
+    <updated>2015-12-15T21:03:39+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/15/the-structure-of-cocos2d-js-project</id>
+    <content type="html"><![CDATA[<p>Cocos2d-js project structure is really simple to understand. so let's look at screenshoot of a folder with a Cocos2d-js project.</p>
+
+
+<p><img class="alignnone size-large wp-image-1001" src="http://nazrdogan.github.io/assets/Screen-Shot-2015-12-15-at-21.39.17-906x1024.png" alt="Screen Shot 2015-12-15 at 21.39.17" width="648" height="732" /></p>
+
+
+<ul>
+<li> The <b>frameworks </b> directory, its contains Cocos2d-html5 engine and the Cocos2d-x JavaScript Bindings and Runtime including iOS/MacOSX/Android/Linux/Windows platforms.</li>
+<li>The <strong>res </strong> directory, resources folder of the project must save all images, audio, fonts, animations, etc.</li>
+<li>The <strong>runtime</strong> directory , its including all executables package under development.</li>
+<li>The <strong>src </strong>directory ,  The most important directory is src directory .Because your game business logic in written in there.</li>
+<li><strong>index.html  </strong> The main web page of project.  You can access when you start web server .</li>
+<li><strong>main.js  </strong>is the starter script  of project.contains initialization code</li>
+<li><strong>project.json  </strong> Project configuration file, detailed information can be found in here.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Running Cocos2d-js Project on Android and iOS]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/14/running-cocos2d-js-project-android-ios/"/>
+    <updated>2015-12-14T23:33:58+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/14/running-cocos2d-js-project-android-ios</id>
+    <content type="html"><![CDATA[<p>If you created Cocos2d-js native project.(if you dont create yet .pleas follow this <a href="http://www.nazirdogan.com/cocos2d-js/creating-a-new-cocos2d-js-project/">link</a>) You can run on Android and OS devices or simulators. Running project so easy</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">-
+
+
+cd directory/to/projectName
+// its for compiling apps
+cocos compile -p ios|mac|android|web
+// its for running apps
+cocos run -p ios|mac|android
+
+
+-</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone size-full wp-image-998" src="http://nazrdogan.github.io/assets/Simulator-Screen-Shot-15-Dec-2015-01.29.25.png" alt="Simulator Screen Shot 15 Dec 2015 01.29.25" width="640" height="960" /></p>
+
+
+<p>if you get error like  "<strong>Can't find iOS target</strong>" or "<strong>Can't find Mac target</strong>" .You can run with code shown  below  for  iOS platform . For this example FirstCocosGame is project name. You must change with your own.</p>
+
+
+<pre class="theme:sublime-text top-set:false bottom-set:false lang:default decode:true"> cocos run  --platform ios  -t FirstCocosGame-mobile</pre>
+
+
+<p>for Mac platform</p>
+
+
+<pre class="theme:sublime-text height-mode:1 top-set:false bottom-set:false lang:default decode:true">cocos compile --platform mac -t FirstCocosGame-desktop
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Creating a New Cocos2d-js Project]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/13/creating-a-new-cocos2d-js-project/"/>
+    <updated>2015-12-13T20:06:27+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/13/creating-a-new-cocos2d-js-project</id>
+    <content type="html"><![CDATA[<p>If you installed Cocos2d-js successfully. Now you can create a new project for developing Cocos2d-js game. if you dont install Cocos2d-js yet. Please follow this <a href="http://www.nazirdogan.com/cocos2d-js/install-cocos2d-js-mac/">link</a>.</p>
+
+
+<p>I assume you installed  Cocos2d-js . and Now open your terminal and go Cocos2d-x directory</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">// Create a project containing Cocos2d-x JSB and Cocos2d-html5:
+cocos new -l js
+
+// Create a project only containing Cocos2d-html5:
+cocos new -l js --no-native
+
+// Create a project with a specified name in a specified directory:
+cocos new projectName -l js -d ./Projects</pre>
+
+
+<p>Now you created Cocos2d-js project. Let's look how to run this project on Web Browser. When you prompt code below .it will start a web server and you can see game on  browser.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">cd ~/Desktop/projectName
+cocos run -p web</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone size-large wp-image-976" src="http://nazrdogan.github.io/assets/Screen-Shot-2015-12-12-at-17.00.51-1024x612.png" alt="Screen Shot 2015-12-12 at 17.00.51" width="648" height="387" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>We successfully run our project on web browser.  Thats it :)</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Install Cocos2d-js on Mac]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/12/install-cocos2d-js-mac/"/>
+    <updated>2015-12-12T10:42:38+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/12/install-cocos2d-js-mac</id>
+    <content type="html"><![CDATA[<p>In this post , I will give information about  how to setup Cocos2d-js development environment.</p>
+
+
+<p>First of all visit :<a href="http://cocos2d-x.org/download"> http://cocos2d-x.org/download</a> and Download Cocos2d-x zip file.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone wp-image-960 size-large" src="http://nazrdogan.github.io/assets/cocosinstall-1024x602.png" alt="cocosinstall" width="648" height="381" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p><strong>Note:</strong> Before Cocos2d-x V 3.9  its have two different package named (Cocos2d-x and Cocos2d-js). with V3.9  they released  one package for all language which including C++,Lua and Javascript.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>After downloading cocos2d-x zip file. Please unzip it.then come  cocos2d-x-3.9 directory, <strong>run ./setup.py</strong> in the console.</p>
+
+
+<p><img class="alignnone wp-image-962" src="http://nazrdogan.github.io/assets/Screen-Shot-2015-12-12-at-12.14.17-300x220.png" alt="Screen Shot 2015-12-12 at 12.14.17" width="600" height="440" /></p>
+
+
+<p>You will need Android NDK ,SDK and ANT and their  path must be provided in your computer. or you can set here. and you will need Python 2.7.5  Because this tool written Python 2.7.5 (32 bit). <strong>Python 3 not supported.</strong></p>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone size-large wp-image-966" src="http://nazrdogan.github.io/assets/Screen-Shot-2015-12-12-at-12.28.54-1024x709.png" alt="Screen Shot 2015-12-12 at 12.28.54" width="648" height="449" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p><strong>Note:</strong> please execute source ~/.bash_profile to make the environment setting take effect immediately.</p>
+
+
+<p>After running setup you will see like this. if your Android NDK,SDK and ANT path is wrong or not provided you will get error.</p>
+
+
+<p>if you get any error. Its means your setup is successful. Welcome to Cocos2d-x world :)</p>
+
+
+<p>Now you can create Cocos2d-js project  following this link</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What Is Cocos2d-js ?]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/10/what-is-cocos2d-js/"/>
+    <updated>2015-12-10T23:08:40+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/10/what-is-cocos2d-js</id>
+    <content type="html"><![CDATA[<p><strong>About Cocos2d-x</strong></p>
+
+
+<p>Started in 2010, Cocos2d-x is an open source, cross-platform game engine. It is loaded with powerful features that allow developers to create spectacular games with ease.Using the most recent version of Cocos2D-x you can target Windows, Mac, Linux, iOS and Android.Cocos2d-x framework using C++ language for development.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><strong>What is Cocos2d-js ?</strong><br />
+Cocos2d-js is game engine port of Cocos2d-x.its targeted web and native games. It's mean its fully cross platform . you can develop HTML5 2d games and native games.Cocos2d-js  using for language  Javascript. Because of this .It can be run browser and native platforms. Even so Cocos2d-js dont losing any power of C++. Because cocos2d-js sources compile to C++ then works like Cocos2d-x games.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><strong>Main Features ( I take from Cocos2d-x websites)</strong></p>
+
+
+<ul>
+<li>Support All modern browsers and native platforms</li>
+<li>Scene management (workflow)</li>
+<li>Transitions between scenes</li>
+<li>Sprites and Sprite Sheets</li>
+<li>Effects: Lens, Ripple, Waves, Liquid, etc.</li>
+<li>Actions (behaviours):
+<ul>
+<li>Trasformation Actions: Move, Rotate, Scale, Fade, Tint, etc.</li>
+<li>Composable actions: Sequence, Spawn, Repeat, Reverse</li>
+<li>Ease Actions: Exp, Sin, Cubic, Elastic, etc.</li>
+<li>Misc actions: CallFunc, OrbitCamera, Follow, Tween</li>
+</ul>
+</li>
+<li>Assets manager (hot update)</li>
+<li>Basic menus and buttons</li>
+<li>Integrated with physics engines: Chipmunk and Box2d</li>
+<li>Particle system</li>
+<li>Skeleton Animations: Spine and Armature support</li>
+<li>Fonts:
+<ul>
+<li>Fast font rendering using Fixed and Variable width fonts</li>
+<li>Support for .ttf fonts</li>
+</ul>
+</li>
+<li>Tile Map support: Orthogonal, Isometric and Hexagonal</li>
+<li>Parallax scrolling</li>
+<li>Motion Streak</li>
+<li>Render To Texture</li>
+<li>Touch/Accelerometer on mobile devices</li>
+<li>Touch/Mouse/Keyboard on desktop</li>
+<li>Sound Engine support (CocosDenshion library) based on OpenAL or WebAudio on web</li>
+<li>Integrated Slow motion/Fast forward</li>
+<li>Fast and compressed textures: PVR compressed and uncompressed textures, ETC1 compressed textures, and more</li>
+<li>Resolution Independence</li>
+<li>Modularized engine for customization</li>
+<li>Open Source Commercial Friendly: Compatible with open and closed source projects</li>
+<li>OpenGL ES 2.0 (mobile) / OpenGL 2.1 (desktop) based</li>
+<li>Full WebGL support and auto canvas fallback</li>
+</ul>
+
+
+<p>&nbsp;</p>
+
+
+<p>After this post.  I will continue blogging   about Cocos2d-js . You can add my blog to your bookmarks. :)</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Focusing an Input Field Ionic and Angular Application.]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/07/focusing-an-input-field-ionic-and-angular-application/"/>
+    <updated>2015-12-07T21:30:49+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/07/focusing-an-input-field-ionic-and-angular-application</id>
+    <content type="html"><![CDATA[<p>if you developing Angular/Ionic application. Maybe you need to focusing input field. with this small code snippet is very easy.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">factory('focus', function($timeout, $window) {
+        return function(id) {
+            $timeout(function() {
+                var element = $window.document.getElementById(id);
+                if(element)
+                    element.focus();
+            });
+        };
+    });</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>Full example on <a href="http://codepen.io/nazrdogan_/pen/VeYpVJ">Codepen</a></p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Appcelerator Titanium Mobile Türkçe Kitap]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/07/appcelerator-titanium-mobile-turkce-kitap/"/>
+    <updated>2015-12-07T20:19:17+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/07/appcelerator-titanium-mobile-turkce-kitap</id>
+    <content type="html"><![CDATA[<div class="ELUvyf">
+<div id="body:c1641">
+<div class="fu5e3b sMVRZe">
+<div class="wftCae" dir="ltr">
+<p>Türkçe kaynak sıkıntısından  yaklaşık 1 sene önce yazmaya başladığım Appcelerator Titanium ile Çapraz platform mobil uygulama geliştirme kitabını açık kaynak hale getirme kararı aldım. Bu kararın nedeni hem Titanium platformunda olan bir takım değişiklikler hemde gerekli düzeltmeleri yapacak zamanımın kısıtlı olması etkili oldu. Titanium'dan kısaca bahsetmek gerekirse javascript ile hem Android hem iOS, Windows phone Uygulamaları  (her ne kadar kitapta anlatılmasada) geliştirebilirsiniz.Kitabın Yazım süresi çok kısa oldugundan yazım yanlışları ve anlatım bozuklukları olabilir. Şimdiden affola.Umarım mobil geliştiren ve geliştirmek isteyenler için faydalı bir kaynak olur.</p>
+<p><a class="ot-anchor aaTEdf" dir="ltr" href="https://dl.orangedox.com/GxaueHo37SlPRj6PO6/TitaniumMobile.pdf" target="_blank" rel="nofollow">https://dl.orangedox.com/GxaueHo37SlPRj6PO6/TitaniumMobile.pdf</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="bldpQb"></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Getting Started With Titanium Alloy MVC Framework]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/07/getting-started-titanium-alloy-mvc-framework/"/>
+    <updated>2015-12-07T17:36:00+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/07/getting-started-titanium-alloy-mvc-framework</id>
+    <content type="html"><![CDATA[<p class="p1"><strong><span class="s1">What is Alloy ?</span></strong></p>
+
+
+<p class="p1"><span class="s1">Alloy is a MVC framework by Appcelerator for developer to build cross platform application . Titanium have two way for developing mobile apps. One of them named Titanium classic and second one is Titanium alloy. You are not required to alloy framework .you can still continue classic one . But you will not have alloy benefits. </span></p>
+
+
+<p class="p1"><strong><span class="s1">Let's look alloy mvc</span></strong></p>
+
+
+<p class="p1"><strong>Model</strong></p>
+
+
+<p class="p1"><span class="s1">The model store data local or remote.it can be SQLite , file or web service data.no matter what is data type. Model layer is doing managing or manipulating data.if you heard CRUD  you know what I'm talking about.</span></p>
+
+
+<p><p class="p1">
+<p class="p1"><a href="http://www.nazirdogan.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-07-at-18.07.57.png"><img class="alignnone wp-image-939 size-medium" src="http://nazrdogan.github.io/assets/Screen-Shot-2015-12-07-at-18.07.57-244x300.png" alt="Screen Shot 2015-12-07 at 18.07.57" width="244" height="300" /></a></p>
+<p class="p1">you can create model in project folder like this and as well as the other components.</p>
+<pre class="theme:sublime-text lang:default decode:true">exports.definition = {
+    config: {</p>
+
+<pre><code>    adapter: {
+        type: "sql",
+        collection_name: "firstmodel"
+    }
+},
+extendModel: function(Model) {
+    _.extend(Model.prototype, {
+        // extended functions and properties go here
     });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
 
+    return Model;
+},
+extendCollection: function(Collection) {
+    _.extend(Collection.prototype, {
+        // extended functions and properties go here
 
+        // For Backbone v1.1.2, uncomment the following to override the
+        // fetch method to account for a breaking change in Backbone.
+        /*
+        fetch: function(options) {
+            options = options ? _.clone(options) : {};
+            options.reset = true;
+            return Backbone.Collection.prototype.fetch.call(this, options);
+        }
+        */
+    });
 
+    return Collection;
+}
+</code></pre>
 
+<p>};</pre>
+<p>&nbsp;</p>
+<p class="p1"><span class="s1">The view is very simple and easy to understand .its the presentation layer of the application. Users will interact with this layer.</span>If you know xml you know alloy view . Because it&rsquo;s only xml.</p>
+<pre class="theme:sublime-text lang:default decode:true ">&lt;Alloy&gt;
+    &lt;Window class=&ldquo;container&rdquo;&gt;
+        &lt;Label id=&ldquo;label&rdquo; onClick=&ldquo;doClick&rdquo;&gt;Hello, World&lt;/Label&gt;
+    &lt;/Window&gt;
+&lt;/Alloy&gt;</pre>
+<p>and you can change your view style with  TSS files. its inside styles folder. TSS  similar to CSS but it uses JSON-like syntax.</p>
+<pre class="theme:sublime-text lang:default decode:true">&ldquo;.container&rdquo;: {
+    backgroundColor:&ldquo;white&rdquo;
+}</p>
 
+<p>&ldquo;Label&rdquo;: {
+    width: Ti.UI.SIZE,
+    height: Ti.UI.SIZE,
+    color: &ldquo;#000&rdquo;
+}</p>
+
+<p>&ldquo;#label&rdquo;: {
+    font: {
+        fontSize: 12
+    }
+}
+</pre>
+<p><strong><span class="s1">Controller</span></strong></p>
+<p class="p1"><span class="s1">Controller is business logic your application.its glue between model and views.</span></p>
+<pre class="theme:sublime-text lang:default decode:true ">function doClick(e) {
+    alert($.label.text);
+}</p>
+
+<p>$.index.open();
+</pre>
+<p>you can see doClick function in your view. When user interact label on device screen. doClick will work.</p>
+<p>if you create Controller in your alloy project with Appcelerator Studio. Studio will create view(.xml) and style(.tss) files. and will be named same your controller.</p>
+<p>For Example:  you create home.js  controller and created file home.xml and home.tss .But if you do this manually. you must add other files manually.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></p>
+]]></content>
+  </entry>
   
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2018 - Nazir Doğan -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'nazrdogan';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>

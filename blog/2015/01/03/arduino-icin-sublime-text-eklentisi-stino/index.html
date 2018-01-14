@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Arduino Için Sublime Text Eklentisi: Stino - Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="&nbsp; Bu yazımda birçok yazılım geliştiricinin vazgeçilmez araçlarından biri olan Sublime Text için Arduino ekletisinden bahsedeceğim. Arduino'nun &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/blog/2015/01/03/arduino-icin-sublime-text-eklentisi-stino/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Arduino Için Sublime Text Eklentisi: Stino</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-03T15:44:15+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>3:44 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="alignnone" src="/assets/stino1.png?w=800" alt="" width="800" height="302" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Bu yazımda birçok yazılım geliştiricinin vazgeçilmez araçlarından biri olan Sublime Text için Arduino ekletisinden bahsedeceğim. Arduino'nun bir geliştirme ortamı varken neden böyle birşeye ihtiyaçımız olabilir diyebilirsiniz. Evet Arduino'nun bir geliştirme ortamı mevcut ama büyük dosyalarda ve büyük projelerde sıkıntılı olmaktadır. Ayrıca kod tamamlama gibi özelliği  yoktur. Stino eklentisi ise Arduino ortamının bütün özellikleri ve daha birçok ekstra özelliği size kazandırmaktadır. Bunun yanı sıra Sublime Text kullanıyorsanız tek bir geliştirme ortamında ve Sublime Text'in güçlü özelliklerini kullanacagınız bir ortama sahip olmuş olacaksınız.</p>
+
+
+<p>Bu kadar lak lak ettikten sonra şimdi asıl işimize geçelim. Stino'yu yüklemek için iki tane yazılıma ihtiyacımız var. Aslında isminden de anlaşılacağı üzere  Sublime+Arduino=Stino yani Sublime Text ve Arduino programlarının birleşimi oldugu için bu ikisi bilgisayarımızda olması gerekmektedir.</p>
+
+
+<p><a href="http://www.sublimetext.com/">Sublime Text </a></p>
+
+
+<p>Sublime Text ücretli bir text editör olsa da ücretsiz olarak kullanabilirsiniz.</p>
+
+
+<p><a href="http://arduino.cc/en/Main/Software">Arduino</a></p>
+
+
+<p>Yukarda verdiğim linklerden indirip kurduktan sonra  <a href="https://github.com/Robot-Will/Stino/archive/new-stino.zip">Stino</a>'yu buradan indiriyoruz. Stino şu anki versiyonununda sadece manuel olarak yüklenmektedir.</p>
+
+
+<p>Yüklemek için ise Sublime Text'i açıyoruz. Üst menüden</p>
+
+
+<p><code>Preferences</code>-&gt;<code>Browse Packages</code></p>
+
+
+<p>tıkladığımızda  Sublime Text'in paketlerinin bulunduğu bir klasör açılacaktır. Buraya indirdiğimiz .zip dosyasının içinden Stino' yu buraya çıkarıyoruz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/01/Selection_178.png"><img class="alignnone wp-image-542 size-large" src="/assets/Selection_178-1024x322.png" alt="Selection_178" width="700" height="220" /></a></p>
+
+
+<p>Bu işlemi yaptıktan sonra  Sublime Text'e geri döndüğümüzde  Arduino menüsü  menü çubuğunun en sonuna gelecektir.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/01/Workspace-1_181.png"><img class="alignnone size-large wp-image-543" src="/assets/Workspace-1_181-1024x575.png" alt="Workspace 1_181" width="700" height="393" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/01/usr-share-arduino-examples-1.Basics-AnalogReadSerial-AnalogReadSerial.ino-•-AnalogReadSerial-Sublime-Text-UNREGISTERED_183.png"><img class="alignnone size-large wp-image-544" src="/assets/usr-share-arduino-examples-1.Basics-AnalogReadSerial-AnalogReadSerial.ino-&#8226;-AnalogReadSerial-Sublime-Text-UNREGISTERED_183-1024x585.png" alt="-usr-share-arduino-examples-1.Basics-AnalogReadSerial-AnalogReadSerial.ino • (AnalogReadSerial) - Sublime Text (UNREGISTERED)_183" width="700" height="399" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Stino projesi gelişme aşamasında olmasına rağmen oldukça kullanışlı özelliklere sahip.Bunların hepsinden bahsetmemiz elbette mümkün değil. Açık kaynak bir proje olduğu için indirin deneyin. Özelliklerini kendiniz keşfedin. Unutmadan Stino <a href="https://github.com/Robot-Will/Stino">Github</a> sayfasını verelim. Sonra nerde bu Stino diyenler olabilir :)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Nazir Doğan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-01-03T15:44:15+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>3:44 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arduino/'>arduino</a>, <a class='category' href='/blog/categories/open-source/'>open source</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://nazrdogan.github.io/blog/2015/01/03/arduino-icin-sublime-text-eklentisi-stino/" data-via="gereksizcoder" data-counturl="http://nazrdogan.github.io/blog/2015/01/03/arduino-icin-sublime-text-eklentisi-stino/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/09/09/gelistiriciler-icin-en-iyi-10-javascript-template-engine/" title="Previous Post: Geliştiriciler için en iyi 10 Javascript  Template engine">&laquo; Geliştiriciler için en iyi 10 Javascript  Template engine</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/01/17/2015-tizennin-olacak-mi/" title="Next Post: 2015 Tizen'nin Yılı olacak mı ?">2015 Tizen'nin Yılı olacak mı ? &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://nazrdogan.github.io/blog/2015/01/03/arduino-icin-sublime-text-eklentisi-stino/';
+        var disqus_url = 'http://nazrdogan.github.io/blog/2015/01/03/arduino-icin-sublime-text-eklentisi-stino/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

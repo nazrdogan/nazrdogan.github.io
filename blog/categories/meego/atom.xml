@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Meego | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/meego/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[2015 Tizen'nin Yılı Olacak Mı ?]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/01/17/2015-tizennin-olacak-mi/"/>
+    <updated>2015-01-17T23:16:30+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/01/17/2015-tizennin-olacak-mi</id>
+    <content type="html"><![CDATA[<p>Geçtiğimiz günlerde Samsung ,Tizen işletim sistemine sahip TV'leri duyurdu. Daha öncedende kameralarında ve akıll saatlerinde yer vermişti. Tizen projesini takip eden birçok beklediği akıllı telefonları ise TV'leri duyurmasına müteakip piyasaya sürdü.</p>
+
+
+<p>Samsung'un blogunu incelerseniz 2015'te kameraların ,giyilebilir teknolojilerin ve TV'lerin Tizen işletim sistemine sahip olacağını anlayabilirsiniz.</p>
+
+
+<p>Bunun yanı sıra Samsung CEO'su BK Yoon bu seneki CES fuarında Samsung'un bütün ürünlerinin 5 yıl içerisinde  IoT (Internet of Things) yani Nesnelerin İnternetine hazır cihazlar olacağını söyledi. Bundan anlayacağımız Tizen işletim sistemini bütün cihazlarında kullanarak stratejik öneme sahip bir yere getirmeyi amaçlanmaktadır.</p>
+
+
+<p>Peki Tizen neden önemli derseniz ?</p>
+
+
+<p>Şu an piyasaya hakim olan işletim sistemi Android olsada birçok kişi bazı teknik nedenlerden ve Google hakimiyetinden dolayı memnun değil. Tizen  hafif yapısı sayesinde daha az güç , daha az hafıza tüketimi   ve daha akıcı bir deneyim hedeflemektedir.</p>
+
+
+<p>Ayrıca HTML5  uygulama geliştirmeye destek verdiği için web teknolojilerini kullanarak native uygulama geliştirilebilmektedir.</p>
+
+
+<p>Aynı uygulamayı araç içi sistemlerden akıllı telefonlara birçok sistemde ufak defek CSS dokunuşları ile uyumlu halde çalıştırabilmektedir.</p>
+
+
+<p>Tizen'nin en büyük eksikliği şu an için geliştirici eksikliği gibi görünüyor. Umarım Samsung  işletim sisteminde ısrar ederek geliştiricilere güven verirse  Tizen'nin geleceğin mobil işletim sistemi olmamasına hiçbir engel yok. Tabi ki diğer rakipler dışında :)</p>
+
+
+<p>Not: Tizen Linux vakfı tarafından geliştirilen bir proje olsada bu projenin en büyük destekçisi Samsung ve Intel'dir.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen İnceleme Videosu]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/23/tizen-inceleme-videosu/"/>
+    <updated>2013-09-23T06:48:45+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/23/tizen-inceleme-videosu</id>
+    <content type="html"><![CDATA[<p><a href="https://vimeo.com/75167028">https://vimeo.com/75167028</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen Web Uygulama Geliştirme-Form Uygulaması]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/15/tizen-web-uygulama-gelistirme-form-uygulamasi/"/>
+    <updated>2013-09-15T19:19:23+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/15/tizen-web-uygulama-gelistirme-form-uygulamasi</id>
+    <content type="html"><![CDATA[<p>Daha önceleri Tizen ile ilğili giriş yapmıştık ,Uygulama geliştirme methodlarından bahsetmiştik.Şimdi ise Tizen+Jquery Mobile ile uygulama geliştirmeye başlamış bulunmaktayız.</p>
+
+
+<p>Bu uygulama Jquery örnegi oldugu için Tizen üzerinde nasıl görünüyor onu görmüş olacagız.Uygulamamız basit bir form sayfasından ibaret.</p>
+
+
+<p>Uygulamayı oluşturmak için</p>
+
+
+<p><span style="color:#ff6600;">File-&gt;New-&gt;Web Application Project-Jquery Mobile</span>   şeçeneklerini izleyip uygulamamıza isim verip oluşturuyoruz.</p>
+
+
+<p>Daha sonra ise index.html sayfasını açıp aşagıdakı kodu kopyalayıp yapıştırıp çalıştırdıgımzda form uygulamamız hazır olmuş oluyor.</p>
+
+
+<p>https://gist.github.com/nazrdogan/6573473</p>
+
+
+<p>Ekran Görüntüsü (Ekran görüntüsü  Web Simulatorden alınmıştır.Tizen Telefon üzerinde daha güzel durmaktadır.)</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/tizenform.png"><img class="alignnone size-full wp-image-146" alt="tizenform" src="/assets/tizenform.png" width="385" height="661" /></a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen Uygulama Geliştirme (Adım 0)]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/03/tizen-uygulama-gelistirme-adim-0/"/>
+    <updated>2013-09-03T21:27:15+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/03/tizen-uygulama-gelistirme-adim-0</id>
+    <content type="html"><![CDATA[<p>Her platformda oldugu gibi Tizen'de de uygulama geliştirmek için bir SDK(Software Development Kit) 'e sahip.</p>
+
+
+<p>Şu an en  güncel sürüm olan Tizen 2.2  SDK'yi i<a href="https://developer.tizen.org/">ndirebilirsiniz</a>.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/tizensdkdownload.png"><img class="alignnone size-medium wp-image-87" alt="tizensdkdownload" src="/assets/tizensdkdownload.png?w=300" width="600" height="652" /></a></p>
+
+
+<p>i<a href="http://nazirdogan.files.wordpress.com/2013/09/tizensdkdownload1.png"><img class="alignnone size-medium wp-image-91" alt="tizensdkdownload1" src="/assets/tizensdkdownload1.png?w=221" width="421" height="600" /></a></p>
+
+
+<p>Tizen SDK , platform binarylerini,döküman ve örnek kodlardan oluşmakta.Ayrıca Tizen SDK ile beraber Eclipse temelli bir IDE gelmekte.<br />
+Tizen IDE   Web Uygulama geliştirme aracı ve Native Uygulama geliştirme araçlarını desteklemekte.</p>
+
+
+<p>Tizen IDE 'de  başka araçlarda Mevcut.(bunları tek tek diğer yazılarımda anlatacağım)</p>
+
+
+<ul>
+<li>Certificate Generator</li>
+<li>Emulator</li>
+<li>Smart Development Bridge</li>
+<li>UI customizer</li>
+</ul>
+
+
+<p>Ayrıca Tizen IDE'de  hem Web hem Native uygulamalar için birçok örnek Mevcut.</p>
+
+
+<p>(Zamanla buraya uygulamalarla ilgili nasıl yapılır gibi bilgiler gelecek)</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen Geliştirici Telefonu]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/03/tizen-gelistirici-telefonu/"/>
+    <updated>2013-09-03T19:19:18+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/03/tizen-gelistirici-telefonu</id>
+    <content type="html"><![CDATA[<p>Tizen projesini ilk duyurulduğu günden beri takip eden biri olarak  ilk telefonların ne zaman çıkacağını hep merak ettim.Daha sonrasında ise bazı yabancı sitelerde ilk  geliştirici cihazlarının dağıtıldığını gördüm.Keşke benimde elime bir tane geçsede kurcalasam diye düşündüm.Aradan belki bir sene belki daha az zaman geçtikten sonra  yeni Tizen cihazın geliştiricelere dağıtıldığını gördüm.Daha sonra ise Tizen Türkiye sayfasında geliştirici cihazlarının   belirli bir süre için geliştiricilere verildigini gördüm. Bazı prosedürlerden  sonra  cihaz geçen cuma günü elime ulaştı.Özellikle Tizen Türkiye'den Oytun EREN Bey'e özellikle teşekkür etmek istiyorum.Değerli vaktini ve emegini ayırdığı için.</p>
+
+
+<p>Cihaz özellik olarak Samsung S3 ile aynı .Bu yüzden özelliklerinden bahsetmek istemiyorum.Her yerde mevcut bu bilgiler.Sadece biraz köşeli bir görünüm katmışlar ve Android'de olan geri tuşu gibi tuşlar çalışmıyor.Çünkü tıpkı iOS gibi sadece bir  Home butonuna sahip.Bundan anladığım kadarıyla Tizen cihazlarda sadece Home tuşu olacak.</p>
+
+
+<p>Cihazla ilgili benim ilk izlenimim geliştirici cihazı ve Tizen 2.1 yüklü olmasından dolayı bazen takılmalar yaşıyor ama uygulamalar gayet hızlı çalışıyor.İlerleyen sürümlerde  bunların çözüleceğinden eminim.Şu an henüz uygulama marketi (Market var ama indirmeye açık degil)açılmadıgı için  başka bir uygulama denemesemde ilerliyen zamanlarda hem kendi yazdığım hemde örnek uygulamaları deneyip burda paylaşacağım.</p>
+
+
+<p>Bir Palm Pre,(WebOS) kullanıcısı olarak,Başka bir izlenimim ise her platformda oldugu gibi  Native uygulamalar Web uygulamalarından daha iyi çalışıyor gibi gözüküyor.</p>
+
+
+<p>şimdilik bu kadar ama bu yazı gün geçtikçe güncellencek...</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2143.jpg"><img class="alignnone size-medium wp-image-71" alt="IMG_2143" src="/assets/img_2143.jpg?w=200" width="200" height="300" /><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2147.jpg"><img class="alignnone size-medium wp-image-72" alt="IMG_2147" src="/assets/img_2147.jpg?w=200" width="200" height="300" /></a> <a href="http://nazirdogan.files.wordpress.com/2013/09/img_2148.jpg"><img class="alignnone size-medium wp-image-73" alt="IMG_2148" src="/assets/img_2148.jpg?w=200" width="200" height="300" /><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2169.jpg"><img class="alignnone size-medium wp-image-74" alt="IMG_2169" src="/assets/img_2169.jpg?w=200" width="200" height="300" /><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2177.jpg"><img class="alignnone size-medium wp-image-75" alt="IMG_2177" src="/assets/img_2177.jpg?w=200" width="200" height="300" /></a></a></a></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Tizen Tab temelli  Native Uygulama görünümü</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2156.jpg"><img class="alignnone size-medium wp-image-77" alt="IMG_2156" src="/assets/img_2156.jpg?w=200" width="200" height="300" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Tizen  Jquery Mobile Web uygulama görünümü</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2161.jpg"><img class="alignnone size-medium wp-image-78" alt="IMG_2161" src="/assets/img_2161.jpg?w=200" width="200" height="300" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Tizen Appcelerator Titanium Mobile görünümü (Tam olarak çalışmasada :) )</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2189.jpg"><img class="alignnone size-medium wp-image-79" alt="IMG_2189" src="/assets/img_2189.jpg?w=200" width="200" height="300" /></a></p>
+
+]]></content>
+  </entry>
+  
+</feed>

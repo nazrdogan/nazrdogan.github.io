@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AngularJS Ve Topcoat Ile Mobil Uygulama Geliştirme]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/03/06/angularjs-ve-topcoat-ile-mobil-uygulama-gelistirme/"/>
+    <updated>2015-03-06T02:22:14+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/03/06/angularjs-ve-topcoat-ile-mobil-uygulama-gelistirme</id>
+    <content type="html"><![CDATA[<p>AngularJS'i muhtemelen duymuşsunuzdur. Topcoat ise hızlı web uygulamaları geliştirmek için geliştirilen bir CSS framework'u desek yanlış birşey söylememiş oluruz sanırım.</p>
+
+
+<p>Bu kısa yazımda üzerinde duracağım konu ise AngularJs ve Topcoat ile mobil uygulama geliştirme üzerinde duracağım.</p>
+
+
+<p>Öncelikle her zaman yaptıgımız gibi  uygulamamızı oluşturup Android'i ekleyelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">cordova create topcoat com.example.topcoat Topcoat
+
+//
+cd topcoat
+
+//
+cordova platform add android
+
+</pre>
+
+
+<p>Daha sonra <a href="https://angularjs.org/">AngularJS</a> ve <a href="http://topcoat.io/">Topcoat</a>'i indirelim.</p>
+
+
+<p>Bundan sonra yapmamız gereken oldukça basit. index.html içerisinde Angular ve Topcoat'i include etmek.</p>
+
+
+<pre class="theme:github lang:default decode:true"> &lt;link rel="stylesheet" type="text/css" href="css/topcoat-mobile-dark.css" /&gt;
+ &lt;link rel="stylesheet" type="text/css" href="css/index.css" /&gt;
+ &lt;script src="js/angularjs_1.3.14.js"&gt;&lt;/script&gt;</pre>
+
+
+<p>Artık Topcoat CSS'i AngularJS ile beraber kullanarak oldukça hızlı uygulamalar geliştirebilirsiniz.</p>
+
+
+<p>Dakikalar içinde yaptıgım  Angular Topcoat Demosunun <a href="https://github.com/nazrdogan/CordovaAngularTopcoat">Github sayfasına</a> bakabilirsiniz. Kolay Gelsin.</p>
+
+
+<p><img class="alignnone" src="/assets/ss.jpg" alt="" width="800" height="1280" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu'ya VirtualBox Yükleme]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/12/12/ubuntuya-virtualbox-yukleme/"/>
+    <updated>2013-12-12T19:36:55+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/12/12/ubuntuya-virtualbox-yukleme</id>
+    <content type="html"><![CDATA[<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/virtualbox_logo.jpg"><img class="alignnone size-full wp-image-272" src="/assets/virtualbox_logo.jpg" alt="virtualbox_logo" width="400" height="272" /></a></p>
+
+
+<p>Bu  yazımda VirtualBox'ın  Ubuntu 13.10 Saucy, 13.04 Raring, 12.04 Precise sürümlerine  nasıl yüklenecegini basitçe göstermek istiyorum.</p>
+
+
+<p>ilk olarak  Ctrl+Alt+Del  kombinasyonu ile Terminal açılır.</p>
+
+
+<ul>
+<ul>
+<li>Repository'ı eklemek için   terminale kopyalayıp yapıştırın.</li>
+</ul>
+</ul>
+
+
+<p>&nbsp;</p>
+
+
+<pre>sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc)  contrib" &gt;&gt; /etc/apt/sources.list'</pre>
+
+
+<ul>
+<li>Key 'i indirip yükleyin.</li>
+</ul>
+
+
+<pre>wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -</pre>
+
+
+<ul>
+<li>Güncelleyin</li>
+</ul>
+
+
+<pre>sudo apt-get update</pre>
+
+
+<ul>
+<li>VirtualBox 4.3 yükleyin.</li>
+</ul>
+
+
+<pre>sudo apt-get install virtualbox-4.3</pre>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+</feed>

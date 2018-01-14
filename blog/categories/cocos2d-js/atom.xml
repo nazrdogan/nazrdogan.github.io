@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Cocos2d-js | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/cocos2d-js/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World Application Cocos2d-js V3]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/18/hello-world-cocos2d-js/"/>
+    <updated>2015-12-18T10:54:39+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/18/hello-world-cocos2d-js</id>
+    <content type="html"><![CDATA[<p class="p1"><span class="s1">In this post , we can start a real cross platform cocos2d-js example. Let's begin </span><span class="s1">(If you don't read posts about setup and what is cocos2d-js you can click to check  underlined blog posts.) </span><span class="s1">If you created a project you should see index.html page . There is no interesting things in here it's just plain   HTML. </span></p>
+
+
+<p class="p1"><span class="s1"> </span></p>
+
+
+
+
+<pre class="theme:sublime-text lang:default decode:true">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Cocos2d-html5 Hello World test&lt;/title&gt;
+    &lt;link rel="icon" type="image/GIF" href="res/favicon.ico"/&gt;
+    &lt;meta name="viewport" content="width=480, initial-scale=1"&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"/&gt;
+    &lt;meta name="full-screen" content="yes"/&gt;
+    &lt;meta name="screen-orientation" content="portrait"/&gt;
+    &lt;meta name="x5-fullscreen" content="true"/&gt;
+    &lt;meta name="360-fullscreen" content="true"/&gt;
+    &lt;style&gt;
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body style="padding:0; margin: 0; background: #000;"&gt;
+&lt;script src="res/loading.js"&gt;&lt;/script&gt;
+&lt;canvas id="gameCanvas" width="480" height="720"&gt;&lt;/canvas&gt;
+&lt;script src="frameworks/cocos2d-html5/CCBoot.js"&gt;&lt;/script&gt;
+&lt;script cocos src="main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+
+
+<p>This canvas  will show  the game inside it.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">&lt;canvas id="gameCanvas" width="480" height="720"&gt;&lt;/canvas&gt;</pre>
+
+
+<p>and second important thing is  its used for starting Cocos2d-js framework.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">&lt;script src="frameworks/cocos2d-html5/CCBoot.js"&gt;&lt;/script&gt;
+</pre>
+
+
+<p>and last one is our actual game will start in this script file.</p>
+
+
+<p>Lets look at main.js file. if you  look carefully we only call main.js file in index.html. Game starting at this script file even so its more like a configuration file you won't code at this moment.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">cc.game.onStart = function(){
+    if(!cc.sys.isNative &amp;&amp; document.getElementById("cocosLoading")) //If referenced loading.js, please remove it
+        document.body.removeChild(document.getElementById("cocosLoading"));
+
+    // Pass true to enable retina display, on Android disabled by default to improve performance
+    cc.view.enableRetina(cc.sys.os === cc.sys.OS_IOS ? true : false);
+
+    // Adjust viewport meta
+    cc.view.adjustViewPort(true);
+    // Setup the resolution policy and design resolution size
+    cc.view.setDesignResolutionSize(cc.winSize.height, cc.winSize.width, cc.ResolutionPolicy.SHOW_ALL);
+    // Instead of set design resolution, you can also set the real pixel resolution size
+    // Uncomment the following line and delete the previous line.
+    // cc.view.setRealPixelResolution(960, 640, cc.ResolutionPolicy.SHOW_ALL);
+    // The game will be resized when browser size change
+    cc.view.resizeWithBrowserSize(true);
+    //load resources
+    cc.LoaderScene.preload(g_resources, function () {
+        cc.director.runScene(new HelloWorldScene());
+    }, this);
+};
+cc.game.run();</pre>
+
+
+<p>I think most important thing in here , loading resources and running scene by  the director. the others is easy to understand and just configs.</p>
+
+
+<p>Docs says "<a href="http://www.cocos2d-x.org/reference/html5-js/V3.8/index.html">cc.LoaderScene</a> is a scene that you can load it when you loading files "</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true"> cc.LoaderScene.preload(g_resources, function () {
+        cc.director.runScene(new HelloWorldScene());
+    }, this);</pre>
+
+
+<p>We  loaded resources file and   run the scene.</p>
+
+
+<p>Let's look at  resources.js in our project. resources.js is file our resources described in here.  if you look at the  above code <em>g_resources</em> loaded. it's come from this file.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">var res = {
+    HelloWorld_png : "res/HelloWorld.png",
+
+};
+
+
+var g_resources = [];
+for (var i in res) {
+    g_resources.push(res[i]);
+}
+</pre>
+
+
+<p>We showed path of image files. and pushed it  to  <em>g_resources </em> array.  You can add more resources in here.</p>
+
+
+<p>After looking at resources file, Let's look most important file of our simple project. its named app.js. When you start to game user will show UI in it.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">var HelloWorldLayer = cc.Layer.extend({
+    sprite:null,
+    ctor:function () {
+        //////////////////////////////
+        // 1. super init first
+        this._super();
+
+
+        /////////////////////////////
+        // 2. add a menu item with "X" image, which is clicked to quit the program
+        //    you may modify it.
+        // ask the window size
+        var size = cc.winSize;
+
+        /////////////////////////////
+        // 3. add your codes below...
+        // add a label shows "Hello World"
+        // create and initialize a label
+        var helloLabel = new cc.LabelTTF("Hello", "Arial", 55);
+      //  helloLabel.setColor(new cc.Color(255,222,22));
+        // position the label on the center of the screen
+        helloLabel.x = size.width / 2;
+        helloLabel.y = size.height / 2 + 200;
+        // add the label as a child to this layer
+        this.addChild(helloLabel, 5);
+
+        // add "HelloWorld" splash screen"
+        this.sprite = new cc.Sprite(res.HelloWorld_png);
+        this.sprite.attr({
+            x: size.width / 2,
+            y: size.height / 2
+        });
+        this.addChild(this.sprite, 0);  
+        return true;
+    }
+});
+
+var HelloWorldScene = cc.Scene.extend({
+    onEnter:function () {
+        this._super();
+        var layer = new HelloWorldLayer();
+        this.addChild(layer);
+    }
+});
+</pre>
+
+
+<p>First of all We created  a layer and extend it. add a  label and a sprite to our layer. İf you think like director  they are our decor. After that We created Scene then add this decor to the scene. and Last we say "Action !!" .</p>
+
+
+<p>I will not explain the code .because its very simple .If you know Javascript you will understand what is going on.</p>
+
+
+<p><img class="alignnone size-full wp-image-998" src="/assets/Simulator-Screen-Shot-15-Dec-2015-01.29.25.png" alt="Simulator Screen Shot 15 Dec 2015 01.29.25" width="640" height="960" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Structure of Cocos2d-JS Project]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/15/the-structure-of-cocos2d-js-project/"/>
+    <updated>2015-12-15T21:03:39+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/15/the-structure-of-cocos2d-js-project</id>
+    <content type="html"><![CDATA[<p>Cocos2d-js project structure is really simple to understand. so let's look at screenshoot of a folder with a Cocos2d-js project.</p>
+
+
+<p><img class="alignnone size-large wp-image-1001" src="/assets/Screen-Shot-2015-12-15-at-21.39.17-906x1024.png" alt="Screen Shot 2015-12-15 at 21.39.17" width="648" height="732" /></p>
+
+
+<ul>
+<li> The <b>frameworks </b> directory, its contains Cocos2d-html5 engine and the Cocos2d-x JavaScript Bindings and Runtime including iOS/MacOSX/Android/Linux/Windows platforms.</li>
+<li>The <strong>res </strong> directory, resources folder of the project must save all images, audio, fonts, animations, etc.</li>
+<li>The <strong>runtime</strong> directory , its including all executables package under development.</li>
+<li>The <strong>src </strong>directory ,  The most important directory is src directory .Because your game business logic in written in there.</li>
+<li><strong>index.html  </strong> The main web page of project.  You can access when you start web server .</li>
+<li><strong>main.js  </strong>is the starter script  of project.contains initialization code</li>
+<li><strong>project.json  </strong> Project configuration file, detailed information can be found in here.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Running Cocos2d-js Project on Android and iOS]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/14/running-cocos2d-js-project-android-ios/"/>
+    <updated>2015-12-14T23:33:58+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/14/running-cocos2d-js-project-android-ios</id>
+    <content type="html"><![CDATA[<p>If you created Cocos2d-js native project.(if you dont create yet .pleas follow this <a href="http://www.nazirdogan.com/cocos2d-js/creating-a-new-cocos2d-js-project/">link</a>) You can run on Android and OS devices or simulators. Running project so easy</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">-
+
+
+cd directory/to/projectName
+// its for compiling apps
+cocos compile -p ios|mac|android|web
+// its for running apps
+cocos run -p ios|mac|android
+
+
+-</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone size-full wp-image-998" src="/assets/Simulator-Screen-Shot-15-Dec-2015-01.29.25.png" alt="Simulator Screen Shot 15 Dec 2015 01.29.25" width="640" height="960" /></p>
+
+
+<p>if you get error like  "<strong>Can't find iOS target</strong>" or "<strong>Can't find Mac target</strong>" .You can run with code shown  below  for  iOS platform . For this example FirstCocosGame is project name. You must change with your own.</p>
+
+
+<pre class="theme:sublime-text top-set:false bottom-set:false lang:default decode:true"> cocos run  --platform ios  -t FirstCocosGame-mobile</pre>
+
+
+<p>for Mac platform</p>
+
+
+<pre class="theme:sublime-text height-mode:1 top-set:false bottom-set:false lang:default decode:true">cocos compile --platform mac -t FirstCocosGame-desktop
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Creating a New Cocos2d-js Project]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/13/creating-a-new-cocos2d-js-project/"/>
+    <updated>2015-12-13T20:06:27+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/13/creating-a-new-cocos2d-js-project</id>
+    <content type="html"><![CDATA[<p>If you installed Cocos2d-js successfully. Now you can create a new project for developing Cocos2d-js game. if you dont install Cocos2d-js yet. Please follow this <a href="http://www.nazirdogan.com/cocos2d-js/install-cocos2d-js-mac/">link</a>.</p>
+
+
+<p>I assume you installed  Cocos2d-js . and Now open your terminal and go Cocos2d-x directory</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">// Create a project containing Cocos2d-x JSB and Cocos2d-html5:
+cocos new -l js
+
+// Create a project only containing Cocos2d-html5:
+cocos new -l js --no-native
+
+// Create a project with a specified name in a specified directory:
+cocos new projectName -l js -d ./Projects</pre>
+
+
+<p>Now you created Cocos2d-js project. Let's look how to run this project on Web Browser. When you prompt code below .it will start a web server and you can see game on  browser.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">cd ~/Desktop/projectName
+cocos run -p web</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone size-large wp-image-976" src="/assets/Screen-Shot-2015-12-12-at-17.00.51-1024x612.png" alt="Screen Shot 2015-12-12 at 17.00.51" width="648" height="387" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>We successfully run our project on web browser.  Thats it :)</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Install Cocos2d-js on Mac]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/12/install-cocos2d-js-mac/"/>
+    <updated>2015-12-12T10:42:38+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/12/install-cocos2d-js-mac</id>
+    <content type="html"><![CDATA[<p>In this post , I will give information about  how to setup Cocos2d-js development environment.</p>
+
+
+<p>First of all visit :<a href="http://cocos2d-x.org/download"> http://cocos2d-x.org/download</a> and Download Cocos2d-x zip file.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone wp-image-960 size-large" src="/assets/cocosinstall-1024x602.png" alt="cocosinstall" width="648" height="381" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p><strong>Note:</strong> Before Cocos2d-x V 3.9  its have two different package named (Cocos2d-x and Cocos2d-js). with V3.9  they released  one package for all language which including C++,Lua and Javascript.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>After downloading cocos2d-x zip file. Please unzip it.then come  cocos2d-x-3.9 directory, <strong>run ./setup.py</strong> in the console.</p>
+
+
+<p><img class="alignnone wp-image-962" src="/assets/Screen-Shot-2015-12-12-at-12.14.17-300x220.png" alt="Screen Shot 2015-12-12 at 12.14.17" width="600" height="440" /></p>
+
+
+<p>You will need Android NDK ,SDK and ANT and their  path must be provided in your computer. or you can set here. and you will need Python 2.7.5  Because this tool written Python 2.7.5 (32 bit). <strong>Python 3 not supported.</strong></p>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone size-large wp-image-966" src="/assets/Screen-Shot-2015-12-12-at-12.28.54-1024x709.png" alt="Screen Shot 2015-12-12 at 12.28.54" width="648" height="449" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p><strong>Note:</strong> please execute source ~/.bash_profile to make the environment setting take effect immediately.</p>
+
+
+<p>After running setup you will see like this. if your Android NDK,SDK and ANT path is wrong or not provided you will get error.</p>
+
+
+<p>if you get any error. Its means your setup is successful. Welcome to Cocos2d-x world :)</p>
+
+
+<p>Now you can create Cocos2d-js project  following this link</p>
+
+]]></content>
+  </entry>
+  
+</feed>

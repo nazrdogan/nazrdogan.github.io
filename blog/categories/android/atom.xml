@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Android | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu'ya Android Studio Kurulumu]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/02/18/ubuntuya-android-studio-kurulumu/"/>
+    <updated>2015-02-18T16:39:11+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/02/18/ubuntuya-android-studio-kurulumu</id>
+    <content type="html"><![CDATA[<p>Bu kısa yazımda Ubuntu ve türevleri (Linux Mint, elementary OS vb..) için  Android Studio kurulumundan bahsedeceğim.<a href="https://plus.google.com/+PaoloRotolo">Paolo Rotolo  </a>tarafından oluşturulan PPA sayesinde kurulum oldukça kolaylaşıyor.</p>
+
+
+<p>Lafı fazla uzatmadan kuruluma geçelim. Terminal'e aşagıdaki komutları yazdığımızda Android Studio yüklenecektir.</p>
+
+
+<pre class="theme:github lang:default decode:true">sudo add-apt-repository ppa:paolorotolo/android-studio
+sudo apt-get update
+sudo apt-get install android-studio</pre>
+
+
+<p>Not: Java 6 veya üzerinin  sisteminizde kurulu olduğundan emin olun.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PhoneGap/Cordova Uygulamalarında Network Bağlantı Bilgisini Alma]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/02/16/phonegapcordova-network-baglanti-bilgisini-alma/"/>
+    <updated>2015-02-16T19:49:53+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/02/16/phonegapcordova-network-baglanti-bilgisini-alma</id>
+    <content type="html"><![CDATA[<p>Bu yazımda Phonegap/Cordova uygulamalarında  Network yani ağ bağlantı bilgisinin nasıl öğreniliceğinden bahsedeceğim.</p>
+
+
+<p>Network Pluginin desteklendiği platformlar</p>
+
+
+<ul class="task-list">
+<li>Amazon Fire OS</li>
+<li>Android</li>
+<li>BlackBerry 10</li>
+<li>Browser</li>
+<li>iOS</li>
+<li>Windows Phone 7 and 8</li>
+<li>Tizen</li>
+<li>Windows</li>
+<li>Firefox OS</li>
+</ul>
+
+
+<h1></h1>
+
+
+<p>Projemizi oluşturup Android'i ekleyelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">cordova create network com.example.network Network
+
+cd network
+
+cordova platform add android
+
+</pre>
+
+
+<p>Daha sonra ise Network Pluginini ekliyoruz.</p>
+
+
+<pre class="theme:github lang:default decode:true">cordova plugin add org.apache.cordova.network-information</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>Network Sabitleri</p>
+
+
+<ul class="task-list">
+<li>Connection.UNKNOWN</li>
+<li>Connection.ETHERNET</li>
+<li>Connection.WIFI</li>
+<li>Connection.CELL_2G</li>
+<li>Connection.CELL_3G</li>
+<li>Connection.CELL_4G</li>
+<li>Connection.CELL</li>
+<li>Connection.NONE</li>
+</ul>
+
+
+<p>&nbsp;</p>
+
+
+<p>Kullanım</p>
+
+
+<p>Plugini ekledikten sonra aşagıdakileri ekliyoruz. (Bunu sadece Android için ekledim .Diğer platformlar için de başka şeyler eklenecektir.<a href="https://github.com/apache/cordova-plugin-network-information"> Daha fazla bilgi için </a>)</p>
+
+
+<pre class="theme:github lang:default decode:true ">(app/res/xml/config.xml)
+&lt;feature name="NetworkStatus"&gt;
+    &lt;param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" /&gt;
+&lt;/feature&gt;
+
+
+( app/AndroidManifest.xml)
+&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
+</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>https://gist.github.com/nazrdogan/da0634f78ad651224414</p>
+
+
+<p>Network bağlantısını kontrol etmek bu kadar kolay. Umarım faydalı olur. Kolay gelsin  :)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Crosswalk Ile Cordova/PhoneGap Uygulaması Oluşturma]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/02/16/crosswalk-ile-cordovaphonegap-uygulamasi-olusturma/"/>
+    <updated>2015-02-16T18:15:52+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/02/16/crosswalk-ile-cordovaphonegap-uygulamasi-olusturma</id>
+    <content type="html"><![CDATA[<p><a href="http://www.nazirdogan.com/android/crosswalk-nedir/">Crosswalk</a>'in ne olduğundan daha önce bahsetmiştim. Bu yazımda ise Crosswalk ile Cordova projesi oluşturma ve bunu Android üzerinde çalıştırmayı anlatacağım.</p>
+
+
+<p>Crosswalk (crosswalk-cordova-android bundle) paketini <a href="https://crosswalk-project.org/documentation/downloads.html">buradan</a> indiriyoruz.</p>
+
+
+<p>yada</p>
+
+
+<p>X86 için</p>
+
+
+<pre class="theme:github lang:default decode:true">$ wget https://download.01.org/crosswalk/releases/crosswalk/android/stable/10.39.235.15/x86/crosswalk-cordova-10.39.235.15-x86.zip</pre>
+
+
+<p>Arm için</p>
+
+
+<pre class="theme:github lang:default decode:true ">$ wget https://download.01.org/crosswalk/releases/crosswalk/android/stable/10.39.235.15/arm/crosswalk-cordova-10.39.235.15-arm.zip</pre>
+
+
+<p>indirdiğimiz  .zip dosyasının içindeki dosyayı çıkaralım.</p>
+
+
+<p>Uygulama oluşturma</p>
+
+
+<p>Uygulama oluşturmak için ise Crosswalk Cordova tools denen bir araçtan faydalanıyoruz. Bu araç ise çıkardığımız dosya paketinin içerisinde   bin/ klasörü içinde bulunmaktadır.</p>
+
+
+<pre class="theme:github lang:default decode:true ">$ crosswalk-cordova-10.39.235.15-x86/bin/create &lt;proje_yolu&gt; \ &lt;paket_adı&gt; &lt;proje_adı&gt; [&lt;template_path&gt;] [--shared]</pre>
+
+
+<p>Örneğin</p>
+
+
+<pre class="theme:github lang:default decode:true">$ crosswalk-cordova-10.39.235.15-x86/bin/create HelloWorld \ org.crosswalkproject.sample HelloWorld</pre>
+
+
+<p>Uygulamayı oluşturduktan sonra projenin dizinine gidiyoruz.</p>
+
+
+<pre class="theme:github lang:default decode:true">$ cd HelloWorld
+$ ./cordova/run</pre>
+
+
+<p>Dedikten sonra uygulamamız cihazımız yada emülator üzerinde çalışacaktır.<a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/Screenshot_2015-02-16-20-00-51.jpg"><img class="alignnone size-large wp-image-665" src="/assets/Screenshot_2015-02-16-20-00-51-640x1024.jpg" alt="Screenshot_2015-02-16-20-00-51" width="640" height="1024" /></a></p>
+
+
+<p>Hata ayıklama</p>
+
+
+<p><a href="http://www.nazirdogan.com/android/chrome-devtools-ile-phonegapcordova-uygulamalarinda-uzaktan-hata-ayiklama/">Chrome DevTools kullanarak hata ayıklama </a>işleminden daha önce bahsetmiştim. Chrome Dev Tools kullanarak hata ayıklama yapabilirsiniz.</p>
+
+
+<p>Kolay gelsin :)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<h3 id="Download-the-crosswalk-cordova-android-bundle"></h3>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Chrome Devtools Ile PhoneGap/Cordova Uygulamalarında Uzaktan Hata Ayıklama]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/02/15/chrome-devtools-ile-phonegapcordova-uygulamalarinda-uzaktan-hata-ayiklama/"/>
+    <updated>2015-02-15T15:13:04+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/02/15/chrome-devtools-ile-phonegapcordova-uygulamalarinda-uzaktan-hata-ayiklama</id>
+    <content type="html"><![CDATA[<p>Cordova/PhoneGap'de  Android için geliştirme yaparken "adb logcat" ile  hata ayıklama  yapabiliriz. Ama logcat ile hata ayıklama oldukça zor ve zahmetli bir iş  .Çünkü hata ayıklama başladığında  uygulamanızla alakalı veya işletim sistemi ile alakalı birçok gereksiz bilgiyi bir arada vermektedir.</p>
+
+
+<p>Eğer çok iyi Android biliyorsanız belki bunla başa çıkabilirsiniz ama bunu Chrome DevTools kullanarak daha kolay hale getirebilirsiniz.</p>
+
+
+<p>Chrome ile Hata ayıklama yapmak için bazı gereksinimler var öncelikle onlardan bahsedeyim.</p>
+
+
+<p>PhoneGap/Cordova 3.3 ve üzeri</p>
+
+
+<p>Android 4.4 veya üzeri bir cihaz veya emulatör</p>
+
+
+<p>Chrome 30 veya üzeri tarayıcı</p>
+
+
+<p>Nasıl yapacağım ?</p>
+
+
+<p>1- Cihazınız üzerinde "USB Hata ayıklama" (USB Debugging) seçenegini aktif edin.</p>
+
+
+<p>2. PhoneGap/Cordova uygulamanızın API seviyesini 19 veya üzeri yapın .</p>
+
+
+<p>AndroidManifest.xml içerisinde  bu kısmı degiştiriyoruz.</p>
+
+
+<pre class="theme:github lang:default decode:true">&lt;uses-sdk android:minSdkVersion="17" android:targetSdkVersion="19" /&gt;</pre>
+
+
+<p>project.properties içerisinde de</p>
+
+
+<pre class="theme:github lang:default decode:true">target=android-19</pre>
+
+
+<p>olarak değiştiriyoruz.</p>
+
+
+<p>Daha sonra ise projemizi bir kere çalıştırdıktan sonra</p>
+
+
+<p>1- Hata ayıklama için</p>
+
+
+<p>platforms/android/src/com/uygulamaAdı/uygulamaAdı.java</p>
+
+
+<p>içerisine</p>
+
+
+<pre class="theme:github lang:default decode:true">import android.os.Build;
+import android.webkit.WebView;</pre>
+
+
+<p>onCreate Methodu içerisine  ise</p>
+
+
+<pre class="theme:github font:ubuntu-mono lang:default decode:true">if(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT) {
+  WebView.setWebContentsDebuggingEnabled(true);
+}</pre>
+
+
+<p>ekliyoruz.  Ekledikten sonra tekrar uygulamayı derleyip çalıştıralım.</p>
+
+
+<p>Değişmiş hali</p>
+
+
+<p>https://gist.github.com/nazrdogan/24e886e7878251a431b2</p>
+
+
+<p>Uzak Hata Ayıklama</p>
+
+
+<p>Chrome'da   adres satırına "about:inspect" yazalım. Yazdıktan sonra eğer diğer şeyleride sorunsuz yaptıysak  artık  Chrome Devtools ile normal web uygulamarı geliştirirken nasıl kullanıyorsak o şekilde kullanabiliriz.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/snapshot17.png"><img class="alignnone size-large wp-image-641" src="/assets/snapshot17-1024x576.png" alt="snapshot17" width="770" height="433" /></a></p>
+
+
+<p>Bu ekranda ise "inspect " butonuna basarak  hata ayıklama ekranını açabilirsiniz.</p>
+
+
+<p>Ben oldukça başarılı buldum. Umarım sizinde işinize yarar kolay gelsin :)</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Crosswalk Nedir ?]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/02/15/crosswalk-nedir/"/>
+    <updated>2015-02-15T12:32:25+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/02/15/crosswalk-nedir</id>
+    <content type="html"><![CDATA[<p>Sizde Cordova projelerin  iOS üzerinde akıcı bir şekilde çalışırken Android üzerinde  biraz  sorunlu olduğunu farkettiniz mi ?</p>
+
+
+<p>Bu soruya kişisel cevabım ise kesinlikle evet .Gariptir ki  Apple HTML5 uygulamalara Google'dan daha fazla önem vermektedir.Apple UIWebview yerine koyduğu WKWebview sayesinde gözle görülür bir performans artışı sağlamıştır. (WKWebview  hakkında daha detaylı bilgi için buraya <a href="http://www.sencha.com/blog/apple-shows-love-for-html5-with-ios-8">bakabilirsiniz</a>.)</p>
+
+
+<p>Tamam iOS için güzel şeyler Apple'da  bizim amacımız zaten çapraz platform uygulama yazmak değil mi ? Biz Android tarafında performansı yüksek uygulama yazamayacakmıyız ?  diyebilirsiniz.</p>
+
+
+<p>Bu soruların cevabı Crosswalk diyebilirim. Crosswalk  açık kaynak geliştirilen Cordova/Phonegap ve Android(projelerin içindeki WebView'lara) projelerine yeni özellikler ve performans getiren HTML5 (runtime) çalışma zamanıdır. Bunun anlamı ise  HTML5 mobil uygulamalarınızı  native webview ile Android 4.0 ve üzeri bütün cihazlar için geliştirebilir ve dağıtabilirsiniz.</p>
+
+
+<p>Artıları neler?</p>
+
+
+<ul>
+<li>Tüm cihazlarda aynı çalışma zamanı  olduğu için her cihaz için farklı çalışma zamanları ile uğraşmak zorunda değilsiniz.</li>
+<li>Daha iyi hafıza yönetimi</li>
+</ul>
+
+
+<p>Crosswalk ile W3C belirlediği en son HTML5 API standartlarını kullanabilirsiniz. Crosswalk'in desteklediği bazı API'ler ise şunlar</p>
+
+
+<ul>
+<li> WebGL</li>
+<li>WebSockets</li>
+<li>Web Auido API</li>
+<li>WebRTC (Real Time Clock-Gerçek zamanlı saat)</li>
+</ul>
+
+
+<p>Crosswalk'ta sadece bunlar yok tabiki çok daha fazlasını bulabilirsiniz. CrossWalk işime yarar bende tam bunu arıyordum diyorsanız sizi söyle alalım. <a href="https://crosswalk-project.org/">https://crosswalk-project.org/</a></p>
+
+
+<p>Crosswalk ile ilğili  söyleyecek çok şey var ama şimdilik bu kadar yeterli .Bir sonraki CrossWalk yazısı  Cordova/Phonegap projelerinde kullanımı ile ilgili olacak.</p>
+
+]]></content>
+  </entry>
+  
+</feed>

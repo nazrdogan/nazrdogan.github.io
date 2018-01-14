@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="Bu kısa yazımda Ubuntu ve türevleri (Linux Mint, elementary OS vb..) için  Android Studio kurulumundan bahsedeceğim.Paolo Rotolo  tarafından &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/posts/4/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/18/ubuntuya-android-studio-kurulumu/">Ubuntu'ya Android Studio Kurulumu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-18T16:39:11+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>4:39 pm</span></time>
+        
+           | <a href="/blog/2015/02/18/ubuntuya-android-studio-kurulumu/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/18/ubuntuya-android-studio-kurulumu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu kısa yazımda Ubuntu ve türevleri (Linux Mint, elementary OS vb..) için  Android Studio kurulumundan bahsedeceğim.<a href="https://plus.google.com/+PaoloRotolo">Paolo Rotolo  </a>tarafından oluşturulan PPA sayesinde kurulum oldukça kolaylaşıyor.</p>
+
+
+<p>Lafı fazla uzatmadan kuruluma geçelim. Terminal'e aşagıdaki komutları yazdığımızda Android Studio yüklenecektir.</p>
+
+
+<pre class="theme:github lang:default decode:true">sudo add-apt-repository ppa:paolorotolo/android-studio
+sudo apt-get update
+sudo apt-get install android-studio</pre>
+
+
+<p>Not: Java 6 veya üzerinin  sisteminizde kurulu olduğundan emin olun.</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/16/phonegapcordova-network-baglanti-bilgisini-alma/">PhoneGap/Cordova Uygulamalarında Network Bağlantı Bilgisini Alma</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-16T19:49:53+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>7:49 pm</span></time>
+        
+           | <a href="/blog/2015/02/16/phonegapcordova-network-baglanti-bilgisini-alma/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/16/phonegapcordova-network-baglanti-bilgisini-alma/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu yazımda Phonegap/Cordova uygulamalarında  Network yani ağ bağlantı bilgisinin nasıl öğreniliceğinden bahsedeceğim.</p>
+
+
+<p>Network Pluginin desteklendiği platformlar</p>
+
+
+<ul class="task-list">
+<li>Amazon Fire OS</li>
+<li>Android</li>
+<li>BlackBerry 10</li>
+<li>Browser</li>
+<li>iOS</li>
+<li>Windows Phone 7 and 8</li>
+<li>Tizen</li>
+<li>Windows</li>
+<li>Firefox OS</li>
+</ul>
+
+
+<h1></h1>
+
+
+<p>Projemizi oluşturup Android'i ekleyelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">cordova create network com.example.network Network
+
+cd network
+
+cordova platform add android
+
+</pre>
+
+
+<p>Daha sonra ise Network Pluginini ekliyoruz.</p>
+
+
+<pre class="theme:github lang:default decode:true">cordova plugin add org.apache.cordova.network-information</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>Network Sabitleri</p>
+
+
+<ul class="task-list">
+<li>Connection.UNKNOWN</li>
+<li>Connection.ETHERNET</li>
+<li>Connection.WIFI</li>
+<li>Connection.CELL_2G</li>
+<li>Connection.CELL_3G</li>
+<li>Connection.CELL_4G</li>
+<li>Connection.CELL</li>
+<li>Connection.NONE</li>
+</ul>
+
+
+<p>&nbsp;</p>
+
+
+<p>Kullanım</p>
+
+
+<p>Plugini ekledikten sonra aşagıdakileri ekliyoruz. (Bunu sadece Android için ekledim .Diğer platformlar için de başka şeyler eklenecektir.<a href="https://github.com/apache/cordova-plugin-network-information"> Daha fazla bilgi için </a>)</p>
+
+
+<pre class="theme:github lang:default decode:true ">(app/res/xml/config.xml)
+&lt;feature name="NetworkStatus"&gt;
+    &lt;param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" /&gt;
+&lt;/feature&gt;
+
+
+( app/AndroidManifest.xml)
+&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
+</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>https://gist.github.com/nazrdogan/da0634f78ad651224414</p>
+
+
+<p>Network bağlantısını kontrol etmek bu kadar kolay. Umarım faydalı olur. Kolay gelsin  :)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/16/crosswalk-ile-cordovaphonegap-uygulamasi-olusturma/">Crosswalk Ile Cordova/PhoneGap Uygulaması Oluşturma</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-16T18:15:52+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:15 pm</span></time>
+        
+           | <a href="/blog/2015/02/16/crosswalk-ile-cordovaphonegap-uygulamasi-olusturma/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/16/crosswalk-ile-cordovaphonegap-uygulamasi-olusturma/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.nazirdogan.com/android/crosswalk-nedir/">Crosswalk</a>'in ne olduğundan daha önce bahsetmiştim. Bu yazımda ise Crosswalk ile Cordova projesi oluşturma ve bunu Android üzerinde çalıştırmayı anlatacağım.</p>
+
+
+<p>Crosswalk (crosswalk-cordova-android bundle) paketini <a href="https://crosswalk-project.org/documentation/downloads.html">buradan</a> indiriyoruz.</p>
+
+
+<p>yada</p>
+
+
+<p>X86 için</p>
+
+
+<pre class="theme:github lang:default decode:true">$ wget https://download.01.org/crosswalk/releases/crosswalk/android/stable/10.39.235.15/x86/crosswalk-cordova-10.39.235.15-x86.zip</pre>
+
+
+<p>Arm için</p>
+
+
+<pre class="theme:github lang:default decode:true ">$ wget https://download.01.org/crosswalk/releases/crosswalk/android/stable/10.39.235.15/arm/crosswalk-cordova-10.39.235.15-arm.zip</pre>
+
+
+<p>indirdiğimiz  .zip dosyasının içindeki dosyayı çıkaralım.</p>
+
+
+<p>Uygulama oluşturma</p>
+
+
+<p>Uygulama oluşturmak için ise Crosswalk Cordova tools denen bir araçtan faydalanıyoruz. Bu araç ise çıkardığımız dosya paketinin içerisinde   bin/ klasörü içinde bulunmaktadır.</p>
+
+
+<pre class="theme:github lang:default decode:true ">$ crosswalk-cordova-10.39.235.15-x86/bin/create &lt;proje_yolu&gt; \ &lt;paket_adı&gt; &lt;proje_adı&gt; [&lt;template_path&gt;] [--shared]</pre>
+
+
+<p>Örneğin</p>
+
+
+<pre class="theme:github lang:default decode:true">$ crosswalk-cordova-10.39.235.15-x86/bin/create HelloWorld \ org.crosswalkproject.sample HelloWorld</pre>
+
+
+<p>Uygulamayı oluşturduktan sonra projenin dizinine gidiyoruz.</p>
+
+
+<pre class="theme:github lang:default decode:true">$ cd HelloWorld
+$ ./cordova/run</pre>
+
+
+<p>Dedikten sonra uygulamamız cihazımız yada emülator üzerinde çalışacaktır.<a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/Screenshot_2015-02-16-20-00-51.jpg"><img class="alignnone size-large wp-image-665" src="/assets/Screenshot_2015-02-16-20-00-51-640x1024.jpg" alt="Screenshot_2015-02-16-20-00-51" width="640" height="1024" /></a></p>
+
+
+<p>Hata ayıklama</p>
+
+
+<p><a href="http://www.nazirdogan.com/android/chrome-devtools-ile-phonegapcordova-uygulamalarinda-uzaktan-hata-ayiklama/">Chrome DevTools kullanarak hata ayıklama </a>işleminden daha önce bahsetmiştim. Chrome Dev Tools kullanarak hata ayıklama yapabilirsiniz.</p>
+
+
+<p>Kolay gelsin :)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<h3 id="Download-the-crosswalk-cordova-android-bundle"></h3>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/15/chrome-devtools-ile-phonegapcordova-uygulamalarinda-uzaktan-hata-ayiklama/">Chrome Devtools Ile PhoneGap/Cordova Uygulamalarında Uzaktan Hata Ayıklama</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-15T15:13:04+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:13 pm</span></time>
+        
+           | <a href="/blog/2015/02/15/chrome-devtools-ile-phonegapcordova-uygulamalarinda-uzaktan-hata-ayiklama/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/15/chrome-devtools-ile-phonegapcordova-uygulamalarinda-uzaktan-hata-ayiklama/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Cordova/PhoneGap'de  Android için geliştirme yaparken "adb logcat" ile  hata ayıklama  yapabiliriz. Ama logcat ile hata ayıklama oldukça zor ve zahmetli bir iş  .Çünkü hata ayıklama başladığında  uygulamanızla alakalı veya işletim sistemi ile alakalı birçok gereksiz bilgiyi bir arada vermektedir.</p>
+
+
+<p>Eğer çok iyi Android biliyorsanız belki bunla başa çıkabilirsiniz ama bunu Chrome DevTools kullanarak daha kolay hale getirebilirsiniz.</p>
+
+
+<p>Chrome ile Hata ayıklama yapmak için bazı gereksinimler var öncelikle onlardan bahsedeyim.</p>
+
+
+<p>PhoneGap/Cordova 3.3 ve üzeri</p>
+
+
+<p>Android 4.4 veya üzeri bir cihaz veya emulatör</p>
+
+
+<p>Chrome 30 veya üzeri tarayıcı</p>
+
+
+<p>Nasıl yapacağım ?</p>
+
+
+<p>1- Cihazınız üzerinde "USB Hata ayıklama" (USB Debugging) seçenegini aktif edin.</p>
+
+
+<p>2. PhoneGap/Cordova uygulamanızın API seviyesini 19 veya üzeri yapın .</p>
+
+
+<p>AndroidManifest.xml içerisinde  bu kısmı degiştiriyoruz.</p>
+
+
+<pre class="theme:github lang:default decode:true">&lt;uses-sdk android:minSdkVersion="17" android:targetSdkVersion="19" /&gt;</pre>
+
+
+<p>project.properties içerisinde de</p>
+
+
+<pre class="theme:github lang:default decode:true">target=android-19</pre>
+
+
+<p>olarak değiştiriyoruz.</p>
+
+
+<p>Daha sonra ise projemizi bir kere çalıştırdıktan sonra</p>
+
+
+<p>1- Hata ayıklama için</p>
+
+
+<p>platforms/android/src/com/uygulamaAdı/uygulamaAdı.java</p>
+
+
+<p>içerisine</p>
+
+
+<pre class="theme:github lang:default decode:true">import android.os.Build;
+import android.webkit.WebView;</pre>
+
+
+<p>onCreate Methodu içerisine  ise</p>
+
+
+<pre class="theme:github font:ubuntu-mono lang:default decode:true">if(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT) {
+  WebView.setWebContentsDebuggingEnabled(true);
+}</pre>
+
+
+<p>ekliyoruz.  Ekledikten sonra tekrar uygulamayı derleyip çalıştıralım.</p>
+
+
+<p>Değişmiş hali</p>
+
+
+<p>https://gist.github.com/nazrdogan/24e886e7878251a431b2</p>
+
+
+<p>Uzak Hata Ayıklama</p>
+
+
+<p>Chrome'da   adres satırına "about:inspect" yazalım. Yazdıktan sonra eğer diğer şeyleride sorunsuz yaptıysak  artık  Chrome Devtools ile normal web uygulamarı geliştirirken nasıl kullanıyorsak o şekilde kullanabiliriz.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/snapshot17.png"><img class="alignnone size-large wp-image-641" src="/assets/snapshot17-1024x576.png" alt="snapshot17" width="770" height="433" /></a></p>
+
+
+<p>Bu ekranda ise "inspect " butonuna basarak  hata ayıklama ekranını açabilirsiniz.</p>
+
+
+<p>Ben oldukça başarılı buldum. Umarım sizinde işinize yarar kolay gelsin :)</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/15/crosswalk-nedir/">Crosswalk Nedir ?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-15T12:32:25+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:32 pm</span></time>
+        
+           | <a href="/blog/2015/02/15/crosswalk-nedir/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/15/crosswalk-nedir/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Sizde Cordova projelerin  iOS üzerinde akıcı bir şekilde çalışırken Android üzerinde  biraz  sorunlu olduğunu farkettiniz mi ?</p>
+
+
+<p>Bu soruya kişisel cevabım ise kesinlikle evet .Gariptir ki  Apple HTML5 uygulamalara Google'dan daha fazla önem vermektedir.Apple UIWebview yerine koyduğu WKWebview sayesinde gözle görülür bir performans artışı sağlamıştır. (WKWebview  hakkında daha detaylı bilgi için buraya <a href="http://www.sencha.com/blog/apple-shows-love-for-html5-with-ios-8">bakabilirsiniz</a>.)</p>
+
+
+<p>Tamam iOS için güzel şeyler Apple'da  bizim amacımız zaten çapraz platform uygulama yazmak değil mi ? Biz Android tarafında performansı yüksek uygulama yazamayacakmıyız ?  diyebilirsiniz.</p>
+
+
+<p>Bu soruların cevabı Crosswalk diyebilirim. Crosswalk  açık kaynak geliştirilen Cordova/Phonegap ve Android(projelerin içindeki WebView'lara) projelerine yeni özellikler ve performans getiren HTML5 (runtime) çalışma zamanıdır. Bunun anlamı ise  HTML5 mobil uygulamalarınızı  native webview ile Android 4.0 ve üzeri bütün cihazlar için geliştirebilir ve dağıtabilirsiniz.</p>
+
+
+<p>Artıları neler?</p>
+
+
+<ul>
+<li>Tüm cihazlarda aynı çalışma zamanı  olduğu için her cihaz için farklı çalışma zamanları ile uğraşmak zorunda değilsiniz.</li>
+<li>Daha iyi hafıza yönetimi</li>
+</ul>
+
+
+<p>Crosswalk ile W3C belirlediği en son HTML5 API standartlarını kullanabilirsiniz. Crosswalk'in desteklediği bazı API'ler ise şunlar</p>
+
+
+<ul>
+<li> WebGL</li>
+<li>WebSockets</li>
+<li>Web Auido API</li>
+<li>WebRTC (Real Time Clock-Gerçek zamanlı saat)</li>
+</ul>
+
+
+<p>Crosswalk'ta sadece bunlar yok tabiki çok daha fazlasını bulabilirsiniz. CrossWalk işime yarar bende tam bunu arıyordum diyorsanız sizi söyle alalım. <a href="https://crosswalk-project.org/">https://crosswalk-project.org/</a></p>
+
+
+<p>Crosswalk ile ilğili  söyleyecek çok şey var ama şimdilik bu kadar yeterli .Bir sonraki CrossWalk yazısı  Cordova/Phonegap projelerinde kullanımı ile ilgili olacak.</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/14/phonegapcordova-barkod-plugini-kullanimi/">PhoneGap/Cordova Barkod Plugini Kullanımı</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-14T23:25:06+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:25 pm</span></time>
+        
+           | <a href="/blog/2015/02/14/phonegapcordova-barkod-plugini-kullanimi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/14/phonegapcordova-barkod-plugini-kullanimi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu yazımda  Cordova için Barkod pluginin kullanımından bahsedeceğim.Plugin oldukça kullanışlı ve kurulumuda bir o kadar basit. Ayrıca plugin Android,iOS ve Windows 8 'i desteklemektedir.</p>
+
+
+<p>Plugini kurmak için bir proje oluşturalım.</p>
+
+
+<pre class="lang:default decode:true ">cordova create barcode com.example.barcode BarcodeReader</pre>
+
+
+<p>Daha sonra sırasıyla bu adımları izleyerek Android'i ve barkod plugini  ekleyelim</p>
+
+
+<pre class="lang:default decode:true ">cd barcode
+cordova platform add android
+cordova plugin add https://github.com/wildabeast/BarcodeScanner.git
+</pre>
+
+
+<p>Kullanım</p>
+
+
+<pre class="lang:js decode:true ">cordova.plugins.barcodeScanner.scan(
+      function (result) {
+          alert("We got a barcode\n" +
+                "Sonuç: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "iptal: " + result.cancelled);
+      },
+      function (error) {
+          alert("Tarama başarısız oldu: " + error);
+      }
+   );</pre>
+
+
+<p>https://gist.github.com/nazrdogan/de6e3647e98a62445486</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Ekran Görüntüleri</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/Screenshot_2015-02-15-01-16-01.jpg"><img class="alignnone size-large wp-image-622" src="/assets/Screenshot_2015-02-15-01-16-01-1024x640.jpg" alt="Screenshot_2015-02-15-01-16-01" width="770" height="481" /></a><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/Screenshot_2015-02-15-01-16-14.jpg"><img class="alignnone size-large wp-image-623" src="/assets/Screenshot_2015-02-15-01-16-14-1024x640.jpg" alt="Screenshot_2015-02-15-01-16-14" width="770" height="481" /></a></p>
+
+
+<p>Pluginin <a href="https://github.com/wildabeast/BarcodeScanner">Github</a> sayfası</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/14/cordova-konusma-tanima-speech-recognizer-plugini-kullanimi/">Cordova Konuşma Tanıma (Speech Recognizer) Plugini Kullanımı</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-14T22:14:22+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:14 pm</span></time>
+        
+           | <a href="/blog/2015/02/14/cordova-konusma-tanima-speech-recognizer-plugini-kullanimi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/14/cordova-konusma-tanima-speech-recognizer-plugini-kullanimi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu yazımda  Cordova  platformu için konuşma tanıma plugininin (Android ) kullanımından  bahsedeceğim.Pluginin kullanımı oldukça basit. Bunun şimdi sırasıyla bu adımları izleyelim.</p>
+
+
+<p>Projemizi oluşturalım.</p>
+
+
+<pre class="lang:default decode:true">cordova create speech com.example.speech SpeechRecognizer</pre>
+
+
+<p>Daha sonra pluginimizi  ekleyelim.</p>
+
+
+<pre class="lang:default decode:true">cd speech
+
+cordova platform add android
+cordova plugin add https://github.com/poiuytrez/SpeechRecognizer</pre>
+
+
+<p>Pluginin kullanımı</p>
+
+
+<pre class="lang:default decode:true">SpeechRecognizer.startRecognize(success, error, maxMatches, promptString, language);</pre>
+
+
+<ul>
+<li> success: olası eşleştirilen sözcükleri döndürür.</li>
+<li>error: hata döndürür.</li>
+<li>maxMatches: Eşleşen sözcüklerin maksimum sayısını döndürür.</li>
+<li>promptString: Google logosu ve mikrofon üzerinde  yazan yazıyı belirlemek için.  Örneğin "Şimdi Konuşun"</li>
+<li>language: Konuşma tanıma motoru için kullanılan dili belirlemek için Örnegin "tr-TR"</li>
+</ul>
+
+
+<p>Desteklenen Diller</p>
+
+
+<p>Desteklenen dillerin kodlarının listesini görmek için</p>
+
+
+<pre class="lang:default decode:true ">SpeechRecognizer.getSupportedLanguages(success, error);</pre>
+
+
+<ul>
+<li> success: json dizisi olarak desteklenen dillerin kodlarını döndürür.</li>
+<li>error: hata döndürür.</li>
+</ul>
+
+
+<p>https://gist.github.com/nazrdogan/ed18f142b655f9b0e0bf</p>
+
+
+<p>Ekran görüntüleri ise</p>
+
+
+<p>Ses Tanıma Ekranı</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/Screenshot_2015-02-14-23-37-43.jpg"><img class="alignnone size-large wp-image-610" src="/assets/Screenshot_2015-02-14-23-37-43-640x1024.jpg" alt="Screenshot_2015-02-14-23-37-43" width="640" height="1024" /></a></p>
+
+
+<p>Döndürülen Sonuçlar</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/Screenshot_2015-02-14-23-38-18.jpg"><img class="alignnone size-large wp-image-612" src="/assets/Screenshot_2015-02-14-23-38-18-640x1024.jpg" alt="Screenshot_2015-02-14-23-38-18" width="640" height="1024" /></a></p>
+
+
+<p>Desteklenen Diller.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/Screenshot_2015-02-14-23-38-04.jpg"><img class="alignnone size-large wp-image-611" src="/assets/Screenshot_2015-02-14-23-38-04-640x1024.jpg" alt="Screenshot_2015-02-14-23-38-04" width="640" height="1024" /></a></p>
+
+
+<p>Plugin oldukça basit ve kullanışlı umarım işinize yarar.  Pluginin <a href="https://github.com/poiuytrez/SpeechRecognizer">Github</a> sayfasına burdan ulaşabilirsiniz.</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/14/phonegapcordova-social-share-plugin-android-kurulumu/">Phonegap/Cordova Social Share Plugin Kurulumu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-14T19:18:17+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>7:18 pm</span></time>
+        
+           | <a href="/blog/2015/02/14/phonegapcordova-social-share-plugin-android-kurulumu/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/14/phonegapcordova-social-share-plugin-android-kurulumu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu yazımda Phonegap/Cordova Platformları için   Social Share Pluginin kurulumunu ve kullanımını Android( diger platformlardada çalışacaktır muhtemelen) için anlatmaya çalışacağım.</p>
+
+
+<p>Öncelikle  Phonegap/Cordova Kurulumunu  yaptığınızı düşünerek proje oluştururak başlamak istiyorum.</p>
+
+
+<p>Proje oluşturmak için</p>
+
+
+<pre class="lang:default decode:true">$cordova create social com.example.social Social</pre>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/snapshot13.png"><img class="alignnone size-full wp-image-591" src="/assets/snapshot13.png" alt="snapshot13" width="990" height="454" /></a></p>
+
+
+<p>Projemizi oluşturduktan sonra Android Platformunu ekleyelim.</p>
+
+
+<pre class="lang:default decode:true">  $ cd social
+
+  $ cordova platform add android</pre>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/snapshot14.png"><img class="alignnone size-full wp-image-592" src="/assets/snapshot14.png" alt="snapshot14" width="990" height="574" /></a></p>
+
+
+<p>Daha sonra  projemizi çalıştırmak için</p>
+
+
+<pre class="lang:default decode:true ">$cordova run android</pre>
+
+
+<p>Projemizde  sıkıntı olmadan çalışması lazım ,</p>
+
+
+<p>boş projemiz çalıştıgına göre  Social Share Pluginini eklemek için</p>
+
+
+<p>Cordova için</p>
+
+
+<pre class="lang:default decode:true">cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git
+</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>PhoeGap için</p>
+
+
+<pre class="lang:default decode:true">phonegap local plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git</pre>
+
+
+<p>Ekledikten sonra ,</p>
+
+
+<pre class="lang:default decode:true"> cordova prepare</pre>
+
+
+<p>Social Share Plugin hazır olacaktır.</p>
+
+
+<p>Bazı örnek kullanımlar :</p>
+
+
+<pre class="lang:default decode:true">&lt;button onclick="window.plugins.socialsharing.share('Message only')"&gt;message only&lt;/button&gt;
+&lt;button onclick="window.plugins.socialsharing.share('Message and subject', 'The subject')"&gt;message and subject&lt;/button&gt;
+&lt;button onclick="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')"&gt;link only&lt;/button&gt;
+&lt;button onclick="window.plugins.socialsharing.share('Message and link', null, null, 'http://www.x-services.nl')"&gt;message and link&lt;/button&gt;
+&lt;button onclick="window.plugins.socialsharing.share(null, null, 'https://www.google.nl/images/srpr/logo4w.png', null)"&gt;image only&lt;/button&gt;
+// Beware: passing a base64 file as 'data:' is not supported on Android 2.x: https://code.google.com/p/android/issues/detail?id=7901#c43
+// Hint: when sharing a base64 encoded file on Android you can set the filename by passing it as the subject (second param)
+&lt;button onclick="window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null)"&gt;base64 image only&lt;/button&gt;
+// Hint: you can share multiple files by using an array as thirds param: ['file 1','file 2', ..], but beware of this Android Kitkat Facebook issue: [#164]
+&lt;button onclick="window.plugins.socialsharing.share('Message and image', null, 'https://www.google.nl/images/srpr/logo4w.png', null)"&gt;message and image&lt;/button&gt;
+&lt;button onclick="window.plugins.socialsharing.share('Message, image and link', null, 'https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl')"&gt;message, image and link&lt;/button&gt;
+&lt;button onclick="window.plugins.socialsharing.share('Message, subject, image and link', 'The subject', 'https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl')"&gt;message, subject, image and link&lt;/button&gt;</pre>
+
+
+<p>Ekran görüntüleri</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/Screenshot_2015-02-14-20-59-25.jpg"><img class="alignnone size-large wp-image-597" src="/assets/Screenshot_2015-02-14-20-59-25-640x1024.jpg" alt="Screenshot_2015-02-14-20-59-25" width="640" height="1024" /></a><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/Screenshot_2015-02-14-20-59-19.jpg"><img class="alignnone size-large wp-image-598" src="/assets/Screenshot_2015-02-14-20-59-19-640x1024.jpg" alt="Screenshot_2015-02-14-20-59-19" width="640" height="1024" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Social Share Pluginin <a href="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin">Github</a> sayfasından daha fazla bilgiye ulaşabilirsiniz.</p>
+
+
+<p>Oluşturduğum basit projeyi indirmek <a href="https://www.dropbox.com/sh/fe7kv0c04nqel6h/AABggzJi53drCK9eaqRN_nO9a?dl=0">için </a></p>
+
+
+<p>Not :  Bu yazıda  Cordova 4.2.0 versiyonu kullanılmıştır.</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/01/npm-ile-node-js-versiyonunu-yukseltme/">NPM Ile Node.js Versiyonunu Yükseltme</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-01T09:15:22+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>9:15 am</span></time>
+        
+           | <a href="/blog/2015/02/01/npm-ile-node-js-versiyonunu-yukseltme/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/01/npm-ile-node-js-versiyonunu-yukseltme/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Node.js aktif olarak geliştirilen bir proje  olduğu için  versiyon sıklıkla değişmektedir. Bazen kullandığınız bir modül size versiyonunuz eski oldugu için hata verecektir. Ya da son versiyonu kullanmak isteyebilirsiniz.</p>
+
+
+<p>Node.js  NPM kullanarak yükseltmek için Terminal'e</p>
+
+
+<pre class="lang:zsh decode:true">sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable</pre>
+
+
+<p>Buradaki "stable "  yerine istediğiniz sürüm numarasınıda yazabilirsiniz.</p>
+
+
+<pre class="lang:default decode:true ">sudo n 0.8.21</pre>
+
+
+<p>Daha sonra  node versiyonunu kontrol edelim.</p>
+
+
+<pre class="lang:default decode:true ">node -v
+</pre>
+
+
+<p>Hepsi bu kadar. Aslında NPM'i kullanmak için Node.js yüklü olması gerekirken ,böyle çalışması bana biraz tuhaf geldi. :D</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/snapshot11.png"><img class="alignnone size-full wp-image-576" src="/assets/snapshot11.png" alt="snapshot11" width="679" height="467" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/17/2015-tizennin-olacak-mi/">2015 Tizen'nin Yılı Olacak Mı ?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-17T23:16:30+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:16 pm</span></time>
+        
+           | <a href="/blog/2015/01/17/2015-tizennin-olacak-mi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/01/17/2015-tizennin-olacak-mi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Geçtiğimiz günlerde Samsung ,Tizen işletim sistemine sahip TV'leri duyurdu. Daha öncedende kameralarında ve akıll saatlerinde yer vermişti. Tizen projesini takip eden birçok beklediği akıllı telefonları ise TV'leri duyurmasına müteakip piyasaya sürdü.</p>
+
+
+<p>Samsung'un blogunu incelerseniz 2015'te kameraların ,giyilebilir teknolojilerin ve TV'lerin Tizen işletim sistemine sahip olacağını anlayabilirsiniz.</p>
+
+
+<p>Bunun yanı sıra Samsung CEO'su BK Yoon bu seneki CES fuarında Samsung'un bütün ürünlerinin 5 yıl içerisinde  IoT (Internet of Things) yani Nesnelerin İnternetine hazır cihazlar olacağını söyledi. Bundan anlayacağımız Tizen işletim sistemini bütün cihazlarında kullanarak stratejik öneme sahip bir yere getirmeyi amaçlanmaktadır.</p>
+
+
+<p>Peki Tizen neden önemli derseniz ?</p>
+
+
+<p>Şu an piyasaya hakim olan işletim sistemi Android olsada birçok kişi bazı teknik nedenlerden ve Google hakimiyetinden dolayı memnun değil. Tizen  hafif yapısı sayesinde daha az güç , daha az hafıza tüketimi   ve daha akıcı bir deneyim hedeflemektedir.</p>
+
+
+<p>Ayrıca HTML5  uygulama geliştirmeye destek verdiği için web teknolojilerini kullanarak native uygulama geliştirilebilmektedir.</p>
+
+
+<p>Aynı uygulamayı araç içi sistemlerden akıllı telefonlara birçok sistemde ufak defek CSS dokunuşları ile uyumlu halde çalıştırabilmektedir.</p>
+
+
+<p>Tizen'nin en büyük eksikliği şu an için geliştirici eksikliği gibi görünüyor. Umarım Samsung  işletim sisteminde ısrar ederek geliştiricilere güven verirse  Tizen'nin geleceğin mobil işletim sistemi olmamasına hiçbir engel yok. Tabi ki diğer rakipler dışında :)</p>
+
+
+<p>Not: Tizen Linux vakfı tarafından geliştirilen bir proje olsada bu projenin en büyük destekçisi Samsung ve Intel'dir.</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/5">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/3">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

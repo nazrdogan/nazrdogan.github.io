@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: node.js | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/node-dot-js/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Async/Await Ile Asenkron Javascript]]></title>
+    <link href="http://nazrdogan.github.io/blog/2018/01/12/async-await-javascript/"/>
+    <updated>2018-01-12T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2018/01/12/async-await-javascript</id>
+    <content type="html"><![CDATA[<p><img src="https://www.bram.us/wordpress/wp-content/uploads/2017/05/js-callbacks-promises-asyncawait.gif" alt="async-await" /></p>
+
+<p>Yukardaki gif  Javascript geliştiricileri için oldukça büyük anlam ifade etse gerek. Javascript geliştiricleri yıllarca  asenkron kod yazmak için callback fonksiyonlarını ihtiyaç duyuyorlardı.</p>
+
+<p>Sonuç olarak  birçoğumuz  &ldquo;callback hell&rdquo; ile karşı karşıya gelmek zorunda kaldık.</p>
+
+<p>Neyse ki daha sonra ise Promise geldi. Bize callback fonksiyonlarından daha organize bir yapı sundu. ve halen birçok geliştirici tarafından sıklıkla kullanılmakta.</p>
+
+<p> Son olarak ise Async/Await'in eklenmesiyle daha okunabilir ve bakımı kolay bir hale geldi.</p>
+
+<h2>Nedir Bu  Async/Await ?</h2>
+
+<p>Async/Await  uzun zamandır beklenen asenkron işlemleri daha anlaşılması kolay bir hale getiren Promise tabanlı Javascript özelliğidir.</p>
+
+<p>Şimdi gelin Promise tabanlı bir örnek yapalım.</p>
+
+<pre><code class="javascript">const fetch = require('node-fetch');
+
+async function makeRequest() {
+  const url = 'http://jsonplaceholder.typicode.com/posts/1';
+  fetch(url).then( response =&gt; response.json())
+    .then(result =&gt; {
+      console.log(result.title); 
+      console.log(result.body); 
+  });
+}
+
+makeRequest();
+</code></pre>
+
+<p>Şimdi ise <code>async/await</code> fonksiyonuna nasıl dönüştüreceğimizi görelim. ilk olarak async anathar kelimesini fonksiyonuna ekliyoruz.
+Daha sonra ise <code>.then()</code> kısmında aşağıdaki gibi değişiklik yapıp <code>await</code> ekliyoruz.</p>
+
+<pre><code class="javascript">
+const fetch = require('node-fetch');
+
+async function makeRequest() {
+  const url = "http://jsonplaceholder.typicode.com/posts/1";
+  const response = await  fetch(url);
+  const json = await response.json();
+  console.log(json.title);
+}
+
+makeRequest();
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Yarn Paket Yöneticisi Nedir ?]]></title>
+    <link href="http://nazrdogan.github.io/blog/2017/11/18/yarn/"/>
+    <updated>2017-11-18T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2017/11/18/yarn</id>
+    <content type="html"><![CDATA[<p><img src="https://yarnpkg.com/assets/og_image.png" alt="yarn" /></p>
+
+<p>Facebook mühendisleri tarafından geliştirilmiş olan Yarn, hız ve güvenlik konusunda npm'den daha iyi olduğuna söz veriyor.</p>
+
+<h2>Yarn kurulumu</h2>
+
+<p>Yarn'ı kurmak için birçok yol bulunuyor. Eğer npm'e sahipseniz. npm ile yükleyebilirsiniz.</p>
+
+<pre><code>
+ npm install -g yarn
+</code></pre>
+
+<p>Başka bir yol ise (Yarn'ı geliştiren takımında önerdiği) işletim sistemizin native paket yöneticisi ile yüklemek.Eğer bir Mac kullanıcısıysanız  homebrew ile yükleyebilirsiniz.</p>
+
+<pre><code>
+ brew update
+ brew install yarn
+</code></pre>
+
+<p>Diğer işletim sistemleri <a href="https://yarnpkg.com/en/docs/install">için</a></p>
+
+<h2>Yarn CLI komutları</h2>
+
+<ul>
+<li>yarn add: aktif pakette kullanmak için bir paket ekler.</li>
+<li>yarn init: yarn dosyasını oluşturur.</li>
+<li>yarn install:  package.json dosysası içindekileri yükler.</li>
+<li>yarn publish: paket yöneticisinde bir paketi yayınlar.</li>
+<li>yarn remove: aktif paketten bir paketi siler.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Electron Ile Web Teknolojilerini Kullanarak Masaüstü Uygulama Geliştirme]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme/"/>
+    <updated>2015-05-02T10:49:29+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme</id>
+    <content type="html"><![CDATA[<p>Electron , Javascript ile masaüstü uygulaması geliştirmenize  olanak  sağlayan bir runtime'dir.Electron  açık kaynak ve çapraz platfromdur .HTML ,CSS ve io.js'ten gücünü almaktadır.Electron GUI olarak web sayfasını kullanır.yani göreceginiz aslında minimal bir Chromuium tarayıcıdı.r İlk olarak Github'un Atom Editörü için geliştirilmiştir. Electron'u kullanan firmalar arasında  Microsoft ,Facebook ,Slack  ve Docker vardır. Hatta yeni çıkan Microsoft Visual Studio Code Electron tabanlıdır.</p>
+
+
+<p>Lafı fazla uzatmadan kurulum ve uygulama oluşturma  kısmına geçelim.</p>
+
+
+<p>Electron'u kurmak için</p>
+
+
+<pre class="theme:github lang:default decode:true"># Install the `electron` command globally
+npm install electron-prebuilt -g
+
+# Install as a development dependency
+npm install electron-prebuilt --save-dev
+
+</pre>
+
+
+<p>Yukardaki işlemi yaptıktan sonra Electron sistemimize kurulmuş olacaktır. Doğrulamak için</p>
+
+
+<pre class="theme:eclipse lang:default decode:true">electron -v
+
+</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronCMD.png"><img class="alignnone size-medium wp-image-829" src="/assets/electronCMD-300x152.png" alt="electronCMD" width="300" height="152" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Doğruladıktan sonra uygulama oluşturmak için üç tane temel dosyaya ihtiyaçımız var.Bunlar package.json ,main.js,index.html  dosyalarıdır.</p>
+
+
+<pre class="theme:github lang:default decode:true ">your-app/
+├── package.json
+├── main.js
+└── index.html</pre>
+
+
+<p>&nbsp;</p>
+
+
+<pre class="lang:default decode:true">//package.json
+
+{
+  "name"    : "your-app",
+  "version" : "0.1.0",
+  "main"    : "main.js"
+}</pre>
+
+
+<p>&nbsp;</p>
+
+
+<pre class="theme:github lang:default decode:true ">//main.js
+var app = require('app');  // Module to control application life.
+var BrowserWindow = require('browser-window');  // Module to create native browser window.
+
+// Report crashes to our server.
+require('crash-reporter').start();
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the javascript object is GCed.
+var mainWindow = null;
+
+// Quit when all windows are closed.
+app.on('window-all-closed', function() {
+  if (process.platform != 'darwin')
+    app.quit();
+});
+
+// This method will be called when Electron has done everything
+// initialization and ready for creating browser windows.
+app.on('ready', function() {
+  // Create the browser window.
+  mainWindow = new BrowserWindow({width: 800, height: 600});
+
+  // and load the index.html of the app.
+  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+
+  // Emitted when the window is closed.
+  mainWindow.on('closed', function() {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null;
+  });
+});</pre>
+
+
+<pre class="theme:eclipse lang:default decode:true">//index.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Hello World!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Merhaba Dünya!&lt;/h1&gt;
+    We are using io.js &lt;script&gt;document.write(process.version)&lt;/script&gt;
+    and Electron &lt;script&gt;document.write(process.versions['electron'])&lt;/script&gt;.
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+
+<p>Uygulamayı çalıştırmak için  terminal de electron yazıp Enter'layalım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronGUI.png"><img class="alignnone size-medium wp-image-834" src="/assets/electronGUI-300x234.png" alt="electronGUI" width="300" height="234" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Daha sonra oluşturdugumuz  klasörü yani your-app klasörünü sürükleyip bırakalım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronMerhaba.png"><img class="alignnone size-medium wp-image-835" src="/assets/electronMerhaba-300x225.png" alt="electronMerhaba" width="300" height="225" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Söyleyecek çok şey olsada   temel olarak şimdilik bu kadar. Electron hakkında daha fazla   bilgi için</p>
+
+
+<p><a href="http://electron.atom.io/">electron.atom.io</a> sayfasına   bakabilirsiniz.</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Node-WebKit Ile Masaüstü Uygulama Geliştirme]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/03/05/node-webkit-ile-masaustu-uygulama-gelistirme/"/>
+    <updated>2015-03-05T11:14:40+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/03/05/node-webkit-ile-masaustu-uygulama-gelistirme</id>
+    <content type="html"><![CDATA[<p>Node-Webkit nedir ?</p>
+
+
+<p>Node-Webkit  Chromium ve Node.js üzerine kurulmuş bir  uygulama runtime'dir.  Node-Webkit ile HTML ve Javascript kullanarak masaüstü uygulaması geliştirebilirsiniz. Ayrıca Node modüllerini  kullanabilirsiniz.</p>
+
+
+<p>Özellikleri:</p>
+
+
+<ul>
+<li>HTML5  ,CSS3 ,Javascript ve WebGL ile uygulama yazabilirsiniz.</li>
+<li>Node.js API'lerini ve üçüncü parti modülleri  kullanabilirsiniz.</li>
+<li>Kolay Paketleme</li>
+<li>Çapraz Platform :Linux, OS X, Windows</li>
+</ul>
+
+
+<p>Nasıl uygulama oluşturacağım ?</p>
+
+
+<p>Öncelikle<a href="https://github.com/nwjs/nw.js"> Github</a> sayfasından sisteminize uygun olarak indirin.</p>
+
+
+<p>Bu arada kısa zaman önce node-webkit isim değişikliğine gidip nw.js adını almıştır.</p>
+
+
+<p>Hadi başlayalım.</p>
+
+
+<p>Öncelikle bir package.json dosyası oluşturuyoruz.</p>
+
+
+<pre class="theme:github lang:default decode:true">{
+  "name" : "nw-demo",
+  "main" : "index.html",
+  "window" : {
+    "toolbar" : false
+  }
+}</pre>
+
+
+<p>Daha sonra ise uygulamamızın başlangıç sayfası olan index.html'i oluşturalım.</p>
+
+
+<pre class="theme:github lang:default decode:true ">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Node-Webkit&lt;/title&gt;
+    &lt;meta content=""&gt;
+    &lt;style&gt;&lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+  &lt;h1&gt;Merhaba NW.JS&lt;/h1&gt;
+&lt;/html&gt;</pre>
+
+
+<p>Daha sonra ise indirdiğimiz node-webkit'i çalıştıralım.</p>
+
+
+<pre class="theme:github lang:default decode:true">/node-webkit-installer/nw  /projemizin yolu</pre>
+
+
+<p>Örnegin benim yaptıgım projede</p>
+
+
+<pre class="lang:default decode:true ">~/node-webkit-v0.11.6-linux-x64/nw   ../NWJS
+</pre>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/03/snapshot40.png"><img class="alignnone size-full wp-image-748" src="/assets/snapshot40.png" alt="snapshot40" width="784" height="557" /></a></p>
+
+
+<p>Temel olarak hepsi bu kadar. Node-Webkit ile web teknolojilerini kullanarak istediğiniz masaüstü uygulamasını geliştirebilirisiniz. <a href="https://github.com/nwjs/nw.js/wiki/List-of-apps-and-companies-using-nw.js">Geliştirlmiş uygulamalara burdan göz atabilirsiniz.</a>Umarım faydalı olur .Kolay gelsin :)</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Javascript Ile Arduino]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/02/28/javascript-ile-arduino/"/>
+    <updated>2015-02-28T12:41:23+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/02/28/javascript-ile-arduino</id>
+    <content type="html"><![CDATA[<p>Bu yazımda Javascript ile Arduino kontrolünden bahsedeceğim.Node.js'ı muhtemelen duymuşsunuzdur. Ama eğer duymadıysanız  kısaca server tarafında Javascript çalıştırabileceğiniz bir platform olarak tanımlayabiliriz.</p>
+
+
+<p>Eğer sisteminizde kurulu değil ise</p>
+
+
+<p><a href="http://nodejs.org/">http://nodejs.org/ </a>sitesinden sisteminize uygun olanını indirip kurun.</p>
+
+
+<p>Kurduktan sonra versiyonunu terminalden kontrol edin. (Emin olmak için)</p>
+
+
+<pre class="theme:github lang:default decode:true ">$ node -v
+v0.10.36
+
+
+</pre>
+
+
+<p>Daha sonra ise Johnny-five  paketini kuruyoruz. Johnny -Five  nedir diyebilirisiniz. Johnny-Five  Node.js için yazılmış  Arduino kontrol frameworkudur.  Firmata ile çalışmaktadır. Johnny-Five kullanılarak  Led yakabilir Servoları döndürebilirsiniz. Heyecan verici değil mi ? :D</p>
+
+
+<p>Şimdi npm kullanarak  Johnny-Five'i yükleyelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">npm install johnny-five</pre>
+
+
+<p>Johnny-Five'i yükledikten sonra  Arduinomuza Firmata'yi yükleyelim.</p>
+
+
+<p>Arduino'yu bilgisayara bağlayın. Arduino IDE'sini açın.</p>
+
+
+<p><strong>File -&gt; Examples -&gt; Firmata -&gt; StandardFirmata<br />
+</strong></p>
+
+
+<p>yolunu izleyerek kütüphaneyi Arduino'ya yükleyin.</p>
+
+
+<p>Daha sonra   ledyak.js  adında bir  dosya oluşturalım.</p>
+
+
+<pre class="lang:default decode:true"> var five = require("johnny-five"),board, led;
+
+    board = new five.Board();
+
+    board.on("ready", function() {
+      led = new five.Led(13);
+      led.strobe(1000);
+    });
+
+</pre>
+
+
+<p>Daha sonra ledyak.js'in dizinine gelelim.</p>
+
+
+<pre class="theme:github lang:default decode:true ">node ledyak.js</pre>
+
+
+<p>diyerek çalıştıralım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/snapshot37png.png"><img class="alignnone size-full wp-image-722" src="/assets/snapshot37png.png" alt="snapshot37png" width="990" height="574" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>[embed]https://vine.co/v/O2UAVXVeWKT[/embed]</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Şimdilik hepsi bu kadar . Daha fazla örnek ve bilgi için <a href="https://github.com/rwaldron/johnny-five">Johnny-Five </a>Github sayfasını ziyaret edebilirsiniz.</p>
+
+]]></content>
+  </entry>
+  
+</feed>
