@@ -1,0 +1,35 @@
+---
+layout: post
+title: Tizen
+date: 2013-09-01T17:54:32.000Z
+type: post
+published: true
+comments: true
+status: publish
+categories:
+  - C++
+  - html
+  - javascript
+  - Jquery
+  - meego
+  - Open Source
+  - QT
+  - tizen
+tags:
+  - meego
+  - tizen
+  - tizen ders
+  - tizen dersleri
+  - tizen nedir?
+---
+
+[![tizen]({{ site.baseurl }}/assets/tizen1-300x168.jpg)](http://www.nazirdogan.com/wp-content/uploads/2013/09/tizen1.jpg)
+
+Tizen(tayzın diye okunuyor) akıllı telefonlar ,tablet,netbook,araç içi bilgi- eglence cihazlar ve akıllı Tv 'ler gibi birden çok cihaz kategorisi için mobil operatörler, cihaz üreticileri ve silikon tedarikçileri lider tarafından desteklenen açık kaynak kodlu, standartlara dayalı yazılım platformudur.
+
+Tizen projesi içinde bulunduğu [Linux Vakfı](http://www.linuxfoundation.org/collaborate/labs/tizen) ve Teknik Yönlendirme Grubu tarafından yönetilir. Teknik Yönlendirme Grubu cihazları desteklemek için çalışma gruplarının oluşumu ile birlikte, platform geliştirme ve dağıtım odaklanarak, açık kaynak projesi için birincil karar alma organıdır.
+
+Tizen HTML5 dayalı uygulama geliştiriciler için güçlü ve esnek bir ortam sağlar. HTML5 en güçlü yetenekleri ve çapraz platform esnekliği sayesinde, hızla mobil uygulamalar ve hizmetler için tercih edilen geliştirme ortamı haline geliyor. Tizen SDK ve API geliştiriciler birden fazla cihaz bölümlerinde çalışan uygulamalar yazmak için HTML5 ve ilgili web teknolojileri kullanmanıza izin verir.
+
+
+Evet arkadaşlar,Tizen nedir ögrendikten sonra bir sonraki yazımızda uygulama geliştirmeye nasıl başlanır onunla ilgili bilgi vereceğim.

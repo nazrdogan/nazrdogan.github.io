@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Tizen | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/tizen/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[2015 Tizen'nin Yılı Olacak Mı ?]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/01/17/2015-tizennin-olacak-mi/"/>
+    <updated>2015-01-17T23:16:30+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/01/17/2015-tizennin-olacak-mi</id>
+    <content type="html"><![CDATA[<p>Geçtiğimiz günlerde Samsung ,Tizen işletim sistemine sahip TV'leri duyurdu. Daha öncedende kameralarında ve akıll saatlerinde yer vermişti. Tizen projesini takip eden birçok beklediği akıllı telefonları ise TV'leri duyurmasına müteakip piyasaya sürdü.</p>
+
+
+<p>Samsung'un blogunu incelerseniz 2015'te kameraların ,giyilebilir teknolojilerin ve TV'lerin Tizen işletim sistemine sahip olacağını anlayabilirsiniz.</p>
+
+
+<p>Bunun yanı sıra Samsung CEO'su BK Yoon bu seneki CES fuarında Samsung'un bütün ürünlerinin 5 yıl içerisinde  IoT (Internet of Things) yani Nesnelerin İnternetine hazır cihazlar olacağını söyledi. Bundan anlayacağımız Tizen işletim sistemini bütün cihazlarında kullanarak stratejik öneme sahip bir yere getirmeyi amaçlanmaktadır.</p>
+
+
+<p>Peki Tizen neden önemli derseniz ?</p>
+
+
+<p>Şu an piyasaya hakim olan işletim sistemi Android olsada birçok kişi bazı teknik nedenlerden ve Google hakimiyetinden dolayı memnun değil. Tizen  hafif yapısı sayesinde daha az güç , daha az hafıza tüketimi   ve daha akıcı bir deneyim hedeflemektedir.</p>
+
+
+<p>Ayrıca HTML5  uygulama geliştirmeye destek verdiği için web teknolojilerini kullanarak native uygulama geliştirilebilmektedir.</p>
+
+
+<p>Aynı uygulamayı araç içi sistemlerden akıllı telefonlara birçok sistemde ufak defek CSS dokunuşları ile uyumlu halde çalıştırabilmektedir.</p>
+
+
+<p>Tizen'nin en büyük eksikliği şu an için geliştirici eksikliği gibi görünüyor. Umarım Samsung  işletim sisteminde ısrar ederek geliştiricilere güven verirse  Tizen'nin geleceğin mobil işletim sistemi olmamasına hiçbir engel yok. Tabi ki diğer rakipler dışında :)</p>
+
+
+<p>Not: Tizen Linux vakfı tarafından geliştirilen bir proje olsada bu projenin en büyük destekçisi Samsung ve Intel'dir.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 14.04 üzerinde Tizen IDE Yeni Proje Oluşturma Problemi]]></title>
+    <link href="http://nazrdogan.github.io/blog/2014/06/03/ubuntu-14-04-uzerinde-tizen-ide-yeni-proje-olusturma-problemi/"/>
+    <updated>2014-06-03T17:25:27+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2014/06/03/ubuntu-14-04-uzerinde-tizen-ide-yeni-proje-olusturma-problemi</id>
+    <content type="html"><![CDATA[<p>Tizen IDE Ubuntu 14.04 üzerine kurulu ise muhtemelen bu hatayı alacaksınızdır(gelecekte düzeltilebilir). Sorun ise yeni proje oluştururken IDE'nin kapanması  .</p>
+
+
+<p>Çözüm ise oldukça basit</p>
+
+
+<p>Tizen sdk içindeki Ide klasörürün içindeki eclipse.ini dosyasının sonuna aşagıdaki scripti eklemek.</p>
+
+
+<p>&nbsp;</p>
+
+
+<div id="file-2-LC1" class="line">[gist id = "d69655d8e0a940e3b04b" file = "<a class="tooltipped tooltipped-s permalink" style="color: #4183c4;" href="https://gist.github.com/nazrdogan/d69655d8e0a940e3b04b#file-gistfile1-txt"><strong class="file-name js-selectable-text">gistfile1.txt</strong></a>"]</div>
+
+
+<p>Kolay gelsin</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen IDE Açılış Hatası]]></title>
+    <link href="http://nazrdogan.github.io/blog/2014/05/29/tizen-ide-acilis-hatasi/"/>
+    <updated>2014-05-29T15:49:06+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2014/05/29/tizen-ide-acilis-hatasi</id>
+    <content type="html"><![CDATA[<h3><span style="color:#ff0000;">Failed to start sdb. Read sdb log in ${tizen_sdk}/tools for details</span></h3>
+
+
+<p>Ubuntu 14.04 böyle bir hata alıyorsanız,sembolik link ile bu sorunu çözebilirsiniz.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>https://gist.github.com/anonymous/21f32fbcc4e874871627</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen UI Builder(Web Için)]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/10/09/tizen-ui-builderweb-icin/"/>
+    <updated>2013-10-09T08:20:07+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/10/09/tizen-ui-builderweb-icin</id>
+    <content type="html"><![CDATA[<p>Tizen Web  UI Builder sürükle bırak editoru kullanarak arayüz oluşturmasını saglayan bir geliştirici aracıdır.UI Builder'de bulunan HTML elementleri sayesinde UI oluşturmanız oldukça kolaylaşıyor.<br />
+Eğer UI Builder kullanacaksanız:<br />
+<span style="color: #ff6600;">File-&gt;New-&gt;Tizen Web Project  <span style="color: #000000;"> daha sonra resimdeki gibi seçtikten sonra projemiz  hazır oluyor.</span></span></p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/10/tizenwebui.png"><img class="alignnone size-full wp-image-225" src="/assets/tizenwebui.png" alt="tizenwebui" width="926" height="768" /></a></p>
+
+
+<p>Web UI Builder içinde  her sayfa için bir design sayfası .page uzantılı   onun altında ise  html,css ,js  , managed.css ve managed.js dosyalarını oluşturyor. Html elementlerini sürükleyip bırakıp kaydettikçe otomatik olarak HTML sayfasında  oluşturuluyor.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/10/tizenwebui1.png"><img class="alignnone size-large wp-image-226" src="/assets/tizenwebui1.png?w=1024" alt="tizenwebui1" width="1024" height="639" /></a><br />
+<a href="http://nazirdogan.files.wordpress.com/2013/10/tizen_builder.png"><img class="alignnone size-full wp-image-230" src="/assets/tizen_builder.png" alt="tizen_builder" width="793" height="589" /></a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen üzerinde Processing.js]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/10/01/tizen-uzerinde-processing-js/"/>
+    <updated>2013-10-01T12:36:28+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/10/01/tizen-uzerinde-processing-js</id>
+    <content type="html"><![CDATA[<ul id="content">
+<li id="work">
+<h2>Processing nedir?</h2>
+<p>Processing, 2001 yılından bu yana çevrimiçi görsel sanatlar odaklı geliştirilen bir programlama dili ve ortamıdır.Açık kaynaklıdır. İlk zamanlarda hızlı prototip çıkarma ve eskiz çalışması yapabilme için geliştirilse de zaman içersinde programlamanın temellerini anlatabilmek için kullanılmaya başlanmıştır. Processing ile çok hızlı geliştirmeler yapabilir ve profesyonel nitelikte çalışmalar hazırlayabilirsiniz.</li>
+</ul>
+
+
+<p>Processing java tabanlı olmasına rağmen javascript moduda mevcut.Bende mevcut Processing.js in Tizen üzerinde nasıl çalışıtıgını test etmek basit bir uygulama ile denedim gayet başarılı sonuçlar aldım.<br />
+yapmanız gerekenler gayet basit .<a href="http://processingjs.org/">Processing.js</a>  sitesinden indirip processing-1.4.1.js adlı(şu an bu versiyonda) js dosyasını projenizine dahil etmek.(Ben isminide degiştirdim)</p>
+
+
+<p>sonra aşagıdaki gibi kullanmak zaten processing.js sitesinde bunun için dersler mevcut.Benim örneğim ise basit bir sarkaç simulasyonu.<br />
+https://gist.github.com/nazrdogan/6776991</p>
+
+
+<p>Simulator üzerinde  processing.js</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/10/pendulumprocessing.png"><img class="alignnone size-full wp-image-215" alt="pendulumprocessing" src="/assets/pendulumprocessing.png" width="438" height="458" /></a></p>
+
+
+<p>https://gist.github.com/nazrdogan/6777186</p>
+
+
+<h2 style="text-align:justify;"><span style="color:#ff6600;">Tizen üzerinde başka bir örnek.(Rastgele zıplayan top)</span></h2>
+
+
+<p>https://gist.github.com/nazrdogan/6777186<br />
+https://vimeo.com/75860986<br />
+&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+</feed>

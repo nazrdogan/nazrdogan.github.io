@@ -1,0 +1,1539 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="Yukardaki gif Javascript geliştiricileri için oldukça büyük anlam ifade etse gerek. Javascript geliştiricleri yıllarca asenkron kod yazmak için &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2018-01-12'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="/blog/2018/01/12/async-await-javascript/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2018/01/12/async-await-javascript/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="https://www.bram.us/wordpress/wp-content/uploads/2017/05/js-callbacks-promises-asyncawait.gif" alt="async-await" /></p>
+
+<p>Yukardaki gif  Javascript geliştiricileri için oldukça büyük anlam ifade etse gerek. Javascript geliştiricleri yıllarca  asenkron kod yazmak için callback fonksiyonlarını ihtiyaç duyuyorlardı.</p>
+
+<p>Sonuç olarak  birçoğumuz  &ldquo;callback hell&rdquo; ile karşı karşıya gelmek zorunda kaldık.</p>
+
+<p>Neyse ki daha sonra ise Promise geldi. Bize callback fonksiyonlarından daha organize bir yapı sundu. ve halen birçok geliştirici tarafından sıklıkla kullanılmakta.</p>
+
+<p> Son olarak ise Async/Await'in eklenmesiyle daha okunabilir ve bakımı kolay bir hale geldi.</p>
+
+<h2>Nedir Bu  Async/Await ?</h2>
+
+<p>Async/Await  uzun zamandır beklenen asenkron işlemleri daha anlaşılması kolay bir hale getiren Promise tabanlı Javascript özelliğidir.</p>
+
+<p>Şimdi gelin Promise tabanlı bir örnek yapalım.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kr">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;node-fetch&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">async</span> <span class="kd">function</span> <span class="nx">makeRequest</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kr">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://jsonplaceholder.typicode.com/posts/1&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">makeRequest</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Şimdi ise <code>async/await</code> fonksiyonuna nasıl dönüştüreceğimizi görelim. ilk olarak async anathar kelimesini fonksiyonuna ekliyoruz.
+Daha sonra ise <code>.then()</code> kısmında aşağıdaki gibi değişiklik yapıp <code>await</code> ekliyoruz.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kr">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;node-fetch&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">async</span> <span class="kd">function</span> <span class="nx">makeRequest</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kr">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://jsonplaceholder.typicode.com/posts/1&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span>  <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+</span><span class='line'>  <span class="kr">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">makeRequest</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2017-11-18'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="/blog/2017/11/18/yarn/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2017/11/18/yarn/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="https://yarnpkg.com/assets/og_image.png" alt="yarn" /></p>
+
+<p>Facebook mühendisleri tarafından geliştirilmiş olan Yarn, hız ve güvenlik konusunda npm'den daha iyi olduğuna söz veriyor.</p>
+
+<h2>Yarn kurulumu</h2>
+
+<p>Yarn'ı kurmak için birçok yol bulunuyor. Eğer npm'e sahipseniz. npm ile yükleyebilirsiniz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'> npm install -g yarn
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Başka bir yol ise (Yarn'ı geliştiren takımında önerdiği) işletim sistemizin native paket yöneticisi ile yüklemek.Eğer bir Mac kullanıcısıysanız  homebrew ile yükleyebilirsiniz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'> brew update
+</span><span class='line'> brew install yarn
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Diğer işletim sistemleri <a href="https://yarnpkg.com/en/docs/install">için</a></p>
+
+<h2>Yarn CLI komutları</h2>
+
+<ul>
+<li>yarn add: aktif pakette kullanmak için bir paket ekler.</li>
+<li>yarn init: yarn dosyasını oluşturur.</li>
+<li>yarn install:  package.json dosysası içindekileri yükler.</li>
+<li>yarn publish: paket yöneticisinde bir paketi yayınlar.</li>
+<li>yarn remove: aktif paketten bir paketi siler.</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-09-30T00:00:00+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="/blog/2016/09/30/swift-temelleri/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/09/30/swift-temelleri/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/assets/swift_logo.png" width="100%"></p>
+
+<h2>Merhaba Dünya uygulaması</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="n">print</span><span class="p">(</span><span class="s">&quot;Merhaba Dünya&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>Değişken Tanımlama</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">var</span> <span class="n">myName</span> <span class="o">=</span> <span class="s">&quot;Nazır&quot;</span>
+</span><span class='line'><span class="k">var</span> <span class="n">myNumber</span> <span class="o">=</span> <span class="mi">13</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>Sabit Tanımlama</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">let</span> <span class="n">myName</span> <span class="o">=</span> <span class="s">&quot;Nazır&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>Veri Tipleri</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'>    <span class="c1">// Character veri tipi</span>
+</span><span class='line'>  <span class="k">var</span> <span class="nl">character</span> <span class="p">:</span><span class="n">Character</span> <span class="o">=</span> <span class="s">&quot;N&quot;</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="c1">// String Veri Tipi</span>
+</span><span class='line'>  <span class="k">var</span> <span class="nl">myName</span><span class="p">:</span> <span class="n">String</span> <span class="o">=</span> <span class="s">&quot;Nazır&quot;</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="c1">// Int Veri Tipi</span>
+</span><span class='line'>  <span class="k">var</span> <span class="nl">myNumber</span><span class="p">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="mi">13</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="c1">// Float ve Double veri tipi</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="k">var</span> <span class="nl">number</span><span class="p">:</span><span class="n">Float</span> <span class="o">=</span> <span class="mf">4.2</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="k">var</span> <span class="nl">number2</span><span class="p">:</span><span class="n">Double</span> <span class="o">=</span> <span class="mf">1.1</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="c1">// sabitlerde bu şekilde yazılabilir</span>
+</span><span class='line'>  <span class="k">let</span> <span class="nl">myName</span><span class="p">:</span><span class="n">String</span> <span class="o">=</span> <span class="s">&quot;Nazır&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>For döngüsü oluşturma</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">for</span> <span class="k">var</span> <span class="n">x</span> <span class="k">in</span> <span class="mf">0.</span><span class="p">.</span><span class="o">&lt;</span><span class="mi">10</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>Switch case yapısı</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">let</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Nazır&quot;</span>
+</span><span class='line'><span class="c1">// &#39;break&#39; yazmak gerekmez.</span>
+</span><span class='line'><span class="k">switch</span> <span class="n">name</span> <span class="p">{</span>
+</span><span class='line'> <span class="k">case</span> <span class="s">&quot;Nazır&quot;</span> <span class="o">:</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;Merhaba Nazır&quot;</span><span class="p">)</span>
+</span><span class='line'> <span class="k">case</span> <span class="s">&quot;Damla&quot;</span> <span class="o">:</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;Merhaba Damla&quot;</span><span class="p">)</span>
+</span><span class='line'> <span class="k">default</span> <span class="o">:</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;Merhaba&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>While Döngüsü</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">var</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>  
+</span><span class='line'><span class="c1">// 0&#39;dan 9 a kadar sayar</span>
+</span><span class='line'><span class="k">while</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">10</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">x</span><span class="o">++</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>If Else yapısı</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">let</span> <span class="n">swiftIsCool</span> <span class="o">=</span> <span class="nb">true</span>
+</span><span class='line'>  
+</span><span class='line'><span class="k">if</span> <span class="n">swiftIsCool</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">print</span><span class="p">(</span><span class="s">&quot;Tabi Canım&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">print</span><span class="p">(</span><span class="s">&quot;Hayır&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-09-30T00:00:00+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/09/30/programmatically-creating-ui-swift3/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>if you are new in iOS development and using Interface Builder for creating UI elements. Maybe you want to learn how can do with code. In this post I will talk about this and give a snippet.</p>
+
+<h3>UIView</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">let</span> <span class="n">child</span> <span class="o">=</span> <span class="bp">UIView</span><span class="p">(</span><span class="nl">frame</span><span class="p">:</span> <span class="bp">CGRect</span><span class="p">(</span><span class="nl">x</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nl">y</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span><span class="nl">width</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="nl">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
+</span><span class='line'><span class="n">child</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">red</span>
+</span><span class='line'><span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/assets/Simulator Screen Shot 30 Sep 2016 13.19.40.png" width="308"></p>
+
+<h3>UISlider</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'> <span class="k">let</span> <span class="n">slider</span> <span class="o">=</span> <span class="bp">UISlider</span> <span class="p">(</span><span class="nl">frame</span><span class="p">:</span> <span class="bp">CGRect</span><span class="p">(</span><span class="nl">x</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nl">y</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span><span class="nl">width</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span> <span class="nl">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
+</span><span class='line'>     <span class="n">slider</span><span class="p">.</span><span class="n">minimumValue</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>     <span class="n">slider</span><span class="p">.</span><span class="n">maximumValue</span> <span class="o">=</span> <span class="mi">100</span>
+</span><span class='line'>     <span class="n">slider</span><span class="p">.</span><span class="n">tintColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">red</span>
+</span><span class='line'>     <span class="n">slider</span><span class="p">.</span><span class="n">isContinuous</span> <span class="o">=</span> <span class="nb">true</span>
+</span><span class='line'>     <span class="n">slider</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">30</span>
+</span><span class='line'>     <span class="n">slider</span><span class="p">.</span><span class="n">addTarget</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nl">action</span><span class="p">:</span><span class="err">#</span><span class="n">selector</span><span class="p">(</span><span class="n">sliderValueDidChange</span><span class="p">),</span> <span class="k">for</span><span class="o">:</span> <span class="p">.</span><span class="n">valueChanged</span><span class="p">)</span>
+</span><span class='line'>     <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">slider</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="nf">sliderValueDidChange</span><span class="p">(</span><span class="nl">sender</span><span class="p">:</span><span class="bp">UISlider</span><span class="o">!</span><span class="p">)</span>
+</span><span class='line'>   <span class="p">{</span>
+</span><span class='line'>      <span class="n">print</span><span class="p">(</span><span class="s">&quot;value : \(sender.value)&quot;</span><span class="p">)</span>
+</span><span class='line'>   <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/assets/Simulator Screen Shot 30 Sep 2016 13.56.51.png" width="308"></p>
+
+<h3>UIButton</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">let</span> <span class="n">button</span>  <span class="o">=</span> <span class="bp">UIButton</span> <span class="p">(</span><span class="nl">frame</span> <span class="p">:</span> <span class="bp">CGRect</span> <span class="p">(</span><span class="nl">x</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="nl">y</span><span class="p">:</span><span class="mi">100</span> <span class="p">,</span><span class="nl">width</span><span class="p">:</span><span class="mi">100</span> <span class="p">,</span> <span class="nl">height</span><span class="p">:</span><span class="mi">40</span><span class="p">))</span>
+</span><span class='line'>    <span class="n">button</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">red</span>
+</span><span class='line'>    <span class="n">button</span><span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">&quot;My Button&quot;</span><span class="p">,</span> <span class="k">for</span><span class="o">:</span><span class="p">.</span><span class="n">normal</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">button</span><span class="p">.</span><span class="n">setTitleColor</span><span class="p">(</span><span class="bp">UIColor</span><span class="p">.</span><span class="n">yellow</span><span class="p">,</span> <span class="k">for</span><span class="o">:</span> <span class="p">.</span><span class="n">normal</span><span class="p">)</span>
+</span><span class='line'>   <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'> <span class="n">button</span><span class="p">.</span><span class="n">addTarget</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nl">action</span><span class="p">:</span> <span class="err">#</span><span class="n">selector</span><span class="p">(</span><span class="n">buttonClicked</span><span class="p">),</span> <span class="k">for</span><span class="o">:</span> <span class="p">.</span><span class="n">touchUpInside</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/assets/Simulator Screen Shot 30 Sep 2016 14.56.26.png" width="308"></p>
+
+<h3>UISwitch</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">let</span> <span class="n">switchDemo</span> <span class="o">=</span> <span class="bp">UISwitch</span><span class="p">(</span><span class="nl">frame</span><span class="p">:</span> <span class="bp">CGRect</span><span class="p">(</span><span class="nl">x</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="nl">y</span><span class="p">:</span><span class="mi">100</span> <span class="p">,</span><span class="nl">width</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span> <span class="nl">height</span><span class="p">:</span><span class="mi">40</span><span class="p">))</span>
+</span><span class='line'>    <span class="n">switchDemo</span><span class="p">.</span><span class="n">isOn</span>  <span class="o">=</span> <span class="nb">true</span>
+</span><span class='line'>    <span class="n">switchDemo</span><span class="p">.</span><span class="n">addTarget</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nl">action</span><span class="p">:</span> <span class="err">#</span><span class="n">selector</span><span class="p">(</span><span class="n">switchChanged</span><span class="p">),</span> <span class="k">for</span><span class="o">:</span> <span class="p">.</span><span class="n">valueChanged</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">switchDemo</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="nf">switchChanged</span><span class="p">(</span><span class="nl">sender</span><span class="p">:</span> <span class="bp">UISwitch</span><span class="o">!</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">print</span><span class="p">(</span><span class="s">&quot;value: \(sender.isOn)&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/assets/Simulator Screen Shot 30 Sep 2016 19.40.40.png" width="308"></p>
+
+<h3>UISegmentedControl</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">let</span> <span class="n">segmentedControl</span> <span class="o">=</span> <span class="bp">UISegmentedControl</span><span class="p">(</span><span class="nl">frame</span><span class="p">:</span> <span class="bp">CGRect</span><span class="p">(</span><span class="nl">x</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="nl">y</span><span class="p">:</span><span class="mi">100</span> <span class="p">,</span><span class="nl">width</span><span class="p">:</span><span class="mi">260</span><span class="p">,</span> <span class="nl">height</span><span class="p">:</span><span class="mi">30</span><span class="p">))</span>
+</span><span class='line'>    <span class="n">segmentedControl</span><span class="p">.</span><span class="n">insertSegment</span><span class="p">(</span><span class="nl">withTitle</span><span class="p">:</span><span class="s">&quot;index 0&quot;</span><span class="p">,</span> <span class="nl">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nl">animated</span><span class="p">:</span> <span class="nb">false</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">segmentedControl</span><span class="p">.</span><span class="n">insertSegment</span><span class="p">(</span><span class="nl">withTitle</span><span class="p">:</span><span class="s">&quot;index 1&quot;</span><span class="p">,</span> <span class="nl">at</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nl">animated</span><span class="p">:</span> <span class="nb">false</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">segmentedControl</span><span class="p">.</span><span class="n">insertSegment</span><span class="p">(</span><span class="nl">withTitle</span><span class="p">:</span><span class="s">&quot;index 2&quot;</span><span class="p">,</span> <span class="nl">at</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nl">animated</span><span class="p">:</span> <span class="nb">false</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">segmentedControl</span><span class="p">.</span><span class="n">addTarget</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nl">action</span><span class="p">:</span> <span class="err">#</span><span class="n">selector</span><span class="p">(</span><span class="n">getSegmentedControlValue</span><span class="p">),</span> <span class="k">for</span><span class="o">:</span> <span class="p">.</span><span class="n">valueChanged</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">segmentedControl</span><span class="p">.</span><span class="n">selectedSegmentIndex</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">segmentedControl</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="nf">getSegmentedControlValue</span><span class="p">(</span><span class="nl">sender</span><span class="p">:</span><span class="bp">UISegmentedControl</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>       <span class="k">if</span>  <span class="n">sender</span><span class="p">.</span><span class="n">selectedSegmentIndex</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+</span><span class='line'>           <span class="n">print</span><span class="p">(</span><span class="s">&quot;index 0&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>       <span class="p">}</span>
+</span><span class='line'>       <span class="k">else</span> <span class="k">if</span> <span class="n">sender</span><span class="p">.</span><span class="n">selectedSegmentIndex</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>           <span class="n">print</span><span class="p">(</span><span class="s">&quot;index 1&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>       <span class="p">}</span>
+</span><span class='line'>       <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>           <span class="n">print</span><span class="p">(</span><span class="s">&quot;index 2&quot;</span><span class="p">)</span>
+</span><span class='line'>       <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/assets/Simulator Screen Shot 30 Sep 2016 19.43.35.png" width="308"></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-08-30T00:00:00+03:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="/blog/2016/08/30/apache-cordova-ios-debug/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/08/30/apache-cordova-ios-debug/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu yazımda Apache Cordova için iOS uygulamalarında uzaktan hata ayıklama nasıl yapılır onu göstereceğim.</p>
+
+<h5>Hata Ayıklamayı  Etkinleştirme</h5>
+
+<p>ilk olarak Safari'nin  &ldquo;Develop Menu&rdquo; kısmını etkinleştirmeniz gerekmekte. Bunun için Safari > Preferences ve  &ldquo;Show Develop Menu&rdquo; checkbox'unu seçilmiş oldugundan emin olalım.</p>
+
+<p><img src="/assets/safari-debug-enable.png" alt="safari debug enabble" /></p>
+
+<p>Şimdi ise iOS cihaz üzerinden gidip Web Denetçisini aktif hale getirmek.
+Bunun için Ayarlar > Safari > ileri Düzey ve  Web Denetçisini aktif hale getirin.</p>
+
+<p><img src="/assets/IMG_3736.PNG" alt="iphone debug enable" />
+<img src="/assets/IMG_3737.PNG" alt="iphone debug enable" />
+<img src="/assets/IMG_3738.PNG" alt="iphone debug enable" /></p>
+
+<h5>Safari ile Hata ayıklama</h5>
+
+<p>Gerekli ayarları yaptıktan sonra ise hata ayıklamaya geçebiliriz. Öncelikle uygulamayı cihazımızda başlatıyoruz. (Cihazımız USB ile bağlı olmalı) Daha sonra ise Safari'de Develop Menusünden  Cihazımızı seçerek hata ayıklama işlemini başlatabiliriz.</p>
+
+<p><img src="/assets/safari-debug-1.png" alt="safari debug 1" />
+<img src="/assets/safari-debug-2.png" alt="safari debug 2" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/07/31/ionic2-googlemaps/">Ionic 2 - Google Maps</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-07-31T00:00:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="/blog/2016/07/31/ionic2-googlemaps/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/07/31/ionic2-googlemaps/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu yazımda Ionic 2 uygulamalarında <strong>Google Maps</strong>&lsquo;ı nasıl ekleyeceğimiz ve <strong>ionic-native</strong> kullanarak konum bilgisini almayı öğreneceğiz.</p>
+
+<p>Şimdi yeni bir ionic projesi oluşturarak başlayalım.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ionic start ionic-maps blank --v2
+</span><span class='line'>cd ionic-maps
+</span><span class='line'>ionic platform add android</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Daha sonra ise konum bilgisi alabilmek için <strong>Geolocation</strong> pluginini ekliyoruz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ionic plugin add cordova-plugin-geolocation</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Google Maps'in script'ini <strong>index.html</strong>&lsquo;e ekliyoruz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;body&gt;
+</span><span class='line'>  &lt;ion-app&gt;&lt;/ion-app&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;!-- Google Maps --&gt;
+</span><span class='line'> &lt;script src="http://maps.googleapis.com/maps/api/js"&gt;&lt;/script&gt;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>  &lt;!-- cordova.js required for cordova apps --&gt;
+</span><span class='line'>  &lt;script src="cordova.js"&gt;&lt;/script&gt;
+</span><span class='line'>  &lt;!-- Polyfill needed for platforms without Promise and Collection support --&gt;
+</span><span class='line'>  &lt;script src="build/js/es6-shim.min.js"&gt;&lt;/script&gt;
+</span><span class='line'>  &lt;!-- Zone.js and Reflect-metadata  --&gt;
+</span><span class='line'>  &lt;script src="build/js/Reflect.js"&gt;&lt;/script&gt;
+</span><span class='line'>  &lt;script src="build/js/zone.js"&gt;&lt;/script&gt;
+</span><span class='line'>  &lt;!-- the bundle which is built from the app's source code --&gt;
+</span><span class='line'>  &lt;script src="build/js/app.bundle.js"&gt;&lt;/script&gt;
+</span><span class='line'>&lt;/body&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bunları ekledikten sonra <strong>angular/core</strong>&lsquo;dan <strong>OnInit</strong>'i ekliyoruz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>import {Component, OnInit} from '@angular/core';</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Konum almak için ise Geolocation'i ekliyoruz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>import {Geolocation} from 'ionic-native';</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Daha sonra fonksiyonumuzu yazıyoruz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>  loadMap() {
+</span><span class='line'>    Geolocation.getCurrentPosition().then((resp) =&gt; {
+</span><span class='line'>      var latlng = new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude);
+</span><span class='line'>      var myOptions = {
+</span><span class='line'>        zoom: 8,
+</span><span class='line'>        center: latlng,
+</span><span class='line'>        mapTypeId: google.maps.MapTypeId.ROADMAP
+</span><span class='line'>      };
+</span><span class='line'>      var map = new google.maps.Map(document.getElementById("map"), myOptions);
+</span><span class='line'>    });
+</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Eğer <strong>Typescript</strong> yazıyorsanız Google Map'sin hata verdiğini göreceksiniz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>TypeScript error: /Users/nazirdogan/ionic-maps/app/pages/home/home.ts(21,24): Error TS2304: Cannot find name 'google'.
+</span><span class='line'>TypeScript error: /Users/nazirdogan/ionic-maps/app/pages/home/home.ts(25,20): Error TS2304: Cannot find name 'google'.
+</span><span class='line'>TypeScript error: /Users/nazirdogan/ionic-maps/app/pages/home/home.ts(27,21): Error TS2304: Cannot find name 'google'.
+</span><span class='line'>TypeScript error: typings/index.d.ts(2,1): Error TS6053: File 'typings/globals/google.maps/index.d.ts' not found.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bu hatanın nedeni ise Typescript Definition dosyalarının olmamasıdır.</p>
+
+<p>Bu hatayı gidermek için</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> npm install typings --global   
+</span><span class='line'>
+</span><span class='line'> typings install dt~google.maps --global
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yukarıdaki gibi typings'i yüklersek projemizde typings klasörü altında globals klasörü içinde <strong>google.maps</strong> dosyaları yüklenecektir.</p>
+
+<p>Yazdığımız fonksiyonu <strong>ngOnInit</strong> ile çagırıyoruz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>ngOnInit() {
+</span><span class='line'>    console.log('ngOnInit');
+</span><span class='line'>    this.loadMap();
+</span><span class='line'>  }
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Html tarafında ise id'si map olan bir div oluşturuyoruz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;ion-header&gt;
+</span><span class='line'>  &lt;ion-navbar&gt;
+</span><span class='line'>    &lt;ion-title&gt;
+</span><span class='line'>      Google Maps
+</span><span class='line'>    &lt;/ion-title&gt;
+</span><span class='line'>  &lt;/ion-navbar&gt;
+</span><span class='line'>&lt;/ion-header&gt;
+</span><span class='line'>&lt;ion-content scroll="false"&gt;
+</span><span class='line'>  &lt;div id="map"&gt;&lt;/div&gt;
+</span><span class='line'>&lt;/ion-content&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>sass dosyamız</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>.home {
+</span><span class='line'>
+</span><span class='line'>}
+</span><span class='line'>.scroll {
+</span><span class='line'>    height: 100%;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>#map {
+</span><span class='line'>    width: 100%;
+</span><span class='line'>    height: 100%;
+</span><span class='line'>
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/assets/ionic-maps.png" alt="project structure" /></p>
+
+<p>Projenin Github <a href="https://github.com/nazrdogan/ionic-maps">linki</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/07/23/ionic2-uzaktan-veri-alma/">Ionic 2 - Sunucudan Veri Alma</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-07-23T00:00:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="/blog/2016/07/23/ionic2-uzaktan-veri-alma/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/07/23/ionic2-uzaktan-veri-alma/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/assets/ionic-weather-app.png" alt="project structure" /></p>
+
+<p>Mobil uygulamaların birçoğu servis olmadan çokta birşey ifade etmezler. ve birçok uygulama REST ve benzeri servisleri kullanmaktadır. Şimdi bizde yapacağımız uygulama ile basit bir servis çagırısı yapıp veriyi ekrana basacağız.</p>
+
+<p>Yapacağımız uygulama basit bir hava durumu uygulaması olacak. Servisden veriyi alma dışında Geolocation pluginini kullanımını göreceğiz. Ayrıca ionic'in yeni CLI yeni özelliğinden bir tanesini kullanacağız.</p>
+
+<p>Şimdi uygulamayı oluşturarak başlayalım.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> ionic start Ionic2Weather blank --v2
+</span><span class='line'> cd Ionic2Weather
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>uygulamayı oluşturuduktan sonra ilk iş olarak servis için provider'i üretiyoruz.</p>
+
+<p>Bunu Ionic CLI'da bulunan <strong><a href="http://ionicframework.com/docs/v2/cli/generate/">generate</a></strong> komutu ile yapıyoruz.</p>
+
+<p><em>Not : Bu komut ile sayfa sayfa'da generate edilmekte. Dökümanda bulabilirsiniz.</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ionic g provider MyData
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> yukaradaki komut ile Ionic bizim için yok ise bir <strong>providers</strong> klasörü oluşturuyor. Ayrıca verdiğimiz isimde bir klasör daha oluşturup içerisinde aynı isimle typescript dosyası oluşturuyor.</p>
+
+<p>providers - > my-data -> my-data.ts</p>
+
+<div><script src='https://gist.github.com/194f00a3183b1fcbca9f49710366c5bf.js'></script>
+<noscript><pre><code>
+// http://ngcourse.rangle.io/handout/di/angular2/inject_and_injectable.html
+import { Injectable } from &#39;@angular/core&#39;;
+// HTTP modulünü import ediyoruz.
+import { Http } from &#39;@angular/http&#39;;
+// rxjs kütüphanesinden map&#39;i ekliyoruz.
+import &#39;rxjs/add/operator/map&#39;;
+
+/*
+  Generated class for the MyData provider.
+
+  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+  for more info on providers and Angular 2 DI.
+*/
+@Injectable()
+export class MyData {
+  data: any;
+
+  constructor(private http: Http) {
+    this.data = null;
+  }
+
+  load() {
+    if (this.data) {
+      // already loaded data
+      return Promise.resolve(this.data);
+    }
+
+    // don&#39;t have the data yet
+    return new Promise(resolve =&gt; {
+      // We&#39;re using Angular Http provider to request the data,
+      // then on the response it&#39;ll map the JSON data to a parsed JS object.
+      // Next we process the data and resolve the promise with the new data.
+      this.http.get(&#39;path/to/data.json&#39;)
+        .map(res =&gt; res.json())
+        .subscribe(data =&gt; {
+          // we&#39;ve got back the raw data, now generate the core schedule data
+          // and save the data for later reference
+          this.data = data;
+          resolve(this.data);
+        });
+    });
+  }
+}
+
+</code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/07/23/ionic2-proje-yapisi/">Ionic 2 - Proje Yapısı</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-07-23T00:00:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="/blog/2016/07/23/ionic2-proje-yapisi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/07/23/ionic2-proje-yapisi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bir <a href="http://nazrdogan.github.io/javascript/ionic%202/2016/07/22/ionic2-kurulum.html">önceki yazımda</a> Ionic 2' nin nasıl kurulacağından bahsettim.</p>
+
+<p>Bu yazımda ise proje yapısınıdan bahsetmek ve önemli birkaç dosyayı göstermek istiyorum.</p>
+
+<p><img src="/assets/ionic2-project-yapi.png" alt="project structure" /></p>
+
+<p><em>Not:Görseldeki editor <a href="" title="https://www.visualstudio.com/en-us/products/code-vs.aspx">Visual Studio Code</a> ve ionic'in oluşturdugu blank projedir.Sadece homeSercives.ts dosyası eklenmiştir.</em></p>
+
+<p>Projemizde Ionic 1.x de oldugu gibi platforms, plugins ,hooks gibi Cordova'nın eklediği klasörler mevcut.</p>
+
+<p>node_modules klasörü ve diğer config dosyaları üzerinde durmayacağım. config dosyalarını biraz karıştırarak neler olduguna bakabilirsiniz.</p>
+
+<p>Bizim için en önemli klasör <strong>app</strong> klasörü. <strong>app</strong> klasörü <strong>pages</strong> içersinde html'lerimiz ve .ts (typescript) dosyaları bulunmaktadır. ayrıca platformlara özel yazdığımız stillerin bulunduğu <strong>theme</strong> klasörü yer almaktadır. Ayrıca ana root'ta bir <strong>app.ts</strong> dosyası bulunmaktadır. adındanda anlaşılacağı üzere uygulama bu dosyadan başlamaktadır.</p>
+
+<p>şimdi <strong>app.ts</strong> , <strong>home.ts</strong> , <strong>home.html</strong> &lsquo;e bakalım.</p>
+
+<div><script src='https://gist.github.com/500059827d14f146350d779f1e3a99bd.js'></script>
+<noscript><pre><code>
+//http://learnangular2.com/components/
+import {Component} from &#39;@angular/core&#39;;
+/* ionic 1.x de karşşılıgı $ionicPlatform. Platform&#39;a yönelik işler yapılacaksa Platform&#39;u import etmek gerekiyor. 
+ ionicBootstrap ise uygulamayı başlatmak için kullanılan bir kök bileşendir.
+*/
+import {Platform, ionicBootstrap} from &#39;ionic-angular&#39;;
+/* Bu kısımda oldukça önemli 1.x kullananların  ngCordova olarak bildiği  ionic 2 ionic-native adını almıştır. 
+  http://ionicframework.com/docs/v2/native/
+*/
+import {StatusBar} from &#39;ionic-native&#39;;
+
+// Burası ise kök sayfa olarak ayarlanacak dosyayı import ediyor.
+import {HomePage} from &#39;./pages/home/home&#39;;
+
+// Componentimizi oluşturuyoruz. Bu kısım typescript ve Angular 2 oldugu için bu konulara aşina olmak gerekiyor.
+@Component({
+  template: &#39;&lt;ion-nav [root]=&quot;rootPage&quot;&gt;&lt;/ion-nav&gt;&#39;
+})
+// MyApp adında bir class oluşturuyoruz.
+export class MyApp {
+  
+  // rootPage olarak daha önceden import ettiğimiz HomePage&#39;i belirliyoruz.
+  rootPage: any = HomePage;
+ // constructor içerisinde ise yine daha önceden import ettiğimiz Platform&#39;u kullanıyoruz.
+  constructor(platform: Platform) {
+    // ionic 1.x deki gibi platform ready ile uygulamayı başlatıyoruz.
+    platform.ready().then(() =&gt; {
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
+      StatusBar.styleDefault();
+    });
+  }
+}
+// ionicBootstrap oldukça önemli eğer bunu çagırmaz isek uygulamamız başlamayacaktır.
+ionicBootstrap(MyApp);
+</code></pre></noscript></div>
+
+
+<p>Proje yapısına dair söylenebilecek çok şey olsada şimdilik bu kadar. İlk bakışta biraz karışık gelebilir ama konsepti öğrendikten sonra oldukça modüler ve kullanışlı geleceğinden eminim. ionic 1.x de şikayet ettiğim birçok şeyden kurtulmuşa benziyor. Ionic 2' ye başlamadan önce  <strong>Angular 2</strong> ve <strong>Typescript</strong> çalışmanızı şiddetle tavsiye ediyorum.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/07/22/ionic2-kurulum/">Ionic 2 Kurulumu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-07-22T00:00:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="/blog/2016/07/22/ionic2-kurulum/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/07/22/ionic2-kurulum/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://ionicframework.com/img/blog/ionic-angular-v2.jpg" alt="ionic-angular-v2" /></p>
+
+<hr />
+
+<p><br></p>
+
+<p>Javascript dünyası son bir iki yıldır baş döndürücü bir şekilde ilerliyor. Node.js'in çok hızlı yükselişi ve ES6 ile Javascript'in yeni özelliklere kavuşması Javascript'i vazgeçilmez bir dil yaptı.</p>
+
+<p>Buna bağlı olarak gelişen Framework'ler (Angular,React) ve dillerde (TypeScript) bundan nasibini aldı. Şu an bütün tarayıcılar bütün özellikleri desteklemesede endişelenecek birşey yok.Bunun için geliştirilen çözümlerde mevcut ( <a href="https://cdnjs.com/libraries/es6-shim">es6-shim</a> ve Babel,TypeScript(programlama dili) gibi araçlar)</p>
+
+<p>Ionic 2'de Ionic 1.x gibi Angular üzerine kurulu bir framework. 1.x'den farkı Angular 2' yi kullanması. Angular 2 ise Angular 1.x düşünüldügünde major bir güncelleme değil komple yeniden yazılmış bir framework diyebiliriz.</p>
+
+<p>Angular 1.x öğrenen ve kullanan birisi için kulağa kötü gibi gelsede front-end geliştiricileri için birçok sorunu ortadan bir değişiklikler getirdiği kesin. Bende yeni yeni Angular2'ye alışmaya çalışan biri olarak daha büyük projeler için oldukça iyi olacağı kanaatindeyim.</p>
+
+<p>Ionic 2 ye daha önceden göz gezdirip geçmiştim.Hazır oldugu kanaatinde değildim. Şimdi biraz daha gelişen framework birçok sorunu çözmüş gibi gözüküyor. Bu yazıda ve bunun devamı olacak yazılarda Ionic 2 ye yönelik örnekleri göstermeye çalışacağım. Hemde kendim öğrenmiş olacağım :)</p>
+
+<p>Hadi başlayalım.</p>
+
+<h1>Cordova ve Ionic</h1>
+
+<p>ilk olarak Cordova ve Ionic'i yüklüyoruz. ( Sisteminize Node.js'i yüklediğinizden emin olunuz.)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>npm install -g cordova ionic@beta</span></code></pre></td></tr></table></div></figure>
+
+
+<p>veya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>npm update -g cordova ionic@beta</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Not: Eğer Ionic 1.x ile geliştirme yapıyorsanız endişe etmenize gerek yok. Eski kurulumlarınız ve projeleriniz oldugu gibi kullanımına devam edebilirsiniz.</em></p>
+
+<h1>Proje Oluşturma</h1>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ionic start Ionic2İlkUygulama blank --v2
+</span><span class='line'>
+</span><span class='line'>cd Ionic2İlkUygulama
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Not: Proje ilk oluşurken sabırlı olunuz npm paketlerinin yüklenmesi zaman alabilmektedir.</em></p>
+
+<p>Daha sonra Android platformunu ekliyoruz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  ionic platform add android</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Not :Eğer MacOS üzerinde geliştirme yapıyorsanız iOS platform otomatik olarak eklenmektedir.</em></p>
+
+<p>Çalıştırmak için ise</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>ionic run android -l -c -s
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Browser'da test etmek için ise</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>ionic serve -l -c -s
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/07/10/facebook-flow/">Facebook Flow - Javascript Için Statik Tip Denetleyicisi (Static Type Checker)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-07-10T00:00:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="/blog/2016/07/10/facebook-flow/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/07/10/facebook-flow/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="https://flowtype.org/static/flow-og-image.png" alt="flowtype" /></p>
+
+<p>&nbsp;&nbsp;Flow, Facebook tarafından geliştirilen Javascript için statik tip denetleyicisidir. Bu araçın ortaya çıkmasında altında yatan neden ise Javascript'in dinamik tipe sahip bir olmasıdır. Dinamik tipli dillerde değişkenlerin tipi (string ,float, double) derleme anında bilinmezler. Statik tipli diller (Java ,C ve C++ vb.. ) ise kullanıcının değişkenlerin tiplerini her zaman tanımlmasını ister.</p>
+
+<p>&nbsp;&nbsp;Aslında bu Javascript'e esneklik getirdiği gibi bazı sorunları da beraberinde getirmektedir. Bugları bulmak,kod sürekliliğini sağlamak oldukça zorlaşmaktadır. Bunun için geliştirilmekte olan Facebook'un Flow aracını nasıl kullanacağımıza bir göz atalım.</p>
+
+<h1>Flow'un kurulumu</h1>
+
+<p>Öncelikle bir npm projesi oluşturuyoruz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$&gt; mkdir -p get_started
+</span><span class='line'>$&gt; cd get_started
+</span><span class='line'>$&gt; echo '{"name": "get_started", "scripts": {"flow": "flow; test $? -eq 0 -o $? -eq 2"}}' &gt; package.json</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Daha sonra Flow'u projemize ekliyoruz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$&gt; touch .flowconfig
+</span><span class='line'>$&gt; npm install --save-dev flow-bin</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Şimdi ise kodumuzu yazalım.</p>
+
+<p><strong>index.js</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// @flow</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Daha sonra ise Flow'u çalıştıralım.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="o">&gt;</span> <span class="nx">npm</span> <span class="nx">run</span><span class="o">-</span><span class="nx">script</span> <span class="nx">flow</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&gt;</span> <span class="nx">test</span><span class="err">@</span> <span class="nx">flow</span> <span class="o">/</span><span class="nx">get_started</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="nx">flow</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">No</span> <span class="nx">errors</span><span class="o">!</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Evet hiçbir hata almadık.  Şimdi ise kodumuzu biraz değiştirelim. ve hata alalım.</p>
+
+<p><strong>index.js</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// @flow</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">str</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="o">&gt;</span> <span class="nx">npm</span> <span class="nx">run</span><span class="o">-</span><span class="nx">script</span> <span class="nx">flow</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&gt;</span> <span class="nx">test</span><span class="err">@</span> <span class="nx">flow</span> <span class="o">/</span><span class="nx">get_started</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="nx">flow</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="err">/dev/null</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">index</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">3</span>
+</span><span class='line'>  <span class="mi">3</span><span class="o">:</span> <span class="kd">let</span> <span class="nx">str</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span><span class="p">;</span>
+</span><span class='line'>                       <span class="o">^^^^^^^^^^^^^^</span> <span class="nx">string</span><span class="p">.</span> <span class="nx">This</span> <span class="nx">type</span> <span class="nx">is</span> <span class="nx">incompatible</span> <span class="kd">with</span>
+</span><span class='line'>  <span class="mi">3</span><span class="o">:</span> <span class="kd">let</span> <span class="nx">str</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span><span class="p">;</span>
+</span><span class='line'>              <span class="o">^^^^^^</span> <span class="nx">number</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nx">Found</span> <span class="mi">1</span> <span class="nx">error</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Şimdi ise hata aldık. Çünkü <strong>number</strong> olarak belirlediğimiz değişkene <strong>string</strong> atadık.</p>
+
+<p>Bir örnek daha yapalım.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nx">foo</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">foo</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Burda ise nerde hata alacağımızı tahmin edebiliyor musunuz ?</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">8</span>
+</span><span class='line'>  <span class="mi">8</span><span class="o">:</span> <span class="nx">foo</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
+</span><span class='line'>     <span class="o">^^^^^^^^^^^^^^^^^^</span> <span class="kd">function</span> <span class="nx">call</span>
+</span><span class='line'>  <span class="mi">4</span><span class="o">:</span>   <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
+</span><span class='line'>              <span class="o">^</span> <span class="nx">string</span><span class="p">.</span> <span class="nx">This</span> <span class="nx">type</span> <span class="nx">is</span> <span class="nx">incompatible</span> <span class="kd">with</span>
+</span><span class='line'>  <span class="mi">4</span><span class="o">:</span>   <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
+</span><span class='line'>              <span class="o">^^^</span> <span class="nx">number</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">8</span>
+</span><span class='line'>  <span class="mi">8</span><span class="o">:</span> <span class="nx">foo</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
+</span><span class='line'>     <span class="o">^^^^^^^^^^^^^^^^^^</span> <span class="kd">function</span> <span class="nx">call</span>
+</span><span class='line'>  <span class="mi">4</span><span class="o">:</span>   <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
+</span><span class='line'>                <span class="o">^</span> <span class="nx">string</span><span class="p">.</span> <span class="nx">This</span> <span class="nx">type</span> <span class="nx">is</span> <span class="nx">incompatible</span> <span class="kd">with</span>
+</span><span class='line'>  <span class="mi">4</span><span class="o">:</span>   <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
+</span><span class='line'>              <span class="o">^^^</span> <span class="nx">number</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nx">Found</span> <span class="mi">2</span> <span class="nx">errors</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&nbsp;<code>foo()</code> fonksiyonu number tipinde parametre alırken . Biz ise  <code>foo('Hello World')</code> ile string bir parametre gönderdik ve hatayı aldık.</p>
+
+<p>Flow için söylenecek çok şey olsada şimdilik bu kadar. Flow'u projenize  ekleyerek özelliklerinden faydalanabilirsiniz. Vakit bulabilirsem Grunt , Gulp  gibi görev çalıştırıcılarında ve Atom ve Webstorm gibi editorlerle nasıl kullanılacağından bahsedeceğim.</p>
+
+<p>Flow hakkında daha çok bilgi için: <a href="https://flowtype.org/">flowtype.org</a></p>
+
+<p><a href="https://github.com/igrigorik/ga-beacon"><img src="https://ga-beacon.appspot.com/UA-54922205-13/facebook-flow" alt="Analytics" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/2">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

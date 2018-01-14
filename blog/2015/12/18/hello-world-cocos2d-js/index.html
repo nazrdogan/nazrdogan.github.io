@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Hello World Application Cocos2d-js V3 - Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="In this post , we can start a real cross platform cocos2d-js example. Let's begin (If you don't read posts about setup and what is cocos2d-js you can &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/blog/2015/12/18/hello-world-cocos2d-js/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Hello World Application Cocos2d-js V3</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-12-18T10:54:39+02:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:54 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p class="p1"><span class="s1">In this post , we can start a real cross platform cocos2d-js example. Let's begin </span><span class="s1">(If you don't read posts about setup and what is cocos2d-js you can click to check  underlined blog posts.) </span><span class="s1">If you created a project you should see index.html page . There is no interesting things in here it's just plain   HTML. </span></p>
+
+
+<p class="p1"><span class="s1"> </span></p>
+
+
+
+
+<pre class="theme:sublime-text lang:default decode:true">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Cocos2d-html5 Hello World test&lt;/title&gt;
+    &lt;link rel="icon" type="image/GIF" href="res/favicon.ico"/&gt;
+    &lt;meta name="viewport" content="width=480, initial-scale=1"&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes"/&gt;
+    &lt;meta name="full-screen" content="yes"/&gt;
+    &lt;meta name="screen-orientation" content="portrait"/&gt;
+    &lt;meta name="x5-fullscreen" content="true"/&gt;
+    &lt;meta name="360-fullscreen" content="true"/&gt;
+    &lt;style&gt;
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body style="padding:0; margin: 0; background: #000;"&gt;
+&lt;script src="res/loading.js"&gt;&lt;/script&gt;
+&lt;canvas id="gameCanvas" width="480" height="720"&gt;&lt;/canvas&gt;
+&lt;script src="frameworks/cocos2d-html5/CCBoot.js"&gt;&lt;/script&gt;
+&lt;script cocos src="main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+
+
+<p>This canvas  will show  the game inside it.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">&lt;canvas id="gameCanvas" width="480" height="720"&gt;&lt;/canvas&gt;</pre>
+
+
+<p>and second important thing is  its used for starting Cocos2d-js framework.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">&lt;script src="frameworks/cocos2d-html5/CCBoot.js"&gt;&lt;/script&gt;
+</pre>
+
+
+<p>and last one is our actual game will start in this script file.</p>
+
+
+<p>Lets look at main.js file. if you  look carefully we only call main.js file in index.html. Game starting at this script file even so its more like a configuration file you won't code at this moment.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">cc.game.onStart = function(){
+    if(!cc.sys.isNative &amp;&amp; document.getElementById("cocosLoading")) //If referenced loading.js, please remove it
+        document.body.removeChild(document.getElementById("cocosLoading"));
+
+    // Pass true to enable retina display, on Android disabled by default to improve performance
+    cc.view.enableRetina(cc.sys.os === cc.sys.OS_IOS ? true : false);
+
+    // Adjust viewport meta
+    cc.view.adjustViewPort(true);
+    // Setup the resolution policy and design resolution size
+    cc.view.setDesignResolutionSize(cc.winSize.height, cc.winSize.width, cc.ResolutionPolicy.SHOW_ALL);
+    // Instead of set design resolution, you can also set the real pixel resolution size
+    // Uncomment the following line and delete the previous line.
+    // cc.view.setRealPixelResolution(960, 640, cc.ResolutionPolicy.SHOW_ALL);
+    // The game will be resized when browser size change
+    cc.view.resizeWithBrowserSize(true);
+    //load resources
+    cc.LoaderScene.preload(g_resources, function () {
+        cc.director.runScene(new HelloWorldScene());
+    }, this);
+};
+cc.game.run();</pre>
+
+
+<p>I think most important thing in here , loading resources and running scene by  the director. the others is easy to understand and just configs.</p>
+
+
+<p>Docs says "<a href="http://www.cocos2d-x.org/reference/html5-js/V3.8/index.html">cc.LoaderScene</a> is a scene that you can load it when you loading files "</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true"> cc.LoaderScene.preload(g_resources, function () {
+        cc.director.runScene(new HelloWorldScene());
+    }, this);</pre>
+
+
+<p>We  loaded resources file and   run the scene.</p>
+
+
+<p>Let's look at  resources.js in our project. resources.js is file our resources described in here.  if you look at the  above code <em>g_resources</em> loaded. it's come from this file.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">var res = {
+    HelloWorld_png : "res/HelloWorld.png",
+
+};
+
+
+var g_resources = [];
+for (var i in res) {
+    g_resources.push(res[i]);
+}
+</pre>
+
+
+<p>We showed path of image files. and pushed it  to  <em>g_resources </em> array.  You can add more resources in here.</p>
+
+
+<p>After looking at resources file, Let's look most important file of our simple project. its named app.js. When you start to game user will show UI in it.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">var HelloWorldLayer = cc.Layer.extend({
+    sprite:null,
+    ctor:function () {
+        //////////////////////////////
+        // 1. super init first
+        this._super();
+
+
+        /////////////////////////////
+        // 2. add a menu item with "X" image, which is clicked to quit the program
+        //    you may modify it.
+        // ask the window size
+        var size = cc.winSize;
+
+        /////////////////////////////
+        // 3. add your codes below...
+        // add a label shows "Hello World"
+        // create and initialize a label
+        var helloLabel = new cc.LabelTTF("Hello", "Arial", 55);
+      //  helloLabel.setColor(new cc.Color(255,222,22));
+        // position the label on the center of the screen
+        helloLabel.x = size.width / 2;
+        helloLabel.y = size.height / 2 + 200;
+        // add the label as a child to this layer
+        this.addChild(helloLabel, 5);
+
+        // add "HelloWorld" splash screen"
+        this.sprite = new cc.Sprite(res.HelloWorld_png);
+        this.sprite.attr({
+            x: size.width / 2,
+            y: size.height / 2
+        });
+        this.addChild(this.sprite, 0);  
+        return true;
+    }
+});
+
+var HelloWorldScene = cc.Scene.extend({
+    onEnter:function () {
+        this._super();
+        var layer = new HelloWorldLayer();
+        this.addChild(layer);
+    }
+});
+</pre>
+
+
+<p>First of all We created  a layer and extend it. add a  label and a sprite to our layer. İf you think like director  they are our decor. After that We created Scene then add this decor to the scene. and Last we say "Action !!" .</p>
+
+
+<p>I will not explain the code .because its very simple .If you know Javascript you will understand what is going on.</p>
+
+
+<p><img class="alignnone size-full wp-image-998" src="/assets/Simulator-Screen-Shot-15-Dec-2015-01.29.25.png" alt="Simulator Screen Shot 15 Dec 2015 01.29.25" width="640" height="960" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Nazir Doğan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-12-18T10:54:39+02:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:54 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cocos2d-js/'>cocos2d-js</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://nazrdogan.github.io/blog/2015/12/18/hello-world-cocos2d-js/" data-via="gereksizcoder" data-counturl="http://nazrdogan.github.io/blog/2015/12/18/hello-world-cocos2d-js/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/12/15/the-structure-of-cocos2d-js-project/" title="Previous Post: The structure of Cocos2d-JS project">&laquo; The structure of Cocos2d-JS project</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/12/24/passing-data-between-parent-to-child-controller-titanium-mobile/" title="Next Post: Passing Data Parent to Child Controller - Titanium Alloy">Passing Data Parent to Child Controller - Titanium Alloy &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://nazrdogan.github.io/blog/2015/12/18/hello-world-cocos2d-js/';
+        var disqus_url = 'http://nazrdogan.github.io/blog/2015/12/18/hello-world-cocos2d-js/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

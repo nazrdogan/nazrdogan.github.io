@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: angular.js | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/angular-dot-js/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Focusing an Input Field Ionic and Angular Application.]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/12/07/focusing-an-input-field-ionic-and-angular-application/"/>
+    <updated>2015-12-07T21:30:49+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/12/07/focusing-an-input-field-ionic-and-angular-application</id>
+    <content type="html"><![CDATA[<p>if you developing Angular/Ionic application. Maybe you need to focusing input field. with this small code snippet is very easy.</p>
+
+
+<pre class="theme:sublime-text lang:default decode:true">factory('focus', function($timeout, $window) {
+        return function(id) {
+            $timeout(function() {
+                var element = $window.document.getElementById(id);
+                if(element)
+                    element.focus();
+            });
+        };
+    });</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>Full example on <a href="http://codepen.io/nazrdogan_/pen/VeYpVJ">Codepen</a></p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Integrating Jshint in Ionic Framework]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/08/02/integrating-jshint-in-ionic-framework/"/>
+    <updated>2015-08-02T17:02:52+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/08/02/integrating-jshint-in-ionic-framework</id>
+    <content type="html"><![CDATA[<p>if you are developing ionic apps.  you can see build system in your projects which is  Gulp . it's not ionic specific but it's used in ionic projects and many other project ,its so similar to Grunt.</p>
+
+
+<p>in this post ,I write about how can save time  with linting javascript files  in your ionic project.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Let's create an ionic project</p>
+
+
+<pre class="theme:solarized-dark lang:default decode:true">//
+ionic start jshint-ionic
+
+//in your project folder
+
+ npm install
+
+
+</pre>
+
+
+<p>After creating an ionic project for using JSHint ,we must load gulp-jshint and  js<span class="s1">hint-stylish  from npm.</span></p>
+
+
+<pre class="theme:solarized-dark lang:js decode:true">//
+
+
+npm install gulp-jshint jshint-stylish --save-dev
+
+
+//</pre>
+
+
+<p>We installed gulp-jshint and jshint-stylish. jshint-stylish is not necessary but make output looks good.</p>
+
+
+<p>After that we must edit gulpfile.js include this line of code.</p>
+
+
+<pre class="theme:solarized-dark lang:js decode:true">//
+
+var  jshint = require('gulp-jshint');
+
+//</pre>
+
+
+<p>then add gulp  task</p>
+
+
+<pre class="theme:solarized-dark lang:default decode:true ">//
+
+
+gulp.task('lint', function() {
+  return gulp.src('./www/js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
+});
+
+
+//</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>Now you can run  <strong>gulp lint</strong>  command  see syntax and logical error.</p>
+
+
+<p>if you want to watch jshint  then add this line in "watch" task</p>
+
+
+<pre class="theme:solarized-dark lang:default decode:true">//
+
+
+gulp.task('watch', function() {
+  gulp.watch(paths.sass, ['sass']);
+
+    gulp.watch('./www/js/app/*.js', ['lint']);
+});
+
+//</pre>
+
+
+<p>you dont write <strong>gulp lint</strong> command. if you serve your project jshint works automatically.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[AngularJS Ve Topcoat Ile Mobil Uygulama Geliştirme]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/03/06/angularjs-ve-topcoat-ile-mobil-uygulama-gelistirme/"/>
+    <updated>2015-03-06T02:22:14+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/03/06/angularjs-ve-topcoat-ile-mobil-uygulama-gelistirme</id>
+    <content type="html"><![CDATA[<p>AngularJS'i muhtemelen duymuşsunuzdur. Topcoat ise hızlı web uygulamaları geliştirmek için geliştirilen bir CSS framework'u desek yanlış birşey söylememiş oluruz sanırım.</p>
+
+
+<p>Bu kısa yazımda üzerinde duracağım konu ise AngularJs ve Topcoat ile mobil uygulama geliştirme üzerinde duracağım.</p>
+
+
+<p>Öncelikle her zaman yaptıgımız gibi  uygulamamızı oluşturup Android'i ekleyelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">cordova create topcoat com.example.topcoat Topcoat
+
+//
+cd topcoat
+
+//
+cordova platform add android
+
+</pre>
+
+
+<p>Daha sonra <a href="https://angularjs.org/">AngularJS</a> ve <a href="http://topcoat.io/">Topcoat</a>'i indirelim.</p>
+
+
+<p>Bundan sonra yapmamız gereken oldukça basit. index.html içerisinde Angular ve Topcoat'i include etmek.</p>
+
+
+<pre class="theme:github lang:default decode:true"> &lt;link rel="stylesheet" type="text/css" href="css/topcoat-mobile-dark.css" /&gt;
+ &lt;link rel="stylesheet" type="text/css" href="css/index.css" /&gt;
+ &lt;script src="js/angularjs_1.3.14.js"&gt;&lt;/script&gt;</pre>
+
+
+<p>Artık Topcoat CSS'i AngularJS ile beraber kullanarak oldukça hızlı uygulamalar geliştirebilirsiniz.</p>
+
+
+<p>Dakikalar içinde yaptıgım  Angular Topcoat Demosunun <a href="https://github.com/nazrdogan/CordovaAngularTopcoat">Github sayfasına</a> bakabilirsiniz. Kolay Gelsin.</p>
+
+
+<p><img class="alignnone" src="/assets/ss.jpg" alt="" width="800" height="1280" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[AngularJS Nedir ? Ve Merhaba Dünya Uygulaması]]></title>
+    <link href="http://nazrdogan.github.io/blog/2014/07/24/angularjs-nedir-ve-merhaba-dunya-uygulamasi/"/>
+    <updated>2014-07-24T21:08:34+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2014/07/24/angularjs-nedir-ve-merhaba-dunya-uygulamasi</id>
+    <content type="html"><![CDATA[<p><img class="alignnone" src="/assets/AngularJS-large.png" alt="" width="383" height="108" /></p>
+
+
+<p>AngularJS  istemci(client-side) tafarında kullanılan bir Javascript framework'udur.AngularJS  tek sayfa (single page ) uygulamalar geliştirmek amacı ile tasarlanmıştır.</p>
+
+
+<p><strong>Angular.js 'de Merhaba Dünya</strong></p>
+
+
+<pre class="lang:default decode:true">&lt;!DOCTYPE html&gt;
+&lt;html ng-app&gt;
+&lt;head&gt;
+
+    &lt;title&gt;Simple app&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;&lt;/meta&gt;
+    &lt;script
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"&gt;
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input ng-model="name" type="text" placeholder="Birşey girin"&gt;
+&lt;h1&gt;Merhaba &lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+<p>Örnegimiz oldukça kolay. Dikkat edilmesi gereken iki şey var birisi html tag'ine yazdıgımız ng-app diger ise input tagına yazdığımız ng-model</p>
+
+
+<p>Çıktı ise  söyle olacaktır.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/Screenshot-from-2014-07-25-000043.png"><img class="alignnone wp-image-488 size-full" src="/assets/Screenshot-from-2014-07-25-000043.png" alt="Screenshot from 2014-07-25 00:00:43" width="1304" height="714" /></a></p>
+
+
+<p>(yazı güncellenecektir)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Qt | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/qt/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sailfish Merhaba Dünya Uygulaması]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi/"/>
+    <updated>2013-12-16T10:58:29+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/12/16/sailfish-merhaba-dunya-uygulamasi</id>
+    <content type="html"><![CDATA[<p>Nokia'dan ayrılan bir grup geliştiricinin MeeGo projesinin devamı olarak piyasaya sundukları Sailfish OS ve ilk Jolla cihazlarını kısıtlı sayıda olsada çıkarmış bulunuyorlar.</p>
+
+
+<p>Bu yazıda ise Sailfish için uygulama nasıl başlanır onunla ilgili bilgiler bulacaksınız.</p>
+
+
+<p>Öncellikle <a href="https://sailfishos.org/index.html">buradan</a> Sailfish SDK 'yi indirmeniz gerekmektedir.Sailfish IDE aslında QT nin üzerine kurulmuş IDE'den başka birşey degil.işletim sisteminize uygun sürümü indirdikten sonra kurmanız gerekmektedir.Windows için oldukça kolay ,kurulumu başlatıp sadece next demek kalıyor.</p>
+
+
+<p>Linux için ise</p>
+
+
+<p>Terminal'i açıp</p>
+
+
+<pre>$ chmod +x ~/Downloads/&lt;installer_name&gt;
+$ ./Downloads/&lt;installer_name&gt;</pre>
+
+
+<p>--</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/sdk_setup.png"><img class="alignnone  wp-image-282" src="/assets/sdk_setup.png" alt="SDK_setup" width="500" height="364" /></a><br />
+<a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/install_3.png"><img class="alignnone size-full wp-image-283" src="/assets/install_3.png" alt="install_3" width="555" height="364" /></a></p>
+
+
+<p>Kurulumu üstteki gibi yaptıkan sonra Sailfish SDK artık hazır.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-123525.png"><img class="alignnone size-large wp-image-285" src="/assets/screenshot-from-2013-12-16-123525.png?w=1024" alt="Screenshot from 2013-12-16 12:35:25" width="1024" height="575" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124112.png"><img class="alignnone size-large wp-image-292" src="/assets/screenshot-from-2013-12-16-124112.png?w=1024" alt="Screenshot from 2013-12-16 12:41:12" width="1024" height="575" /></a><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124229.png"><img class="alignnone size-large wp-image-294" src="/assets/screenshot-from-2013-12-16-124229.png?w=1024" alt="Screenshot from 2013-12-16 12:42:29" width="1024" height="575" /></a></p>
+
+
+<p>Eger uygulamamızı Simulatorde görmek istiyorsak .Virtualbox'ın kurulu olması gerekmekte.Çünkü Simulator VirtualBox üzerinde çalışmakta.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-124735.png"><img class="alignnone size-large wp-image-296" src="/assets/screenshot-from-2013-12-16-124735.png?w=1024" alt="Screenshot from 2013-12-16 12:47:35" width="1024" height="575" /></a></p>
+
+
+<p>Uygulama geliştirme dili olarak ise QML i kullanmakta.</p>
+
+
+<p>Kaynak olarak ise <a href="https://sailfishos.org/sailfish-silica/sailfish-silica-all.html"> buradan  </a> faydalanabilirsiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-16-125502.png"><img class="alignnone size-large wp-image-298" src="/assets/screenshot-from-2013-12-16-125502.png?w=1024" alt="Screenshot from 2013-12-16 12:55:02" width="1024" height="575" /></a></p>
+
+
+<p>Şimdilik SDK nın alpha olması ve vaktimin sınırlı olmasından dolayı izlenimlerim bu kadar .Umarım devamında birşeyler ekleyebilirim.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu üzerinde QT Ve MySql Baglantısı]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/12/03/ubuntu-uzerinde-qt-ve-mysql-baglantisi/"/>
+    <updated>2013-12-03T23:40:04+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/12/03/ubuntu-uzerinde-qt-ve-mysql-baglantisi</id>
+    <content type="html"><![CDATA[<p><img src="/assets/Qt_Software_logo.png" alt="" /><img src="/assets/MySQL.svg" alt="" /></p>
+
+<p>QT ve Mysql bağlantısı için gerekli olanlar</p>
+
+<p>Öncelikle bir localde yada uzakta çalışan bir Web server'a ihtiyacımız var.Öncelikle bu</p>
+
+<p><span style="color: #ff6600;">
+  <span style="color: #ff6600;"><a href="https://help.ubuntu.com/community/ApacheMySQLPHP">adresten </a> <span style="color: #000000;">LAMP kurulumunu yapıp serverimizi hazır hale getirmemiz gerekiyor.</span></span>
+</span></p>
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/lamp.png"><img src="/assets/lamp-1024x575.png" alt="lamp" /></a></p>
+
+<p>Eğer üstteki resimdeki gibi görüyorsanız web serveriniz hazır durumdadır.</p>
+
+<p>Artık QT ile ilgili olan tarafına geçebilirsiniz.</p>
+
+<p>QT de ise işler oldukça kolay. öncelikle yazılım merkezinden QT mysql sürücülerini indirmeniz gerekiyor.</p>
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-04-011859.png"><img src="/assets/screenshot-from-2013-12-04-011859.png?w=1024" alt="Screenshot from 2013-12-04 01:18:59" /></a></p>
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/12/screenshot-from-2013-12-04-012932.png"><img src="/assets/screenshot-from-2013-12-04-012932.png?w=1024" alt="Screenshot from 2013-12-04 01:29:32" /></a>Projenizin .pro dosyasına QT += core gui sql şeklinde eklemeniz gerekmektedir.</p>
+
+<p>Daha sonra ise örnek bir proje ile çalıştırabilirsiniz.<br>
+<a href="https://gist.github.com/nazrdogan/7779642">https://gist.github.com/nazrdogan/7779642</a></p>
+
+<p>Eğer bir sorun çıkmadıysa QT ve MySql bağlantınız hazır demektir :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tizen]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/09/01/tizen/"/>
+    <updated>2013-09-01T20:54:32+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/09/01/tizen</id>
+    <content type="html"><![CDATA[<p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/09/tizen1.jpg"><img src="/assets/tizen1-300x168.jpg" alt="tizen" /></a></p>
+
+<p>Tizen(tayzın diye okunuyor) akıllı telefonlar ,tablet,netbook,araç içi bilgi- eglence cihazlar ve akıllı Tv &lsquo;ler gibi birden çok cihaz kategorisi için mobil operatörler, cihaz üreticileri ve silikon tedarikçileri lider tarafından desteklenen açık kaynak kodlu, standartlara dayalı yazılım platformudur.</p>
+
+<p>Tizen projesi içinde bulunduğu <a href="http://www.linuxfoundation.org/collaborate/labs/tizen">Linux Vakfı</a> ve Teknik Yönlendirme Grubu tarafından yönetilir. Teknik Yönlendirme Grubu cihazları desteklemek için çalışma gruplarının oluşumu ile birlikte, platform geliştirme ve dağıtım odaklanarak, açık kaynak projesi için birincil karar alma organıdır.</p>
+
+<p>Tizen HTML5 dayalı uygulama geliştiriciler için güçlü ve esnek bir ortam sağlar. HTML5 en güçlü yetenekleri ve çapraz platform esnekliği sayesinde, hızla mobil uygulamalar ve hizmetler için tercih edilen geliştirme ortamı haline geliyor. Tizen SDK ve API geliştiriciler birden fazla cihaz bölümlerinde çalışan uygulamalar yazmak için HTML5 ve ilgili web teknolojileri kullanmanıza izin verir.</p>
+
+<p>Evet arkadaşlar,Tizen nedir ögrendikten sonra bir sonraki yazımızda uygulama geliştirmeye nasıl başlanır onunla ilgili bilgi vereceğim.</p>
+]]></content>
+  </entry>
+  
+</feed>

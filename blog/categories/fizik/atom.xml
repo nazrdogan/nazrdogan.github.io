@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Fizik | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/fizik/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Arduino Kitabım (Notlarım )]]></title>
+    <link href="http://nazrdogan.github.io/blog/2013/08/15/arduino-kitabim-notlarim/"/>
+    <updated>2013-08-15T19:50:35+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2013/08/15/arduino-kitabim-notlarim</id>
+    <content type="html"><![CDATA[<p><a href="http://nazirdogan.files.wordpress.com/2013/08/images.jpg"><img src="/assets/images.jpg" alt="Image" /></a></p>
+
+<p>Bir Open Source aşığı olarak benimde bu ortama katkım olması gerektiğini hep düşünmüştüm.Sonrasında ise Arduino ile tanıştım kaynaştım :D. Elimden geldiği kadar birşeyler yapmaya birilerine anlatmaya çalıştım ama insanlar türkçe kaynak olmamasından dolayı hep uzak duruyordu.Bende bildiklerimi ve ilerde öğreneceklerimi bu kitap(daha çok not gibi duruyor ama ) toplamaya karar verdim .Bildiklerimin hepsini yazamasamda başlagıç için yeterli oldugunu düşünüyorum.Çok gözden geçirme şansım olmadı (Onu okuyucuya bırakıyorum).Umarım faydalı bir çalışma olur ve kitap güncellenerek devam eder.</p>
+
+<p>indirmek için <a href="http://www.dikeyeksen.com/products/arduino-hizli-baslangic-rehberi">buraya buyrun</a></p>
+
+<p>Fikir ve önerileriniz için :<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#110;&#97;&#x7a;&#114;&#100;&#x6f;&#103;&#97;&#110;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x6e;&#97;&#x7a;&#114;&#100;&#x6f;&#103;&#97;&#110;&#64;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></p>
+]]></content>
+  </entry>
+  
+</feed>

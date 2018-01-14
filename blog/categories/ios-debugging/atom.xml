@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ios Debugging | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/ios-debugging/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/08/30/apache-cordova-ios-debug/"/>
+    <updated>2016-08-30T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/08/30/apache-cordova-ios-debug</id>
+    <content type="html"><![CDATA[<p>Bu yazımda Apache Cordova için iOS uygulamalarında uzaktan hata ayıklama nasıl yapılır onu göstereceğim.</p>
+
+<h5>Hata Ayıklamayı  Etkinleştirme</h5>
+
+<p>ilk olarak Safari'nin  &ldquo;Develop Menu&rdquo; kısmını etkinleştirmeniz gerekmekte. Bunun için Safari > Preferences ve  &ldquo;Show Develop Menu&rdquo; checkbox'unu seçilmiş oldugundan emin olalım.</p>
+
+<p><img src="/assets/safari-debug-enable.png" alt="safari debug enabble" /></p>
+
+<p>Şimdi ise iOS cihaz üzerinden gidip Web Denetçisini aktif hale getirmek.
+Bunun için Ayarlar > Safari > ileri Düzey ve  Web Denetçisini aktif hale getirin.</p>
+
+<p><img src="/assets/IMG_3736.PNG" alt="iphone debug enable" />
+<img src="/assets/IMG_3737.PNG" alt="iphone debug enable" />
+<img src="/assets/IMG_3738.PNG" alt="iphone debug enable" /></p>
+
+<h5>Safari ile Hata ayıklama</h5>
+
+<p>Gerekli ayarları yaptıktan sonra ise hata ayıklamaya geçebiliriz. Öncelikle uygulamayı cihazımızda başlatıyoruz. (Cihazımız USB ile bağlı olmalı) Daha sonra ise Safari'de Develop Menusünden  Cihazımızı seçerek hata ayıklama işlemini başlatabiliriz.</p>
+
+<p><img src="/assets/safari-debug-1.png" alt="safari debug 1" />
+<img src="/assets/safari-debug-2.png" alt="safari debug 2" /></p>
+]]></content>
+  </entry>
+  
+</feed>

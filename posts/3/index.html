@@ -1,0 +1,1495 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="if you are developing ionic apps.  you can see build system in your projects which is  Gulp . it's not ionic specific but it's used in ionic projects &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/posts/3/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/08/02/integrating-jshint-in-ionic-framework/">Integrating Jshint in Ionic Framework</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-08-02T17:02:52+03:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>5:02 pm</span></time>
+        
+           | <a href="/blog/2015/08/02/integrating-jshint-in-ionic-framework/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/08/02/integrating-jshint-in-ionic-framework/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>if you are developing ionic apps.  you can see build system in your projects which is  Gulp . it's not ionic specific but it's used in ionic projects and many other project ,its so similar to Grunt.</p>
+
+
+<p>in this post ,I write about how can save time  with linting javascript files  in your ionic project.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Let's create an ionic project</p>
+
+
+<pre class="theme:solarized-dark lang:default decode:true">//
+ionic start jshint-ionic
+
+//in your project folder
+
+ npm install
+
+
+</pre>
+
+
+<p>After creating an ionic project for using JSHint ,we must load gulp-jshint and  js<span class="s1">hint-stylish  from npm.</span></p>
+
+
+<pre class="theme:solarized-dark lang:js decode:true">//
+
+
+npm install gulp-jshint jshint-stylish --save-dev
+
+
+//</pre>
+
+
+<p>We installed gulp-jshint and jshint-stylish. jshint-stylish is not necessary but make output looks good.</p>
+
+
+<p>After that we must edit gulpfile.js include this line of code.</p>
+
+
+<pre class="theme:solarized-dark lang:js decode:true">//
+
+var  jshint = require('gulp-jshint');
+
+//</pre>
+
+
+<p>then add gulp  task</p>
+
+
+<pre class="theme:solarized-dark lang:default decode:true ">//
+
+
+gulp.task('lint', function() {
+  return gulp.src('./www/js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
+});
+
+
+//</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>Now you can run  <strong>gulp lint</strong>  command  see syntax and logical error.</p>
+
+
+<p>if you want to watch jshint  then add this line in "watch" task</p>
+
+
+<pre class="theme:solarized-dark lang:default decode:true">//
+
+
+gulp.task('watch', function() {
+  gulp.watch(paths.sass, ['sass']);
+
+    gulp.watch('./www/js/app/*.js', ['lint']);
+});
+
+//</pre>
+
+
+<p>you dont write <strong>gulp lint</strong> command. if you serve your project jshint works automatically.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/18/chrome-developer-tools-console-api-referans/">Chrome Developer Tools -Console API Referans</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-18T19:44:34+03:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>7:44 pm</span></time>
+        
+           | <a href="/blog/2015/06/18/chrome-developer-tools-console-api-referans/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/06/18/chrome-developer-tools-console-api-referans/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Chrome Developer Tools birçok web geliştiricinin vazgeçilmez bir araçtır. Console API ise uygulamamızda hata ayıklama, ekrana bilgi yazdırma ve Javascript  analizi yapmamıza imkan sağlamaktadır.</p>
+
+
+<h2 id="consoleassertexpression-object" class="has-permalink">console.assert(expression, object)</h2>
+
+
+<p>Eğer yazdığınız expression false degerini alıyorsa mesajı ekrana basar.</p>
+
+
+<p>Örnegin:</p>
+
+
+<pre><code>var list = document.querySelector('#myList');
+
+console.assert(list.childNodes.length &lt; 10, "List item count is &gt;= 10");
+
+</code></pre>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2><a href="http://www.nazirdogan.com/wp-content/uploads/2015/06/assert-failed-list.png"><img class="alignnone size-full wp-image-888" src="/assets/assert-failed-list.png" alt="assert-failed-list" width="1324" height="230" /></a></h2>
+
+
+<h2>console.clear()</h2>
+
+
+<p>Console ekranını temizler</p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consolecountlabel" class="has-permalink">console.count(label)</h2>
+
+
+<p>count()  fonkisyonunun kaç defa çağrıldığını  gösterir.</p>
+
+
+<pre class="prettyprint"><code><span class="kwd">function</span><span class="pln"> login</span><span class="pun">(</span><span class="pln">user</span><span class="pun">)</span> <span class="pun">{</span><span class="pln">   
+ console</span><span class="pun">.</span><span class="pln">count</span><span class="pun">(</span><span class="str">"Login called"</span><span class="pun">);</span>
+   <span class="com">// login() code...
+}</span></code></pre>
+
+
+<p><img class="alignnone" src="/assets/count.png" alt="" width="709" height="84" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Farklı bir örnek ile count() methoduna bakarsak  her isim için farklı çağrıldıgı için 1,2,3 şeklinde artmayıp  farklı farklı yazmıştır.</p>
+
+
+<pre class="prettyprint"><code><span class="kwd">function</span><span class="pln"> login</span><span class="pun">(</span><span class="pln">user</span><span class="pun">)</span> <span class="pun">{</span><span class="pln">   
+ console</span><span class="pun">.</span><span class="pln">count</span><span class="pun">(</span><span class="str">"Login called for user '"</span> <span class="pun">+</span><span class="pln">  user </span><span class="pun">+</span> <span class="str">"'"</span><span class="pun">);</span>   
+ <span class="com">// login() code...
+}</span></code></pre>
+
+
+<p><img class="alignnone" src="/assets/count-unique.png" alt="" width="1324" height="316" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consoledebugobject-object" class="has-permalink">console.debug(object [, object, ...])</h2>
+
+
+<p>console.log() ile aynıdır.</p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consoledirobject" class="has-permalink">console.dir(object)</h2>
+
+
+<p>Belirtilen nesneyi Javascript  nesnesi görünümünde  ekrana basar.</p>
+
+
+<pre class="prettyprint"><code><span class="pln">console</span><span class="pun">.</span><span class="pln">dir</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">body</span><span class="pun">);</span></code></pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone" src="/assets/consoledir-body.png" alt="" width="1322" height="398" /></p>
+
+
+<p>Ayrıca  console.log'a  "%0 " yazarak  console.dir ile aynı şekilde kullanabilirsiniz.</p>
+
+
+<pre class="prettyprint"><code><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"document body: %O"</span><span class="pun">,</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">body</span><span class="pun">);</span></code></pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone" src="/assets/consolelog-object-formatter.png" alt="" width="1322" height="246" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consoleerrorobject-object" class="has-permalink">console.error(object [, object, ...])</h2>
+
+
+<p>console.log()'a  benzer olarak method nerede çağrılıyor ise stack trace'leri içerir.</p>
+
+
+<pre class="prettyprint"><code><span class="kwd">function</span><span class="pln"> connectToServer</span><span class="pun">()</span> <span class="pun">{</span>  
+  <span class="kwd">var</span><span class="pln"> errorCode </span><span class="pun">=</span> <span class="lit">1</span><span class="pun">;</span>    
+<span class="kwd">if</span> <span class="pun">(</span><span class="pln">errorCode</span><span class="pun">)</span> <span class="pun">{</span><span class="pln">    
+
+  console</span><span class="pun">.</span><span class="pln">error</span><span class="pun">(</span><span class="str">"Error: %s (%i)"</span><span class="pun">,
+</span><span class="str">  "Server is  not responding"</span><span class="pun">,</span> <span class="lit">500</span><span class="pun">);</span>  
+  <span class="pun">}}
+
+</span><span class="pln">connectToServer</span><span class="pun">();</span></code></pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone" src="/assets/error-server-not-resp.png" alt="" width="1130" height="319" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Yazı Güncellenecektir...</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/05/09/cocos2d-js-intellij-idea-kurulumu/">Cocos2d-JS Intellij IDEA Kurulumu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-05-09T14:14:30+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:14 pm</span></time>
+        
+           | <a href="/blog/2015/05/09/cocos2d-js-intellij-idea-kurulumu/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/05/09/cocos2d-js-intellij-idea-kurulumu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu yazımda Cocos2D-JS platformunu  Intellij IDEAüzerinde nasıl kullanacağız  onu göstereceğim. Öncelikle başlık  sizi yanıltmasın  Bu plugini Webstorm veya diğer Intellij tabanlı IDE'lerede kurabilirsiniz.</p>
+
+
+<p>Neyse lafı fazla uzatmadan adım adım kuruluma  geçelim.</p>
+
+
+<p>Öncelikle Cocos2d-js'yi ve Intellij IDEA pluginini indiriyoruz.<a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/cocosidea.png"><img class="alignnone wp-image-858 size-full" src="/assets/cocosidea.png" alt="cocosidea" width="1094" height="837" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Intellij  IDEA kurulu degil ise <a href="https://www.jetbrains.com/idea/">buradan</a> topluluk sürümünü indirebilirsiniz. Daha sonra indirdigimiz   Cocos2d-js'yi zip dosyasından çıkaralım.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>İntelliji kurduktan sonra   açalım. Açtıktan sonra File -Settings-Plugin kısmında Install plugin from disk'e tıklayıp açılan pencereden indirdiğimiz pluginin yolunu verelim.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_33_13-Settings.png"><img class="alignnone wp-image-862 size-full" src="/assets/2015-05-09-16_33_13-Settings.png" alt="2015-05-09 16_33_13-Settings" width="1038" height="705" /></a></p>
+
+
+<p>Hepsi bu kadar artık Intellij içerisinde cocos2d-js projesi oluşturabilirsiniz. ama yapmanız gereken birkaç şey daha var.Bunlarıda ilk proje oluştururken yada ayarladan yapabilirsiniz. şimdi onu anlatalım.</p>
+
+
+<p>Plugini ekledikten sonra Intellij değişiklerin çalışması için kapatıp açılması için soracaktır. onu yapalım yoksa projeler içerisinde göremeyeceksiniz.</p>
+
+
+<p>Tekrar açtıktan sonra ise yine File-Settings altında other Settings kısmında Cocos ve Cocos Framework başlıklarını göreceksiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_36_58-Settings.png"><img class="alignnone wp-image-863 size-full" src="/assets/2015-05-09-16_36_58-Settings.png" alt="2015-05-09 16_36_58-Settings" width="1038" height="705" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_48_18-Settings.png"><img class="alignnone wp-image-864 size-full" src="/assets/2015-05-09-16_48_18-Settings.png" alt="2015-05-09 16_48_18-Settings" width="1038" height="705" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>ilk ekranda Python'nun Python 2.7 olması gerekmekte.  Android SDK ve NDK yollarınını doğru oldugundan emin olun.ANT ve JDK'ye özellikle dikkat ediniz. Çünkü bunlar olmadan hiçbir derleme işlemini yapamazsınız. ikinci ekranda ise Framework olarak girecegimiz şey indirdigimiz  Cocos2d-js dosyasından başka birşey degil .Simulator kısmını boş bırakın kendisi oluşturacaktır.Daha sonra her iki ekrandada Apply diyerek etkin hale getirin.</p>
+
+
+<p>Bütün ayarlar bu kadar diyebilirim.</p>
+
+
+<p>şimdi ise Projemizi oluşturalım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_55_02-New-Project.png"><img class="alignnone size-full wp-image-865" src="/assets/2015-05-09-16_55_02-New-Project.png" alt="2015-05-09 16_55_02-New Project" width="750" height="710" /></a></p>
+
+
+<p>Burada Cocos Js yi seçerek ileri diyelim.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_56_27-New-Project.png"><img class="alignnone size-full wp-image-868" src="/assets/2015-05-09-16_56_27-New-Project.png" alt="2015-05-09 16_56_27-New Project" width="750" height="710" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_56_36-New-Project.png"><img class="alignnone size-full wp-image-867" src="/assets/2015-05-09-16_56_36-New-Project.png" alt="2015-05-09 16_56_36-New Project" width="750" height="710" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Finish dedikten sonra projemiz oluşacaktır. Projemizi çalıştırmak için üst menüden direk run diyebiliriz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-17_02_24-untitled2-C__Users_nazir.dogan_Documents_Cocos_untitled2-IntelliJ-IDEA-14..png"><img class="alignnone size-full wp-image-869" src="/assets/2015-05-09-17_02_24-untitled2-C__Users_nazir.dogan_Documents_Cocos_untitled2-IntelliJ-IDEA-14..png" alt="2015-05-09 17_02_24-untitled2 - [C__Users_nazir.dogan_Documents_Cocos_untitled2] - IntelliJ IDEA 14." width="1920" height="1040" /></a></p>
+
+
+<p>Projemizi böyle çalıştırdıgımızda direk olarak  Windows uygulaması şeklinde açacaktır. Ama bir ayar ile Android'te çalıştırabiliriz.</p>
+
+
+<p>Bunun için ise</p>
+
+
+<p>Run menüsünden Edit Configuration'a tıklayın açılan pencereden JSBinding altında Android Debug Mode'u göreceksiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-17_01_18-Run_Debug-Configurations.png"><img class="alignnone size-full wp-image-870" src="/assets/2015-05-09-17_01_18-Run_Debug-Configurations.png" alt="2015-05-09 17_01_18-Run_Debug Configurations" width="1092" height="707" /></a></p>
+
+
+<p>Burda ayar yaptıktan sonra ise projemiz Android'te çalılşacaktır.</p>
+
+
+<p>Şimdilik hepsi bu kadar. Kolay gelsin.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/IMG_0916.jpg"><img class="alignnone size-full wp-image-873" src="/assets/IMG_0916.jpg" alt="IMG_0916" width="3264" height="2448" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme/">Electron Ile Web Teknolojilerini Kullanarak Masaüstü Uygulama Geliştirme</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-05-02T10:49:29+03:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>10:49 am</span></time>
+        
+           | <a href="/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Electron , Javascript ile masaüstü uygulaması geliştirmenize  olanak  sağlayan bir runtime'dir.Electron  açık kaynak ve çapraz platfromdur .HTML ,CSS ve io.js'ten gücünü almaktadır.Electron GUI olarak web sayfasını kullanır.yani göreceginiz aslında minimal bir Chromuium tarayıcıdı.r İlk olarak Github'un Atom Editörü için geliştirilmiştir. Electron'u kullanan firmalar arasında  Microsoft ,Facebook ,Slack  ve Docker vardır. Hatta yeni çıkan Microsoft Visual Studio Code Electron tabanlıdır.</p>
+
+
+<p>Lafı fazla uzatmadan kurulum ve uygulama oluşturma  kısmına geçelim.</p>
+
+
+<p>Electron'u kurmak için</p>
+
+
+<pre class="theme:github lang:default decode:true"># Install the `electron` command globally
+npm install electron-prebuilt -g
+
+# Install as a development dependency
+npm install electron-prebuilt --save-dev
+
+</pre>
+
+
+<p>Yukardaki işlemi yaptıktan sonra Electron sistemimize kurulmuş olacaktır. Doğrulamak için</p>
+
+
+<pre class="theme:eclipse lang:default decode:true">electron -v
+
+</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronCMD.png"><img class="alignnone size-medium wp-image-829" src="/assets/electronCMD-300x152.png" alt="electronCMD" width="300" height="152" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Doğruladıktan sonra uygulama oluşturmak için üç tane temel dosyaya ihtiyaçımız var.Bunlar package.json ,main.js,index.html  dosyalarıdır.</p>
+
+
+<pre class="theme:github lang:default decode:true ">your-app/
+├── package.json
+├── main.js
+└── index.html</pre>
+
+
+<p>&nbsp;</p>
+
+
+<pre class="lang:default decode:true">//package.json
+
+{
+  "name"    : "your-app",
+  "version" : "0.1.0",
+  "main"    : "main.js"
+}</pre>
+
+
+<p>&nbsp;</p>
+
+
+<pre class="theme:github lang:default decode:true ">//main.js
+var app = require('app');  // Module to control application life.
+var BrowserWindow = require('browser-window');  // Module to create native browser window.
+
+// Report crashes to our server.
+require('crash-reporter').start();
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the javascript object is GCed.
+var mainWindow = null;
+
+// Quit when all windows are closed.
+app.on('window-all-closed', function() {
+  if (process.platform != 'darwin')
+    app.quit();
+});
+
+// This method will be called when Electron has done everything
+// initialization and ready for creating browser windows.
+app.on('ready', function() {
+  // Create the browser window.
+  mainWindow = new BrowserWindow({width: 800, height: 600});
+
+  // and load the index.html of the app.
+  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+
+  // Emitted when the window is closed.
+  mainWindow.on('closed', function() {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null;
+  });
+});</pre>
+
+
+<pre class="theme:eclipse lang:default decode:true">//index.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Hello World!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Merhaba Dünya!&lt;/h1&gt;
+    We are using io.js &lt;script&gt;document.write(process.version)&lt;/script&gt;
+    and Electron &lt;script&gt;document.write(process.versions['electron'])&lt;/script&gt;.
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+
+<p>Uygulamayı çalıştırmak için  terminal de electron yazıp Enter'layalım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronGUI.png"><img class="alignnone size-medium wp-image-834" src="/assets/electronGUI-300x234.png" alt="electronGUI" width="300" height="234" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Daha sonra oluşturdugumuz  klasörü yani your-app klasörünü sürükleyip bırakalım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronMerhaba.png"><img class="alignnone size-medium wp-image-835" src="/assets/electronMerhaba-300x225.png" alt="electronMerhaba" width="300" height="225" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Söyleyecek çok şey olsada   temel olarak şimdilik bu kadar. Electron hakkında daha fazla   bilgi için</p>
+
+
+<p><a href="http://electron.atom.io/">electron.atom.io</a> sayfasına   bakabilirsiniz.</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/04/11/labview-ile-arduino-programlama/">LabVIEW Ile Arduino Programlama</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-04-11T11:09:05+03:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:09 am</span></time>
+        
+           | <a href="/blog/2015/04/11/labview-ile-arduino-programlama/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/04/11/labview-ile-arduino-programlama/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Labview Nedir?</p>
+
+
+<p>LabVIEW (Laboratuary Virtual Instruments For Engineering Workbench)</p>
+
+
+<p>LabVIEW, ölçüm ve kontrol uygulamaları oluşturmak için ihtiyacınız olan araçları ile bilim adamları ve mühendisler sağlayan tek sistemi tasarım yazılımıdır. Bu sorunları çözmek için çok  güçlü, verimlilik hızlandırmaya yardımcı olur ve sürekli yenilik güven veren bir yazılımdır.Görsel programlama dediğimiz kodlara girmeden kendimize özgü programlar oluşturabiliriz. Bir çok kütüphanesi mevcuttur.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Labview'in ne oldugunu öğrendikten sonra şimdi bunu Arduino ile nasıl konuştururum kısmına   gelelim.</p>
+
+
+<p>Adım adım anlatacağım için sorun çıkacağını  düşünmüyorum.</p>
+
+
+<p>1- Öncelikle LabVIEW programını indirin ve kurun.  2011 veya sonrası bir sürüm  olmasına dikkat edin.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/labview-logo.jpg"><img class="alignnone size-medium wp-image-801" src="/assets/labview-logo-300x259.jpg" alt="labview-logo" width="300" height="259" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>2- <a href="http://www.ni.com/visa/">NI-VISA</a>  indirin ve kurun.  Bu LabVIEW için RS-232 sürücülerini içermeketedir.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/ni_logo_trans.png"><img class="alignnone size-full wp-image-803" src="/assets/ni_logo_trans.png" alt="ni_logo_trans" width="292" height="284" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>3- Arduino IDE'sini indirin ve kurun burda dikkat edilmesi gereken Arduino IDE'sinin sürümü 1.0.5 olması gerektigi .(Diğerleride ilede çalışabilir ama test etmek lazım)</p>
+
+
+<p>ve Arduino sürücülerini  yükleyin.</p>
+
+
+<p>Şimdi ise asıl önemli adımlara geçelim.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>4- LabVIEW Interface for Arduino  VI Package Manager'i kullanarak indirin.  VI Package Manager LabVIEW ile beraber gelmektedir.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/2-_search_arduino.png"><img class="alignnone size-medium wp-image-804" src="/assets/2-_search_arduino-300x216.png" alt="2-_search_arduino" width="300" height="216" /></a></p>
+
+
+<p>VI Package Manager'i açın.   Arama yerine Arduino yazdıktan sonra  göreceksiniz. Daha sonra ise Sağ tıklayıp "install " diyebilirsiniz.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>5-   Yükledikten sonra  Arduino'yu bilgisayarımıza bağlıyoruz.</p>
+
+
+<p>LIFA Firmware'ini  Arduino'ya  yüklememiz gerekmekte.</p>
+
+
+<pre class="">C:\Program Files\National Instruments\LabVIEW 2014\vi.lib\LabVIEW Interface for Arduino\Firmware\LIFA_Base
+</pre>
+
+
+<p>Yukardakı dosya yolunda  LIFA_Base klasörünün içerisindeki Arduino kaynak  kodlarını Arduino'da   açın .Hepsini seçtiginizden emin olun. Eğer "error compiling " gibi hata alırsanız  LIFA_Base klasörünü alıp başka  bir yere taşıyıp deneyin.</p>
+
+
+<p>6- Daha sonra  LabVIEW programını açın .</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/1_-_help_findexamples.png"><img class="alignnone size-medium wp-image-805" src="/assets/1_-_help_findexamples-300x207.png" alt="1_-_help_findexamples" width="300" height="207" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Daha sonra  Analog Read Serial örnegini açın. Açtıktan sonra Ctrl+E yaparak  block diagramı açın.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/analogread.png"><img class="alignnone size-medium wp-image-806" src="/assets/analogread-297x300.png" alt="analogread" width="297" height="300" /></a></p>
+
+
+<p>Arduino'da  gerekli bağlantıları yaptıktan sonra "run " diyerek çalıştırın.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/potantiometer.png"><img class="alignnone size-medium wp-image-807" src="/assets/potantiometer-300x188.png" alt="potantiometer" width="300" height="188" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Arduino Bağlantılarını ve sürücüleri düzgün yüklediyseniz sorunsuz çalışacaktır kolay gelsin. :)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/03/06/angularjs-ve-topcoat-ile-mobil-uygulama-gelistirme/">AngularJS Ve Topcoat Ile Mobil Uygulama Geliştirme</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-03-06T02:22:14+02:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:22 am</span></time>
+        
+           | <a href="/blog/2015/03/06/angularjs-ve-topcoat-ile-mobil-uygulama-gelistirme/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/03/06/angularjs-ve-topcoat-ile-mobil-uygulama-gelistirme/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>AngularJS'i muhtemelen duymuşsunuzdur. Topcoat ise hızlı web uygulamaları geliştirmek için geliştirilen bir CSS framework'u desek yanlış birşey söylememiş oluruz sanırım.</p>
+
+
+<p>Bu kısa yazımda üzerinde duracağım konu ise AngularJs ve Topcoat ile mobil uygulama geliştirme üzerinde duracağım.</p>
+
+
+<p>Öncelikle her zaman yaptıgımız gibi  uygulamamızı oluşturup Android'i ekleyelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">cordova create topcoat com.example.topcoat Topcoat
+
+//
+cd topcoat
+
+//
+cordova platform add android
+
+</pre>
+
+
+<p>Daha sonra <a href="https://angularjs.org/">AngularJS</a> ve <a href="http://topcoat.io/">Topcoat</a>'i indirelim.</p>
+
+
+<p>Bundan sonra yapmamız gereken oldukça basit. index.html içerisinde Angular ve Topcoat'i include etmek.</p>
+
+
+<pre class="theme:github lang:default decode:true"> &lt;link rel="stylesheet" type="text/css" href="css/topcoat-mobile-dark.css" /&gt;
+ &lt;link rel="stylesheet" type="text/css" href="css/index.css" /&gt;
+ &lt;script src="js/angularjs_1.3.14.js"&gt;&lt;/script&gt;</pre>
+
+
+<p>Artık Topcoat CSS'i AngularJS ile beraber kullanarak oldukça hızlı uygulamalar geliştirebilirsiniz.</p>
+
+
+<p>Dakikalar içinde yaptıgım  Angular Topcoat Demosunun <a href="https://github.com/nazrdogan/CordovaAngularTopcoat">Github sayfasına</a> bakabilirsiniz. Kolay Gelsin.</p>
+
+
+<p><img class="alignnone" src="/assets/ss.jpg" alt="" width="800" height="1280" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/03/05/phonegapcordova-uygulamalarinda-actionsheet-kullanimi/">PhoneGap/Cordova Uygulamalarında ActionSheet Kullanımı</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-03-05T21:22:40+02:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:22 pm</span></time>
+        
+           | <a href="/blog/2015/03/05/phonegapcordova-uygulamalarinda-actionsheet-kullanimi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/03/05/phonegapcordova-uygulamalarinda-actionsheet-kullanimi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Action Sheet  native olarak kullanıcıya seçenek listesinden birşey seçtirmek için kullanabileceginiz bir plugindir.  Birçok uygulamada görebilirsiniz. ( Yazının sonundaki görsele bakarsanız daha anlaşılır olabilir.) Plugin iOS, Android ve Windows Phone platformlarını desteklemektedir.</p>
+
+
+<p>Şimdi  basit bir uygulama oluştururak  nasıl kullanıldığını görelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">//
+cordova create actionsheet com.example.actionsheet ActionSheet
+//
+cd  actionsheet
+
+//
+cordova platform add android
+
+//</pre>
+
+
+<p>ActionSheet pluginini ekliyoruz ve hazırlıyoruz.</p>
+
+
+<pre class="lang:default decode:true">cordova plugin add https://github.com/EddyVerbruggen/cordova-plugin-actionsheet
+//
+ cordova prepare</pre>
+
+
+<p>Demo olarak bu kodu inceleyebilirsiniz. oldukça basit Javascript kodu oldugu için açıklamaya gerek yok diye düşünüyorum.</p>
+
+
+<pre class="theme:github lang:default decode:true">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="format-detection" content="telephone=no" /&gt;
+    &lt;!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 --&gt;
+    &lt;meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="css/index.css" /&gt;
+    &lt;meta name="msapplication-tap-highlight" content="no" /&gt;
+    &lt;title&gt;Hello ActionSheet&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="app"&gt;
+    &lt;h1&gt;ActionSheet demo&lt;/h1&gt;
+    &lt;div id="deviceready" class="blink"&gt;
+        &lt;p class="event listening"&gt;Connecting to Device&lt;/p&gt;
+        &lt;p class="event received"&gt;Device is Ready&lt;/p&gt;
+        &lt;button onclick="testShareSheet()"&gt;Test Share&lt;/button&gt;&lt;br/&gt;&lt;br/&gt;
+        &lt;button onclick="testDeleteSheet()"&gt;Test Delete&lt;/button&gt;&lt;br/&gt;&lt;br/&gt;
+        &lt;button onclick="testLogoutSheet()"&gt;Test Logout&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript" src="cordova.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/index.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+
+    app.initialize();
+
+    var callback = function(buttonIndex) {
+        setTimeout(function() {
+            alert('button index clicked: ' + buttonIndex);
+        });
+    };
+
+    function testShareSheet() {
+        var options = {
+            'androidTheme' : window.plugins.actionsheet.ANDROID_THEMES.THEME_HOLO_LIGHT,
+            'title': 'What do you want with this image?',
+            'buttonLabels': ['Share via Facebook', 'Share via Twitter'],
+            'addCancelButtonWithLabel': 'Cancel',
+            'androidEnableCancelButton' : true,
+            'winphoneEnableCancelButton' : true,
+            'addDestructiveButtonWithLabel' : 'Delete it'
+        };
+        window.plugins.actionsheet.show(options, callback);
+    }
+
+    function testDeleteSheet() {
+        var options = {
+            'addCancelButtonWithLabel': 'Cancel',
+            'addDestructiveButtonWithLabel' : 'Delete note'
+        };
+        window.plugins.actionsheet.show(options, callback);
+    }
+
+    function testLogoutSheet() {
+        var options = {
+            'buttonLabels': ['Log out'],
+            'androidEnableCancelButton' : true,
+            'winphoneEnableCancelButton' : true,
+            'addCancelButtonWithLabel': 'Cancel'
+        };
+        window.plugins.actionsheet.show(options, callback);
+    }
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+<p><a href="https://github.com/EddyVerbruggen/cordova-plugin-actionsheet">ActionSheet Github sayfasını ziyaret edip daha fazla bilgi alabilirsiniz.</a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/03/snapshot41.png"><img class="alignnone size-full wp-image-760" src="/assets/snapshot41.png" alt="snapshot41" width="532" height="819" /></a></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/03/05/node-webkit-ile-masaustu-uygulama-gelistirme/">Node-WebKit Ile Masaüstü Uygulama Geliştirme</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-03-05T11:14:40+02:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:14 am</span></time>
+        
+           | <a href="/blog/2015/03/05/node-webkit-ile-masaustu-uygulama-gelistirme/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/03/05/node-webkit-ile-masaustu-uygulama-gelistirme/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Node-Webkit nedir ?</p>
+
+
+<p>Node-Webkit  Chromium ve Node.js üzerine kurulmuş bir  uygulama runtime'dir.  Node-Webkit ile HTML ve Javascript kullanarak masaüstü uygulaması geliştirebilirsiniz. Ayrıca Node modüllerini  kullanabilirsiniz.</p>
+
+
+<p>Özellikleri:</p>
+
+
+<ul>
+<li>HTML5  ,CSS3 ,Javascript ve WebGL ile uygulama yazabilirsiniz.</li>
+<li>Node.js API'lerini ve üçüncü parti modülleri  kullanabilirsiniz.</li>
+<li>Kolay Paketleme</li>
+<li>Çapraz Platform :Linux, OS X, Windows</li>
+</ul>
+
+
+<p>Nasıl uygulama oluşturacağım ?</p>
+
+
+<p>Öncelikle<a href="https://github.com/nwjs/nw.js"> Github</a> sayfasından sisteminize uygun olarak indirin.</p>
+
+
+<p>Bu arada kısa zaman önce node-webkit isim değişikliğine gidip nw.js adını almıştır.</p>
+
+
+<p>Hadi başlayalım.</p>
+
+
+<p>Öncelikle bir package.json dosyası oluşturuyoruz.</p>
+
+
+<pre class="theme:github lang:default decode:true">{
+  "name" : "nw-demo",
+  "main" : "index.html",
+  "window" : {
+    "toolbar" : false
+  }
+}</pre>
+
+
+<p>Daha sonra ise uygulamamızın başlangıç sayfası olan index.html'i oluşturalım.</p>
+
+
+<pre class="theme:github lang:default decode:true ">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Node-Webkit&lt;/title&gt;
+    &lt;meta content=""&gt;
+    &lt;style&gt;&lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+  &lt;h1&gt;Merhaba NW.JS&lt;/h1&gt;
+&lt;/html&gt;</pre>
+
+
+<p>Daha sonra ise indirdiğimiz node-webkit'i çalıştıralım.</p>
+
+
+<pre class="theme:github lang:default decode:true">/node-webkit-installer/nw  /projemizin yolu</pre>
+
+
+<p>Örnegin benim yaptıgım projede</p>
+
+
+<pre class="lang:default decode:true ">~/node-webkit-v0.11.6-linux-x64/nw   ../NWJS
+</pre>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/03/snapshot40.png"><img class="alignnone size-full wp-image-748" src="/assets/snapshot40.png" alt="snapshot40" width="784" height="557" /></a></p>
+
+
+<p>Temel olarak hepsi bu kadar. Node-Webkit ile web teknolojilerini kullanarak istediğiniz masaüstü uygulamasını geliştirebilirisiniz. <a href="https://github.com/nwjs/nw.js/wiki/List-of-apps-and-companies-using-nw.js">Geliştirlmiş uygulamalara burdan göz atabilirsiniz.</a>Umarım faydalı olur .Kolay gelsin :)</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/28/phonegapcordova-admob-ile-uygulamaya-reklam-eklenmesi/">PhoneGap/Cordova - AdMob İle Uygulamaya Reklam Eklenmesi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-28T18:48:53+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:48 pm</span></time>
+        
+           | <a href="/blog/2015/02/28/phonegapcordova-admob-ile-uygulamaya-reklam-eklenmesi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/28/phonegapcordova-admob-ile-uygulamaya-reklam-eklenmesi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Appstore'da ve Google Play'deki uygulamaların birçoğu  ücretsiz olup gelir modeli olarak  ise  reklam alma olarak belirlenmiştir. Bunun için birçok reklam servisi vardır. Bunlardan en ünlüsü ve en tercih edileni ise Google'un sahibi olduğu  AdMob'tur.</p>
+
+
+<p>Bu yazımda ise  Admob reklamlarını PhoneGap/Cordova uygulamalarına nasıl ekleyecegimizden bahsedeceğim.</p>
+
+
+<p>ilk iş olarak Admob'a  Google hesabımızı kullanarak giriş yapıyoruz.</p>
+
+
+<p><a href="https://www.google.com/admob/">https://www.google.com/admob/</a></p>
+
+
+<p>Giriş yaptıktan sonra bu ekranı göreceksiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/snapshot38.png"><img class="alignnone size-large wp-image-734" src="/assets/snapshot38-1024x492.png" alt="snapshot38" width="770" height="370" /></a></p>
+
+
+<p>"Monetize New App"  diyerek uygulamamızı ekliyoruz. Burda uzun uzadıya bahsetmeme gerek yok sanırım.</p>
+
+
+<p>Phonegap/Cordova tarafında ise eklentiyi kullanamak oldukça basit.Ayrıca plugin Android iOS ve Windows Phone 8 platformlarını desteklemektedir.</p>
+
+
+<p>Plugini eklemek için.</p>
+
+
+<pre class="theme:github lang:default decode:true">cordova plugin add com.rjfun.cordova.plugin.admob</pre>
+
+
+<p>Plugini ekledikten sonra koda geçebiliriz.</p>
+
+
+<p>https://gist.github.com/nazrdogan/7535c81d584b67f04323</p>
+
+
+<p>Ekran görüntüsü:</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/Screenshot_2015-02-28-20-04-12.jpg"><img class="alignnone size-large wp-image-738" src="/assets/Screenshot_2015-02-28-20-04-12-640x1024.jpg" alt="Screenshot_2015-02-28-20-04-12" width="640" height="1024" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Plugin hakkında daha fazla bilgi almak için <a href="https://github.com/floatinghotpot/cordova-plugin-admob">Github</a> sayfasısını ziyaret edebilirsiniz.</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/28/javascript-ile-arduino/">Javascript Ile Arduino</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-28T12:41:23+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:41 pm</span></time>
+        
+           | <a href="/blog/2015/02/28/javascript-ile-arduino/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/28/javascript-ile-arduino/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu yazımda Javascript ile Arduino kontrolünden bahsedeceğim.Node.js'ı muhtemelen duymuşsunuzdur. Ama eğer duymadıysanız  kısaca server tarafında Javascript çalıştırabileceğiniz bir platform olarak tanımlayabiliriz.</p>
+
+
+<p>Eğer sisteminizde kurulu değil ise</p>
+
+
+<p><a href="http://nodejs.org/">http://nodejs.org/ </a>sitesinden sisteminize uygun olanını indirip kurun.</p>
+
+
+<p>Kurduktan sonra versiyonunu terminalden kontrol edin. (Emin olmak için)</p>
+
+
+<pre class="theme:github lang:default decode:true ">$ node -v
+v0.10.36
+
+
+</pre>
+
+
+<p>Daha sonra ise Johnny-five  paketini kuruyoruz. Johnny -Five  nedir diyebilirisiniz. Johnny-Five  Node.js için yazılmış  Arduino kontrol frameworkudur.  Firmata ile çalışmaktadır. Johnny-Five kullanılarak  Led yakabilir Servoları döndürebilirsiniz. Heyecan verici değil mi ? :D</p>
+
+
+<p>Şimdi npm kullanarak  Johnny-Five'i yükleyelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">npm install johnny-five</pre>
+
+
+<p>Johnny-Five'i yükledikten sonra  Arduinomuza Firmata'yi yükleyelim.</p>
+
+
+<p>Arduino'yu bilgisayara bağlayın. Arduino IDE'sini açın.</p>
+
+
+<p><strong>File -&gt; Examples -&gt; Firmata -&gt; StandardFirmata<br />
+</strong></p>
+
+
+<p>yolunu izleyerek kütüphaneyi Arduino'ya yükleyin.</p>
+
+
+<p>Daha sonra   ledyak.js  adında bir  dosya oluşturalım.</p>
+
+
+<pre class="lang:default decode:true"> var five = require("johnny-five"),board, led;
+
+    board = new five.Board();
+
+    board.on("ready", function() {
+      led = new five.Led(13);
+      led.strobe(1000);
+    });
+
+</pre>
+
+
+<p>Daha sonra ledyak.js'in dizinine gelelim.</p>
+
+
+<pre class="theme:github lang:default decode:true ">node ledyak.js</pre>
+
+
+<p>diyerek çalıştıralım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/snapshot37png.png"><img class="alignnone size-full wp-image-722" src="/assets/snapshot37png.png" alt="snapshot37png" width="990" height="574" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>[embed]https://vine.co/v/O2UAVXVeWKT[/embed]</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Şimdilik hepsi bu kadar . Daha fazla örnek ve bilgi için <a href="https://github.com/rwaldron/johnny-five">Johnny-Five </a>Github sayfasını ziyaret edebilirsiniz.</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/4">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/2">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

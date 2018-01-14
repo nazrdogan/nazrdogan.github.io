@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Open Source | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/open-source/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Chrome Developer Tools -Console API Referans]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/06/18/chrome-developer-tools-console-api-referans/"/>
+    <updated>2015-06-18T19:44:34+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/06/18/chrome-developer-tools-console-api-referans</id>
+    <content type="html"><![CDATA[<p>Chrome Developer Tools birçok web geliştiricinin vazgeçilmez bir araçtır. Console API ise uygulamamızda hata ayıklama, ekrana bilgi yazdırma ve Javascript  analizi yapmamıza imkan sağlamaktadır.</p>
+
+
+<h2 id="consoleassertexpression-object" class="has-permalink">console.assert(expression, object)</h2>
+
+
+<p>Eğer yazdığınız expression false degerini alıyorsa mesajı ekrana basar.</p>
+
+
+<p>Örnegin:</p>
+
+
+<pre><code>var list = document.querySelector('#myList');
+
+console.assert(list.childNodes.length &lt; 10, "List item count is &gt;= 10");
+
+</code></pre>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2></h2>
+
+
+<h2><a href="http://www.nazirdogan.com/wp-content/uploads/2015/06/assert-failed-list.png"><img class="alignnone size-full wp-image-888" src="/assets/assert-failed-list.png" alt="assert-failed-list" width="1324" height="230" /></a></h2>
+
+
+<h2>console.clear()</h2>
+
+
+<p>Console ekranını temizler</p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consolecountlabel" class="has-permalink">console.count(label)</h2>
+
+
+<p>count()  fonkisyonunun kaç defa çağrıldığını  gösterir.</p>
+
+
+<pre class="prettyprint"><code><span class="kwd">function</span><span class="pln"> login</span><span class="pun">(</span><span class="pln">user</span><span class="pun">)</span> <span class="pun">{</span><span class="pln">   
+ console</span><span class="pun">.</span><span class="pln">count</span><span class="pun">(</span><span class="str">"Login called"</span><span class="pun">);</span>
+   <span class="com">// login() code...
+}</span></code></pre>
+
+
+<p><img class="alignnone" src="/assets/count.png" alt="" width="709" height="84" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Farklı bir örnek ile count() methoduna bakarsak  her isim için farklı çağrıldıgı için 1,2,3 şeklinde artmayıp  farklı farklı yazmıştır.</p>
+
+
+<pre class="prettyprint"><code><span class="kwd">function</span><span class="pln"> login</span><span class="pun">(</span><span class="pln">user</span><span class="pun">)</span> <span class="pun">{</span><span class="pln">   
+ console</span><span class="pun">.</span><span class="pln">count</span><span class="pun">(</span><span class="str">"Login called for user '"</span> <span class="pun">+</span><span class="pln">  user </span><span class="pun">+</span> <span class="str">"'"</span><span class="pun">);</span>   
+ <span class="com">// login() code...
+}</span></code></pre>
+
+
+<p><img class="alignnone" src="/assets/count-unique.png" alt="" width="1324" height="316" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consoledebugobject-object" class="has-permalink">console.debug(object [, object, ...])</h2>
+
+
+<p>console.log() ile aynıdır.</p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consoledirobject" class="has-permalink">console.dir(object)</h2>
+
+
+<p>Belirtilen nesneyi Javascript  nesnesi görünümünde  ekrana basar.</p>
+
+
+<pre class="prettyprint"><code><span class="pln">console</span><span class="pun">.</span><span class="pln">dir</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">body</span><span class="pun">);</span></code></pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone" src="/assets/consoledir-body.png" alt="" width="1322" height="398" /></p>
+
+
+<p>Ayrıca  console.log'a  "%0 " yazarak  console.dir ile aynı şekilde kullanabilirsiniz.</p>
+
+
+<pre class="prettyprint"><code><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"document body: %O"</span><span class="pun">,</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">body</span><span class="pun">);</span></code></pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone" src="/assets/consolelog-object-formatter.png" alt="" width="1322" height="246" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<h2 id="consoleerrorobject-object" class="has-permalink">console.error(object [, object, ...])</h2>
+
+
+<p>console.log()'a  benzer olarak method nerede çağrılıyor ise stack trace'leri içerir.</p>
+
+
+<pre class="prettyprint"><code><span class="kwd">function</span><span class="pln"> connectToServer</span><span class="pun">()</span> <span class="pun">{</span>  
+  <span class="kwd">var</span><span class="pln"> errorCode </span><span class="pun">=</span> <span class="lit">1</span><span class="pun">;</span>    
+<span class="kwd">if</span> <span class="pun">(</span><span class="pln">errorCode</span><span class="pun">)</span> <span class="pun">{</span><span class="pln">    
+
+  console</span><span class="pun">.</span><span class="pln">error</span><span class="pun">(</span><span class="str">"Error: %s (%i)"</span><span class="pun">,
+</span><span class="str">  "Server is  not responding"</span><span class="pun">,</span> <span class="lit">500</span><span class="pun">);</span>  
+  <span class="pun">}}
+
+</span><span class="pln">connectToServer</span><span class="pun">();</span></code></pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><img class="alignnone" src="/assets/error-server-not-resp.png" alt="" width="1130" height="319" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Yazı Güncellenecektir...</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cocos2d-JS Intellij IDEA Kurulumu]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/05/09/cocos2d-js-intellij-idea-kurulumu/"/>
+    <updated>2015-05-09T14:14:30+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/05/09/cocos2d-js-intellij-idea-kurulumu</id>
+    <content type="html"><![CDATA[<p>Bu yazımda Cocos2D-JS platformunu  Intellij IDEAüzerinde nasıl kullanacağız  onu göstereceğim. Öncelikle başlık  sizi yanıltmasın  Bu plugini Webstorm veya diğer Intellij tabanlı IDE'lerede kurabilirsiniz.</p>
+
+
+<p>Neyse lafı fazla uzatmadan adım adım kuruluma  geçelim.</p>
+
+
+<p>Öncelikle Cocos2d-js'yi ve Intellij IDEA pluginini indiriyoruz.<a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/cocosidea.png"><img class="alignnone wp-image-858 size-full" src="/assets/cocosidea.png" alt="cocosidea" width="1094" height="837" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Intellij  IDEA kurulu degil ise <a href="https://www.jetbrains.com/idea/">buradan</a> topluluk sürümünü indirebilirsiniz. Daha sonra indirdigimiz   Cocos2d-js'yi zip dosyasından çıkaralım.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>İntelliji kurduktan sonra   açalım. Açtıktan sonra File -Settings-Plugin kısmında Install plugin from disk'e tıklayıp açılan pencereden indirdiğimiz pluginin yolunu verelim.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_33_13-Settings.png"><img class="alignnone wp-image-862 size-full" src="/assets/2015-05-09-16_33_13-Settings.png" alt="2015-05-09 16_33_13-Settings" width="1038" height="705" /></a></p>
+
+
+<p>Hepsi bu kadar artık Intellij içerisinde cocos2d-js projesi oluşturabilirsiniz. ama yapmanız gereken birkaç şey daha var.Bunlarıda ilk proje oluştururken yada ayarladan yapabilirsiniz. şimdi onu anlatalım.</p>
+
+
+<p>Plugini ekledikten sonra Intellij değişiklerin çalışması için kapatıp açılması için soracaktır. onu yapalım yoksa projeler içerisinde göremeyeceksiniz.</p>
+
+
+<p>Tekrar açtıktan sonra ise yine File-Settings altında other Settings kısmında Cocos ve Cocos Framework başlıklarını göreceksiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_36_58-Settings.png"><img class="alignnone wp-image-863 size-full" src="/assets/2015-05-09-16_36_58-Settings.png" alt="2015-05-09 16_36_58-Settings" width="1038" height="705" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_48_18-Settings.png"><img class="alignnone wp-image-864 size-full" src="/assets/2015-05-09-16_48_18-Settings.png" alt="2015-05-09 16_48_18-Settings" width="1038" height="705" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>ilk ekranda Python'nun Python 2.7 olması gerekmekte.  Android SDK ve NDK yollarınını doğru oldugundan emin olun.ANT ve JDK'ye özellikle dikkat ediniz. Çünkü bunlar olmadan hiçbir derleme işlemini yapamazsınız. ikinci ekranda ise Framework olarak girecegimiz şey indirdigimiz  Cocos2d-js dosyasından başka birşey degil .Simulator kısmını boş bırakın kendisi oluşturacaktır.Daha sonra her iki ekrandada Apply diyerek etkin hale getirin.</p>
+
+
+<p>Bütün ayarlar bu kadar diyebilirim.</p>
+
+
+<p>şimdi ise Projemizi oluşturalım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_55_02-New-Project.png"><img class="alignnone size-full wp-image-865" src="/assets/2015-05-09-16_55_02-New-Project.png" alt="2015-05-09 16_55_02-New Project" width="750" height="710" /></a></p>
+
+
+<p>Burada Cocos Js yi seçerek ileri diyelim.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_56_27-New-Project.png"><img class="alignnone size-full wp-image-868" src="/assets/2015-05-09-16_56_27-New-Project.png" alt="2015-05-09 16_56_27-New Project" width="750" height="710" /></a></p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-16_56_36-New-Project.png"><img class="alignnone size-full wp-image-867" src="/assets/2015-05-09-16_56_36-New-Project.png" alt="2015-05-09 16_56_36-New Project" width="750" height="710" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Finish dedikten sonra projemiz oluşacaktır. Projemizi çalıştırmak için üst menüden direk run diyebiliriz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-17_02_24-untitled2-C__Users_nazir.dogan_Documents_Cocos_untitled2-IntelliJ-IDEA-14..png"><img class="alignnone size-full wp-image-869" src="/assets/2015-05-09-17_02_24-untitled2-C__Users_nazir.dogan_Documents_Cocos_untitled2-IntelliJ-IDEA-14..png" alt="2015-05-09 17_02_24-untitled2 - [C__Users_nazir.dogan_Documents_Cocos_untitled2] - IntelliJ IDEA 14." width="1920" height="1040" /></a></p>
+
+
+<p>Projemizi böyle çalıştırdıgımızda direk olarak  Windows uygulaması şeklinde açacaktır. Ama bir ayar ile Android'te çalıştırabiliriz.</p>
+
+
+<p>Bunun için ise</p>
+
+
+<p>Run menüsünden Edit Configuration'a tıklayın açılan pencereden JSBinding altında Android Debug Mode'u göreceksiniz.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/2015-05-09-17_01_18-Run_Debug-Configurations.png"><img class="alignnone size-full wp-image-870" src="/assets/2015-05-09-17_01_18-Run_Debug-Configurations.png" alt="2015-05-09 17_01_18-Run_Debug Configurations" width="1092" height="707" /></a></p>
+
+
+<p>Burda ayar yaptıktan sonra ise projemiz Android'te çalılşacaktır.</p>
+
+
+<p>Şimdilik hepsi bu kadar. Kolay gelsin.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/IMG_0916.jpg"><img class="alignnone size-full wp-image-873" src="/assets/IMG_0916.jpg" alt="IMG_0916" width="3264" height="2448" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Electron Ile Web Teknolojilerini Kullanarak Masaüstü Uygulama Geliştirme]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme/"/>
+    <updated>2015-05-02T10:49:29+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme</id>
+    <content type="html"><![CDATA[<p>Electron , Javascript ile masaüstü uygulaması geliştirmenize  olanak  sağlayan bir runtime'dir.Electron  açık kaynak ve çapraz platfromdur .HTML ,CSS ve io.js'ten gücünü almaktadır.Electron GUI olarak web sayfasını kullanır.yani göreceginiz aslında minimal bir Chromuium tarayıcıdı.r İlk olarak Github'un Atom Editörü için geliştirilmiştir. Electron'u kullanan firmalar arasında  Microsoft ,Facebook ,Slack  ve Docker vardır. Hatta yeni çıkan Microsoft Visual Studio Code Electron tabanlıdır.</p>
+
+
+<p>Lafı fazla uzatmadan kurulum ve uygulama oluşturma  kısmına geçelim.</p>
+
+
+<p>Electron'u kurmak için</p>
+
+
+<pre class="theme:github lang:default decode:true"># Install the `electron` command globally
+npm install electron-prebuilt -g
+
+# Install as a development dependency
+npm install electron-prebuilt --save-dev
+
+</pre>
+
+
+<p>Yukardaki işlemi yaptıktan sonra Electron sistemimize kurulmuş olacaktır. Doğrulamak için</p>
+
+
+<pre class="theme:eclipse lang:default decode:true">electron -v
+
+</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronCMD.png"><img class="alignnone size-medium wp-image-829" src="/assets/electronCMD-300x152.png" alt="electronCMD" width="300" height="152" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Doğruladıktan sonra uygulama oluşturmak için üç tane temel dosyaya ihtiyaçımız var.Bunlar package.json ,main.js,index.html  dosyalarıdır.</p>
+
+
+<pre class="theme:github lang:default decode:true ">your-app/
+├── package.json
+├── main.js
+└── index.html</pre>
+
+
+<p>&nbsp;</p>
+
+
+<pre class="lang:default decode:true">//package.json
+
+{
+  "name"    : "your-app",
+  "version" : "0.1.0",
+  "main"    : "main.js"
+}</pre>
+
+
+<p>&nbsp;</p>
+
+
+<pre class="theme:github lang:default decode:true ">//main.js
+var app = require('app');  // Module to control application life.
+var BrowserWindow = require('browser-window');  // Module to create native browser window.
+
+// Report crashes to our server.
+require('crash-reporter').start();
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the javascript object is GCed.
+var mainWindow = null;
+
+// Quit when all windows are closed.
+app.on('window-all-closed', function() {
+  if (process.platform != 'darwin')
+    app.quit();
+});
+
+// This method will be called when Electron has done everything
+// initialization and ready for creating browser windows.
+app.on('ready', function() {
+  // Create the browser window.
+  mainWindow = new BrowserWindow({width: 800, height: 600});
+
+  // and load the index.html of the app.
+  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+
+  // Emitted when the window is closed.
+  mainWindow.on('closed', function() {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null;
+  });
+});</pre>
+
+
+<pre class="theme:eclipse lang:default decode:true">//index.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Hello World!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Merhaba Dünya!&lt;/h1&gt;
+    We are using io.js &lt;script&gt;document.write(process.version)&lt;/script&gt;
+    and Electron &lt;script&gt;document.write(process.versions['electron'])&lt;/script&gt;.
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+
+<p>Uygulamayı çalıştırmak için  terminal de electron yazıp Enter'layalım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronGUI.png"><img class="alignnone size-medium wp-image-834" src="/assets/electronGUI-300x234.png" alt="electronGUI" width="300" height="234" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Daha sonra oluşturdugumuz  klasörü yani your-app klasörünü sürükleyip bırakalım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/05/electronMerhaba.png"><img class="alignnone size-medium wp-image-835" src="/assets/electronMerhaba-300x225.png" alt="electronMerhaba" width="300" height="225" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Söyleyecek çok şey olsada   temel olarak şimdilik bu kadar. Electron hakkında daha fazla   bilgi için</p>
+
+
+<p><a href="http://electron.atom.io/">electron.atom.io</a> sayfasına   bakabilirsiniz.</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Javascript Ile Arduino]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/02/28/javascript-ile-arduino/"/>
+    <updated>2015-02-28T12:41:23+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/02/28/javascript-ile-arduino</id>
+    <content type="html"><![CDATA[<p>Bu yazımda Javascript ile Arduino kontrolünden bahsedeceğim.Node.js'ı muhtemelen duymuşsunuzdur. Ama eğer duymadıysanız  kısaca server tarafında Javascript çalıştırabileceğiniz bir platform olarak tanımlayabiliriz.</p>
+
+
+<p>Eğer sisteminizde kurulu değil ise</p>
+
+
+<p><a href="http://nodejs.org/">http://nodejs.org/ </a>sitesinden sisteminize uygun olanını indirip kurun.</p>
+
+
+<p>Kurduktan sonra versiyonunu terminalden kontrol edin. (Emin olmak için)</p>
+
+
+<pre class="theme:github lang:default decode:true ">$ node -v
+v0.10.36
+
+
+</pre>
+
+
+<p>Daha sonra ise Johnny-five  paketini kuruyoruz. Johnny -Five  nedir diyebilirisiniz. Johnny-Five  Node.js için yazılmış  Arduino kontrol frameworkudur.  Firmata ile çalışmaktadır. Johnny-Five kullanılarak  Led yakabilir Servoları döndürebilirsiniz. Heyecan verici değil mi ? :D</p>
+
+
+<p>Şimdi npm kullanarak  Johnny-Five'i yükleyelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">npm install johnny-five</pre>
+
+
+<p>Johnny-Five'i yükledikten sonra  Arduinomuza Firmata'yi yükleyelim.</p>
+
+
+<p>Arduino'yu bilgisayara bağlayın. Arduino IDE'sini açın.</p>
+
+
+<p><strong>File -&gt; Examples -&gt; Firmata -&gt; StandardFirmata<br />
+</strong></p>
+
+
+<p>yolunu izleyerek kütüphaneyi Arduino'ya yükleyin.</p>
+
+
+<p>Daha sonra   ledyak.js  adında bir  dosya oluşturalım.</p>
+
+
+<pre class="lang:default decode:true"> var five = require("johnny-five"),board, led;
+
+    board = new five.Board();
+
+    board.on("ready", function() {
+      led = new five.Led(13);
+      led.strobe(1000);
+    });
+
+</pre>
+
+
+<p>Daha sonra ledyak.js'in dizinine gelelim.</p>
+
+
+<pre class="theme:github lang:default decode:true ">node ledyak.js</pre>
+
+
+<p>diyerek çalıştıralım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/snapshot37png.png"><img class="alignnone size-full wp-image-722" src="/assets/snapshot37png.png" alt="snapshot37png" width="990" height="574" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>[embed]https://vine.co/v/O2UAVXVeWKT[/embed]</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Şimdilik hepsi bu kadar . Daha fazla örnek ve bilgi için <a href="https://github.com/rwaldron/johnny-five">Johnny-Five </a>Github sayfasını ziyaret edebilirsiniz.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PhoneGap/Cordova Uygulamalarında Network Bağlantı Bilgisini Alma]]></title>
+    <link href="http://nazrdogan.github.io/blog/2015/02/16/phonegapcordova-network-baglanti-bilgisini-alma/"/>
+    <updated>2015-02-16T19:49:53+02:00</updated>
+    <id>http://nazrdogan.github.io/blog/2015/02/16/phonegapcordova-network-baglanti-bilgisini-alma</id>
+    <content type="html"><![CDATA[<p>Bu yazımda Phonegap/Cordova uygulamalarında  Network yani ağ bağlantı bilgisinin nasıl öğreniliceğinden bahsedeceğim.</p>
+
+
+<p>Network Pluginin desteklendiği platformlar</p>
+
+
+<ul class="task-list">
+<li>Amazon Fire OS</li>
+<li>Android</li>
+<li>BlackBerry 10</li>
+<li>Browser</li>
+<li>iOS</li>
+<li>Windows Phone 7 and 8</li>
+<li>Tizen</li>
+<li>Windows</li>
+<li>Firefox OS</li>
+</ul>
+
+
+<h1></h1>
+
+
+<p>Projemizi oluşturup Android'i ekleyelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">cordova create network com.example.network Network
+
+cd network
+
+cordova platform add android
+
+</pre>
+
+
+<p>Daha sonra ise Network Pluginini ekliyoruz.</p>
+
+
+<pre class="theme:github lang:default decode:true">cordova plugin add org.apache.cordova.network-information</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>Network Sabitleri</p>
+
+
+<ul class="task-list">
+<li>Connection.UNKNOWN</li>
+<li>Connection.ETHERNET</li>
+<li>Connection.WIFI</li>
+<li>Connection.CELL_2G</li>
+<li>Connection.CELL_3G</li>
+<li>Connection.CELL_4G</li>
+<li>Connection.CELL</li>
+<li>Connection.NONE</li>
+</ul>
+
+
+<p>&nbsp;</p>
+
+
+<p>Kullanım</p>
+
+
+<p>Plugini ekledikten sonra aşagıdakileri ekliyoruz. (Bunu sadece Android için ekledim .Diğer platformlar için de başka şeyler eklenecektir.<a href="https://github.com/apache/cordova-plugin-network-information"> Daha fazla bilgi için </a>)</p>
+
+
+<pre class="theme:github lang:default decode:true ">(app/res/xml/config.xml)
+&lt;feature name="NetworkStatus"&gt;
+    &lt;param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" /&gt;
+&lt;/feature&gt;
+
+
+( app/AndroidManifest.xml)
+&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
+</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>https://gist.github.com/nazrdogan/da0634f78ad651224414</p>
+
+
+<p>Network bağlantısını kontrol etmek bu kadar kolay. Umarım faydalı olur. Kolay gelsin  :)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+</feed>

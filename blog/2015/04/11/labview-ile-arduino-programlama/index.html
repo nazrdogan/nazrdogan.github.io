@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>LabVIEW Ile Arduino Programlama - Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="Labview Nedir? LabVIEW (Laboratuary Virtual Instruments For Engineering Workbench) LabVIEW, ölçüm ve kontrol uygulamaları oluşturmak için ihtiyacınız &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/blog/2015/04/11/labview-ile-arduino-programlama/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">LabVIEW Ile Arduino Programlama</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-04-11T11:09:05+03:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:09 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Labview Nedir?</p>
+
+
+<p>LabVIEW (Laboratuary Virtual Instruments For Engineering Workbench)</p>
+
+
+<p>LabVIEW, ölçüm ve kontrol uygulamaları oluşturmak için ihtiyacınız olan araçları ile bilim adamları ve mühendisler sağlayan tek sistemi tasarım yazılımıdır. Bu sorunları çözmek için çok  güçlü, verimlilik hızlandırmaya yardımcı olur ve sürekli yenilik güven veren bir yazılımdır.Görsel programlama dediğimiz kodlara girmeden kendimize özgü programlar oluşturabiliriz. Bir çok kütüphanesi mevcuttur.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Labview'in ne oldugunu öğrendikten sonra şimdi bunu Arduino ile nasıl konuştururum kısmına   gelelim.</p>
+
+
+<p>Adım adım anlatacağım için sorun çıkacağını  düşünmüyorum.</p>
+
+
+<p>1- Öncelikle LabVIEW programını indirin ve kurun.  2011 veya sonrası bir sürüm  olmasına dikkat edin.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/labview-logo.jpg"><img class="alignnone size-medium wp-image-801" src="/assets/labview-logo-300x259.jpg" alt="labview-logo" width="300" height="259" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>2- <a href="http://www.ni.com/visa/">NI-VISA</a>  indirin ve kurun.  Bu LabVIEW için RS-232 sürücülerini içermeketedir.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/ni_logo_trans.png"><img class="alignnone size-full wp-image-803" src="/assets/ni_logo_trans.png" alt="ni_logo_trans" width="292" height="284" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>3- Arduino IDE'sini indirin ve kurun burda dikkat edilmesi gereken Arduino IDE'sinin sürümü 1.0.5 olması gerektigi .(Diğerleride ilede çalışabilir ama test etmek lazım)</p>
+
+
+<p>ve Arduino sürücülerini  yükleyin.</p>
+
+
+<p>Şimdi ise asıl önemli adımlara geçelim.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>4- LabVIEW Interface for Arduino  VI Package Manager'i kullanarak indirin.  VI Package Manager LabVIEW ile beraber gelmektedir.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/2-_search_arduino.png"><img class="alignnone size-medium wp-image-804" src="/assets/2-_search_arduino-300x216.png" alt="2-_search_arduino" width="300" height="216" /></a></p>
+
+
+<p>VI Package Manager'i açın.   Arama yerine Arduino yazdıktan sonra  göreceksiniz. Daha sonra ise Sağ tıklayıp "install " diyebilirsiniz.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>5-   Yükledikten sonra  Arduino'yu bilgisayarımıza bağlıyoruz.</p>
+
+
+<p>LIFA Firmware'ini  Arduino'ya  yüklememiz gerekmekte.</p>
+
+
+<pre class="">C:\Program Files\National Instruments\LabVIEW 2014\vi.lib\LabVIEW Interface for Arduino\Firmware\LIFA_Base
+</pre>
+
+
+<p>Yukardakı dosya yolunda  LIFA_Base klasörünün içerisindeki Arduino kaynak  kodlarını Arduino'da   açın .Hepsini seçtiginizden emin olun. Eğer "error compiling " gibi hata alırsanız  LIFA_Base klasörünü alıp başka  bir yere taşıyıp deneyin.</p>
+
+
+<p>6- Daha sonra  LabVIEW programını açın .</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/1_-_help_findexamples.png"><img class="alignnone size-medium wp-image-805" src="/assets/1_-_help_findexamples-300x207.png" alt="1_-_help_findexamples" width="300" height="207" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Daha sonra  Analog Read Serial örnegini açın. Açtıktan sonra Ctrl+E yaparak  block diagramı açın.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/analogread.png"><img class="alignnone size-medium wp-image-806" src="/assets/analogread-297x300.png" alt="analogread" width="297" height="300" /></a></p>
+
+
+<p>Arduino'da  gerekli bağlantıları yaptıktan sonra "run " diyerek çalıştırın.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2014/07/potantiometer.png"><img class="alignnone size-medium wp-image-807" src="/assets/potantiometer-300x188.png" alt="potantiometer" width="300" height="188" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Arduino Bağlantılarını ve sürücüleri düzgün yüklediyseniz sorunsuz çalışacaktır kolay gelsin. :)</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Nazir Doğan</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-04-11T11:09:05+03:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:09 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arduino/'>arduino</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://nazrdogan.github.io/blog/2015/04/11/labview-ile-arduino-programlama/" data-via="gereksizcoder" data-counturl="http://nazrdogan.github.io/blog/2015/04/11/labview-ile-arduino-programlama/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/03/06/angularjs-ve-topcoat-ile-mobil-uygulama-gelistirme/" title="Previous Post: AngularJS ve Topcoat ile Mobil Uygulama geliştirme">&laquo; AngularJS ve Topcoat ile Mobil Uygulama geliştirme</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/05/02/electron-ile-web-teknolojilerini-kullanarak-masaustu-uygulama-gelistirme/" title="Next Post: Electron ile Web Teknolojilerini Kullanarak masaüstü uygulama  geliştirme">Electron ile Web Teknolojilerini Kullanarak masaüstü uygulama  geliştirme &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://nazrdogan.github.io/blog/2015/04/11/labview-ile-arduino-programlama/';
+        var disqus_url = 'http://nazrdogan.github.io/blog/2015/04/11/labview-ile-arduino-programlama/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

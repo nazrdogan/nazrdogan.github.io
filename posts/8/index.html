@@ -1,0 +1,604 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Nazir Doğan Code Blog</title>
+  <meta name="author" content="Nazir Doğan">
+
+  
+  <meta name="description" content="Tizen SDK'yi indirkten sonra ilk olarak yapmamız gereken iş  Sertifika oluşturmak. Peki neden sertifikalara ihtiyaç var derseniz.  güvenlik sebebi &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://nazrdogan.github.io/posts/8/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54922205-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Nazir Doğan Code Blog</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="nazrdogan.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/04/tizen-uygulama-gelistirme-sertifika-olusturma-adim-1/">Tizen Uygulama Geliştirme -Sertifika Oluşturma (Adım-1)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-04T07:49:57+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>7:49 am</span></time>
+        
+           | <a href="/blog/2013/09/04/tizen-uygulama-gelistirme-sertifika-olusturma-adim-1/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/04/tizen-uygulama-gelistirme-sertifika-olusturma-adim-1/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://nazirdogan.files.wordpress.com/2013/09/tizenide1.png"><img class="alignnone size-medium wp-image-111" alt="tizenIDE1" src="/assets/tizenide1.png?w=300" width="600" height="406" /></a></p>
+
+
+<p>Tizen SDK'yi indirkten sonra ilk olarak yapmamız gereken iş  Sertifika oluşturmak. Peki neden sertifikalara ihtiyaç var derseniz.  güvenlik sebebi ile  ihtiyaç duyuyoruz.(ayrıntılı bilgi için burayı <a href="http://www.bilgiguvenligi.gov.tr/guvenlik-teknolojileri/sertifika-sertifika-olusturma-sertifika-turleri.html">okuyabilirsiniz</a>.)</p>
+
+
+<p>Çünkü oluşturduğumuz özel anahtarları(private keys) uygulamalarımızı  imzalamak ve doğrulamak için kullanacağız.Ayrıca Sertifika oluşturmadan uygulamarı çalıştırmak mümkün değil.</p>
+
+
+<p>Peki Nasıl Oluşturulur bu sertifika ve özel anatharlar..</p>
+
+
+<p>Tizen IDE'yı açtıktan sonra menuden</p>
+
+
+<p><strong>Window &gt; Preferences &gt; Tizen SDK &gt; Security Profile</strong></p>
+
+
+<p>yolunu izleriz.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/tizensecurityprofiles.png"><img class="alignnone size-medium wp-image-113" alt="tizensecurityprofiles" src="/assets/tizensecurityprofiles.png?w=300" width="800" height="492" /></a></p>
+
+
+<p>Bu ekranı gördükten  sonra imzalı (signed) profil eklemek için  Profiles panelinden  <strong>Add 'e </strong>tıklayın.</p>
+
+
+<p>Profilinize isim verdikten sonra  <strong>Generate</strong>'e tıklayın.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/tizencertificate.png"><img class="alignnone size-large wp-image-120" alt="tizencertificate" src="/assets/tizencertificate.png?w=1024" width="1024" height="548" /></a></p>
+
+
+<p>Gerekli alanları doldurduktan sonra <strong><br />
+Apply  </strong>dedikten sonra Sertifikalarımız oluşturmuş oluyoruz.</p>
+
+
+<p>Artık Proje oluşturup uygulama geliştirmeye başlayabilirsiniz.</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/03/tizen-uygulama-gelistirme-adim-0/">Tizen Uygulama Geliştirme (Adım 0)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-03T21:27:15+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2013</span></span> <span class='time'>9:27 pm</span></time>
+        
+           | <a href="/blog/2013/09/03/tizen-uygulama-gelistirme-adim-0/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/03/tizen-uygulama-gelistirme-adim-0/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Her platformda oldugu gibi Tizen'de de uygulama geliştirmek için bir SDK(Software Development Kit) 'e sahip.</p>
+
+
+<p>Şu an en  güncel sürüm olan Tizen 2.2  SDK'yi i<a href="https://developer.tizen.org/">ndirebilirsiniz</a>.</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/tizensdkdownload.png"><img class="alignnone size-medium wp-image-87" alt="tizensdkdownload" src="/assets/tizensdkdownload.png?w=300" width="600" height="652" /></a></p>
+
+
+<p>i<a href="http://nazirdogan.files.wordpress.com/2013/09/tizensdkdownload1.png"><img class="alignnone size-medium wp-image-91" alt="tizensdkdownload1" src="/assets/tizensdkdownload1.png?w=221" width="421" height="600" /></a></p>
+
+
+<p>Tizen SDK , platform binarylerini,döküman ve örnek kodlardan oluşmakta.Ayrıca Tizen SDK ile beraber Eclipse temelli bir IDE gelmekte.<br />
+Tizen IDE   Web Uygulama geliştirme aracı ve Native Uygulama geliştirme araçlarını desteklemekte.</p>
+
+
+<p>Tizen IDE 'de  başka araçlarda Mevcut.(bunları tek tek diğer yazılarımda anlatacağım)</p>
+
+
+<ul>
+<li>Certificate Generator</li>
+<li>Emulator</li>
+<li>Smart Development Bridge</li>
+<li>UI customizer</li>
+</ul>
+
+
+<p>Ayrıca Tizen IDE'de  hem Web hem Native uygulamalar için birçok örnek Mevcut.</p>
+
+
+<p>(Zamanla buraya uygulamalarla ilgili nasıl yapılır gibi bilgiler gelecek)</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/03/tizen-gelistirici-telefonu/">Tizen Geliştirici Telefonu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-03T19:19:18+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2013</span></span> <span class='time'>7:19 pm</span></time>
+        
+           | <a href="/blog/2013/09/03/tizen-gelistirici-telefonu/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/03/tizen-gelistirici-telefonu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Tizen projesini ilk duyurulduğu günden beri takip eden biri olarak  ilk telefonların ne zaman çıkacağını hep merak ettim.Daha sonrasında ise bazı yabancı sitelerde ilk  geliştirici cihazlarının dağıtıldığını gördüm.Keşke benimde elime bir tane geçsede kurcalasam diye düşündüm.Aradan belki bir sene belki daha az zaman geçtikten sonra  yeni Tizen cihazın geliştiricelere dağıtıldığını gördüm.Daha sonra ise Tizen Türkiye sayfasında geliştirici cihazlarının   belirli bir süre için geliştiricilere verildigini gördüm. Bazı prosedürlerden  sonra  cihaz geçen cuma günü elime ulaştı.Özellikle Tizen Türkiye'den Oytun EREN Bey'e özellikle teşekkür etmek istiyorum.Değerli vaktini ve emegini ayırdığı için.</p>
+
+
+<p>Cihaz özellik olarak Samsung S3 ile aynı .Bu yüzden özelliklerinden bahsetmek istemiyorum.Her yerde mevcut bu bilgiler.Sadece biraz köşeli bir görünüm katmışlar ve Android'de olan geri tuşu gibi tuşlar çalışmıyor.Çünkü tıpkı iOS gibi sadece bir  Home butonuna sahip.Bundan anladığım kadarıyla Tizen cihazlarda sadece Home tuşu olacak.</p>
+
+
+<p>Cihazla ilgili benim ilk izlenimim geliştirici cihazı ve Tizen 2.1 yüklü olmasından dolayı bazen takılmalar yaşıyor ama uygulamalar gayet hızlı çalışıyor.İlerleyen sürümlerde  bunların çözüleceğinden eminim.Şu an henüz uygulama marketi (Market var ama indirmeye açık degil)açılmadıgı için  başka bir uygulama denemesemde ilerliyen zamanlarda hem kendi yazdığım hemde örnek uygulamaları deneyip burda paylaşacağım.</p>
+
+
+<p>Bir Palm Pre,(WebOS) kullanıcısı olarak,Başka bir izlenimim ise her platformda oldugu gibi  Native uygulamalar Web uygulamalarından daha iyi çalışıyor gibi gözüküyor.</p>
+
+
+<p>şimdilik bu kadar ama bu yazı gün geçtikçe güncellencek...</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2143.jpg"><img class="alignnone size-medium wp-image-71" alt="IMG_2143" src="/assets/img_2143.jpg?w=200" width="200" height="300" /><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2147.jpg"><img class="alignnone size-medium wp-image-72" alt="IMG_2147" src="/assets/img_2147.jpg?w=200" width="200" height="300" /></a> <a href="http://nazirdogan.files.wordpress.com/2013/09/img_2148.jpg"><img class="alignnone size-medium wp-image-73" alt="IMG_2148" src="/assets/img_2148.jpg?w=200" width="200" height="300" /><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2169.jpg"><img class="alignnone size-medium wp-image-74" alt="IMG_2169" src="/assets/img_2169.jpg?w=200" width="200" height="300" /><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2177.jpg"><img class="alignnone size-medium wp-image-75" alt="IMG_2177" src="/assets/img_2177.jpg?w=200" width="200" height="300" /></a></a></a></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Tizen Tab temelli  Native Uygulama görünümü</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2156.jpg"><img class="alignnone size-medium wp-image-77" alt="IMG_2156" src="/assets/img_2156.jpg?w=200" width="200" height="300" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Tizen  Jquery Mobile Web uygulama görünümü</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2161.jpg"><img class="alignnone size-medium wp-image-78" alt="IMG_2161" src="/assets/img_2161.jpg?w=200" width="200" height="300" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Tizen Appcelerator Titanium Mobile görünümü (Tam olarak çalışmasada :) )</p>
+
+
+<p><a href="http://nazirdogan.files.wordpress.com/2013/09/img_2189.jpg"><img class="alignnone size-medium wp-image-79" alt="IMG_2189" src="/assets/img_2189.jpg?w=200" width="200" height="300" /></a></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/02/tizen-mimarisi/">Tizen Mimarisi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-02T13:17:15+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>1:17 pm</span></time>
+        
+           | <a href="/blog/2013/09/02/tizen-mimarisi/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/02/tizen-mimarisi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Tizen birden fazla cihaz kategorisi için uygulamalar geliştirmek için Web ve Native API'leri sağlayan bir standart tabanlı bir platformdur. Gelecekte daha fazla cihaz türlerini kapsayacak şekilde planlanan Tizen şu anda, akıllı telefonlar ve tablet cihazlar için hedeflenmiştir. Aşağıdaki şekil Tizen mimarisini göstermektedir.</p>
+
+<p><img src="https://developer.tizen.org/sites/default/files/users/user-83/tizen_arch.png" alt="" /></p>
+
+<p>Tizen Mimarisi aşağıdaki altsistemlerden oluşmaktadır.</p>
+
+<ul>
+<li><span style="color: #ff6600;">Web   Framework</span></li>
+</ul>
+
+
+<p>Web Framework en güncel Web teknolojisinden gücünü alır.W3C tarafından belirlenen video ,ses ,resim ,2D canvas,WebGL,CSS3 ,konum belirleme ,titreşim ,Web Socket , WebWorker gibi birçok HTML5 özelliklerinin barındırır. Ayrıca bu Framework cihazın diğer özelliklerine (NFC ,Bluetooth, alarm ,mesajlaşma) ulaşabilecek API'leri sağlamakta. Bunları yaparkende güvenlik için sıkı bir kontrolden geçiriyor.</p>
+
+<ul>
+<li><span style="color: #ff6600;">Native Framework</span></li>
+</ul>
+
+
+<p>Tizen'de her ne kadar Web uygulamalar yazılsada Native geliştirme API'leride mevcut.Native geliştirme dili ise C++ dir.API referanslarından yola çıkarak methodları ve class'ları kullanarak çeşitli uygulamalar geliştirebilirsiniz.Native Framework ile cihazın bütün sensörlerine ve birçok işlevine ulaşabilirsiniz.Dikkat çekici arayüzleri tasarlayabilirsiniz.</p>
+
+<ul>
+<li><span style="color: #ff6600;">Çekirdek</span></li>
+</ul>
+
+
+<p>Çekirdek Web ve Native Frameworkler için gerekli alt özellikleri sağlar.Açık kaynak kütüphaneler ve ek API'ler kullanılarak üst sistemin kullanması için bir sistem tabakası oluşturulmuştur.</p>
+
+<ul>
+<li><span style="color: #ff6600;">Kernel</span></li>
+</ul>
+
+
+<p>Kernel ise Linux Kernel ve cihazın sürücülerini içermektedir.</p>
+
+<p>Daha fazla bilgi için bu dökümanı da <a href="https://www.tizen.org/sites/default/files/tizen-architecture-linuxcollab.pdf">indirebilirsiniz.</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/01/tizen/">Tizen</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-01T20:54:32+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2013</span></span> <span class='time'>8:54 pm</span></time>
+        
+           | <a href="/blog/2013/09/01/tizen/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/09/01/tizen/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.nazirdogan.com/wp-content/uploads/2013/09/tizen1.jpg"><img src="/assets/tizen1-300x168.jpg" alt="tizen" /></a></p>
+
+<p>Tizen(tayzın diye okunuyor) akıllı telefonlar ,tablet,netbook,araç içi bilgi- eglence cihazlar ve akıllı Tv &lsquo;ler gibi birden çok cihaz kategorisi için mobil operatörler, cihaz üreticileri ve silikon tedarikçileri lider tarafından desteklenen açık kaynak kodlu, standartlara dayalı yazılım platformudur.</p>
+
+<p>Tizen projesi içinde bulunduğu <a href="http://www.linuxfoundation.org/collaborate/labs/tizen">Linux Vakfı</a> ve Teknik Yönlendirme Grubu tarafından yönetilir. Teknik Yönlendirme Grubu cihazları desteklemek için çalışma gruplarının oluşumu ile birlikte, platform geliştirme ve dağıtım odaklanarak, açık kaynak projesi için birincil karar alma organıdır.</p>
+
+<p>Tizen HTML5 dayalı uygulama geliştiriciler için güçlü ve esnek bir ortam sağlar. HTML5 en güçlü yetenekleri ve çapraz platform esnekliği sayesinde, hızla mobil uygulamalar ve hizmetler için tercih edilen geliştirme ortamı haline geliyor. Tizen SDK ve API geliştiriciler birden fazla cihaz bölümlerinde çalışan uygulamalar yazmak için HTML5 ve ilgili web teknolojileri kullanmanıza izin verir.</p>
+
+<p>Evet arkadaşlar,Tizen nedir ögrendikten sonra bir sonraki yazımızda uygulama geliştirmeye nasıl başlanır onunla ilgili bilgi vereceğim.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/15/arduino-kitabim-notlarim/">Arduino Kitabım (Notlarım )</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-08-15T19:50:35+03:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>7:50 pm</span></time>
+        
+           | <a href="/blog/2013/08/15/arduino-kitabim-notlarim/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/08/15/arduino-kitabim-notlarim/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://nazirdogan.files.wordpress.com/2013/08/images.jpg"><img src="/assets/images.jpg" alt="Image" /></a></p>
+
+<p>Bir Open Source aşığı olarak benimde bu ortama katkım olması gerektiğini hep düşünmüştüm.Sonrasında ise Arduino ile tanıştım kaynaştım :D. Elimden geldiği kadar birşeyler yapmaya birilerine anlatmaya çalıştım ama insanlar türkçe kaynak olmamasından dolayı hep uzak duruyordu.Bende bildiklerimi ve ilerde öğreneceklerimi bu kitap(daha çok not gibi duruyor ama ) toplamaya karar verdim .Bildiklerimin hepsini yazamasamda başlagıç için yeterli oldugunu düşünüyorum.Çok gözden geçirme şansım olmadı (Onu okuyucuya bırakıyorum).Umarım faydalı bir çalışma olur ve kitap güncellenerek devam eder.</p>
+
+<p>indirmek için <a href="http://www.dikeyeksen.com/products/arduino-hizli-baslangic-rehberi">buraya buyrun</a></p>
+
+<p>Fikir ve önerileriniz için :<a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#110;&#x61;&#x7a;&#114;&#100;&#x6f;&#103;&#x61;&#x6e;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#111;&#x6d;">&#110;&#x61;&#x7a;&#x72;&#x64;&#x6f;&#103;&#97;&#110;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/25/butun-gereksizliklere-burada-olacak/">Bütün Gereksizlikler Burada Olacak..</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-07-25T20:32:13+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:32 pm</span></time>
+        
+           | <a href="/blog/2013/07/25/butun-gereksizliklere-burada-olacak/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2013/07/25/butun-gereksizliklere-burada-olacak/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div><script src='https://gist.github.com/6094168.js'></script>
+<noscript><pre><code>Merhaba Zalim Dünya!</code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/7">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/18/yarn/">Yarn Paket Yöneticisi Nedir ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/swift-temelleri/">Swift 3 Dersleri-Temeller</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/nazrdogan">@nazrdogan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'nazrdogan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Nazir Doğan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'nazrdogan';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

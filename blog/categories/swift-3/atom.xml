@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Swift 3 | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/swift-3/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Swift 3 Dersleri-Temeller]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/09/30/swift-temelleri/"/>
+    <updated>2016-09-30T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/09/30/swift-temelleri</id>
+    <content type="html"><![CDATA[<p><img src="http://nazrdogan.github.io/assets/swift_logo.png" width="100%"></p>
+
+<h2>Merhaba Dünya uygulaması</h2>
+
+<pre><code class="swift">print("Merhaba Dünya")
+</code></pre>
+
+<h3>Değişken Tanımlama</h3>
+
+<pre><code class="swift">var myName = "Nazır"
+var myNumber = 13
+</code></pre>
+
+<h3>Sabit Tanımlama</h3>
+
+<pre><code class="swift">let myName = "Nazır"
+</code></pre>
+
+<h3>Veri Tipleri</h3>
+
+<pre><code class="swift">
+    // Character veri tipi
+    var character :Character = "N"
+
+    // String Veri Tipi
+    var myName: String = "Nazır"
+
+    // Int Veri Tipi
+    var myNumber: Int = 13
+
+    // Float ve Double veri tipi
+
+    var number:Float = 4.2
+
+    var number2:Double = 1.1
+
+    // sabitlerde bu şekilde yazılabilir
+    let myName:String = "Nazır"
+</code></pre>
+
+<h3>For döngüsü oluşturma</h3>
+
+<pre><code class="swift">    for var x in 0..&lt;10 {
+        print(x)
+    }
+</code></pre>
+
+<h3>Switch case yapısı</h3>
+
+<pre><code class="swift    ">    let name = "Nazır"
+    // 'break' yazmak gerekmez.
+    switch name {
+     case "Nazır" : print("Merhaba Nazır")
+     case "Damla" : print("Merhaba Damla")
+     default : print("Merhaba")
+    }
+</code></pre>
+
+<h3>While Döngüsü</h3>
+
+<pre><code class="swift">var x = 0
+
+// 0'dan 9 a kadar sayar
+while x&lt;10 {
+  print(x)
+    x++
+}
+</code></pre>
+
+<h3>If Else yapısı</h3>
+
+<pre><code class="swift    ">let swiftIsCool = true
+
+if swiftIsCool {
+    print("Tabi Canım")
+}
+else {
+    print("Hayır")
+    }
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Programmatically Creating UI Elements Using Swift 3]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/09/30/programmatically-creating-ui-swift3/"/>
+    <updated>2016-09-30T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/09/30/programmatically-creating-ui-swift3</id>
+    <content type="html"><![CDATA[<p>if you are new in iOS development and using Interface Builder for creating UI elements. Maybe you want to learn how can do with code. In this post I will talk about this and give a snippet.</p>
+
+<h3>UIView</h3>
+
+<pre><code class="swift">
+let child = UIView(frame: CGRect(x: 100, y: 100,width:100, height: 100))
+child.backgroundColor = UIColor.red
+self.view.addSubview(child)
+</code></pre>
+
+<p><img src="http://nazrdogan.github.io/assets/Simulator Screen Shot 30 Sep 2016 13.19.40.png" width="308"></p>
+
+<h3>UISlider</h3>
+
+<pre><code class="swift"> let slider = UISlider (frame: CGRect(x: 10, y: 300,width:300, height: 100))
+     slider.minimumValue = 0
+     slider.maximumValue = 100
+     slider.tintColor = UIColor.red
+     slider.isContinuous = true
+     slider.value = 30
+     slider.addTarget(self, action:#selector(sliderValueDidChange), for: .valueChanged)
+     self.view.addSubview(slider)
+</code></pre>
+
+<pre><code class="swift">func sliderValueDidChange(sender:UISlider!)
+   {
+      print("value : \(sender.value)")
+   }
+</code></pre>
+
+<p><img src="http://nazrdogan.github.io/assets/Simulator Screen Shot 30 Sep 2016 13.56.51.png" width="308"></p>
+
+<h3>UIButton</h3>
+
+<pre><code class="swift">let button  = UIButton (frame : CGRect (x:100, y:100 ,width:100 , height:40))
+    button.backgroundColor = UIColor.red
+    button.setTitle("My Button", for:.normal)
+    button.setTitleColor(UIColor.yellow, for: .normal)
+   self.view.addSubview(button)
+</code></pre>
+
+<pre><code class="swift"> button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+</code></pre>
+
+<p><img src="http://nazrdogan.github.io/assets/Simulator Screen Shot 30 Sep 2016 14.56.26.png" width="308"></p>
+
+<h3>UISwitch</h3>
+
+<pre><code class="swift">
+let switchDemo = UISwitch(frame: CGRect(x:100, y:100 ,width:40, height:40))
+    switchDemo.isOn  = true
+    switchDemo.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
+    self.view.addSubview(switchDemo)
+</code></pre>
+
+<pre><code class="swift">
+func switchChanged(sender: UISwitch!){
+
+      print("value: \(sender.isOn)")
+  }
+</code></pre>
+
+<p><img src="http://nazrdogan.github.io/assets/Simulator Screen Shot 30 Sep 2016 19.40.40.png" width="308"></p>
+
+<h3>UISegmentedControl</h3>
+
+<pre><code class="swift">let segmentedControl = UISegmentedControl(frame: CGRect(x:10, y:100 ,width:260, height:30))
+    segmentedControl.insertSegment(withTitle:"index 0", at: 0, animated: false)
+    segmentedControl.insertSegment(withTitle:"index 1", at: 1, animated: false)
+    segmentedControl.insertSegment(withTitle:"index 2", at: 2, animated: false)
+    segmentedControl.addTarget(self, action: #selector(getSegmentedControlValue), for: .valueChanged)
+    segmentedControl.selectedSegmentIndex = 0
+    self.view.addSubview(segmentedControl)
+</code></pre>
+
+<pre><code class="swift">func getSegmentedControlValue(sender:UISegmentedControl!) {
+       if  sender.selectedSegmentIndex == 0 {
+           print("index 0")
+
+       }
+       else if sender.selectedSegmentIndex == 1 {
+
+           print("index 1")
+
+       }
+       else {
+           print("index 2")
+       }
+
+   }
+</code></pre>
+
+<p><img src="http://nazrdogan.github.io/assets/Simulator Screen Shot 30 Sep 2016 19.43.35.png" width="308"></p>
+]]></content>
+  </entry>
+  
+</feed>

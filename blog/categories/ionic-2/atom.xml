@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ionic 2 | Nazir Doğan Code Blog]]></title>
+  <link href="http://nazrdogan.github.io/blog/categories/ionic-2/atom.xml" rel="self"/>
+  <link href="http://nazrdogan.github.io/"/>
+  <updated>2018-01-14T03:25:01+03:00</updated>
+  <id>http://nazrdogan.github.io/</id>
+  <author>
+    <name><![CDATA[Nazir Doğan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ionic 2 - Google Maps]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/07/31/ionic2-googlemaps/"/>
+    <updated>2016-07-31T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/07/31/ionic2-googlemaps</id>
+    <content type="html"><![CDATA[<p>Bu yazımda Ionic 2 uygulamalarında <strong>Google Maps</strong>&lsquo;ı nasıl ekleyeceğimiz ve <strong>ionic-native</strong> kullanarak konum bilgisini almayı öğreneceğiz.</p>
+
+<p>Şimdi yeni bir ionic projesi oluşturarak başlayalım.</p>
+
+<pre><code>ionic start ionic-maps blank --v2
+cd ionic-maps
+ionic platform add android
+</code></pre>
+
+<p>Daha sonra ise konum bilgisi alabilmek için <strong>Geolocation</strong> pluginini ekliyoruz.</p>
+
+<pre><code>ionic plugin add cordova-plugin-geolocation
+</code></pre>
+
+<p>Google Maps'in script'ini <strong>index.html</strong>&lsquo;e ekliyoruz.</p>
+
+<p>```
+<body>
+  <ion-app></ion-app></p>
+
+<!-- Google Maps -->
+
+
+<p> <script src="http://maps.googleapis.com/maps/api/js"></script></p>
+
+<p>  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js"></script>
+  <!-- Polyfill needed for platforms without Promise and Collection support -->
+  <script src="build/js/es6-shim.min.js"></script>
+  <!-- Zone.js and Reflect-metadata  -->
+  <script src="build/js/Reflect.js"></script>
+  <script src="build/js/zone.js"></script>
+  <!-- the bundle which is built from the app's source code -->
+  <script src="build/js/app.bundle.js"></script>
+</body>
+```</p>
+
+<p>Bunları ekledikten sonra <strong>angular/core</strong>&lsquo;dan <strong>OnInit</strong>'i ekliyoruz.</p>
+
+<pre><code>
+import {Component, OnInit} from '@angular/core';
+</code></pre>
+
+<p>Konum almak için ise Geolocation'i ekliyoruz.</p>
+
+<pre><code>
+import {Geolocation} from 'ionic-native';
+</code></pre>
+
+<p>Daha sonra fonksiyonumuzu yazıyoruz.</p>
+
+<pre><code>
+  loadMap() {
+    Geolocation.getCurrentPosition().then((resp) =&gt; {
+      var latlng = new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude);
+      var myOptions = {
+        zoom: 8,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("map"), myOptions);
+    });
+  }
+</code></pre>
+
+<p>Eğer <strong>Typescript</strong> yazıyorsanız Google Map'sin hata verdiğini göreceksiniz.</p>
+
+<pre><code>
+TypeScript error: /Users/nazirdogan/ionic-maps/app/pages/home/home.ts(21,24): Error TS2304: Cannot find name 'google'.
+TypeScript error: /Users/nazirdogan/ionic-maps/app/pages/home/home.ts(25,20): Error TS2304: Cannot find name 'google'.
+TypeScript error: /Users/nazirdogan/ionic-maps/app/pages/home/home.ts(27,21): Error TS2304: Cannot find name 'google'.
+TypeScript error: typings/index.d.ts(2,1): Error TS6053: File 'typings/globals/google.maps/index.d.ts' not found.
+</code></pre>
+
+<p>Bu hatanın nedeni ise Typescript Definition dosyalarının olmamasıdır.</p>
+
+<p>Bu hatayı gidermek için</p>
+
+<pre><code> npm install typings --global   
+
+ typings install dt~google.maps --global
+</code></pre>
+
+<p>Yukarıdaki gibi typings'i yüklersek projemizde typings klasörü altında globals klasörü içinde <strong>google.maps</strong> dosyaları yüklenecektir.</p>
+
+<p>Yazdığımız fonksiyonu <strong>ngOnInit</strong> ile çagırıyoruz.</p>
+
+<pre><code>
+ngOnInit() {
+    console.log('ngOnInit');
+    this.loadMap();
+  }
+</code></pre>
+
+<p>Html tarafında ise id'si map olan bir div oluşturuyoruz.</p>
+
+<pre><code>&lt;ion-header&gt;
+  &lt;ion-navbar&gt;
+    &lt;ion-title&gt;
+      Google Maps
+    &lt;/ion-title&gt;
+  &lt;/ion-navbar&gt;
+&lt;/ion-header&gt;
+&lt;ion-content scroll="false"&gt;
+  &lt;div id="map"&gt;&lt;/div&gt;
+&lt;/ion-content&gt;
+</code></pre>
+
+<p>sass dosyamız</p>
+
+<pre><code>.home {
+
+}
+.scroll {
+    height: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+
+}
+</code></pre>
+
+<p><img src="/assets/ionic-maps.png" alt="project structure" /></p>
+
+<p>Projenin Github <a href="https://github.com/nazrdogan/ionic-maps">linki</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ionic 2 - Sunucudan Veri Alma]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/07/23/ionic2-uzaktan-veri-alma/"/>
+    <updated>2016-07-23T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/07/23/ionic2-uzaktan-veri-alma</id>
+    <content type="html"><![CDATA[<p><img src="/assets/ionic-weather-app.png" alt="project structure" /></p>
+
+<p>Mobil uygulamaların birçoğu servis olmadan çokta birşey ifade etmezler. ve birçok uygulama REST ve benzeri servisleri kullanmaktadır. Şimdi bizde yapacağımız uygulama ile basit bir servis çagırısı yapıp veriyi ekrana basacağız.</p>
+
+<p>Yapacağımız uygulama basit bir hava durumu uygulaması olacak. Servisden veriyi alma dışında Geolocation pluginini kullanımını göreceğiz. Ayrıca ionic'in yeni CLI yeni özelliğinden bir tanesini kullanacağız.</p>
+
+<p>Şimdi uygulamayı oluşturarak başlayalım.</p>
+
+<pre><code> ionic start Ionic2Weather blank --v2
+ cd Ionic2Weather
+</code></pre>
+
+<p>uygulamayı oluşturuduktan sonra ilk iş olarak servis için provider'i üretiyoruz.</p>
+
+<p>Bunu Ionic CLI'da bulunan <strong><a href="http://ionicframework.com/docs/v2/cli/generate/">generate</a></strong> komutu ile yapıyoruz.</p>
+
+<p><em>Not : Bu komut ile sayfa sayfa'da generate edilmekte. Dökümanda bulabilirsiniz.</em></p>
+
+<pre><code>ionic g provider MyData
+</code></pre>
+
+<p> yukaradaki komut ile Ionic bizim için yok ise bir <strong>providers</strong> klasörü oluşturuyor. Ayrıca verdiğimiz isimde bir klasör daha oluşturup içerisinde aynı isimle typescript dosyası oluşturuyor.</p>
+
+<p>providers - > my-data -> my-data.ts</p>
+
+<p><div><script src='https://gist.github.com/194f00a3183b1fcbca9f49710366c5bf.js'></script>
+<noscript><pre><code>
+// http://ngcourse.rangle.io/handout/di/angular2/inject_and_injectable.html
+import { Injectable } from &#39;@angular/core&#39;;
+// HTTP modulünü import ediyoruz.
+import { Http } from &#39;@angular/http&#39;;
+// rxjs kütüphanesinden map&#39;i ekliyoruz.
+import &#39;rxjs/add/operator/map&#39;;
+
+/*
+  Generated class for the MyData provider.
+
+  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+  for more info on providers and Angular 2 DI.
+*/
+@Injectable()
+export class MyData {
+  data: any;
+
+  constructor(private http: Http) {
+    this.data = null;
+  }
+
+  load() {
+    if (this.data) {
+      // already loaded data
+      return Promise.resolve(this.data);
+    }
+
+    // don&#39;t have the data yet
+    return new Promise(resolve =&gt; {
+      // We&#39;re using Angular Http provider to request the data,
+      // then on the response it&#39;ll map the JSON data to a parsed JS object.
+      // Next we process the data and resolve the promise with the new data.
+      this.http.get(&#39;path/to/data.json&#39;)
+        .map(res =&gt; res.json())
+        .subscribe(data =&gt; {
+          // we&#39;ve got back the raw data, now generate the core schedule data
+          // and save the data for later reference
+          this.data = data;
+          resolve(this.data);
+        });
+    });
+  }
+}
+
+</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ionic 2 - Proje Yapısı]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/07/23/ionic2-proje-yapisi/"/>
+    <updated>2016-07-23T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/07/23/ionic2-proje-yapisi</id>
+    <content type="html"><![CDATA[<p>Bir <a href="http://nazrdogan.github.io/javascript/ionic%202/2016/07/22/ionic2-kurulum.html">önceki yazımda</a> Ionic 2' nin nasıl kurulacağından bahsettim.</p>
+
+<p>Bu yazımda ise proje yapısınıdan bahsetmek ve önemli birkaç dosyayı göstermek istiyorum.</p>
+
+<p><img src="/assets/ionic2-project-yapi.png" alt="project structure" /></p>
+
+<p><em>Not:Görseldeki editor <a href="" title="https://www.visualstudio.com/en-us/products/code-vs.aspx">Visual Studio Code</a> ve ionic'in oluşturdugu blank projedir.Sadece homeSercives.ts dosyası eklenmiştir.</em></p>
+
+<p>Projemizde Ionic 1.x de oldugu gibi platforms, plugins ,hooks gibi Cordova'nın eklediği klasörler mevcut.</p>
+
+<p>node_modules klasörü ve diğer config dosyaları üzerinde durmayacağım. config dosyalarını biraz karıştırarak neler olduguna bakabilirsiniz.</p>
+
+<p>Bizim için en önemli klasör <strong>app</strong> klasörü. <strong>app</strong> klasörü <strong>pages</strong> içersinde html'lerimiz ve .ts (typescript) dosyaları bulunmaktadır. ayrıca platformlara özel yazdığımız stillerin bulunduğu <strong>theme</strong> klasörü yer almaktadır. Ayrıca ana root'ta bir <strong>app.ts</strong> dosyası bulunmaktadır. adındanda anlaşılacağı üzere uygulama bu dosyadan başlamaktadır.</p>
+
+<p>şimdi <strong>app.ts</strong> , <strong>home.ts</strong> , <strong>home.html</strong> &lsquo;e bakalım.</p>
+
+<p><div><script src='https://gist.github.com/500059827d14f146350d779f1e3a99bd.js'></script>
+<noscript><pre><code>
+//http://learnangular2.com/components/
+import {Component} from &#39;@angular/core&#39;;
+/* ionic 1.x de karşşılıgı $ionicPlatform. Platform&#39;a yönelik işler yapılacaksa Platform&#39;u import etmek gerekiyor. 
+ ionicBootstrap ise uygulamayı başlatmak için kullanılan bir kök bileşendir.
+*/
+import {Platform, ionicBootstrap} from &#39;ionic-angular&#39;;
+/* Bu kısımda oldukça önemli 1.x kullananların  ngCordova olarak bildiği  ionic 2 ionic-native adını almıştır. 
+  http://ionicframework.com/docs/v2/native/
+*/
+import {StatusBar} from &#39;ionic-native&#39;;
+
+// Burası ise kök sayfa olarak ayarlanacak dosyayı import ediyor.
+import {HomePage} from &#39;./pages/home/home&#39;;
+
+// Componentimizi oluşturuyoruz. Bu kısım typescript ve Angular 2 oldugu için bu konulara aşina olmak gerekiyor.
+@Component({
+  template: &#39;&lt;ion-nav [root]=&quot;rootPage&quot;&gt;&lt;/ion-nav&gt;&#39;
+})
+// MyApp adında bir class oluşturuyoruz.
+export class MyApp {
+  
+  // rootPage olarak daha önceden import ettiğimiz HomePage&#39;i belirliyoruz.
+  rootPage: any = HomePage;
+ // constructor içerisinde ise yine daha önceden import ettiğimiz Platform&#39;u kullanıyoruz.
+  constructor(platform: Platform) {
+    // ionic 1.x deki gibi platform ready ile uygulamayı başlatıyoruz.
+    platform.ready().then(() =&gt; {
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
+      StatusBar.styleDefault();
+    });
+  }
+}
+// ionicBootstrap oldukça önemli eğer bunu çagırmaz isek uygulamamız başlamayacaktır.
+ionicBootstrap(MyApp);
+</code></pre></noscript></div>
+</p>
+
+<p>Proje yapısına dair söylenebilecek çok şey olsada şimdilik bu kadar. İlk bakışta biraz karışık gelebilir ama konsepti öğrendikten sonra oldukça modüler ve kullanışlı geleceğinden eminim. ionic 1.x de şikayet ettiğim birçok şeyden kurtulmuşa benziyor. Ionic 2' ye başlamadan önce  <strong>Angular 2</strong> ve <strong>Typescript</strong> çalışmanızı şiddetle tavsiye ediyorum.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ionic 2 Kurulumu]]></title>
+    <link href="http://nazrdogan.github.io/blog/2016/07/22/ionic2-kurulum/"/>
+    <updated>2016-07-22T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2016/07/22/ionic2-kurulum</id>
+    <content type="html"><![CDATA[<p><img src="http://ionicframework.com/img/blog/ionic-angular-v2.jpg" alt="ionic-angular-v2" /></p>
+
+<hr />
+
+<p><br></p>
+
+<p>Javascript dünyası son bir iki yıldır baş döndürücü bir şekilde ilerliyor. Node.js'in çok hızlı yükselişi ve ES6 ile Javascript'in yeni özelliklere kavuşması Javascript'i vazgeçilmez bir dil yaptı.</p>
+
+<p>Buna bağlı olarak gelişen Framework'ler (Angular,React) ve dillerde (TypeScript) bundan nasibini aldı. Şu an bütün tarayıcılar bütün özellikleri desteklemesede endişelenecek birşey yok.Bunun için geliştirilen çözümlerde mevcut ( <a href="https://cdnjs.com/libraries/es6-shim">es6-shim</a> ve Babel,TypeScript(programlama dili) gibi araçlar)</p>
+
+<p>Ionic 2'de Ionic 1.x gibi Angular üzerine kurulu bir framework. 1.x'den farkı Angular 2' yi kullanması. Angular 2 ise Angular 1.x düşünüldügünde major bir güncelleme değil komple yeniden yazılmış bir framework diyebiliriz.</p>
+
+<p>Angular 1.x öğrenen ve kullanan birisi için kulağa kötü gibi gelsede front-end geliştiricileri için birçok sorunu ortadan bir değişiklikler getirdiği kesin. Bende yeni yeni Angular2'ye alışmaya çalışan biri olarak daha büyük projeler için oldukça iyi olacağı kanaatindeyim.</p>
+
+<p>Ionic 2 ye daha önceden göz gezdirip geçmiştim.Hazır oldugu kanaatinde değildim. Şimdi biraz daha gelişen framework birçok sorunu çözmüş gibi gözüküyor. Bu yazıda ve bunun devamı olacak yazılarda Ionic 2 ye yönelik örnekleri göstermeye çalışacağım. Hemde kendim öğrenmiş olacağım :)</p>
+
+<p>Hadi başlayalım.</p>
+
+<h1>Cordova ve Ionic</h1>
+
+<p>ilk olarak Cordova ve Ionic'i yüklüyoruz. ( Sisteminize Node.js'i yüklediğinizden emin olunuz.)</p>
+
+<pre><code>npm install -g cordova ionic@beta
+</code></pre>
+
+<p>veya</p>
+
+<pre><code>npm update -g cordova ionic@beta
+</code></pre>
+
+<p><em>Not: Eğer Ionic 1.x ile geliştirme yapıyorsanız endişe etmenize gerek yok. Eski kurulumlarınız ve projeleriniz oldugu gibi kullanımına devam edebilirsiniz.</em></p>
+
+<h1>Proje Oluşturma</h1>
+
+<pre><code>ionic start Ionic2İlkUygulama blank --v2
+
+cd Ionic2İlkUygulama
+</code></pre>
+
+<p><em>Not: Proje ilk oluşurken sabırlı olunuz npm paketlerinin yüklenmesi zaman alabilmektedir.</em></p>
+
+<p>Daha sonra Android platformunu ekliyoruz.</p>
+
+<pre><code>  ionic platform add android
+</code></pre>
+
+<p><em>Not :Eğer MacOS üzerinde geliştirme yapıyorsanız iOS platform otomatik olarak eklenmektedir.</em></p>
+
+<p>Çalıştırmak için ise</p>
+
+<pre><code>
+ionic run android -l -c -s
+</code></pre>
+
+<p>Browser'da test etmek için ise</p>
+
+<pre><code>
+ionic serve -l -c -s
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
