@@ -9,7 +9,7 @@
   <meta name="author" content="Nazir Doğan">
 
   
-  <meta name="description" content="Bu kısa yazımda Ubuntu ve türevleri (Linux Mint, elementary OS vb..) için  Android Studio kurulumundan bahsedeceğim.Paolo Rotolo  tarafından &hellip;">
+  <meta name="description" content="Bu yazımda Javascript ile Arduino kontrolünden bahsedeceğim.Node.js'ı muhtemelen duymuşsunuzdur. Ama eğer duymadıysanız  kısaca server tarafında &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +75,116 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/28/javascript-ile-arduino/">Javascript Ile Arduino</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-28T12:41:23+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:41 pm</span></time>
+        
+           | <a href="/blog/2015/02/28/javascript-ile-arduino/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/02/28/javascript-ile-arduino/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bu yazımda Javascript ile Arduino kontrolünden bahsedeceğim.Node.js'ı muhtemelen duymuşsunuzdur. Ama eğer duymadıysanız  kısaca server tarafında Javascript çalıştırabileceğiniz bir platform olarak tanımlayabiliriz.</p>
+
+
+<p>Eğer sisteminizde kurulu değil ise</p>
+
+
+<p><a href="http://nodejs.org/">http://nodejs.org/ </a>sitesinden sisteminize uygun olanını indirip kurun.</p>
+
+
+<p>Kurduktan sonra versiyonunu terminalden kontrol edin. (Emin olmak için)</p>
+
+
+<pre class="theme:github lang:default decode:true ">$ node -v
+v0.10.36
+
+
+</pre>
+
+
+<p>Daha sonra ise Johnny-five  paketini kuruyoruz. Johnny -Five  nedir diyebilirisiniz. Johnny-Five  Node.js için yazılmış  Arduino kontrol frameworkudur.  Firmata ile çalışmaktadır. Johnny-Five kullanılarak  Led yakabilir Servoları döndürebilirsiniz. Heyecan verici değil mi ? :D</p>
+
+
+<p>Şimdi npm kullanarak  Johnny-Five'i yükleyelim.</p>
+
+
+<pre class="theme:github lang:default decode:true">npm install johnny-five</pre>
+
+
+<p>Johnny-Five'i yükledikten sonra  Arduinomuza Firmata'yi yükleyelim.</p>
+
+
+<p>Arduino'yu bilgisayara bağlayın. Arduino IDE'sini açın.</p>
+
+
+<p><strong>File -&gt; Examples -&gt; Firmata -&gt; StandardFirmata<br />
+</strong></p>
+
+
+<p>yolunu izleyerek kütüphaneyi Arduino'ya yükleyin.</p>
+
+
+<p>Daha sonra   ledyak.js  adında bir  dosya oluşturalım.</p>
+
+
+<pre class="lang:default decode:true"> var five = require("johnny-five"),board, led;
+
+    board = new five.Board();
+
+    board.on("ready", function() {
+      led = new five.Led(13);
+      led.strobe(1000);
+    });
+
+</pre>
+
+
+<p>Daha sonra ledyak.js'in dizinine gelelim.</p>
+
+
+<pre class="theme:github lang:default decode:true ">node ledyak.js</pre>
+
+
+<p>diyerek çalıştıralım.</p>
+
+
+<p><a href="http://www.nazirdogan.com/wp-content/uploads/2015/02/snapshot37png.png"><img class="alignnone size-full wp-image-722" src="/assets/snapshot37png.png" alt="snapshot37png" width="990" height="574" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>[embed]https://vine.co/v/O2UAVXVeWKT[/embed]</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Şimdilik hepsi bu kadar . Daha fazla örnek ve bilgi için <a href="https://github.com/rwaldron/johnny-five">Johnny-Five </a>Github sayfasını ziyaret edebilirsiniz.</p>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -927,63 +1037,6 @@ sudo n stable</pre>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/01/17/2015-tizennin-olacak-mi/">2015 Tizen'nin Yılı Olacak Mı ?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-01-17T23:16:30+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:16 pm</span></time>
-        
-           | <a href="/blog/2015/01/17/2015-tizennin-olacak-mi/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2015/01/17/2015-tizennin-olacak-mi/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Geçtiğimiz günlerde Samsung ,Tizen işletim sistemine sahip TV'leri duyurdu. Daha öncedende kameralarında ve akıll saatlerinde yer vermişti. Tizen projesini takip eden birçok beklediği akıllı telefonları ise TV'leri duyurmasına müteakip piyasaya sürdü.</p>
-
-
-<p>Samsung'un blogunu incelerseniz 2015'te kameraların ,giyilebilir teknolojilerin ve TV'lerin Tizen işletim sistemine sahip olacağını anlayabilirsiniz.</p>
-
-
-<p>Bunun yanı sıra Samsung CEO'su BK Yoon bu seneki CES fuarında Samsung'un bütün ürünlerinin 5 yıl içerisinde  IoT (Internet of Things) yani Nesnelerin İnternetine hazır cihazlar olacağını söyledi. Bundan anlayacağımız Tizen işletim sistemini bütün cihazlarında kullanarak stratejik öneme sahip bir yere getirmeyi amaçlanmaktadır.</p>
-
-
-<p>Peki Tizen neden önemli derseniz ?</p>
-
-
-<p>Şu an piyasaya hakim olan işletim sistemi Android olsada birçok kişi bazı teknik nedenlerden ve Google hakimiyetinden dolayı memnun değil. Tizen  hafif yapısı sayesinde daha az güç , daha az hafıza tüketimi   ve daha akıcı bir deneyim hedeflemektedir.</p>
-
-
-<p>Ayrıca HTML5  uygulama geliştirmeye destek verdiği için web teknolojilerini kullanarak native uygulama geliştirilebilmektedir.</p>
-
-
-<p>Aynı uygulamayı araç içi sistemlerden akıllı telefonlara birçok sistemde ufak defek CSS dokunuşları ile uyumlu halde çalıştırabilmektedir.</p>
-
-
-<p>Tizen'nin en büyük eksikliği şu an için geliştirici eksikliği gibi görünüyor. Umarım Samsung  işletim sisteminde ısrar ederek geliştiricilere güven verirse  Tizen'nin geleceğin mobil işletim sistemi olmamasına hiçbir engel yok. Tabi ki diğer rakipler dışında :)</p>
-
-
-<p>Not: Tizen Linux vakfı tarafından geliştirilen bir proje olsada bu projenin en büyük destekçisi Samsung ve Intel'dir.</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/5">&larr; Older</a>
@@ -1001,6 +1054,10 @@ sudo n stable</pre>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/01/20/node-version-nvm/">NVM İle Varsayılan Node.js Versiyonunu Ayarlama</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
       </li>
     
@@ -1014,10 +1071,6 @@ sudo n stable</pre>
     
       <li class="post">
         <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
       </li>
     
   </ul>

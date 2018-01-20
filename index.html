@@ -9,7 +9,7 @@
   <meta name="author" content="Nazir Doğan">
 
   
-  <meta name="description" content="Yukardaki gif Javascript geliştiricileri için oldukça büyük anlam ifade etse gerek. Javascript geliştiricleri yıllarca asenkron kod yazmak için &hellip;">
+  <meta name="description" content="Yaklaşık 2 aydır nvm kullanıyorum ve node.js versiyonları arası geçişte büyük kolaylık sağlıyor. Varsayılan versiyonu değiştirmem yükseltmem &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +75,59 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2018/01/20/node-version-nvm/">NVM İle Varsayılan Node.js Versiyonunu Ayarlama</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2018-01-20'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>12:00 am</span></time>
+        
+           | <a href="/blog/2018/01/20/node-version-nvm/#disqus_thread"
+             data-disqus-identifier="http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Yaklaşık 2 aydır nvm kullanıyorum ve node.js versiyonları arası geçişte büyük kolaylık sağlıyor. Varsayılan versiyonu değiştirmem yükseltmem gerektiğinde biraz araştırma yaparak aşağıdaki komutları buldum. Umarım sizin de işinize yarar.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'># İstediğiniz versiyonu yükleyin
+</span><span class='line'>nvm install 8.9.4
+</span><span class='line'>
+</span><span class='line'># Varsayılan olarak kullanın
+</span><span class='line'>nvm alias default 8.9.4
+</span><span class='line'>
+</span><span class='line'># Daha sonra node -v  yazarsanız varsayılan versiyonu verecektir.
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1204,204 +1257,6 @@ ionicBootstrap(MyApp);
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/07/10/facebook-flow/">Facebook Flow - Javascript Için Statik Tip Denetleyicisi (Static Type Checker)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2016-07-10T00:00:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:00 am</span></time>
-        
-           | <a href="/blog/2016/07/10/facebook-flow/#disqus_thread"
-             data-disqus-identifier="http://nazrdogan.github.io/blog/2016/07/10/facebook-flow/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="https://flowtype.org/static/flow-og-image.png" alt="flowtype" /></p>
-
-<p>&nbsp;&nbsp;Flow, Facebook tarafından geliştirilen Javascript için statik tip denetleyicisidir. Bu araçın ortaya çıkmasında altında yatan neden ise Javascript'in dinamik tipe sahip bir olmasıdır. Dinamik tipli dillerde değişkenlerin tipi (string ,float, double) derleme anında bilinmezler. Statik tipli diller (Java ,C ve C++ vb.. ) ise kullanıcının değişkenlerin tiplerini her zaman tanımlmasını ister.</p>
-
-<p>&nbsp;&nbsp;Aslında bu Javascript'e esneklik getirdiği gibi bazı sorunları da beraberinde getirmektedir. Bugları bulmak,kod sürekliliğini sağlamak oldukça zorlaşmaktadır. Bunun için geliştirilmekte olan Facebook'un Flow aracını nasıl kullanacağımıza bir göz atalım.</p>
-
-<h1>Flow'un kurulumu</h1>
-
-<p>Öncelikle bir npm projesi oluşturuyoruz.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$&gt; mkdir -p get_started
-</span><span class='line'>$&gt; cd get_started
-</span><span class='line'>$&gt; echo '{"name": "get_started", "scripts": {"flow": "flow; test $? -eq 0 -o $? -eq 2"}}' &gt; package.json</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Daha sonra Flow'u projemize ekliyoruz.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$&gt; touch .flowconfig
-</span><span class='line'>$&gt; npm install --save-dev flow-bin</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Şimdi ise kodumuzu yazalım.</p>
-
-<p><strong>index.js</strong></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// @flow</span>
-</span><span class='line'><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span><span class="p">;</span>
-</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Daha sonra ise Flow'u çalıştıralım.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="o">&gt;</span> <span class="nx">npm</span> <span class="nx">run</span><span class="o">-</span><span class="nx">script</span> <span class="nx">flow</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&gt;</span> <span class="nx">test</span><span class="err">@</span> <span class="nx">flow</span> <span class="o">/</span><span class="nx">get_started</span>
-</span><span class='line'><span class="o">&gt;</span> <span class="nx">flow</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">No</span> <span class="nx">errors</span><span class="o">!</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Evet hiçbir hata almadık.  Şimdi ise kodumuzu biraz değiştirelim. ve hata alalım.</p>
-
-<p><strong>index.js</strong></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// @flow</span>
-</span><span class='line'><span class="kd">var</span> <span class="nx">str</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span><span class="p">;</span>
-</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="o">&gt;</span> <span class="nx">npm</span> <span class="nx">run</span><span class="o">-</span><span class="nx">script</span> <span class="nx">flow</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&gt;</span> <span class="nx">test</span><span class="err">@</span> <span class="nx">flow</span> <span class="o">/</span><span class="nx">get_started</span>
-</span><span class='line'><span class="o">&gt;</span> <span class="nx">flow</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="err">/dev/null</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">index</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">3</span>
-</span><span class='line'>  <span class="mi">3</span><span class="o">:</span> <span class="kd">let</span> <span class="nx">str</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span><span class="p">;</span>
-</span><span class='line'>                       <span class="o">^^^^^^^^^^^^^^</span> <span class="nx">string</span><span class="p">.</span> <span class="nx">This</span> <span class="nx">type</span> <span class="nx">is</span> <span class="nx">incompatible</span> <span class="kd">with</span>
-</span><span class='line'>  <span class="mi">3</span><span class="o">:</span> <span class="kd">let</span> <span class="nx">str</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="s1">&#39;hello world!&#39;</span><span class="p">;</span>
-</span><span class='line'>              <span class="o">^^^^^^</span> <span class="nx">number</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="nx">Found</span> <span class="mi">1</span> <span class="nx">error</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Şimdi ise hata aldık. Çünkü <strong>number</strong> olarak belirlediğimiz değişkene <strong>string</strong> atadık.</p>
-
-<p>Bir örnek daha yapalım.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nx">foo</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Burda ise nerde hata alacağımızı tahmin edebiliyor musunuz ?</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">8</span>
-</span><span class='line'>  <span class="mi">8</span><span class="o">:</span> <span class="nx">foo</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
-</span><span class='line'>     <span class="o">^^^^^^^^^^^^^^^^^^</span> <span class="kd">function</span> <span class="nx">call</span>
-</span><span class='line'>  <span class="mi">4</span><span class="o">:</span>   <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
-</span><span class='line'>              <span class="o">^</span> <span class="nx">string</span><span class="p">.</span> <span class="nx">This</span> <span class="nx">type</span> <span class="nx">is</span> <span class="nx">incompatible</span> <span class="kd">with</span>
-</span><span class='line'>  <span class="mi">4</span><span class="o">:</span>   <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
-</span><span class='line'>              <span class="o">^^^</span> <span class="nx">number</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">8</span>
-</span><span class='line'>  <span class="mi">8</span><span class="o">:</span> <span class="nx">foo</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
-</span><span class='line'>     <span class="o">^^^^^^^^^^^^^^^^^^</span> <span class="kd">function</span> <span class="nx">call</span>
-</span><span class='line'>  <span class="mi">4</span><span class="o">:</span>   <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
-</span><span class='line'>                <span class="o">^</span> <span class="nx">string</span><span class="p">.</span> <span class="nx">This</span> <span class="nx">type</span> <span class="nx">is</span> <span class="nx">incompatible</span> <span class="kd">with</span>
-</span><span class='line'>  <span class="mi">4</span><span class="o">:</span>   <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
-</span><span class='line'>              <span class="o">^^^</span> <span class="nx">number</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="nx">Found</span> <span class="mi">2</span> <span class="nx">errors</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>&nbsp;<code>foo()</code> fonksiyonu number tipinde parametre alırken . Biz ise  <code>foo('Hello World')</code> ile string bir parametre gönderdik ve hatayı aldık.</p>
-
-<p>Flow için söylenecek çok şey olsada şimdilik bu kadar. Flow'u projenize  ekleyerek özelliklerinden faydalanabilirsiniz. Vakit bulabilirsem Grunt , Gulp  gibi görev çalıştırıcılarında ve Atom ve Webstorm gibi editorlerle nasıl kullanılacağından bahsedeceğim.</p>
-
-<p>Flow hakkında daha çok bilgi için: <a href="https://flowtype.org/">flowtype.org</a></p>
-
-<p><a href="https://github.com/igrigorik/ga-beacon"><img src="https://ga-beacon.appspot.com/UA-54922205-13/facebook-flow" alt="Analytics" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -1417,6 +1272,10 @@ ionicBootstrap(MyApp);
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/01/20/node-version-nvm/">NVM İle Varsayılan Node.js Versiyonunu Ayarlama</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/01/12/async-await-javascript/">Async/Await Ile Asenkron Javascript</a>
       </li>
     
@@ -1430,10 +1289,6 @@ ionicBootstrap(MyApp);
     
       <li class="post">
         <a href="/blog/2016/09/30/programmatically-creating-ui-swift3/">Programmatically Creating UI Elements Using Swift 3</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/30/apache-cordova-ios-debug/">Apache Cordova Ve iOS'ta Uzaktan Hata Ayıklama</a>
       </li>
     
   </ul>

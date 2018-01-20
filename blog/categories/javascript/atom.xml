@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Javascript | Nazir Doğan Code Blog]]></title>
   <link href="http://nazrdogan.github.io/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://nazrdogan.github.io/"/>
-  <updated>2018-01-14T20:36:59+03:00</updated>
+  <updated>2018-01-20T14:29:09+03:00</updated>
   <id>http://nazrdogan.github.io/</id>
   <author>
     <name><![CDATA[Nazir Doğan]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[NVM İle Varsayılan Node.js Versiyonunu Ayarlama]]></title>
+    <link href="http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm/"/>
+    <updated>2018-01-20T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm</id>
+    <content type="html"><![CDATA[<p>Yaklaşık 2 aydır nvm kullanıyorum ve node.js versiyonları arası geçişte büyük kolaylık sağlıyor. Varsayılan versiyonu değiştirmem yükseltmem gerektiğinde biraz araştırma yaparak aşağıdaki komutları buldum. Umarım sizin de işinize yarar.</p>
+
+<pre><code>
+# İstediğiniz versiyonu yükleyin
+nvm install 8.9.4
+
+# Varsayılan olarak kullanın
+nvm alias default 8.9.4
+
+# Daha sonra node -v  yazarsanız varsayılan versiyonu verecektir.
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Async/Await Ile Asenkron Javascript]]></title>
@@ -266,87 +285,6 @@ ngOnInit() {
 <p><img src="/assets/ionic-maps.png" alt="project structure" /></p>
 
 <p>Projenin Github <a href="https://github.com/nazrdogan/ionic-maps">linki</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ionic 2 - Sunucudan Veri Alma]]></title>
-    <link href="http://nazrdogan.github.io/blog/2016/07/23/ionic2-uzaktan-veri-alma/"/>
-    <updated>2016-07-23T00:00:00+03:00</updated>
-    <id>http://nazrdogan.github.io/blog/2016/07/23/ionic2-uzaktan-veri-alma</id>
-    <content type="html"><![CDATA[<p><img src="/assets/ionic-weather-app.png" alt="project structure" /></p>
-
-<p>Mobil uygulamaların birçoğu servis olmadan çokta birşey ifade etmezler. ve birçok uygulama REST ve benzeri servisleri kullanmaktadır. Şimdi bizde yapacağımız uygulama ile basit bir servis çagırısı yapıp veriyi ekrana basacağız.</p>
-
-<p>Yapacağımız uygulama basit bir hava durumu uygulaması olacak. Servisden veriyi alma dışında Geolocation pluginini kullanımını göreceğiz. Ayrıca ionic'in yeni CLI yeni özelliğinden bir tanesini kullanacağız.</p>
-
-<p>Şimdi uygulamayı oluşturarak başlayalım.</p>
-
-<pre><code> ionic start Ionic2Weather blank --v2
- cd Ionic2Weather
-</code></pre>
-
-<p>uygulamayı oluşturuduktan sonra ilk iş olarak servis için provider'i üretiyoruz.</p>
-
-<p>Bunu Ionic CLI'da bulunan <strong><a href="http://ionicframework.com/docs/v2/cli/generate/">generate</a></strong> komutu ile yapıyoruz.</p>
-
-<p><em>Not : Bu komut ile sayfa sayfa'da generate edilmekte. Dökümanda bulabilirsiniz.</em></p>
-
-<pre><code>ionic g provider MyData
-</code></pre>
-
-<p> yukaradaki komut ile Ionic bizim için yok ise bir <strong>providers</strong> klasörü oluşturuyor. Ayrıca verdiğimiz isimde bir klasör daha oluşturup içerisinde aynı isimle typescript dosyası oluşturuyor.</p>
-
-<p>providers - > my-data -> my-data.ts</p>
-
-<p><div><script src='https://gist.github.com/194f00a3183b1fcbca9f49710366c5bf.js'></script>
-<noscript><pre><code>
-// http://ngcourse.rangle.io/handout/di/angular2/inject_and_injectable.html
-import { Injectable } from &#39;@angular/core&#39;;
-// HTTP modulünü import ediyoruz.
-import { Http } from &#39;@angular/http&#39;;
-// rxjs kütüphanesinden map&#39;i ekliyoruz.
-import &#39;rxjs/add/operator/map&#39;;
-
-/*
-  Generated class for the MyData provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
-@Injectable()
-export class MyData {
-  data: any;
-
-  constructor(private http: Http) {
-    this.data = null;
-  }
-
-  load() {
-    if (this.data) {
-      // already loaded data
-      return Promise.resolve(this.data);
-    }
-
-    // don&#39;t have the data yet
-    return new Promise(resolve =&gt; {
-      // We&#39;re using Angular Http provider to request the data,
-      // then on the response it&#39;ll map the JSON data to a parsed JS object.
-      // Next we process the data and resolve the promise with the new data.
-      this.http.get(&#39;path/to/data.json&#39;)
-        .map(res =&gt; res.json())
-        .subscribe(data =&gt; {
-          // we&#39;ve got back the raw data, now generate the core schedule data
-          // and save the data for later reference
-          this.data = data;
-          resolve(this.data);
-        });
-    });
-  }
-}
-
-</code></pre></noscript></div>
-</p>
 ]]></content>
   </entry>
   

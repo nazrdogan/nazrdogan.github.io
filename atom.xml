@@ -4,7 +4,7 @@
   <title><![CDATA[Nazir Doğan Code Blog]]></title>
   <link href="http://nazrdogan.github.io/atom.xml" rel="self"/>
   <link href="http://nazrdogan.github.io/"/>
-  <updated>2018-01-14T20:36:59+03:00</updated>
+  <updated>2018-01-20T14:29:09+03:00</updated>
   <id>http://nazrdogan.github.io/</id>
   <author>
     <name><![CDATA[Nazir Doğan]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[NVM İle Varsayılan Node.js Versiyonunu Ayarlama]]></title>
+    <link href="http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm/"/>
+    <updated>2018-01-20T00:00:00+03:00</updated>
+    <id>http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm</id>
+    <content type="html"><![CDATA[<p>Yaklaşık 2 aydır nvm kullanıyorum ve node.js versiyonları arası geçişte büyük kolaylık sağlıyor. Varsayılan versiyonu değiştirmem yükseltmem gerektiğinde biraz araştırma yaparak aşağıdaki komutları buldum. Umarım sizin de işinize yarar.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'># İstediğiniz versiyonu yükleyin
+</span><span class='line'>nvm install 8.9.4
+</span><span class='line'>
+</span><span class='line'># Varsayılan olarak kullanın
+</span><span class='line'>nvm alias default 8.9.4
+</span><span class='line'>
+</span><span class='line'># Daha sonra node -v  yazarsanız varsayılan versiyonu verecektir.
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Async/Await Ile Asenkron Javascript]]></title>
@@ -1702,105 +1732,6 @@ Cocos2d-js is game engine port of Cocos2d-x.its targeted web and native games. I
 
 <div class="bldpQb"></div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Getting Started With Titanium Alloy MVC Framework]]></title>
-    <link href="http://nazrdogan.github.io/blog/2015/12/07/getting-started-titanium-alloy-mvc-framework/"/>
-    <updated>2015-12-07T17:36:00+02:00</updated>
-    <id>http://nazrdogan.github.io/blog/2015/12/07/getting-started-titanium-alloy-mvc-framework</id>
-    <content type="html"><![CDATA[<p class="p1"><strong><span class="s1">What is Alloy ?</span></strong></p>
-
-
-<p class="p1"><span class="s1">Alloy is a MVC framework by Appcelerator for developer to build cross platform application . Titanium have two way for developing mobile apps. One of them named Titanium classic and second one is Titanium alloy. You are not required to alloy framework .you can still continue classic one . But you will not have alloy benefits. </span></p>
-
-
-<p class="p1"><strong><span class="s1">Let's look alloy mvc</span></strong></p>
-
-
-<p class="p1"><strong>Model</strong></p>
-
-
-<p class="p1"><span class="s1">The model store data local or remote.it can be SQLite , file or web service data.no matter what is data type. Model layer is doing managing or manipulating data.if you heard CRUD  you know what I'm talking about.</span></p>
-
-
-<p><p class="p1">
-<p class="p1"><a href="http://www.nazirdogan.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-07-at-18.07.57.png"><img class="alignnone wp-image-939 size-medium" src="http://nazrdogan.github.io/assets/Screen-Shot-2015-12-07-at-18.07.57-244x300.png" alt="Screen Shot 2015-12-07 at 18.07.57" width="244" height="300" /></a></p>
-<p class="p1">you can create model in project folder like this and as well as the other components.</p>
-<pre class="theme:sublime-text lang:default decode:true">exports.definition = {
-    config: {</p>
-
-<pre><code>    adapter: {
-        type: "sql",
-        collection_name: "firstmodel"
-    }
-},
-extendModel: function(Model) {
-    _.extend(Model.prototype, {
-        // extended functions and properties go here
-    });
-
-    return Model;
-},
-extendCollection: function(Collection) {
-    _.extend(Collection.prototype, {
-        // extended functions and properties go here
-
-        // For Backbone v1.1.2, uncomment the following to override the
-        // fetch method to account for a breaking change in Backbone.
-        /*
-        fetch: function(options) {
-            options = options ? _.clone(options) : {};
-            options.reset = true;
-            return Backbone.Collection.prototype.fetch.call(this, options);
-        }
-        */
-    });
-
-    return Collection;
-}
-</code></pre>
-
-<p>};</pre>
-<p>&nbsp;</p>
-<p class="p1"><span class="s1">The view is very simple and easy to understand .its the presentation layer of the application. Users will interact with this layer.</span>If you know xml you know alloy view . Because it&rsquo;s only xml.</p>
-<pre class="theme:sublime-text lang:default decode:true ">&lt;Alloy&gt;
-    &lt;Window class=&ldquo;container&rdquo;&gt;
-        &lt;Label id=&ldquo;label&rdquo; onClick=&ldquo;doClick&rdquo;&gt;Hello, World&lt;/Label&gt;
-    &lt;/Window&gt;
-&lt;/Alloy&gt;</pre>
-<p>and you can change your view style with  TSS files. its inside styles folder. TSS  similar to CSS but it uses JSON-like syntax.</p>
-<pre class="theme:sublime-text lang:default decode:true">&ldquo;.container&rdquo;: {
-    backgroundColor:&ldquo;white&rdquo;
-}</p>
-
-<p>&ldquo;Label&rdquo;: {
-    width: Ti.UI.SIZE,
-    height: Ti.UI.SIZE,
-    color: &ldquo;#000&rdquo;
-}</p>
-
-<p>&ldquo;#label&rdquo;: {
-    font: {
-        fontSize: 12
-    }
-}
-</pre>
-<p><strong><span class="s1">Controller</span></strong></p>
-<p class="p1"><span class="s1">Controller is business logic your application.its glue between model and views.</span></p>
-<pre class="theme:sublime-text lang:default decode:true ">function doClick(e) {
-    alert($.label.text);
-}</p>
-
-<p>$.index.open();
-</pre>
-<p>you can see doClick function in your view. When user interact label on device screen. doClick will work.</p>
-<p>if you create Controller in your alloy project with Appcelerator Studio. Studio will create view(.xml) and style(.tss) files. and will be named same your controller.</p>
-<p>For Example:  you create home.js  controller and created file home.xml and home.tss .But if you do this manually. you must add other files manually.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p></p>
 ]]></content>
   </entry>
   

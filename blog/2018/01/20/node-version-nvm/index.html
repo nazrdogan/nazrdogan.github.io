@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Bütün Gereksizlikler Burada Olacak.. - Nazir Doğan Code Blog</title>
+  <title>NVM İle Varsayılan Node.js Versiyonunu Ayarlama - Nazir Doğan Code Blog</title>
   <meta name="author" content="Nazir Doğan">
 
   
-  <meta name="description" content="
-Merhaba Zalim Dünya! ">
+  <meta name="description" content="Yaklaşık 2 aydır nvm kullanıyorum ve node.js versiyonları arası geçişte büyük kolaylık sağlıyor. Varsayılan versiyonu değiştirmem yükseltmem &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Merhaba Zalim Dünya! ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://nazrdogan.github.io/blog/2013/07/25/butun-gereksizliklere-burada-olacak/">
+  <link rel="canonical" href="http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Nazir Doğan Code Blog" type="application/atom+xml">
@@ -79,7 +78,7 @@ Merhaba Zalim Dünya! ">
   
   <header>
     
-      <h1 class="entry-title">Bütün Gereksizlikler Burada Olacak..</h1>
+      <h1 class="entry-title">NVM İle Varsayılan Node.js Versiyonunu Ayarlama</h1>
     
     
       <p class="meta">
@@ -88,7 +87,7 @@ Merhaba Zalim Dünya! ">
 
 
 
-<time class='entry-date' datetime='2013-07-25T20:32:13+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:32 pm</span></time>
+<time class='entry-date' datetime='2018-01-20'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>12:00 am</span></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://nazrdogan.github.io">Comments</a>
@@ -98,8 +97,25 @@ Merhaba Zalim Dünya! ">
   </header>
 
 
-<div class="entry-content"><div><script src='https://gist.github.com/6094168.js'></script>
-<noscript><pre><code>Merhaba Zalim Dünya!</code></pre></noscript></div>
+<div class="entry-content"><p>Yaklaşık 2 aydır nvm kullanıyorum ve node.js versiyonları arası geçişte büyük kolaylık sağlıyor. Varsayılan versiyonu değiştirmem yükseltmem gerektiğinde biraz araştırma yaparak aşağıdaki komutları buldum. Umarım sizin de işinize yarar.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'># İstediğiniz versiyonu yükleyin
+</span><span class='line'>nvm install 8.9.4
+</span><span class='line'>
+</span><span class='line'># Varsayılan olarak kullanın
+</span><span class='line'>nvm alias default 8.9.4
+</span><span class='line'>
+</span><span class='line'># Daha sonra node -v  yazarsanız varsayılan versiyonu verecektir.
+</span></code></pre></td></tr></table></div></figure>
 
 
 
@@ -118,12 +134,12 @@ Merhaba Zalim Dünya! ">
 
 
 
-<time class='entry-date' datetime='2013-07-25T20:32:13+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:32 pm</span></time>
+<time class='entry-date' datetime='2018-01-20'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>12:00 am</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/arduino/'>arduino</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/open-source/'>open source</a>, <a class='category' href='/blog/categories/titanium-mobile/'>titanium mobile</a>
+    <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/node-dot-js/'>node.js</a>
   
 </span>
 
@@ -132,7 +148,7 @@ Merhaba Zalim Dünya! ">
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://nazrdogan.github.io/blog/2013/07/25/butun-gereksizliklere-burada-olacak/" data-via="gereksizcoder" data-counturl="http://nazrdogan.github.io/blog/2013/07/25/butun-gereksizliklere-burada-olacak/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm/" data-via="gereksizcoder" data-counturl="http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -145,8 +161,8 @@ Merhaba Zalim Dünya! ">
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2018/01/12/async-await-javascript/" title="Previous Post: Async/Await ile  Asenkron Javascript">&laquo; Async/Await ile  Asenkron Javascript</a>
       
-        <a class="basic-alignment right" href="/blog/2013/08/15/arduino-kitabim-notlarim/" title="Next Post: Arduino Kitabım (Notlarım )">Arduino Kitabım (Notlarım ) &raquo;</a>
       
     </p>
   </footer>
@@ -241,8 +257,8 @@ Merhaba Zalim Dünya! ">
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://nazrdogan.github.io/blog/2013/07/25/butun-gereksizliklere-burada-olacak/';
-        var disqus_url = 'http://nazrdogan.github.io/blog/2013/07/25/butun-gereksizliklere-burada-olacak/';
+        var disqus_identifier = 'http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm/';
+        var disqus_url = 'http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm/';
         var disqus_script = 'embed.js';
       
     (function () {
