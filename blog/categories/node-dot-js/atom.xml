@@ -4,7 +4,7 @@
   <title><![CDATA[Category: node.js | Nazir Doğan Code Blog]]></title>
   <link href="http://nazrdogan.github.io/blog/categories/node-dot-js/atom.xml" rel="self"/>
   <link href="http://nazrdogan.github.io/"/>
-  <updated>2018-01-20T14:31:18+03:00</updated>
+  <updated>2019-01-24T00:41:45+02:00</updated>
   <id>http://nazrdogan.github.io/</id>
   <author>
     <name><![CDATA[Nazir Doğan]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[NVM İle Varsayılan Node.js Versiyonunu Ayarlama]]></title>
     <link href="http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm/"/>
-    <updated>2018-01-20T00:00:00+03:00</updated>
+    <updated>2018-01-20T00:00:00+02:00</updated>
     <id>http://nazrdogan.github.io/blog/2018/01/20/node-version-nvm</id>
     <content type="html"><![CDATA[<p>Yaklaşık 2 aydır nvm kullanıyorum ve node.js versiyonları arası geçişte büyük kolaylık sağlıyor. Varsayılan versiyonu değiştirmem yükseltmem gerektiğinde biraz araştırma yaparak aşağıdaki komutları buldum. Umarım sizin de işinize yarar.</p>
 
@@ -35,7 +35,7 @@ nvm alias default 8.9.4
   <entry>
     <title type="html"><![CDATA[Async/Await Ile Asenkron Javascript]]></title>
     <link href="http://nazrdogan.github.io/blog/2018/01/12/async-await-javascript/"/>
-    <updated>2018-01-12T00:00:00+03:00</updated>
+    <updated>2018-01-12T00:00:00+02:00</updated>
     <id>http://nazrdogan.github.io/blog/2018/01/12/async-await-javascript</id>
     <content type="html"><![CDATA[<p><img src="https://www.bram.us/wordpress/wp-content/uploads/2017/05/js-callbacks-promises-asyncawait.gif" alt="async-await" /></p>
 
@@ -88,7 +88,7 @@ makeRequest();
   <entry>
     <title type="html"><![CDATA[Yarn Paket Yöneticisi Nedir ?]]></title>
     <link href="http://nazrdogan.github.io/blog/2017/11/18/yarn/"/>
-    <updated>2017-11-18T00:00:00+03:00</updated>
+    <updated>2017-11-18T00:00:00+02:00</updated>
     <id>http://nazrdogan.github.io/blog/2017/11/18/yarn</id>
     <content type="html"><![CDATA[<p><img src="https://yarnpkg.com/assets/og_image.png" alt="yarn" /></p>
 
